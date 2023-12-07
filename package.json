@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm run deploy-nearorg && next build",
     "start": "next start",
     "lint": "next lint",
     "sync-submodules": "git submodule init && git submodule update",
