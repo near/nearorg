@@ -58,15 +58,15 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/:path/widget/:slug',
+        source: '/:path/widget/:slug',  // TODO Update these to replace 'widget' with 'component' with corresponding change in near-discovery
         destination:
-          'https://dev.near.org/:path/component/:slug',
+          'https://dev.near.org/:path/widget/:slug',
         permanent: true,
       },
       {
         source: '/horizon',
         destination:
-          'https://dev.near.org/horizon/component/homePage',
+          'https://dev.near.org/horizon/widget/homePage',
         permanent: true,
       },
       {
