@@ -6,61 +6,67 @@ const nextConfig = {
       {
         source: '/signup',
         destination:
-          'https://discovery-devnetwork.vercel.app/signup',
+          'https://dev.near.org/signup',
+        permanent: true,
+      },
+      {
+        source: '/signin',
+        destination:
+          'https://dev.near.org/signin',
         permanent: true,
       },
       {
         source: '/data-availability',
         destination:
-          'https://discovery-devnetwork.vercel.app/data-availability',
+          'https://dev.near.org/data-availability',
         permanent: true,
       },
       {
         source: '/open-web-applications',
         destination:
-          'https://discovery-devnetwork.vercel.app/open-web-applications',
+          'https://dev.near.org/open-web-applications',
         permanent: true,
       },
       {
         source: '/fast-auth-and-relayers',
         destination:
-          'https://discovery-devnetwork.vercel.app/fast-auth-and-relayers',
+          'https://dev.near.org/fast-auth-and-relayers',
         permanent: true,
       },
       {
         source: '/data-infrastructure',
         destination:
-          'https://discovery-devnetwork.vercel.app/data-infrastructure',
+          'https://dev.near.org/data-infrastructure',
         permanent: true,
       },
       {
         source: '/ecosystem',
         destination:
-          'https://discovery-devnetwork.vercel.app/ecosystem',
+          'https://dev.near.org/ecosystem',
         permanent: true,
       },
       {
         source: '/sandbox',
         destination:
-          'https://discovery-devnetwork.vercel.app/sandbox',
+          'https://dev.near.org/sandbox',
         permanent: true,
       },
       {
         source: '/onboarding',
         destination:
-          'https://discovery-devnetwork.vercel.app/onboarding',
+          'https://dev.near.org/onboarding',
         permanent: true,
       },
       {
         source: '/:path/widget/:slug',
         destination:
-          'https://discovery-devnetwork.vercel.app/:path/component/:slug',
+          'https://dev.near.org/:path/component/:slug',
         permanent: true,
       },
       {
         source: '/horizon',
         destination:
-          'https://discovery-devnetwork.vercel.app/horizon/component/homePage',
+          'https://dev.near.org/horizon/component/homePage',
         permanent: true,
       },
       {
