@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "sync-submodules": "git submodule init && git submodule update",
-    "deploy-nearorg": "cp -r nearorg_marketing/public/ public/"
+    "deploy-nearorg": "cp -r nearorg_marketing/public/ ./public"
   },
   "dependencies": {
     "react": "^18",
