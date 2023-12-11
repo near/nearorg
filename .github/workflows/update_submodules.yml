@@ -1,7 +1,10 @@
 on:  
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+        update
   push: 
     branches: [main]
-  workflow_dispatch:
 jobs:
   update-submodules:
     runs-on: ubuntu-latest
@@ -9,12 +12,12 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0 
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.REPO_TOKEN }}
     - name: update nearorg_marketing
       run: |
         git submodule init
         git submodule update --remote --merge
         git config --local user.email "devconsole-team@pagoda.co"
-        git config --local user.name "github-actions[bot]"
+        git config --local user.name "github-actions-bot"
         git commit -m "update submodule in response to marketing content update" -a
         git push
