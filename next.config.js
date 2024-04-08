@@ -1,142 +1,85 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   redirects: async () => {
     return [
       {
-        source: '/signup',
-        destination:
-          'https://dev.near.org/signup',
+        source: "/signup",
+        destination: "https://dev.near.org/signup",
         permanent: true,
       },
       {
-        source: '/signin',
-        destination:
-          'https://dev.near.org/signin',
+        source: "/signin",
+        destination: "https://dev.near.org/signin",
         permanent: true,
       },
       {
-        source: '/data-availability',
-        destination:
-          'https://dev.near.org/data-availability',
+        source: "/data-availability",
+        destination: "https://dev.near.org/data-availability",
         permanent: true,
       },
       {
-        source: '/open-web-applications',
-        destination:
-          'https://dev.near.org/open-web-applications',
+        source: "/open-web-applications",
+        destination: "https://dev.near.org/open-web-applications",
         permanent: true,
       },
       {
-        source: '/fast-auth-and-relayers',
-        destination:
-          'https://dev.near.org/fast-auth-and-relayers',
+        source: "/fast-auth-and-relayers",
+        destination: "https://dev.near.org/fast-auth-and-relayers",
         permanent: true,
       },
       {
-        source: '/data-infrastructure',
-        destination:
-          'https://dev.near.org/data-infrastructure',
+        source: "/data-infrastructure",
+        destination: "https://dev.near.org/data-infrastructure",
         permanent: true,
       },
       {
-        source: '/ecosystem',
-        destination:
-          'https://dev.near.org/ecosystem',
+        source: "/ecosystem",
+        destination: "https://dev.near.org/ecosystem",
         permanent: true,
       },
       {
-        source: '/sandbox',
-        destination:
-          'https://dev.near.org/sandbox',
+        source: "/sandbox",
+        destination: "https://dev.near.org/sandbox",
         permanent: true,
       },
       {
-        source: '/onboarding',
-        destination:
-          'https://dev.near.org/onboarding',
+        source: "/onboarding",
+        destination: "https://dev.near.org/onboarding",
         permanent: true,
       },
       {
-        source: '/:path/component/:slug', 
-        destination:
-          'https://dev.near.org/:path/component/:slug',
+        source: "/:path/component/:slug",
+        destination: "https://dev.near.org/:path/component/:slug",
         permanent: true,
       },
       {
-        source: '/horizon',
-        destination:
-          'https://dev.near.org/nearhorizon.near/component/HomePage',
+        source: "/horizon",
+        destination: "https://dev.near.org/nearhorizon.near/component/HomePage",
         permanent: true,
       },
       {
-        source: '/brand',
-        destination:
-          'https://pages.near.org/brand',
+        source: "/brand",
+        destination: "https://pages.near.org/brand",
         permanent: true,
-      }
-    ]
+      },
+    ];
   },
   rewrites: async () => {
     return [
       {
-        source: '/',
-        destination: '/index.html',
+        source: "/blog",
+        destination: "/build/blog/page/2/index.html",
       },
       {
-        source: '/:path',
-        destination: '/:path/index.html',
+        source: "/blog/:path*",
+        destination: "/build/blog/:path*/index.html",
       },
-      {
-        source: '/blog',
-        destination: '/blog/page/2/index.html',
-      },
-      {
-        source: '/blog/:path*',
-        destination: '/blog/:path*/index.html',
-      },
-      {
-        source: '/learn/:path*',
-        destination: '/learn/:path*/index.html',
-      },
-      {
-        source: '/near-events/:path*',
-        destination: '/near-events/:path*/index.html',
-      },
-      {
-        source: '/case-studies/:path*',
-        destination: '/case-studies/:path*/index.html',
-      },
-      {
-        source: '/use-cases/:path*',
-        destination: '/use-cases/:path*/index.html',
-      },
-      {
-        source: '/coverages/:path*',
-        destination: '/coverages/:path*/index.html',
-      },
-      {
-        source: '/events/:path*',
-        destination: '/events/:path*/index.html',
-      },
-      {
-        source: '/ecosystem/:path*',
-        destination: '/ecosystem/:path*/index.html',
-      },
-      {
-        source: '/developers/:path*',
-        destination: '/developers/:path*/index.html',
-      },
-      {
-        source: '/papers/:path*',
-        destination: '/papers/:path*/index.html',
-      },
-      {
-        source: '/press-releases/:path*',
-        destination: '/press-releases/:path*/index.html',
-      },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
