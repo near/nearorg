@@ -1,3 +1,5 @@
+const appGatewayHostname = 'https://dev.near.org'; // This will probably change to "apps.near.org"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,7 +12,7 @@ const nextConfig = {
 
       {
         source: '/applications',
-        destination: 'https://dev.near.org/applications',
+        destination: `${appGatewayHostname}/applications`,
         permanent: true,
       },
       {
@@ -25,7 +27,7 @@ const nextConfig = {
       },
       {
         source: '/components',
-        destination: 'https://dev.near.org/components',
+        destination: `${appGatewayHostname}/components`,
         permanent: true,
       },
       {
@@ -65,12 +67,12 @@ const nextConfig = {
       },
       {
         source: '/gateways',
-        destination: 'https://dev.near.org/gateways',
+        destination: `${appGatewayHostname}/gateways`,
         permanent: true,
       },
       {
         source: '/horizon',
-        destination: 'https://dev.near.org/nearhorizon.near/component/HomePage',
+        destination: `${appGatewayHostname}/nearhorizon.near/component/HomePage`,
         permanent: true,
       },
       {
@@ -80,7 +82,7 @@ const nextConfig = {
       },
       {
         source: '/onboarding',
-        destination: 'https://dev.near.org/onboarding',
+        destination: `${appGatewayHostname}/onboarding`,
         permanent: true,
       },
       {
@@ -90,7 +92,7 @@ const nextConfig = {
       },
       {
         source: '/people',
-        destination: 'https://dev.near.org/people',
+        destination: `${appGatewayHostname}/people`,
         permanent: true,
       },
       {
@@ -100,23 +102,22 @@ const nextConfig = {
       },
       {
         source: '/sandbox',
-        destination: 'https://dev.near.org/sandbox',
+        destination: `${appGatewayHostname}/sandbox`,
         permanent: true,
       },
       {
         source: '/signin',
-        destination: 'https://dev.near.org/applications?requestAuth=1',
+        destination: `${appGatewayHostname}/applications?requestAuth=1`,
         permanent: false,
       },
       {
         source: '/signup',
-        destination: 'https://dev.near.org/applications?requestAuth=1&createAccount=1',
+        destination: `${appGatewayHostname}/applications?requestAuth=1&createAccount=1`,
         permanent: false,
       },
       {
         source: '/stackoverflow',
-        destination:
-          'https://dev.near.org/near/widget/NearOrg.HomePage?utm_source=stack&utm_medium=podcast&utm_campaign=stackoverflow_evergreen_bos_awareness',
+        destination: `${appGatewayHostname}/near/widget/NearOrg.HomePage?utm_source=stack&utm_medium=podcast&utm_campaign=stackoverflow_evergreen_bos_awareness`,
         permanent: false,
       },
       {
@@ -134,12 +135,12 @@ const nextConfig = {
 
       {
         source: '/:path/component/:slug',
-        destination: 'https://dev.near.org/:path/component/:slug',
+        destination: `${appGatewayHostname}/:path/component/:slug`,
         permanent: true,
       },
       {
         source: '/:path/widget/:slug',
-        destination: 'https://dev.near.org/:path/widget/:slug',
+        destination: `${appGatewayHostname}/:path/widget/:slug`,
         permanent: true,
       },
     ];
