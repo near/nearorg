@@ -5,6 +5,7 @@ export type EventItem = {
   event: {
     api_id: string;
     name: string;
+    description: string;
     start_at: string;
     end_at: string;
     cover_url: string;
@@ -19,7 +20,11 @@ type EventsListData = {
 };
 
 export const fetchEvents = async (limit: number, offset: number): Promise<EventsListData> => {
-  const queryFrom = '';
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() - 1);
+  const afterDate = currentDate.toISOString().split('T')[0]; // YYYY-MM-DD
+
+  const queryFrom = `after=${afterDate}`;
   const queryLimit = `pagination_limit=${limit ?? 10}`;
   const queryOffset = offset ? `pagination_offset=${offset}` : '';
   const queryParams = [queryFrom, queryLimit, queryOffset].filter(Boolean).join('&');

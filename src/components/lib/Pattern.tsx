@@ -11,9 +11,11 @@ export const Pattern = styled.div`
   background-position: center top;
 `;
 
-export const PatternContent = styled.div`
+export const PatternContent = styled.div<{
+  $maxWidth?: string;
+}>`
   padding: 1rem;
-  max-width: 648px;
+  max-width: ${(p) => p.$maxWidth ?? '808px'};
   margin: 0 auto;
   background-color: var(--background-color);
   display: flex;

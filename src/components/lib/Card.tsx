@@ -38,3 +38,17 @@ export const Card = styled.div<{
     gap: 24px;
   }
 `;
+
+export const CardThumbnail = styled.div`
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;

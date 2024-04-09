@@ -10,8 +10,12 @@ export function useSocialDb<T extends Record<string, any>>(method: 'get' | 'keys
 
   useEffect(() => {
     const loadData = async () => {
-      const result = await fetchSocialDb(method, keys);
-      setData(result as any);
+      try {
+        const result = await fetchSocialDb(method, keys);
+        setData(result as any);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     loadData();

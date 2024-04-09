@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { fetchEvents } from '@/utils/events';
 
-type MappedEvent = {
+export type MappedEvent = {
   date: string;
+  description: string;
   location: any;
   thumbnail: string;
   title: string;
@@ -12,33 +13,39 @@ type MappedEvent = {
 
 // TODO: Refactor this hook to use something like ReactQuery
 
-export function useLatestEvents() {
+export function useLatestEvents(limit = 3) {
   const [events, setEvents] = useState<MappedEvent[]>([]);
+  const [hasMoreEvents, setHasMoreEvents] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
-      const limit = 3;
-      const result = await fetchEvents(limit, 0);
+      try {
+        const result = await fetchEvents(limit, 0);
 
-      const sortedEvents = [...result.entries]
-        .sort((a, b) => new Date(a.event.start_at).getTime() - new Date(b.event.start_at).getTime())
-        .slice(0, limit);
+        const sortedEvents = [...result.entries]
+          .sort((a, b) => new Date(a.event.start_at).getTime() - new Date(b.event.start_at).getTime())
+          .slice(0, limit);
 
-      const mappedEvents = sortedEvents.map((item) => {
-        return {
-          date: formatDate(item.event.start_at, item.event.end_at),
-          location: formatLocation(item.event.geo_address_json),
-          thumbnail: item.event.cover_url,
-          title: item.event.name,
-          url: item.event.url,
-        };
-      });
+        const mappedEvents = sortedEvents.map((item) => {
+          return {
+            date: formatDate(item.event.start_at, item.event.end_at),
+            description: item.event.description,
+            location: formatLocation(item.event.geo_address_json),
+            thumbnail: item.event.cover_url,
+            title: item.event.name,
+            url: item.event.url,
+          };
+        });
 
-      setEvents(mappedEvents);
+        setEvents(mappedEvents);
+        setHasMoreEvents(result.hasMore);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     loadData();
-  }, []);
+  }, [limit]);
 
   const formatDate = (startAt: string, endAt: string) => {
     // Example Format: "Jul 21 - Jul 23, 2023"
@@ -69,5 +76,6 @@ export function useLatestEvents() {
 
   return {
     events,
+    hasMoreEvents,
   };
 }

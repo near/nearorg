@@ -6,69 +6,20 @@ import styled from 'styled-components';
 import { useLatestEvents } from '@/hooks/useLatestEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
+import { CREATE_ACCOUNT_URL } from '@/utils/constants';
 
+import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
-import { Card } from '../lib/Card';
+import { Card, CardThumbnail } from '../lib/Card';
 import { Container } from '../lib/Container';
 import { ContentWithImage } from '../lib/ContentWithImage';
 import { Flex } from '../lib/Flex';
 import { Grid } from '../lib/Grid';
+import { IconCircle } from '../lib/IconCircle';
 import { Pattern, PatternContent } from '../lib/Pattern';
 import { Section } from '../lib/Section';
-import { Text } from '../lib/Text';
-
-const Wrapper = styled.div`
-  --section-gap: 120px;
-  --text-hero: 500 72px/1 'FK Grotesk', 'Mona Sans', sans-serif;
-  margin-top: calc(var(--body-top-padding) * -1);
-
-  .darkButton {
-    color: #fff !important;
-    background: transparent !important;
-    border-color: #00ec97 !important;
-    &:focus {
-      border-color: var(--violet9) !important;
-    }
-    &:hover {
-      color: #000 !important;
-      background: #00ec97 !important;
-    }
-    &:active {
-      color: #000 !important;
-      background: var(--sand3) !important;
-      border-color: var(--sand3) !important;
-    }
-  }
-
-  @media (max-width: 900px) {
-    --section-gap: 80px;
-  }
-`;
-
-const H1 = styled.h1`
-  font: var(--text-hero);
-  letter-spacing: -3px;
-  text-align: center;
-  color: var(--black);
-  margin: 0;
-  max-width: 600px;
-
-  @media (max-width: 900px) {
-    font-size: 48px;
-  }
-`;
-
-const H2 = styled.h2`
-  font: var(--text-hero);
-  font-size: 56px;
-  line-height: 1.3;
-  color: var(--black);
-  margin: 0;
-
-  @media (max-width: 900px) {
-    font-size: 36px;
-  }
-`;
+import { H1, H2, Text } from '../lib/Text';
+import { Wrapper } from '../lib/Wrapper';
 
 const Teams = styled.div`
   width: 100%;
@@ -118,20 +69,6 @@ const LogoLinks = styled.div`
   }
 `;
 
-const CardThumbnail = styled.div`
-  width: 72px;
-  height: 72px;
-  border-radius: 8px;
-  overflow: hidden;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
 const Stats = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -159,279 +96,207 @@ const Stats = styled.div`
   }
 `;
 
-const IconCircle = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 100%;
-  border: 1px solid var(--sand11);
+const ipfsImages = {
+  apps: {
+    bosAllStars: 'bafkreicgnsizdxoc436tbln3ucqo45hdauumd7if4gltrqh3tbxgosi3q4',
+    bosHacks: 'bafkreicpbijnii55242f7wcs6xnjf3ocyuyuguts6r6kkfz745g3jjudam',
+    nui: 'bafkreiefq7qqug2f657fdb5fyuaf5uesybwn7qu3ebxvmo47dhcsxu27vm',
+  },
+  community: {
+    devHub: 'bafkreifdsmtvi7mpovau5asmaabibk6cvtqvujuunjjlazqov32wng34q4',
+    horizon: 'bafkreiguqynoybtr6esvnyetcaayke5gsh5ex7lk4efjgunnyw6unszin4',
+    ndc: 'bafkreigqrtvkwu4uzjzg7nrv3ivsb2uthvcozici34loxumkpekz7weyly',
+  },
+  illustrations: {
+    betterWayToBuild: 'bafkreib6sp7aoovferwg4zfvekhxxmp6hdp4u7f2bgxupebntrfgrmjhbe',
+    code: 'bafkreig2anu2f6j6kh7i26k2x7z75d72bn4vtsp2dusiin5pahwbjd3rvi',
+    components: 'bafkreiecfsfxzubbayv27se2pr2xcz4rugp5a5kscsfz5lvjykiomt3a4u',
+    dapps: 'bafkreihhuffoky3qywxmnnr7z7r2gdtjfab6tbx7f7ml2xvwldx76ggrni',
+    fastAuth: 'bafkreib5rowa6ujusqvk6xr4qo2bnoazwvraozrl56taejqypemd5mc75y',
+    gateways: 'bafkreibvfggs2ea6e7fp4apfeaccjlcnpovzr73fwnxxkuvcnmpkkzqiwm',
+    placeholder: 'bafkreid7abzwnzk3qrniq7mnnl4blhka7k5nk62m3u7afqnqdxowmrkdu4',
+  },
+  logos: {
+    alibaba: 'bafkreibjmnm5mu5sdauregztl2bsin2a633gdfmrydviyqkyf5rpjfbg64',
+    arbitrum: 'bafkreibff556aanawcdwlpbelqnzns35gqmxcsll5k4acyynyrvibcljpu',
+    cosmose: 'bafkreifx5onoiyip7mwogdnzmv7ilirkw2fyzvegrvxbmzf6bcbzuwbmbu',
+    dropt: 'bafkreihjdirbdiuoiqlcmpp7gnjnvkm3bfol7mtetyaldtgnvgrprpdbba',
+    eigenLayer: 'bafkreid44xmemwrym532jybhwqwrvlbzchxfxyrkcivns5qtmpeym7cmbe',
+    icc: 'bafkreibygllbcqh3e3qkcrim2noa4wwev36af34rk6gw2rpogp53lwkbg4',
+    google: 'bafkreie7ewwxbvcv4hgztuj5uwk5i4siirqnxbo2c5g2nt72iaty6lnpje',
+    optimism: 'bafkreidwitx5hu6hivyn3exi34moyea7livf6zfqk2dcny3z62ive7fpou',
+    polygon: 'bafkreig5ubh27cnjindiujnmyrwa2uft24bcrmgibzwlma4nqsommrcd4u',
+    marblex: 'bafkreigaqwyom4knnvjdvsgmfbef5adp5k6no4prdudiog3pypiqddoyum',
+    sailgp: 'bafkreifoxofuz4mkoopodvrdb44g5lva4w5p46iexccovj4c62x6ihoj2i',
+    shemaroo: 'bafkreigoulx5h4u43xj4332bidnkn4dzbw5qgrcar6wf7yoewnrxfyjfle',
+    sweatcoin: 'bafkreigztaapfbvnfzrw4oap6zi7us4drcbx2wt3broi4n3u4nzfyrtxcy',
+  },
+};
 
-  i {
-    color: var(--sand11);
-    font-size: 32px;
-  }
-`;
+const featuredApps = [
+  {
+    name: 'BOS All-Stars',
+    accountId: 'hack.near',
+    description: 'Ranking starred components',
+    ipfsImage: ipfsImages.apps.bosAllStars,
+    url: '/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
+  },
+  {
+    name: 'BOS Hacks',
+    accountId: 'ndcplug.near',
+    description: 'The 2 week B.O.S Hackathon on B.O.S',
+    ipfsImage: ipfsImages.apps.bosHacks,
+    url: '/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
+  },
+  {
+    name: 'NUI',
+    accountId: 'nearui.near',
+    description: ' A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
+    ipfsImage: ipfsImages.apps.nui,
+    url: '/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
+  },
+];
 
-const Article = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-decoration: none !important;
-  outline: none;
-  box-shadow: 0 0 0 0px var(--violet4);
+const web3Teams2 = [
+  {
+    url: 'https://dropt.io',
+    name: 'Dropt',
+    ipfsImage: ipfsImages.logos.dropt,
+    height: '35px',
+  },
+  {
+    url: 'https://sailgp.com',
+    name: 'Sail GP',
+    ipfsImage: ipfsImages.logos.sailgp,
+    height: '16px',
+  },
+  {
+    url: 'https://www.shemarooent.com',
+    name: 'Shemaroo',
+    ipfsImage: ipfsImages.logos.shemaroo,
+    height: '38px',
+  },
+  {
+    url: 'https://www.marblex.io',
+    name: 'Marblex',
+    ipfsImage: ipfsImages.logos.marblex,
+    height: '16px',
+  },
+  {
+    url: 'https://polygon.technology/polygon-cdk',
+    name: 'Polygon',
+    ipfsImage: ipfsImages.logos.polygon,
+    height: '38px',
+  },
+  {
+    url: 'https://sweatco.in',
+    name: 'Sweatcoin',
+    ipfsImage: ipfsImages.logos.sweatcoin,
+    height: '24px',
+  },
+];
 
-  &:hover {
-    h3 {
-      text-decoration: underline;
-    }
+const web3Teams = [
+  {
+    url: 'https://alibabacloud.com/',
+    name: 'Alibaba',
+    ipfsImage: ipfsImages.logos.alibaba,
+    height: '38px',
+  },
+  {
+    url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
+    name: 'Arbitrum',
+    ipfsImage: ipfsImages.logos.arbitrum,
+    height: '38px',
+  },
+  {
+    url: 'https://cosmose.co',
+    name: 'Cosmose AI',
+    ipfsImage: ipfsImages.logos.cosmose,
+    height: '38px',
+  },
+  {
+    url: 'https://docs.eigenlayer.xyz/eigenda-guides/eigenda-overview',
+    name: 'EigenLayer',
+    ipfsImage: ipfsImages.logos.eigenLayer,
+    height: '38px',
+  },
+  {
+    url: 'https://google.com',
+    name: 'Google',
+    ipfsImage: ipfsImages.logos.google,
+    height: '38px',
+  },
+  {
+    url: 'https://www.icc-cricket.com',
+    name: 'ICC',
+    ipfsImage: ipfsImages.logos.icc,
+    height: '24px',
+  },
+];
 
-    div:first-child {
-      &::before {
-        opacity: 1;
-      }
-    }
-  }
+const web3TeamsCombined = [...web3Teams, ...web3Teams2];
 
-  &:focus {
-    div:first-child {
-      box-shadow: 0 0 0 4px var(--violet4);
-    }
-  }
-`;
+const learnItems = [
+  {
+    name: 'Docs',
+    description: 'Read the NEAR documentation and learn to build and publish blockchain applications.',
+    icon: 'ph-file-doc',
+    url: 'https://docs.near.org',
+    target: '_blank',
+  },
+  {
+    name: 'Blog',
+    description: 'The latest news about the NEAR protocol and innovations from the community.',
+    icon: 'ph-newspaper-clipping',
+    url: '/blog',
+  },
+  {
+    name: 'Learn Center',
+    description: 'Starter kit to learn about blockchain technology, web3, and the NEAR protocol.',
+    icon: 'ph-book-open-text',
+    url: '/learn',
+  },
+];
 
-const ArticleImage = styled.div`
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  height: 220px;
-  transition: all 200ms;
-  margin-bottom: 10px;
-  position: relative;
+const communityItems = [
+  {
+    name: 'DevHub',
+    description:
+      'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
+    ipfsImage: ipfsImages.community.devHub,
+    url: '/devgovgigs.near/widget/Ideas',
+  },
+  {
+    name: 'Horizon',
+    description: 'Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.',
+    ipfsImage: ipfsImages.community.horizon,
+    url: '/horizon',
+  },
+  {
+    name: 'Near Digital Collective (NDC)',
+    description: 'The NDC is a grassroots, community-led movement to build decentralized governance on NEAR.',
+    ipfsImage: ipfsImages.community.ndc,
+    url: 'https://app.neardc.org/',
+    target: '_blank',
+  },
+];
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 5;
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    inset: 0;
-    background: var(--whiteA6);
-    z-index: 10;
-    position: absolute;
-    opacity: 0;
-    transition: all 200ms;
-  }
-`;
+function returnImageSrc(cfid: string) {
+  return `/images/home/${cfid}.png`;
+}
 
 export const Home = () => {
   const { statistics } = useStatistics();
   const { events } = useLatestEvents();
   const { news } = useLatestNews();
 
-  const ipfsImages = {
-    apps: {
-      bosAllStars: 'bafkreicgnsizdxoc436tbln3ucqo45hdauumd7if4gltrqh3tbxgosi3q4',
-      bosHacks: 'bafkreicpbijnii55242f7wcs6xnjf3ocyuyuguts6r6kkfz745g3jjudam',
-      nui: 'bafkreiefq7qqug2f657fdb5fyuaf5uesybwn7qu3ebxvmo47dhcsxu27vm',
-    },
-    community: {
-      devHub: 'bafkreifdsmtvi7mpovau5asmaabibk6cvtqvujuunjjlazqov32wng34q4',
-      horizon: 'bafkreiguqynoybtr6esvnyetcaayke5gsh5ex7lk4efjgunnyw6unszin4',
-      ndc: 'bafkreigqrtvkwu4uzjzg7nrv3ivsb2uthvcozici34loxumkpekz7weyly',
-    },
-    illustrations: {
-      betterWayToBuild: 'bafkreib6sp7aoovferwg4zfvekhxxmp6hdp4u7f2bgxupebntrfgrmjhbe',
-      code: 'bafkreig2anu2f6j6kh7i26k2x7z75d72bn4vtsp2dusiin5pahwbjd3rvi',
-      components: 'bafkreiecfsfxzubbayv27se2pr2xcz4rugp5a5kscsfz5lvjykiomt3a4u',
-      dapps: 'bafkreihhuffoky3qywxmnnr7z7r2gdtjfab6tbx7f7ml2xvwldx76ggrni',
-      fastAuth: 'bafkreib5rowa6ujusqvk6xr4qo2bnoazwvraozrl56taejqypemd5mc75y',
-      gateways: 'bafkreibvfggs2ea6e7fp4apfeaccjlcnpovzr73fwnxxkuvcnmpkkzqiwm',
-      placeholder: 'bafkreid7abzwnzk3qrniq7mnnl4blhka7k5nk62m3u7afqnqdxowmrkdu4',
-    },
-    logos: {
-      alibaba: 'bafkreibjmnm5mu5sdauregztl2bsin2a633gdfmrydviyqkyf5rpjfbg64',
-      arbitrum: 'bafkreibff556aanawcdwlpbelqnzns35gqmxcsll5k4acyynyrvibcljpu',
-      cosmose: 'bafkreifx5onoiyip7mwogdnzmv7ilirkw2fyzvegrvxbmzf6bcbzuwbmbu',
-      dropt: 'bafkreihjdirbdiuoiqlcmpp7gnjnvkm3bfol7mtetyaldtgnvgrprpdbba',
-      eigenLayer: 'bafkreid44xmemwrym532jybhwqwrvlbzchxfxyrkcivns5qtmpeym7cmbe',
-      icc: 'bafkreibygllbcqh3e3qkcrim2noa4wwev36af34rk6gw2rpogp53lwkbg4',
-      google: 'bafkreie7ewwxbvcv4hgztuj5uwk5i4siirqnxbo2c5g2nt72iaty6lnpje',
-      optimism: 'bafkreidwitx5hu6hivyn3exi34moyea7livf6zfqk2dcny3z62ive7fpou',
-      polygon: 'bafkreig5ubh27cnjindiujnmyrwa2uft24bcrmgibzwlma4nqsommrcd4u',
-      marblex: 'bafkreigaqwyom4knnvjdvsgmfbef5adp5k6no4prdudiog3pypiqddoyum',
-      sailgp: 'bafkreifoxofuz4mkoopodvrdb44g5lva4w5p46iexccovj4c62x6ihoj2i',
-      shemaroo: 'bafkreigoulx5h4u43xj4332bidnkn4dzbw5qgrcar6wf7yoewnrxfyjfle',
-      sweatcoin: 'bafkreigztaapfbvnfzrw4oap6zi7us4drcbx2wt3broi4n3u4nzfyrtxcy',
-    },
-  };
-
-  const featuredApps = [
-    {
-      name: 'BOS All-Stars',
-      accountId: 'hack.near',
-      description: 'Ranking starred components',
-      ipfsImage: ipfsImages.apps.bosAllStars,
-      url: '/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
-    },
-    {
-      name: 'BOS Hacks',
-      accountId: 'ndcplug.near',
-      description: 'The 2 week B.O.S Hackathon on B.O.S',
-      ipfsImage: ipfsImages.apps.bosHacks,
-      url: '/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
-    },
-    {
-      name: 'NUI',
-      accountId: 'nearui.near',
-      description: ' A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
-      ipfsImage: ipfsImages.apps.nui,
-      url: '/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
-    },
-  ];
-
-  const web3Teams2 = [
-    {
-      url: 'https://dropt.io',
-      name: 'Dropt',
-      ipfsImage: ipfsImages.logos.dropt,
-      height: '35px',
-    },
-    {
-      url: 'https://sailgp.com',
-      name: 'Sail GP',
-      ipfsImage: ipfsImages.logos.sailgp,
-      height: '16px',
-    },
-    {
-      url: 'https://www.shemarooent.com',
-      name: 'Shemaroo',
-      ipfsImage: ipfsImages.logos.shemaroo,
-      height: '38px',
-    },
-    {
-      url: 'https://www.marblex.io',
-      name: 'Marblex',
-      ipfsImage: ipfsImages.logos.marblex,
-      height: '16px',
-    },
-    {
-      url: 'https://polygon.technology/polygon-cdk',
-      name: 'Polygon',
-      ipfsImage: ipfsImages.logos.polygon,
-      height: '38px',
-    },
-    {
-      url: 'https://sweatco.in',
-      name: 'Sweatcoin',
-      ipfsImage: ipfsImages.logos.sweatcoin,
-      height: '24px',
-    },
-  ];
-
-  const web3Teams = [
-    {
-      url: 'https://alibabacloud.com/',
-      name: 'Alibaba',
-      ipfsImage: ipfsImages.logos.alibaba,
-      height: '38px',
-    },
-    {
-      url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
-      name: 'Arbitrum',
-      ipfsImage: ipfsImages.logos.arbitrum,
-      height: '38px',
-    },
-    {
-      url: 'https://cosmose.co',
-      name: 'Cosmose AI',
-      ipfsImage: ipfsImages.logos.cosmose,
-      height: '38px',
-    },
-    {
-      url: 'https://docs.eigenlayer.xyz/eigenda-guides/eigenda-overview',
-      name: 'EigenLayer',
-      ipfsImage: ipfsImages.logos.eigenLayer,
-      height: '38px',
-    },
-    {
-      url: 'https://google.com',
-      name: 'Google',
-      ipfsImage: ipfsImages.logos.google,
-      height: '38px',
-    },
-    {
-      url: 'https://www.icc-cricket.com',
-      name: 'ICC',
-      ipfsImage: ipfsImages.logos.icc,
-      height: '24px',
-    },
-  ];
-
-  const web3TeamsCombined = [...web3Teams, ...web3Teams2];
-
-  const learnItems = [
-    {
-      name: 'Docs',
-      description: 'Read the NEAR documentation and learn to build and publish blockchain applications.',
-      icon: 'ph-file-doc',
-      url: 'https://docs.near.org',
-      target: '_blank',
-    },
-    {
-      name: 'Blog',
-      description: 'The latest news about the NEAR protocol and innovations from the community.',
-      icon: 'ph-newspaper-clipping',
-      url: '/blog',
-    },
-    {
-      name: 'Learn Center',
-      description: 'Starter kit to learn about blockchain technology, web3, and the NEAR protocol.',
-      icon: 'ph-book-open-text',
-      url: '/learn',
-    },
-  ];
-
-  const communityItems = [
-    {
-      name: 'DevHub',
-      description:
-        'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
-      ipfsImage: ipfsImages.community.devHub,
-      url: '/devgovgigs.near/widget/Ideas',
-    },
-    {
-      name: 'Horizon',
-      description: 'Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.',
-      ipfsImage: ipfsImages.community.horizon,
-      url: '/horizon',
-    },
-    {
-      name: 'Near Digital Collective (NDC)',
-      description: 'The NDC is a grassroots, community-led movement to build decentralized governance on NEAR.',
-      ipfsImage: ipfsImages.community.ndc,
-      url: 'https://app.neardc.org/',
-      target: '_blank',
-    },
-  ];
-
-  function returnImageSrc(cfid: string) {
-    return `/images/home/${cfid}.png`;
-  }
-
   return (
     <Wrapper>
       <Section style={{ padding: '72px 0' }} $backgroundColor="var(--white)">
         <Container $center>
           <Pattern>
-            <PatternContent>
+            <PatternContent $maxWidth="648px">
               <Flex $gap="32px" $direction="column" $alignItems="center">
                 <H1>Blockchains, Abstracted.</H1>
 
@@ -449,12 +314,7 @@ export const Home = () => {
                     fill="outline"
                     size="large"
                   />
-                  <Button
-                    href="https://near.org/nearcatalog.near/widget/Index?requestAuth=1&createAccount=1"
-                    label="Create Account"
-                    variant="affirmative"
-                    size="large"
-                  />
+                  <Button href={CREATE_ACCOUNT_URL} label="Create Account" variant="affirmative" size="large" />
                 </Flex>
               </Flex>
             </PatternContent>
