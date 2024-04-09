@@ -1,7 +1,8 @@
-import { type ReactNode } from "react";
-import styled from "styled-components";
+import { type ReactNode } from 'react';
+import styled from 'styled-components';
 
-import { Navigation } from "../navigation/Navigation";
+import { Footer } from '../Footer';
+import { Navigation } from '../navigation/Navigation';
 
 interface Props {
   children: ReactNode;
@@ -29,7 +30,10 @@ export function DefaultLayout({ children }: Props) {
   return (
     <Wrapper>
       <Navigation />
-      <Content>{children}</Content>
+      <Content>
+        {children}
+        <Footer />
+      </Content>
     </Wrapper>
   );
 }

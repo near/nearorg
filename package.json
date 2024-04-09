@@ -6,6 +6,10 @@
     "build": "pnpm run deploy-nearorg && next build",
     "start": "next start",
     "lint": "next lint",
+    "prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "prettier:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "ts:check": "tsc --noEmit --incremental",
+    "precommit": "npm run lint && npm run prettier:write && npm run ts:check",
     "sync-submodules": "git submodule init && git submodule update",
     "deploy-nearorg": "cp -r ./nearorg_marketing/public/ ./public/build"
   },
@@ -26,6 +30,7 @@
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.2.5",
     "typescript": "^5"
   },
   "license": "ISC"

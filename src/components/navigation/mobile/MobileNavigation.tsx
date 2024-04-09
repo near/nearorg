@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import styled from "styled-components";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import styled from 'styled-components';
 
-import NearIcon from "../icons/near-icon.svg";
-import { Menu } from "./Menu";
+import NearIcon from '../icons/near-icon.svg';
+import { Menu } from './Menu';
 
 const Wrapper = styled.div`
   --nav-height: 72px;
@@ -97,11 +97,7 @@ export const MobileNavigation = () => {
           </Link>
 
           <MenuButton aria-label="Menu" onClick={toggleMenu}>
-            {menuIsVisible ? (
-              <i className="ph ph-x" />
-            ) : (
-              <i className="ph ph-list" />
-            )}
+            {menuIsVisible ? <i className="ph ph-x" /> : <i className="ph ph-list" />}
           </MenuButton>
         </Navigation>
 

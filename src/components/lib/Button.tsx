@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import type { ButtonHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type Fill = 'solid' | 'outline' | 'ghost';
 type Size = 'small' | 'default' | 'large';
@@ -22,12 +23,12 @@ type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'size'> & {
 };
 
 type StyledProps = {
-  disabled?: boolean;
-  fill: Fill;
-  icon?: string;
-  loading?: boolean;
-  size: Size;
-  variant: Variant;
+  $disabled?: boolean;
+  $fill: Fill;
+  $icon?: string;
+  $loading?: boolean;
+  $size: Size;
+  $variant: Variant;
 };
 
 const variants: Record<Variant, any> = {
@@ -63,19 +64,19 @@ const variants: Record<Variant, any> = {
   },
   secondary: {
     outline: {
-      background: 'var(--sand1)',
-      border: 'var(--sand6)',
+      background: 'transparent',
+      border: 'var(--sand12)',
       color: 'var(--sand12)',
       iconColor: 'var(--sand10)',
       hover: {
-        border: 'var(--sand8)',
+        background: 'var(--sand12)',
+        color: 'var(--white)',
       },
       focus: {
         border: 'var(--violet8)',
       },
       active: {
-        background: 'var(--sand3)',
-        border: 'var(--sand8)',
+        background: 'var(--sand8)',
       },
     },
     solid: {
@@ -211,7 +212,7 @@ function returnColor(variant: Variant, fill: string, state: string, key: string)
   return variants[variant][fill][state][key] || variants[variant][fill][key];
 }
 
-const StyledButton = styled.button<StyledProps>`
+const buttonStyles = css<StyledProps>`
   all: unset;
   box-sizing: border-box;
   position: relative;
@@ -219,49 +220,49 @@ const StyledButton = styled.button<StyledProps>`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: ${(p) => (p.icon ? sizes[p.size].height : undefined)};
-  height: ${(p) => sizes[p.size].height};
-  padding: ${(p) => (p.icon ? '0' : `0 ${sizes[p.size].paddingX}`)};
-  font: ${(p) => sizes[p.size].font};
+  width: ${(p) => (p.$icon ? sizes[p.$size].height : undefined)};
+  height: ${(p) => sizes[p.$size].height};
+  padding: ${(p) => (p.$icon ? '0' : `0 ${sizes[p.$size].paddingX}`)};
+  font: ${(p) => sizes[p.$size].font};
   font-weight: 600;
   line-height: 1;
   border-radius: 100px;
-  background: ${(p) => returnColor(p.variant, p.fill, 'default', 'background')};
-  color: ${(p) => returnColor(p.variant, p.fill, 'default', 'color')};
-  border: 1px solid ${(p) => returnColor(p.variant, p.fill, 'default', 'border')};
+  background: ${(p) => returnColor(p.$variant, p.$fill, 'default', 'background')};
+  color: ${(p) => returnColor(p.$variant, p.$fill, 'default', 'color')};
+  border: 1px solid ${(p) => returnColor(p.$variant, p.$fill, 'default', 'border')};
   box-shadow: 0 0 0 0px var(--violet4);
   cursor: pointer;
   transition: all 200ms;
   text-decoration: none !important;
 
   &:hover {
-    background: ${(p) => returnColor(p.variant, p.fill, 'hover', 'background')};
-    color: ${(p) => returnColor(p.variant, p.fill, 'hover', 'color')};
-    border: 1px solid ${(p) => returnColor(p.variant, p.fill, 'hover', 'border')};
+    background: ${(p) => returnColor(p.$variant, p.$fill, 'hover', 'background')};
+    color: ${(p) => returnColor(p.$variant, p.$fill, 'hover', 'color')};
+    border: 1px solid ${(p) => returnColor(p.$variant, p.$fill, 'hover', 'border')};
   }
   &:focus {
-    background: ${(p) => returnColor(p.variant, p.fill, 'focus', 'background')};
-    color: ${(p) => returnColor(p.variant, p.fill, 'focus', 'color')};
-    border: 1px solid ${(p) => returnColor(p.variant, p.fill, 'focus', 'border')};
+    background: ${(p) => returnColor(p.$variant, p.$fill, 'focus', 'background')};
+    color: ${(p) => returnColor(p.$variant, p.$fill, 'focus', 'color')};
+    border: 1px solid ${(p) => returnColor(p.$variant, p.$fill, 'focus', 'border')};
     box-shadow: 0 0 0 4px var(--violet4);
   }
   &:active {
-    background: ${(p) => returnColor(p.variant, p.fill, 'active', 'background')};
-    color: ${(p) => returnColor(p.variant, p.fill, 'active', 'color')};
-    border: 1px solid ${(p) => returnColor(p.variant, p.fill, 'active', 'border')};
+    background: ${(p) => returnColor(p.$variant, p.$fill, 'active', 'background')};
+    color: ${(p) => returnColor(p.$variant, p.$fill, 'active', 'color')};
+    border: 1px solid ${(p) => returnColor(p.$variant, p.$fill, 'active', 'border')};
   }
 
   ${(p) =>
-    p.loading &&
+    p.$loading &&
     `
         pointer-events: none;
       `}
 
   ${(p) =>
-    p.disabled &&
+    p.$disabled &&
     `
         opacity: 1;
-        background: ${p.fill === 'ghost' ? 'hsla(0, 0%, 100%, 0)' : 'var(--sand3)'};
+        background: ${p.$fill === 'ghost' ? 'hsla(0, 0%, 100%, 0)' : 'var(--sand3)'};
         border-color: var(--sand3);
         color: var(--sand8);
         pointer-events: none;
@@ -272,20 +273,28 @@ const StyledButton = styled.button<StyledProps>`
       `}
 `;
 
+const StyledButtonLink = styled(Link)<StyledProps>`
+  ${buttonStyles}
+`;
+
+const StyledButton = styled.button<StyledProps>`
+  ${buttonStyles}
+`;
+
 const Inner = styled.span<StyledProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: ${(p) => sizes[p.size].gap};
+  gap: ${(p) => sizes[p.$size].gap};
 
   i {
-    font-size: ${(p) => sizes[p.size].icon};
-    line-height: ${(p) => sizes[p.size].icon};
-    color: ${(p) => (p.icon ? undefined : returnColor(p.variant, p.fill, 'default', 'iconColor'))};
+    font-size: ${(p) => sizes[p.$size].icon};
+    line-height: ${(p) => sizes[p.$size].icon};
+    color: ${(p) => (p.$icon ? undefined : returnColor(p.$variant, p.$fill, 'default', 'iconColor'))};
   }
 
   ${(p) =>
-    p.loading &&
+    p.$loading &&
     `
         opacity: 0;
       `}
@@ -298,11 +307,11 @@ const Spinner = styled.i<StyledProps>`
   top: 50%;
   left: 0;
   right: 0;
-  margin: calc(${(p) => sizes[p.size].icon} * -0.5) auto 0;
-  width: ${(p) => sizes[p.size].icon};
-  height: ${(p) => sizes[p.size].icon};
-  font-size: ${(p) => sizes[p.size].icon};
-  line-height: ${(p) => sizes[p.size].icon};
+  margin: calc(${(p) => sizes[p.$size].icon} * -0.5) auto 0;
+  width: ${(p) => sizes[p.$size].icon};
+  height: ${(p) => sizes[p.$size].icon};
+  font-size: ${(p) => sizes[p.$size].icon};
+  line-height: ${(p) => sizes[p.$size].icon};
   animation: spin 800ms infinite linear;
 
   @keyframes spin {
@@ -335,7 +344,6 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
   ) => {
     const conditionalAttributes: Record<string, unknown> = href
       ? {
-          as: 'a',
           href,
         }
       : {
@@ -348,16 +356,18 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     }
 
     const styledProps: StyledProps = {
-      disabled,
-      fill,
-      icon,
-      loading,
-      size,
-      variant,
+      $disabled: disabled,
+      $fill: fill,
+      $icon: icon,
+      $loading: loading,
+      $size: size,
+      $variant: variant,
     };
 
+    const ButtonElement: any = href ? StyledButtonLink : StyledButton;
+
     return (
-      <StyledButton ref={ref} {...styledProps} {...conditionalAttributes} {...forwardedProps}>
+      <ButtonElement ref={ref} {...styledProps} {...conditionalAttributes} {...forwardedProps}>
         <>
           {loading && <Spinner {...styledProps} className="ph-bold ph-circle-notch" />}
           <Inner {...styledProps}>
@@ -372,7 +382,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
             )}
           </Inner>
         </>
-      </StyledButton>
+      </ButtonElement>
     );
   },
 );

@@ -1,12 +1,12 @@
-import "@/styles/reset.css";
-import "@/styles/theme.css";
-import "@/styles/globals.css";
+import '@/styles/reset.css';
+import '@/styles/theme.css';
+import '@/styles/globals.css';
 
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import Script from "next/script";
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Script from 'next/script';
 
-import type { NextPageWithLayout } from "@/utils/types";
+import type { NextPageWithLayout } from '@/utils/types';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -25,11 +25,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         {/* <link rel="canonical" href={`${process.env.NEXT_PUBLIC_HOSTNAME}${router.asPath}`} key="canonical" /> */}
       </Head>
 
-      <Script
-        id="phosphor-icons"
-        src="https://unpkg.com/@phosphor-icons/web@2.0.3"
-        async
-      />
+      <Script id="phosphor-icons" src="https://unpkg.com/@phosphor-icons/web@2.0.3" async />
 
       {getLayout(<Component {...pageProps} />)}
     </>

@@ -1,8 +1,8 @@
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import Link from "next/link";
-import styled from "styled-components";
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import { navigationCategories } from "../categories";
+import { navigationCategories } from '../categories';
 
 const Wrapper = styled.div`
   position: relative;
@@ -43,7 +43,7 @@ const NavTrigger = styled(NavigationMenu.Trigger)`
 
   &:hover,
   &:focus,
-  &[data-state="open"] {
+  &[data-state='open'] {
     background: var(--sand4);
   }
 `;
@@ -130,7 +130,7 @@ const SectionTitle = styled.p`
 `;
 
 const Icon = styled.i`
-  font-weight: "bold";
+  font-weight: 'bold';
   font-size: 18px;
   color: #868682;
   margin-top: -0.3em;
@@ -149,10 +149,7 @@ export const MainNavigationMenu = () => {
       <NavRoot delayDuration={0}>
         <NavList>
           {navigationCategories
-            .filter(
-              (category) =>
-                category.visible === "all" || category.visible === "desktop"
-            )
+            .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (
               <NavItem key={category.title}>
                 <NavTrigger>{category.title}</NavTrigger>
@@ -161,22 +158,13 @@ export const MainNavigationMenu = () => {
                   <Container>
                     {category.sections.map((section) => (
                       <Section key={section.title}>
-                        {section.title && (
-                          <SectionTitle>{section.title}</SectionTitle>
-                        )}
+                        {section.title && <SectionTitle>{section.title}</SectionTitle>}
 
                         {section.links.map((link) => (
                           <NavSection key={link.title}>
                             <Icon className={link.icon} />
                             <NavLink asChild>
-                              <Link
-                                href={link.url}
-                                target={
-                                  link.url.indexOf("http") === 0
-                                    ? "_blank"
-                                    : undefined
-                                }
-                              >
+                              <Link href={link.url} target={link.url.indexOf('http') === 0 ? '_blank' : undefined}>
                                 {link.title}
                               </Link>
                             </NavLink>

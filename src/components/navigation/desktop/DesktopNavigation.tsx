@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import styled from "styled-components";
+import Image from 'next/image';
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import NearLogo from "../icons/near-logo.svg";
-import { MainNavigationMenu } from "./MainNavigationMenu";
+import NearLogo from '../icons/near-logo.svg';
+import { MainNavigationMenu } from './MainNavigationMenu';
 
 const Wrapper = styled.div`
   --nav-height: 75px;

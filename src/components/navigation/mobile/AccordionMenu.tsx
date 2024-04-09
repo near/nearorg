@@ -1,8 +1,8 @@
-import * as Accordion from "@radix-ui/react-accordion";
-import Link from "next/link";
-import styled from "styled-components";
+import * as Accordion from '@radix-ui/react-accordion';
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import { navigationCategories } from "../categories";
+import { navigationCategories } from '../categories';
 
 type Props = {
   onCloseMenu: () => void;
@@ -39,7 +39,7 @@ const AccordionTrigger = styled(Accordion.Trigger)`
     transition: transform 200ms;
   }
 
-  &[data-state="open"] {
+  &[data-state='open'] {
     i {
       transform: rotate(-180deg);
     }
@@ -50,10 +50,10 @@ const AccordionContent = styled(Accordion.Content)`
   background: var(--sand3);
   overflow: hidden;
 
-  &[data-state="open"] {
+  &[data-state='open'] {
     animation: slideDown 200ms;
   }
-  &[data-state="closed"] {
+  &[data-state='closed'] {
     animation: slideUp 200ms;
   }
 
@@ -88,15 +88,6 @@ const Section = styled.div`
   }
 `;
 
-const CurrentComponentSection = styled.div`
-  padding: 24px;
-  border-top: 1px solid var(--sand6);
-
-  > div {
-    max-width: 350px;
-  }
-`;
-
 const SectionTitle = styled.p`
   font: var(--text-xs);
   color: var(--sand10);
@@ -108,7 +99,7 @@ const SectionTitle = styled.p`
 `;
 
 const Icon = styled.i`
-  font-weight: "bold";
+  font-weight: 'bold';
   font-size: 18px;
   color: #868682;
   padding-left: 1rem;
@@ -126,10 +117,7 @@ export const AccordionMenu = (props: Props) => {
     <Wrapper>
       <AccordionRoot type="multiple">
         {navigationCategories
-          .filter(
-            (category) =>
-              category.visible === "all" || category.visible === "mobile"
-          )
+          .filter((category) => category.visible === 'all' || category.visible === 'mobile')
           .map((category) => (
             <AccordionItem value={category.title} key={category.title}>
               <AccordionHeader>
@@ -142,20 +130,14 @@ export const AccordionMenu = (props: Props) => {
               <AccordionContent>
                 {category.sections.map((section) => (
                   <Section key={section.title}>
-                    {section.title && (
-                      <SectionTitle>{section.title}</SectionTitle>
-                    )}
+                    {section.title && <SectionTitle>{section.title}</SectionTitle>}
 
                     {section.links.map((link) => (
                       <NavSection key={link.title}>
                         <Icon className={link.icon} />
                         <Link
                           href={link.url}
-                          target={
-                            link.url.indexOf("http") === 0
-                              ? "_blank"
-                              : undefined
-                          }
+                          target={link.url.indexOf('http') === 0 ? '_blank' : undefined}
                           key={link.title}
                           onClick={props.onCloseMenu}
                         >

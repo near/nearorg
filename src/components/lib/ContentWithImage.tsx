@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ReactNode } from "react";
-import styled from "styled-components";
+import type { ReactNode } from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const ImageWrapper = styled.div`
     width: 100%;
   }
 
-  [data-image-side="right"] & {
+  [data-image-side='right'] & {
     order: 2;
   }
 
@@ -42,19 +42,19 @@ const ContentWrapper = styled.div`
 
 type Props = {
   alt: string;
-  content: ReactNode;
-  imageSide: "left" | "right";
+  children: ReactNode;
+  imageSide: 'left' | 'right';
   src: string;
 };
 
-export const ContentWithImage = ({ alt, src, imageSide, content }: Props) => {
+export const ContentWithImage = ({ alt, src, imageSide, children }: Props) => {
   return (
     <Wrapper data-image-side={imageSide}>
       <ImageWrapper>
         <img src={src} alt={alt} />
       </ImageWrapper>
 
-      <ContentWrapper>{content}</ContentWrapper>
+      <ContentWrapper>{children}</ContentWrapper>
     </Wrapper>
   );
 };

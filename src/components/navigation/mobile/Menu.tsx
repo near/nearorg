@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { AccordionMenu } from "./AccordionMenu";
+import { AccordionMenu } from './AccordionMenu';
 
 type Props = {
   isVisible: boolean;
@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Wrapper = styled.div<{
-  visible: boolean;
+  $visible: boolean;
 }>`
   position: fixed;
   top: var(--nav-height);
@@ -17,7 +17,7 @@ const Wrapper = styled.div<{
   left: 0;
   right: 0;
   z-index: 10000;
-  display: ${(p) => (p.visible ? "block" : "none")};
+  display: ${(p) => (p.$visible ? 'block' : 'none')};
   transition: 200ms;
   background: var(--white);
   border-top: 1px solid var(--sand6);
@@ -58,7 +58,7 @@ const InnerWrapper = styled.div`
 
 export function Menu(props: Props) {
   return (
-    <Wrapper visible={props.isVisible}>
+    <Wrapper $visible={props.isVisible}>
       <InnerWrapper>
         <AccordionMenu onCloseMenu={props.onCloseMenu} />
       </InnerWrapper>
