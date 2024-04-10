@@ -1,142 +1,169 @@
+const appGatewayHostname = 'https://dev.near.org'; // This will probably change to "apps.near.org"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   redirects: async () => {
     return [
+      // Please keep redirects in alphabetical order based on `source`:
+
       {
-        source: '/signup',
-        destination:
-          'https://dev.near.org/signup',
+        source: '/applications',
+        destination: `${appGatewayHostname}/applications`,
         permanent: true,
       },
       {
-        source: '/signin',
-        destination:
-          'https://dev.near.org/signin',
-        permanent: true,
-      },
-      {
-        source: '/data-availability',
-        destination:
-          'https://dev.near.org/data-availability',
-        permanent: true,
-      },
-      {
-        source: '/open-web-applications',
-        destination:
-          'https://dev.near.org/open-web-applications',
-        permanent: true,
-      },
-      {
-        source: '/fast-auth-and-relayers',
-        destination:
-          'https://dev.near.org/fast-auth-and-relayers',
-        permanent: true,
-      },
-      {
-        source: '/data-infrastructure',
-        destination:
-          'https://dev.near.org/data-infrastructure',
-        permanent: true,
-      },
-      {
-        source: '/ecosystem',
-        destination:
-          'https://dev.near.org/ecosystem',
-        permanent: true,
-      },
-      {
-        source: '/sandbox',
-        destination:
-          'https://dev.near.org/sandbox',
-        permanent: true,
-      },
-      {
-        source: '/onboarding',
-        destination:
-          'https://dev.near.org/onboarding',
-        permanent: true,
-      },
-      {
-        source: '/:path/component/:slug', 
-        destination:
-          'https://dev.near.org/:path/component/:slug',
-        permanent: true,
-      },
-      {
-        source: '/horizon',
-        destination:
-          'https://dev.near.org/nearhorizon.near/component/HomePage',
+        source: '/blog/getting-started-with-the-near-wallet',
+        destination: 'https://wallet.near.org',
         permanent: true,
       },
       {
         source: '/brand',
-        destination:
-          'https://pages.near.org/brand',
+        destination: 'https://pages.near.org/brand',
         permanent: true,
-      }
-    ]
-  },
-  rewrites: async () => {
-    return [
-      {
-        source: '/',
-        destination: '/index.html',
       },
       {
-        source: '/:path',
-        destination: '/:path/index.html',
+        source: '/components',
+        destination: `${appGatewayHostname}/components`,
+        permanent: true,
       },
       {
-        source: '/blog',
-        destination: '/blog/page/2/index.html',
+        source: '/consensus',
+        destination: 'https://nearconsensus2023.splashthat.com/',
+        permanent: false,
       },
       {
-        source: '/blog/:path*',
-        destination: '/blog/:path*/index.html',
+        source: '/da',
+        destination: '/data-availability',
+        permanent: true,
       },
       {
-        source: '/learn/:path*',
-        destination: '/learn/:path*/index.html',
+        source: '/developer-governance',
+        destination: 'https://neardevgov.org/',
+        permanent: false,
       },
       {
-        source: '/near-events/:path*',
-        destination: '/near-events/:path*/index.html',
+        source: '/docs',
+        destination: 'https://docs.near.org',
+        permanent: true,
       },
       {
-        source: '/case-studies/:path*',
-        destination: '/case-studies/:path*/index.html',
+        source: '/ethcc',
+        destination: 'https://www.eventbrite.com/e/near-ethcc-tickets-655229297467',
+        permanent: false,
       },
       {
-        source: '/use-cases/:path*',
-        destination: '/use-cases/:path*/index.html',
+        source: '/ethdenver',
+        destination: 'https://pages.near.org/ethdenver2024',
+        permanent: true,
       },
       {
-        source: '/coverages/:path*',
-        destination: '/coverages/:path*/index.html',
+        source: '/files/:slug',
+        destination: 'https://discovery-domain.org/papers/:slug.pdf',
+        permanent: false,
       },
       {
-        source: '/events/:path*',
-        destination: '/events/:path*/index.html',
+        source: '/gateways',
+        destination: `${appGatewayHostname}/gateways`,
+        permanent: true,
       },
       {
-        source: '/ecosystem/:path*',
-        destination: '/ecosystem/:path*/index.html',
+        source: '/horizon',
+        destination: `${appGatewayHostname}/nearhorizon.near/component/HomePage`,
+        permanent: true,
       },
       {
-        source: '/developers/:path*',
-        destination: '/developers/:path*/index.html',
+        source: '/nearcon23.near/widget/Index',
+        destination: 'https://nearcon.app',
+        permanent: true,
       },
       {
-        source: '/papers/:path*',
-        destination: '/papers/:path*/index.html',
+        source: '/onboarding',
+        destination: `${appGatewayHostname}/onboarding`,
+        permanent: true,
       },
       {
-        source: '/press-releases/:path*',
-        destination: '/press-releases/:path*/index.html',
+        source: '/papers/:slug',
+        destination: 'https://discovery-domain.org/papers/:slug.pdf',
+        permanent: false,
       },
-    ]
-  },
-}
+      {
+        source: '/people',
+        destination: `${appGatewayHostname}/people`,
+        permanent: true,
+      },
+      {
+        source: '/pitch',
+        destination: 'https://nearpitchfestconsensus.splashthat.com/',
+        permanent: false,
+      },
+      {
+        source: '/sandbox',
+        destination: `${appGatewayHostname}/sandbox`,
+        permanent: true,
+      },
+      {
+        source: '/signin',
+        destination: `${appGatewayHostname}/applications?requestAuth=1`,
+        permanent: false,
+      },
+      {
+        source: '/signup',
+        destination: `${appGatewayHostname}/applications?requestAuth=1&createAccount=1`,
+        permanent: false,
+      },
+      {
+        source: '/stackoverflow',
+        destination: `${appGatewayHostname}/near/widget/NearOrg.HomePage?utm_source=stack&utm_medium=podcast&utm_campaign=stackoverflow_evergreen_bos_awareness`,
+        permanent: false,
+      },
+      {
+        source: '/stakewars',
+        destination: 'https://github.com/near/stakewars-iv',
+        permanent: false,
+      },
+      {
+        source: '/validators',
+        destination: 'https://pages.near.org/validators',
+        permanent: true,
+      },
 
-module.exports = nextConfig
+      // Handle dynamic widget/component path redirects:
+
+      {
+        source: '/:path/component/:slug',
+        destination: `${appGatewayHostname}/:path/component/:slug`,
+        permanent: true,
+      },
+      {
+        source: '/:path/widget/:slug',
+        destination: `${appGatewayHostname}/:path/widget/:slug`,
+        permanent: true,
+      },
+    ];
+  },
+  rewrites: async () => [
+    {
+      source: '/api/analytics/:path*',
+      destination: 'https://near.dataplane.rudderstack.com/:path*',
+    },
+    {
+      source: '/blog/:path*',
+      destination: '/blog/:path*/index.html',
+    }
+  ],
+  headers: async () => [
+    {
+        source: '/:path*',
+        headers: [{
+          key: 'Referrer-Policy',
+          value: 'strict-origin-when-cross-origin'
+        }]
+      }
+  ]
+};
+
+module.exports = nextConfig;
