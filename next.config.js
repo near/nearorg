@@ -145,18 +145,25 @@ const nextConfig = {
       },
     ];
   },
-  rewrites: async () => {
-    return [
-      {
-        source: '/blog',
-        destination: '/build/blog/page/2/index.html',
-      },
-      {
-        source: '/blog/:path*',
-        destination: '/build/blog/:path*/index.html',
-      },
-    ];
-  },
+  rewrites: async () => [
+    {
+      source: '/api/analytics/:path*',
+      destination: 'https://near.dataplane.rudderstack.com/:path*',
+    },
+    {
+      source: '/blog/:path*',
+      destination: '/blog/:path*/index.html',
+    }
+  ],
+  headers: async () => [
+    {
+        source: '/:path*',
+        headers: [{
+          key: 'Referrer-Policy',
+          value: 'strict-origin-when-cross-origin'
+        }]
+      }
+  ]
 };
 
 module.exports = nextConfig;
