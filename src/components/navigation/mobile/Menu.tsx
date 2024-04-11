@@ -12,7 +12,7 @@ const Wrapper = styled.div<{
   $visible: boolean;
 }>`
   position: fixed;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + var(--banner-nav-offset-height));
   bottom: 0;
   left: 0;
   right: 0;

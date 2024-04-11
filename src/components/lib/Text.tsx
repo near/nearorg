@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
+type TextSize = 'text-xs' | 'text-s' | 'text-base' | 'text-l' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-hero';
+
 export const Text = styled.p<{
   $clampLines?: number;
   $color?: string;
-  $mobileSize?: string;
+  $mobileSize?: TextSize;
   $size?: 'text-xs' | 'text-s' | 'text-base' | 'text-l' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-hero';
   $weight?: string;
 }>`
