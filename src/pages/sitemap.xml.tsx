@@ -1,6 +1,6 @@
 function generateSiteMap() {
-    //this fn serves to build a sitemap with the env specific hostname
-    return `<?xml version="1.0" encoding="UTF-8"?>
+  //this fn serves to build a sitemap with the env specific hostname
+  return `<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
       xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -2232,28 +2232,27 @@ function generateSiteMap() {
       </url>
       </urlset>
      `;
-  }
-  
-  type SiteMap = {
-    props: object;
+}
+
+type SiteMap = {
+  props: object;
+};
+
+function SiteMap() {
+  // getServerSideProps will do the heavy lifting
+}
+
+export function getServerSideProps({ res }: { res: any }): SiteMap {
+  const sitemap = generateSiteMap();
+
+  res.setHeader('Content-Type', 'text/xml');
+
+  res.write(sitemap);
+  res.end();
+
+  return {
+    props: {},
   };
-  
-  function SiteMap() {
-    // getServerSideProps will do the heavy lifting
-  }
-  
-  export function getServerSideProps({ res }: { res: any }): SiteMap {
-    const sitemap = generateSiteMap();
-  
-    res.setHeader('Content-Type', 'text/xml');
-  
-    res.write(sitemap);
-    res.end();
-  
-    return {
-      props: {},
-    };
-  }
-  
-  export default SiteMap;
-  
+}
+
+export default SiteMap;

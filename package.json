@@ -9,8 +9,9 @@
     "prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json}'",
     "prettier:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json}'",
     "ts:check": "tsc --noEmit --incremental",
-    "precommit": "npm run lint && npm run prettier:write && npm run ts:check",
-    "sync-submodules": "git submodule init && git submodule update"
+    "pre-commit": "npm run lint && npm run prettier:write && npm run ts:check",
+    "sync-submodules": "git submodule init && git submodule update",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -29,6 +30,7 @@
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "typescript": "^5"
   },

@@ -1,8 +1,8 @@
 import type { GetServerSideProps } from 'next';
 import { useCallback, useEffect } from 'react';
 
-import type { NextPageWithLayout } from '@/utils/types';
 import { useDefaultLayout } from '@/hooks/useLayout';
+import type { NextPageWithLayout } from '@/utils/types';
 
 export const getServerSideProps = (async ({ resolvedUrl }) => {
   const blogParts = resolvedUrl.split('blog/');

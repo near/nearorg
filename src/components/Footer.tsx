@@ -133,7 +133,7 @@ const sections = [
       },
       {
         title: 'Technical Papers',
-        url: 'https://near.org/papers',
+        url: '/papers',
       },
     ],
   },
