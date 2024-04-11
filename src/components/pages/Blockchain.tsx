@@ -33,7 +33,7 @@ const communityItems = [
     name: 'Roadmap',
     description: 'Follow the public roadmap and contribute to building the ecosystem',
     icon: 'ph-map-trifold',
-    url: 'https://near.org/blog/near-q2-protocol-roadmap-update',
+    url: '/blog/near-q2-protocol-roadmap-update',
     target: '_blank',
   },
 ];
