@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 
+import { CookiePrompt } from '@/components/CookiePrompt';
 import type { NextPageWithLayout } from '@/utils/types';
 
 type AppPropsWithLayout = AppProps & {
@@ -28,6 +29,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Script id="phosphor-icons" src="https://unpkg.com/@phosphor-icons/web@2.0.3" async />
 
       {getLayout(<Component {...pageProps} />)}
+
+      <CookiePrompt />
     </>
   );
 }

@@ -36,6 +36,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/cookies',
+        destination: `${appGatewayHostname}/cookies`,
+        permanent: true,
+      },
+      {
         source: '/da',
         destination: '/data-availability',
         permanent: true,
@@ -153,17 +158,19 @@ const nextConfig = {
     {
       source: '/blog/:path*',
       destination: '/blog/:path*/index.html',
-    }
+    },
   ],
   headers: async () => [
     {
-        source: '/:path*',
-        headers: [{
+      source: '/:path*',
+      headers: [
+        {
           key: 'Referrer-Policy',
-          value: 'strict-origin-when-cross-origin'
-        }]
-      }
-  ]
+          value: 'strict-origin-when-cross-origin',
+        },
+      ],
+    },
+  ],
 };
 
 module.exports = nextConfig;
