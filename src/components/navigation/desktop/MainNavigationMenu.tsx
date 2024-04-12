@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { navigationCategories } from '../categories';
+import { recordMouseEnter } from '@/utils/analytics';
 
 const Wrapper = styled.div`
   position: relative;
@@ -152,7 +153,7 @@ export const MainNavigationMenu = () => {
             .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (
               <NavItem key={category.title}>
-                <NavTrigger>{category.title}</NavTrigger>
+                <NavTrigger onMouseEnter={recordMouseEnter}>{category.title}</NavTrigger>
 
                 <NavContent>
                   <Container>
