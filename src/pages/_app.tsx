@@ -5,8 +5,13 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
+import { init as initializeAnalytics, setReferrer } from '@/utils/analytics';
 import { CookiePrompt } from '@/components/CookiePrompt';
+import { useClickTracking } from '@/hooks/useClickTracking';
+import { usePageAnalytics } from '@/hooks/usePageAnalytics';
 import type { NextPageWithLayout } from '@/utils/types';
 
 type AppPropsWithLayout = AppProps & {
@@ -15,6 +20,20 @@ type AppPropsWithLayout = AppProps & {
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  usePageAnalytics();
+  useClickTracking();
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => {
+      //save a reference to the currentl URL before the route change event completes
+      setReferrer(window.location.href);
+    });
+  });
+
+  useEffect(() => {
+    initializeAnalytics();
+  }, []);
 
   return (
     <>
