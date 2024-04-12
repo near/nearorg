@@ -16,12 +16,16 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
+    "lodash": "^4.17.21",
+    "nanoid": "^5.0.7",
     "next": "14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rudder-sdk-js": "^2.48.6",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
