@@ -85,14 +85,16 @@ export async function init() {
 
   const rudderStackDataPlaneUrl = 'https://near.dataplane.rudderstack.com';
 
+  const destinationkeys = { prod: '2f101MRnb7Y8Sb3Ama9b2AE7xfh', stage: '2f14hJlveNpsrfxeJcZpcYmqBcf' };
   let analyticsUrl = rudderStackDataPlaneUrl;
   if (typeof window !== 'undefined') {
     analyticsUrl = `${window.location.protocol}//${window.location.host}/api/analytics`;
   }
 
   try {
+    const key = window.location.href.indexOf('https://near.org') !== -1 ? destinationkeys.prod : destinationkeys.stage;
     window.rudderAnalytics = await import('rudder-sdk-js');
-    window.rudderAnalytics.load('2f101MRnb7Y8Sb3Ama9b2AE7xfh', analyticsUrl);
+    window.rudderAnalytics.load(key, analyticsUrl);
     rudderAnalytics = window.rudderAnalytics;
     if (rudderAnalytics) rudderAnalytics.setAnonymousId(getAnonymousId());
     for (const event of pendingEvents) {
