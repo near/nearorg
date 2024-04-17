@@ -2,8 +2,9 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { navigationCategories } from '../categories';
 import { recordMouseEnter } from '@/utils/analytics';
+
+import { navigationCategories } from '../categories';
 
 const Wrapper = styled.div`
   position: relative;
