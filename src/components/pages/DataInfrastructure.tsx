@@ -7,7 +7,7 @@ import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const ipfsImages = {
+const images = {
   illustrations: {
     bigQuery: 'bafkreidvzhed5xtbswgzrcu4woho5jwql53wzagfmkafjcpxivmxv6tkcm',
     queryApi: 'bafkreie5lvklwktdgvxyachxn4zkwb4pzkroqfopsu4zcb4ffyu5urcm6a',
@@ -50,7 +50,7 @@ export const DataInfrastructure = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.bigQuery)}
+            src={returnImageSrc(images.illustrations.bigQuery)}
             imageSide="left"
             alt="A line drawing of the BigQuery logo, a magnifying glass inside a hexagon with a bar graph inside the glass, set behind a console window with a code snippet"
           >
@@ -104,7 +104,7 @@ export const DataInfrastructure = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.queryApi)}
+            src={returnImageSrc(images.illustrations.queryApi)}
             imageSide="right"
             alt="A console window with a code snippet"
           >
@@ -162,7 +162,7 @@ export const DataInfrastructure = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.nearLake)}
+            src={returnImageSrc(images.illustrations.nearLake)}
             imageSide="left"
             alt="Three squares each with a line drawing inside: a data tower, code brackets, and three wiggling lines representing water"
           >

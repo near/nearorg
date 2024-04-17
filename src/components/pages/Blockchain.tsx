@@ -38,7 +38,7 @@ const communityItems = [
   },
 ];
 
-const ipfsImages = {
+const images = {
   illustrations: {
     developers: 'bafkreiaccoujoiwowiypzjyobdqyfeqweu32htcswc3ojvnesvtwfs5acm',
     endUsers: 'bafkreifew3ibskmcxicoa7bffleekg6kn3cwswyg5ht5shifbii6elwp2a',
@@ -80,7 +80,7 @@ export const Blockchain = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.endUsers)}
+            src={returnImageSrc(images.illustrations.endUsers)}
             imageSide="left"
             alt="A line drawing of a user avatar and the NEAR logo set behind the Create Account screen from FastAuth"
           >
@@ -135,7 +135,7 @@ export const Blockchain = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.developers)}
+            src={returnImageSrc(images.illustrations.developers)}
             imageSide="right"
             alt="A line drawing of two diamonds with arrows pointing toward each other set behind a console window with a code snippet"
           >
@@ -186,13 +186,13 @@ export const Blockchain = () => {
           <Flex $direction="column" $gap="24px">
             <H2 style={{ color: 'var(--white)' }}>NEAR, a technical marvel</H2>
             <Text $size="text-2xl" $mobileSize="text-l" color="white" style={{ maxWidth: '808px' }}>
-              Built on years of research, NEAR’s efficient and robust protocol stands as a true marvel of modern
+              Built on years of research, NEAR&apos;s efficient and robust protocol stands as a true marvel of modern
               technology.
             </Text>
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.technicalMarvel)}
+            src={returnImageSrc(images.illustrations.technicalMarvel)}
             imageSide="left"
             alt="A line drawing of a leaf, a flower, and two data towers all interconnected"
           >

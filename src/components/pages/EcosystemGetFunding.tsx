@@ -90,7 +90,7 @@ const SocialIcon = styled.i<{
   color: ${(p) => p.$color};
 `;
 
-const ipfsImages = {
+const images = {
   arrows: 'bafkreifdzknpkboed3jmm4rgtbg3mqaocziagtjbznfp6o3hvgd5ix6brm.svg',
   logoDevHub: 'bafkreif4i3opjuumiq3djbyta74somrjsjzhlvd3zgrhknmh32iv4qgcgi.jpeg',
   logoHorizon: 'bafkreietp2ohevk7v3w6bb66u5rrgstfnqgx75w7xal5foraimv4jxijh4.png',
@@ -147,43 +147,43 @@ const fundingCards = [
 
 const ecosystemGrantCards = [
   {
-    ipfsImage: ipfsImages.logoNDC,
+    image: images.logoNDC,
     title: 'Near Digital Collective',
     content: 'The NDC empowers builders to create sustainable impact in Web3',
     href: 'https://app.neardc.org/',
   },
   {
-    ipfsImage: ipfsImages.logoDevHub,
+    image: images.logoDevHub,
     title: 'DevHub',
     content: 'Funding & support for developers & builders',
-    href: 'https://${REPL_NEAR_URL}/devhub.near/widget/app',
+    href: '/devhub.near/widget/app',
   },
   {
-    ipfsImage: ipfsImages.logoPotlock,
+    image: images.logoPotlock,
     title: 'Potlock',
     content: 'Decentralized public goods funding',
     href: 'https://app.potlock.org/',
   },
   {
-    ipfsImage: ipfsImages.logoMetaPool,
+    image: images.logoMetaPool,
     title: 'MetaPool Grants',
     content: 'For MetaPool growth initiatives focused on Defi, Education, TVL Generation, and Brand Awareness',
     href: 'https://docs.metapool.app/master/meta-pool-ecosystem/vote/grants',
   },
   {
-    ipfsImage: ipfsImages.logoSheNear,
+    image: images.logoSheNear,
     title: 'She is Near',
     content: 'Comprehensive support for women-led projects and Web3 influencers',
     href: 'https://gov.near.org/c/community/she-is-near/145',
   },
   {
-    ipfsImage: ipfsImages.logoGlobeDao,
+    image: images.logoGlobeDao,
     title: 'Globe DAO',
     content: 'Supports regional projects and communities with resources and collaboration',
     href: 'https://gov.near.org/c/community/globe/112',
   },
   {
-    ipfsImage: ipfsImages.logoMintBase,
+    image: images.logoMintBase,
     title: 'Mintbase',
     content: 'Aimed at supporting projects building in NFTs',
     href: 'https://github.com/mintbase/Grants-Program#1-application',
@@ -192,26 +192,26 @@ const ecosystemGrantCards = [
 
 const acceleratorsCards = [
   {
-    ipfsImage: ipfsImages.logoHorizon,
+    image: images.logoHorizon,
     title: 'HZN Accelerator Application',
     content:
       'Join the 8-week equity-free accelerator that provides multi-faceted support for early stage web3 projects.',
     href: 'https://www.hzn.xyz/hzn',
   },
   {
-    ipfsImage: ipfsImages.logoLyric,
+    image: images.logoLyric,
     title: 'Lyric Ventures',
     content: 'An incubator focused on B2B projects',
     href: 'https://lyrik.ventures',
   },
   {
-    ipfsImage: ipfsImages.logoMetaWeb,
+    image: images.logoMetaWeb,
     title: 'MetaWeb',
     content: 'Venture capital and Incubator',
     href: 'https://www.metaweb.vc',
   },
   {
-    ipfsImage: ipfsImages.logoNearWeek,
+    image: images.logoNearWeek,
     title: 'NEARWEEK',
     content: 'Amplification of twitter posts, newsletters, marketing campaigns, etc.',
     href: 'https://nearweek.com/',
@@ -220,89 +220,89 @@ const acceleratorsCards = [
 
 const communityDaoCards = [
   {
-    ipfsImage: ipfsImages.logoNearGamingDAO,
+    image: images.logoNearGamingDAO,
     title: 'Near Gaming DAO',
     content: 'Focused on the development of the NEAR gaming ecosystem',
     href: 'https://gov.near.org/c/community/gaming/146',
   },
   {
-    ipfsImage: ipfsImages.logoOnboardDao,
+    image: images.logoOnboardDao,
     title: 'Onboard DAO',
     content: 'Supporting collaboration & development of wallet and onboarding infrastructure',
     href: 'https://onboarddao.super.site/funding-guide-onboard-dao',
   },
   {
-    ipfsImage: ipfsImages.logoMarketingDao,
+    image: images.logoMarketingDao,
     title: 'Marketing DAO',
     content:
       'Grants for marketing support initiatives providing comprehensive founders support via PR agency, influencers, working hours, building marketing strategies and more',
-    href: 'https://${REPL_NEAR_URL}/ndcdev.near/widget/MDAO.App?page=home',
+    href: '/ndcdev.near/widget/MDAO.App?page=home',
   },
   {
-    ipfsImage: ipfsImages.logoCreativeDao,
+    image: images.logoCreativeDao,
     title: 'Creative DAO',
     content: 'Funding for creative projects, guilds and DAOs',
     href: 'https://gov.near.org/c/creatives/creatives-dao/61?_gl=1*1fhalxr*_ga*OTkzODQ3NDEwLjE2NzI4MjM3NjE.*_ga_9GWCXQJ62J*MTY3MjkxMDg2My40LjAuMTY3MjkxMDg2My4wLjAuMA..',
   },
   {
-    ipfsImage: ipfsImages.logoDevHub,
+    image: images.logoDevHub,
     title: 'DevHub',
     content: 'The decentralized home base for NEAR builders',
-    href: 'https://${REPL_NEAR_URL}/devhub.near/widget/app',
+    href: '/devhub.near/widget/app',
   },
 ];
 
 const regionalHubCards = [
   {
-    ipfsImage: ipfsImages.logoAfrica,
+    image: images.logoAfrica,
     title: 'Africa',
     href: 'https://twitter.com/nearafrica_',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.flagBalcans,
+    image: images.flagBalcans,
     title: 'Balkans',
     href: 'https://nearbalkans.org',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.flagUSA,
+    image: images.flagUSA,
     title: 'Banyan',
     href: 'https://twitter.com/Banyan_NEAR',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.logoBrasil,
+    image: images.logoBrasil,
     title: 'Brasil',
     href: 'https://twitter.com/near_brazil',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.logoIndia,
+    image: images.logoIndia,
     title: 'India',
     href: 'https://twitter.com/NearIndia',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.flagKenia,
+    image: images.flagKenia,
     title: 'Kenya',
     href: 'https://sankore2.com',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.logoKorea,
+    image: images.logoKorea,
     title: 'Korea',
     href: 'https://twitter.com/NearKoreaHub',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.logoToronto,
+    image: images.logoToronto,
     title: 'Toronto',
     href: 'https://twitter.com/NEAR_Toronto',
     content: '',
   },
   {
-    ipfsImage: ipfsImages.logoVietnam,
+    image: images.logoVietnam,
     title: 'Vietnam',
     href: 'https://nearvietnamhub.org',
     content: '',
@@ -375,7 +375,7 @@ export const EcosystemGetFunding = () => {
               {`We've`} helped hundreds of projects and teams realize their ideas, and bring them to market.
             </Text>
             <img
-              src={returnImageSrc(ipfsImages.arrows)}
+              src={returnImageSrc(images.arrows)}
               alt=""
               className="arrows-image"
               style={{ maxWidth: '890px', margin: '0 auto' }}
@@ -407,10 +407,10 @@ export const EcosystemGetFunding = () => {
               </Text>
               <Grid $columns="1fr 1fr" $gap="2rem">
                 {card.cards.map((item) => (
-                  <div className="col" key={item.ipfsImage}>
+                  <div className="col" key={item.image}>
                     <Card $background="transparent" $border="none" $direction="row">
                       <img
-                        src={returnImageSrc(item.ipfsImage)}
+                        src={returnImageSrc(item.image)}
                         alt={item.title}
                         className="img-fluid"
                         style={{

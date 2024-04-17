@@ -50,7 +50,7 @@ const ecosystemCommunityResources = [
     description:
       'Explore ecosystem funding opportunities and builder communities to find the right support for your projects.',
     icon: 'ph-article',
-    url: 'https://${REPL_NEAR_URL}/ecosystem/get-funding',
+    url: '/ecosystem/get-funding',
   },
   {
     name: 'Founder Events',
@@ -193,8 +193,7 @@ export const Founders = () => {
               Reach out to us to provide your feedback or to ask for specific support.
             </Text>
             <Button
-              href="https://pages.near.org/about/contact-us"
-              target="_blank"
+              href="/contact-us"
               label="Contact Us"
               variant="primary"
               size="large"

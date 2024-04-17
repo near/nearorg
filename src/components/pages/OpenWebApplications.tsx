@@ -12,7 +12,7 @@ import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const ipfsImages = {
+const images = {
   apps: {
     bosAllStars: 'bafkreicgnsizdxoc436tbln3ucqo45hdauumd7if4gltrqh3tbxgosi3q4',
     bosHacks: 'bafkreicpbijnii55242f7wcs6xnjf3ocyuyuguts6r6kkfz745g3jjudam',
@@ -35,21 +35,21 @@ const exampleGateways = [
     description:
       'Streamlines access to top Mantle apps via a single interface and enhances user experience (UX) and project visibility.',
     url: 'https://bos.fusionx.finance/',
-    ipfsImage: ipfsImages.gateways.mantle,
+    image: images.gateways.mantle,
   },
   {
     title: 'Jutsu.ai',
     description:
       'A gateway for developers to increase productivity and achieve cost-effective on-chain deployment, straight from their browser.',
     url: 'https://jutsu.ai/',
-    ipfsImage: ipfsImages.gateways.jutsu,
+    image: images.gateways.jutsu,
   },
   {
     title: 'zkEVM',
     description:
       'Polygon zkEVM increases accessibility and discoverability for zkEVM developers and users on the open web.',
     url: 'https://bos.quickswap.exchange/',
-    ipfsImage: ipfsImages.gateways.zkevm,
+    image: images.gateways.zkevm,
   },
 ];
 
@@ -58,21 +58,21 @@ const featuredApps = [
     name: 'BOS All-Stars',
     accountId: 'hack.near',
     description: 'Ranking starred components',
-    ipfsImage: ipfsImages.apps.bosAllStars,
+    image: images.apps.bosAllStars,
     url: '/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
   },
   {
     name: 'BOS Hacks',
     accountId: 'ndcplug.near',
     description: 'The 2 week B.O.S Hackathon on B.O.S',
-    ipfsImage: ipfsImages.apps.bosHacks,
+    image: images.apps.bosHacks,
     url: '/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
   },
   {
     name: 'NUI',
     accountId: 'nearui.near',
     description: 'A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
-    ipfsImage: ipfsImages.apps.nui,
+    image: images.apps.nui,
     url: '/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
   },
 ];
@@ -111,7 +111,7 @@ export const OpenWebApplications = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.gateways)}
+            src={returnImageSrc(images.illustrations.gateways)}
             imageSide="left"
             alt="A browser window and a console window with the code snippet # Quick-start your own gateway npx create-near-app@latest alongside the logos for React JS, Ethereum, Polygon, and NEAR."
           >
@@ -174,7 +174,7 @@ export const OpenWebApplications = () => {
               {exampleGateways.map((gateway) => (
                 <Article key={gateway.title} href={gateway.url} target="_blank">
                   <ArticleImage>
-                    <img src={returnImageSrc(gateway.ipfsImage)} alt={gateway.title} />
+                    <img src={returnImageSrc(gateway.image)} alt={gateway.title} />
                   </ArticleImage>
                   <Text $size="text-l" $weight="500" as="h3">
                     {gateway.title}
@@ -199,7 +199,7 @@ export const OpenWebApplications = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.buildingBlocks)}
+            src={returnImageSrc(images.illustrations.buildingBlocks)}
             imageSide="left"
             alt="Two chat bubbles alongside two component windows from the NEAR gateway"
           >
@@ -275,7 +275,7 @@ export const OpenWebApplications = () => {
                 <Card $clickable $dark as="a" href={app.url} key={app.name}>
                   <Flex $alignItems="center" $gap="24px">
                     <CardThumbnail>
-                      <img src={returnImageSrc(app.ipfsImage)} alt={app.name} />
+                      <img src={returnImageSrc(app.image)} alt={app.name} />
                     </CardThumbnail>
                     <div>
                       <Text color="white" $size="text-l" $weight="500">
