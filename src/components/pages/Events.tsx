@@ -15,18 +15,22 @@ import { Section } from '../lib/Section';
 import { H1, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const backgroundAsset1 = 'https://ipfs.near.social/ipfs/bafkreibocppns3yi7yakmhgsj53qdgw74kzs25dulfbrrif5g3gtzm45zy';
-const backgroundAsset2 = 'https://ipfs.near.social/ipfs/bafkreibupkdrjsmnxcmcu4yvtlex3rmioj3eoqlb2jlccdkeujzfwmvzhy';
-const backgroundAsset3 = 'https://ipfs.near.social/ipfs/bafkreidovdxkcy6f3rb5xm3ack7tdujxngx6xn6bnkl7t72u7fds4vt53i';
-const backgroundAsset4 = 'https://ipfs.near.social/ipfs/bafkreic632ok3wpcjcqjem43e7y3er4pxtt457akiw6coevu43aksy4ctu';
+function returnImageSrc(image: string) {
+  return `/images/events/${image}.jpeg`;
+}
+
+const backgroundAsset1 = 'bafkreibocppns3yi7yakmhgsj53qdgw74kzs25dulfbrrif5g3gtzm45zy';
+const backgroundAsset2 = 'bafkreibupkdrjsmnxcmcu4yvtlex3rmioj3eoqlb2jlccdkeujzfwmvzhy';
+const backgroundAsset3 = 'bafkreidovdxkcy6f3rb5xm3ack7tdujxngx6xn6bnkl7t72u7fds4vt53i';
+const backgroundAsset4 = 'bafkreic632ok3wpcjcqjem43e7y3er4pxtt457akiw6coevu43aksy4ctu';
 
 const Pattern = styled.div`
   width: 100%;
   min-height: 540px;
   display: flex;
   align-items: center;
-  background-image: url('${backgroundAsset1}'), url('${backgroundAsset2}'), url('${backgroundAsset3}'),
-    url('${backgroundAsset4}'),
+  background-image: url('${returnImageSrc(backgroundAsset1)}'), url('${returnImageSrc(backgroundAsset2)}'),
+    url('${returnImageSrc(backgroundAsset3)}'), url('${returnImageSrc(backgroundAsset4)}'),
     url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGeSURBVHgB7doxTisxEAbgeY/mvQro6NiSDo6QkpJbcA2OwjWooKQMJ2DpKENJBV7FEYoBeQSIZr9PGk2cItWvsdfZnSBjKHVf6rnUbdD1N8g4K7VX6jhIEaycofaTIEWwcoam0yFYOYe179WiQ7Byhk8+8wnB6munlHNWgmD1tUGyFSYIVl8bJFcOCYLV106s/aBrJ2hNE+qo1GmpRanz2J5aB6X+x/oQv/l+FWz5E/O1iHU4pom0W/u0/uoZahnrgN2VGuv6Jpidl1+o2T5BznkrfKj9MdZT6l9836r+3k2pq1KXMVNz3gpbU7hOmj49AQ7x/lJ0WWsK5xhv2+AYkHQR29vbddDluqFvbNZPQZdg9S07az4gWH3tHZVgJQhW3xjb4XIZyo+Z3nffHN79CZ1gYuXc1b4KEytFsHLGptMhWDlj7Q9BimDlbJ4Ex4AftggHdwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIpXoUVLSWulnzoAAAAASUVORK5CYII=');
   background-size:
     13%,

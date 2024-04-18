@@ -8,7 +8,7 @@ import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const ipfsImages = {
+const images = {
   illustrations: {
     devHub: 'bafkreia5igkmp2pjnnxddpyz5sp6et7uowm6r3fk2ycxwca3aflzop2odq',
     horizon: 'bafkreihcolnwvwigzerbvweyg5ygeuxgo5fngfrowogytjst2v3qchujne',
@@ -51,7 +51,7 @@ export const EcosystemOverview = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.devHub)}
+            src={returnImageSrc(images.illustrations.devHub)}
             imageSide="right"
             alt="The DevHub logo, the characters / d / h ."
           >
@@ -65,6 +65,7 @@ export const EcosystemOverview = () => {
             <div>
               <Button
                 href="/devhub.near/widget/app"
+                target="_blank"
                 label="Explore DevHub"
                 variant="secondary"
                 fill="outline"
@@ -74,7 +75,7 @@ export const EcosystemOverview = () => {
           </ContentWithImage>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.horizon)}
+            src={returnImageSrc(images.illustrations.horizon)}
             imageSide="left"
             alt="The Near Horizon logo, a blue sunrise and the wordmark for Horizon"
           >
@@ -88,7 +89,7 @@ export const EcosystemOverview = () => {
           </ContentWithImage>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.ndc)}
+            src={returnImageSrc(images.illustrations.ndc)}
             imageSide="right"
             alt="The NDC logo, the letters N, D, and C interconnected"
           >
@@ -109,7 +110,7 @@ export const EcosystemOverview = () => {
           </ContentWithImage>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.funding)}
+            src={returnImageSrc(images.illustrations.funding)}
             imageSide="left"
             alt="The Ecosystem Funding Homepage logo"
           >
