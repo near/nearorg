@@ -186,7 +186,7 @@ const web3Teams2 = [
     height: '29px',
   },
   {
-    url: 'https://www.ankr.com',
+    url: 'https://www.ankr.com/docs/scaling-services-rollups/data-availability/nearda',
     name: 'Ankr',
     image: images.logos.ankr,
     height: '28px',
