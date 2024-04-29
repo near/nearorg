@@ -1,5 +1,3 @@
-import { CREATE_ACCOUNT_URL } from '@/utils/constants';
-
 import { Button } from '../lib/Button';
 import { Card } from '../lib/Card';
 import { Container } from '../lib/Container';
@@ -117,8 +115,9 @@ export const Blockchain = () => {
 
               <div>
                 <Button
-                  href={CREATE_ACCOUNT_URL}
-                  label="Create Account"
+                  href="https://docs.near.org/tools/welcome"
+                  target="_blank"
+                  label="Start Building"
                   variant="secondary"
                   fill="outline"
                   size="large"
@@ -269,7 +268,13 @@ export const Blockchain = () => {
             </Flex>
 
             <Flex $gap="24px" $wrap="$wrap" $alignItems="center" $justifyContent="center">
-              <Button href={CREATE_ACCOUNT_URL} label="Create Account" variant="secondary" size="large" />
+              <Button
+                href="https://docs.near.org/tools/welcome"
+                target="_blank"
+                label="Start Building"
+                variant="secondary"
+                size="large"
+              />
 
               <Button
                 href="https://docs.near.org/concepts/welcome"
