@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { useLatestEvents } from '@/hooks/useLatestEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
-import { CREATE_ACCOUNT_URL } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
@@ -314,7 +313,13 @@ export const Home = () => {
                     fill="outline"
                     size="large"
                   />
-                  <Button href={CREATE_ACCOUNT_URL} label="Create Account" variant="affirmative" size="large" />
+                  <Button
+                    href="https://docs.near.org/tools/welcome"
+                    target="_blank"
+                    label="Start Building"
+                    variant="affirmative"
+                    size="large"
+                  />
                 </Flex>
               </Flex>
             </PatternContent>
@@ -377,7 +382,14 @@ export const Home = () => {
                   your data.
                 </Text>
                 <div>
-                  <Button href="/signup" label="Create an Account" variant="secondary" fill="outline" size="large" />
+                  <Button
+                    href="https://dev.near.org"
+                    target="_blank"
+                    label="Join Near Developers"
+                    variant="secondary"
+                    fill="outline"
+                    size="large"
+                  />
                 </div>
               </Flex>
 
