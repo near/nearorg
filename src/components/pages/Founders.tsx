@@ -34,6 +34,22 @@ const selfServeResources = [
     url: '/papers/token-launch-checklist',
     target: '_blank',
   },
+  {
+    name: 'Builder Perks',
+    description: (
+      <>
+        {/* TODO: Push this change as well */}
+        {`We've`} curated a growing collection of curated resources and over $500K in discounts for HZN Founders.
+        <br />
+        <br />
+        Interested in having your product listed as a perk? Send us a message at:{' '}
+        <a href="mailto:Horizon@near.foundation">Horizon@near.foundation</a>
+      </>
+    ),
+    icon: 'ph-hammer',
+    url: 'https://www.notion.so/near-horizon/Builder-Perks-cb5e5f55870c4c5da6bf9f72fbae35a9',
+    target: '_blank',
+  },
 ];
 
 const ecosystemCommunityResources = [
