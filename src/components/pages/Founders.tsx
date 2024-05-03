@@ -38,7 +38,6 @@ const selfServeResources = [
     name: 'Builder Perks',
     description: (
       <>
-        {/* TODO: Push this change as well */}
         {`We've`} curated a growing collection of curated resources and over $500K in discounts for HZN Founders.
         <br />
         <br />
