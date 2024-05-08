@@ -148,6 +148,11 @@ const nextConfig = {
         destination: `${appGatewayHostname}/:path/widget/:slug`,
         permanent: true,
       },
+      {
+        source: '/auditrequest',
+        destination: 'https://airtable.com/appr1nBRRGx2PTJVh/shrpa99vKKW3xafso',
+        permanent: false,
+      },
     ];
   },
   rewrites: async () => [
