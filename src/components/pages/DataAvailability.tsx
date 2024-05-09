@@ -12,7 +12,20 @@ import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const ipfsImages = {
+type Team = {
+  url: string;
+  name: string;
+  image: string;
+  grayscaleImage?: string;
+  height: string;
+};
+
+interface TeamSection {
+  title: string;
+  teams: Team[];
+}
+
+const images = {
   illustrations: {
     l2: 'bafkreiaqqz44yzagdcj3ubd3uteh2guh7fhbktdg26fw52bti5onu6zsxm',
     dac: 'bafkreifkselhtl5p2lwjzzpzii6xcdkywwn47gxzulhir7vtn52hv4g5oe',
@@ -30,6 +43,10 @@ const ipfsImages = {
     optimism: 'bafkreidwitx5hu6hivyn3exi34moyea7livf6zfqk2dcny3z62ive7fpou',
     zeeve: 'bafkreigwtxjuraug4l2rltpoy4wau6gaom6e52fwgyqfpdsh2t6voe6ypm',
     web3Game: 'bafkreidbmy27gngqsz5opzy5dbhd7jdrnzt5r2e5grcpiad77zgjc4e6ki',
+    gatewayFm: 'bafkreiga33qbg5c4ffckdk7d4fnwc54ydafn4o3b3oucnabcd2mcq4s5ve',
+    ankr: 'bafkreiaxqdtshibxuivqus3btgpx66z2mamse6idhoklp2ghwru5jxf4l4',
+    fraxFinance: 'bafkreihsgo2ikwgfcjt4dbj3fv5srychvyw23disz4rimp3zwgxnfchs3q',
+    particleNetwork: 'bafkreic7mcnt67qn4444u5zwbiuujl56vq2yomznqj2jjwcko7p3fhwiam',
   },
 };
 
@@ -98,29 +115,41 @@ const LogoLinks = styled.div`
   }
 `;
 
+const LinkLogo = styled(Link)<{ $grayscale?: string }>`
+  img {
+    filter: ${(p) => p.$grayscale ?? 'none'};
+  }
+`;
+
 const web3Teams1 = [
   {
     url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
     name: 'Arbitrum',
-    ipfsImage: ipfsImages.logos.arbitrum,
+    image: images.logos.arbitrum,
     height: '29px',
   },
   {
     url: 'https://polygon.technology/polygon-cdk',
     name: 'Polygon',
-    ipfsImage: ipfsImages.logos.polygon,
+    image: images.logos.polygon,
     height: '29px',
   },
   {
-    url: 'https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/on-chain-data/',
+    url: 'https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/on-chain-data',
     name: 'Starknet',
-    ipfsImage: ipfsImages.logos.starknet,
+    image: images.logos.starknet,
     height: '29px',
   },
   {
     url: 'https://movementlabs.xyz',
     name: 'Movement Labs',
-    ipfsImage: ipfsImages.logos.movementLabs,
+    image: images.logos.movementLabs,
+    height: '24px',
+  },
+  {
+    url: 'https://docs.optimism.io',
+    name: 'Optimism',
+    image: images.logos.optimism,
     height: '24px',
   },
 ];
@@ -129,26 +158,38 @@ const web3Teams2 = [
   {
     url: 'https://docs.altlayer.io/altlayer-documentation/core-features-of-altlayers-in-house-rollup-stack/modular',
     name: 'Altlayer',
-    ipfsImage: ipfsImages.logos.altlayer,
+    image: images.logos.altlayer,
     height: '29px',
   },
   {
     url: 'https://docs.caldera.xyz/about/alternative-da',
     name: 'Caldera',
-    ipfsImage: ipfsImages.logos.caldera,
+    image: images.logos.caldera,
     height: '28px',
   },
   {
     url: 'https://docs.dymension.xyz/build/adv-guide/roller-adv/da-light-client',
     name: 'Dymension',
-    ipfsImage: ipfsImages.logos.dymension,
+    image: images.logos.dymension,
     height: '28px',
   },
   {
-    url: 'https://www.zeeve.io/blog/zeeve-raas-partners-with-near-da-to-power-ethereum-rollup-builders-with-efficient-data-availability/',
+    url: 'https://www.zeeve.io/blog/zeeve-raas-partners-with-near-da-to-power-ethereum-rollup-builders-with-efficient-data-availability',
     name: 'Zeeve',
-    ipfsImage: ipfsImages.logos.zeeve,
+    image: images.logos.zeeve,
     height: '29px',
+  },
+  {
+    url: 'https://gateway.fm',
+    name: 'Gateway',
+    image: images.logos.gatewayFm,
+    height: '29px',
+  },
+  {
+    url: 'https://www.ankr.com/docs/scaling-services-rollups/data-availability/nearda',
+    name: 'Ankr',
+    image: images.logos.ankr,
+    height: '28px',
   },
 ];
 
@@ -156,8 +197,36 @@ const web3Teams3 = [
   {
     url: 'https://web3games.com',
     name: 'Web3Game',
-    ipfsImage: ipfsImages.logos.web3Game,
+    image: images.logos.web3Game,
     height: '28px',
+  },
+  {
+    url: 'https://frax.finance',
+    name: 'Frax Finance',
+    image: images.logos.fraxFinance,
+    height: '28px',
+  },
+  {
+    url: 'https://particle.network',
+    name: 'Particle Network',
+    image: images.logos.particleNetwork,
+    grayscaleImage: 'grayscale(1) brightness(50%)',
+    height: '29px',
+  },
+];
+
+const web3TeamsSections: TeamSection[] = [
+  {
+    title: 'Frameworks',
+    teams: web3Teams1,
+  },
+  {
+    title: 'Rollups as a Service',
+    teams: web3Teams2,
+  },
+  {
+    title: 'Blockchains',
+    teams: web3Teams3,
   },
 ];
 
@@ -216,95 +285,41 @@ export const DataAvailability = () => {
           <Text $size="text-3xl" $weight="500" style={{ maxWidth: '600px' }}>
             Trusted by forward thinking teams
           </Text>
-          <LogoText
-            $size="text-xs"
-            $weight="700"
-            $color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              textAlign: 'center',
-              marginTop: '60px',
-            }}
-          >
-            Frameworks
-          </LogoText>
 
-          <LogoLinksWrapper>
-            <LogoLinks>
-              {web3Teams1.map((team) => (
-                <Link
-                  href={team.url}
-                  target="_blank"
-                  title={team.name}
-                  style={{ height: team.height, display: 'inline-block' }}
-                  key={team.name}
-                >
-                  <img src={returnImageSrc(team.ipfsImage)} alt={team.name} />
-                </Link>
-              ))}
-            </LogoLinks>
-          </LogoLinksWrapper>
-
-          <LogoText
-            $size="text-xs"
-            $weight="700"
-            $color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              textAlign: 'center',
-              marginTop: '60px',
-            }}
-          >
-            Rollups as a Service
-          </LogoText>
-
-          <LogoLinksWrapper>
-            <LogoLinks>
-              {web3Teams2.map((team) => (
-                <Link
-                  href={team.url}
-                  target="_blank"
-                  title={team.name}
-                  style={{ height: team.height, display: 'inline-block' }}
-                  key={team.name}
-                >
-                  <img src={returnImageSrc(team.ipfsImage)} alt={team.name} />
-                </Link>
-              ))}
-            </LogoLinks>
-          </LogoLinksWrapper>
-
-          <LogoText
-            $size="text-xs"
-            $weight="700"
-            $color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              textAlign: 'center',
-              marginTop: '60px',
-            }}
-          >
-            Rollups
-          </LogoText>
-
-          <LogoLinksWrapper>
-            <LogoLinks>
-              {web3Teams3.map((team) => (
-                <Link
-                  href={team.url}
-                  target="_blank"
-                  title={team.name}
-                  style={{ height: team.height, display: 'inline-block' }}
-                  key={team.name}
-                >
-                  <img src={returnImageSrc(team.ipfsImage)} alt={team.name} />
-                </Link>
-              ))}
-            </LogoLinks>
-          </LogoLinksWrapper>
+          {/* <TeamsList> */}
+          {web3TeamsSections.map((section) => (
+            <Flex $gap="16px" $direction="column" key={section.title.replace(/ /g, '_').toLowerCase()}>
+              <LogoText
+                $size="text-xs"
+                $weight="700"
+                $color="sand11"
+                style={{
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  textAlign: 'center',
+                  marginTop: '60px',
+                }}
+              >
+                {section.title}
+              </LogoText>
+              <LogoLinksWrapper>
+                <LogoLinks>
+                  {section.teams.map((team) => (
+                    <LinkLogo
+                      href={team.url}
+                      target="_blank"
+                      title={team.name}
+                      style={{ height: team.height, display: 'inline-block' }}
+                      key={team.name}
+                      $grayscale={team?.grayscaleImage ?? undefined}
+                    >
+                      <img src={returnImageSrc(team.image)} alt={team.name} />
+                    </LinkLogo>
+                  ))}
+                </LogoLinks>
+              </LogoLinksWrapper>
+            </Flex>
+          ))}
         </Flex>
       </Section>
 
@@ -319,12 +334,12 @@ export const DataAvailability = () => {
           </Flex>
 
           <img
-            src={returnImageSrc(ipfsImages.illustrations.dac)}
+            src={returnImageSrc(images.illustrations.dac)}
             alt="A data availability chart showing comparisons between NEAR, Celestia, Ethereum with proto-danksharding, and ethereum without proto-danksharding."
           />
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.l2)}
+            src={returnImageSrc(images.illustrations.l2)}
             imageSide="left"
             alt="A flow chart showing the relationships between the L2 and Data Availability (DA). On the L2, the Rollup node and Batcher feed into the NEAR Protocol on Data Availability. The proposal from the L2 feeds into Ethereum in the DA when then feeds back into the Rollup Node of the L2."
           >
@@ -334,10 +349,8 @@ export const DataAvailability = () => {
                   Drastically reduce your costs
                 </Text>
                 <Text>
-                  Storing rollup calldata on NEAR Protocol is approximately 8000x cheaper than storing the same amount
-                  of data on Ethereum. Harness the power of {`NEAR's`} robust blockchain, optimized for speed,
-                  scalability, and cost. Say goodbye to high DA fees and embrace a new era of cost-effective modular
-                  blockchain solutions.
+                  A trustless off-chain light client for NEAR provides easy access to validate that rollup data was
+                  stored on-chain.
                 </Text>
               </Flex>
 
@@ -346,9 +359,8 @@ export const DataAvailability = () => {
                   Easily validate proofs
                 </Text>
                 <Text>
-                  Validate proofs effortlessly with {`NEAR's`} trustless off-chain light client. Seamlessly access and
-                  verify the storage of rollup data on-chain. {`NEAR's`} developer-friendly interface allows for
-                  convenient validation of blockchain transactions, enhancing transparency and trust in the system.
+                  A trustless off-chain light client for NEAR provides easy access to validate that rollup data was
+                  stored on-chain.
                 </Text>
               </Flex>
 
@@ -356,11 +368,7 @@ export const DataAvailability = () => {
                 <Text $size="text-xl" $mobileSize="text-l" $weight="500">
                   Simple to interact with
                 </Text>
-                <Text>
-                  NEAR Protocol offers an RPC interface for the effortless retrieval of on-chain data from anywhere.
-                  Accessing transaction data has never been easier. Experience the ease of {`NEAR's`} Data Availability
-                  solution and unlock new potential for your Ethereum rollup.
-                </Text>
+                <Text>NEAR readily provides an RPC to easily retrieve the on-chain data from anywhere</Text>
               </Flex>
 
               <div>
@@ -387,10 +395,7 @@ export const DataAvailability = () => {
               </Text>
 
               <Text style={{ maxWidth: '600px' }}>
-                Efficiently store state data and commitments on a NEAR contract for your L2 rollup. Whether {`you're `}
-                processing transactions or managing data on the blockchain layer, {`NEAR's`} Ethereum-compatible
-                infrastructure offers unparalleled efficiency through our robust network of nodes. Enhance the
-                functionality of your rollup and experience the future of modular blockchain technology with NEAR.
+                Efficiently store state data and commitments on a NEAR contract for your L2 rollup.
               </Text>
             </Flex>
 

@@ -4,14 +4,14 @@ import '@/styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
-import { init as initializeAnalytics, setReferrer } from '@/utils/analytics';
 import { CookiePrompt } from '@/components/CookiePrompt';
 import { useClickTracking } from '@/hooks/useClickTracking';
 import { usePageAnalytics } from '@/hooks/usePageAnalytics';
+import { init as initializeAnalytics, setReferrer } from '@/utils/analytics';
 import type { NextPageWithLayout } from '@/utils/types';
 
 type AppPropsWithLayout = AppProps & {
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         {/* <link rel="canonical" href={`${process.env.NEXT_PUBLIC_HOSTNAME}${router.asPath}`} key="canonical" /> */}
       </Head>
 
-      <Script id="phosphor-icons" src="https://unpkg.com/@phosphor-icons/web@2.0.3" async />
+      <Script id="phosphor-icons" src="https://unpkg.com/@phosphor-icons/web" async />
 
       {getLayout(<Component {...pageProps} />)}
 

@@ -2,6 +2,8 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import { recordMouseEnter } from '@/utils/analytics';
+
 import { navigationCategories } from '../categories';
 
 const Wrapper = styled.div`
@@ -152,7 +154,7 @@ export const MainNavigationMenu = () => {
             .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (
               <NavItem key={category.title}>
-                <NavTrigger>{category.title}</NavTrigger>
+                <NavTrigger onMouseEnter={recordMouseEnter}>{category.title}</NavTrigger>
 
                 <NavContent>
                   <Container>

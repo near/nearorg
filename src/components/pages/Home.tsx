@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { useLatestEvents } from '@/hooks/useLatestEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
-import { CREATE_ACCOUNT_URL } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
@@ -96,7 +95,7 @@ const Stats = styled.div`
   }
 `;
 
-const ipfsImages = {
+const images = {
   apps: {
     bosAllStars: 'bafkreicgnsizdxoc436tbln3ucqo45hdauumd7if4gltrqh3tbxgosi3q4',
     bosHacks: 'bafkreicpbijnii55242f7wcs6xnjf3ocyuyuguts6r6kkfz745g3jjudam',
@@ -138,21 +137,21 @@ const featuredApps = [
     name: 'BOS All-Stars',
     accountId: 'hack.near',
     description: 'Ranking starred components',
-    ipfsImage: ipfsImages.apps.bosAllStars,
+    image: images.apps.bosAllStars,
     url: '/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
   },
   {
     name: 'BOS Hacks',
     accountId: 'ndcplug.near',
     description: 'The 2 week B.O.S Hackathon on B.O.S',
-    ipfsImage: ipfsImages.apps.bosHacks,
+    image: images.apps.bosHacks,
     url: '/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
   },
   {
     name: 'NUI',
     accountId: 'nearui.near',
     description: ' A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
-    ipfsImage: ipfsImages.apps.nui,
+    image: images.apps.nui,
     url: '/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
   },
 ];
@@ -161,37 +160,37 @@ const web3Teams2 = [
   {
     url: 'https://dropt.io',
     name: 'Dropt',
-    ipfsImage: ipfsImages.logos.dropt,
+    image: images.logos.dropt,
     height: '35px',
   },
   {
     url: 'https://sailgp.com',
     name: 'Sail GP',
-    ipfsImage: ipfsImages.logos.sailgp,
+    image: images.logos.sailgp,
     height: '16px',
   },
   {
     url: 'https://www.shemarooent.com',
     name: 'Shemaroo',
-    ipfsImage: ipfsImages.logos.shemaroo,
+    image: images.logos.shemaroo,
     height: '38px',
   },
   {
     url: 'https://www.marblex.io',
     name: 'Marblex',
-    ipfsImage: ipfsImages.logos.marblex,
+    image: images.logos.marblex,
     height: '16px',
   },
   {
     url: 'https://polygon.technology/polygon-cdk',
     name: 'Polygon',
-    ipfsImage: ipfsImages.logos.polygon,
+    image: images.logos.polygon,
     height: '38px',
   },
   {
     url: 'https://sweatco.in',
     name: 'Sweatcoin',
-    ipfsImage: ipfsImages.logos.sweatcoin,
+    image: images.logos.sweatcoin,
     height: '24px',
   },
 ];
@@ -200,37 +199,37 @@ const web3Teams = [
   {
     url: 'https://alibabacloud.com/',
     name: 'Alibaba',
-    ipfsImage: ipfsImages.logos.alibaba,
+    image: images.logos.alibaba,
     height: '38px',
   },
   {
     url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
     name: 'Arbitrum',
-    ipfsImage: ipfsImages.logos.arbitrum,
+    image: images.logos.arbitrum,
     height: '38px',
   },
   {
     url: 'https://cosmose.co',
     name: 'Cosmose AI',
-    ipfsImage: ipfsImages.logos.cosmose,
+    image: images.logos.cosmose,
     height: '38px',
   },
   {
     url: 'https://docs.eigenlayer.xyz/eigenda-guides/eigenda-overview',
     name: 'EigenLayer',
-    ipfsImage: ipfsImages.logos.eigenLayer,
+    image: images.logos.eigenLayer,
     height: '38px',
   },
   {
     url: 'https://google.com',
     name: 'Google',
-    ipfsImage: ipfsImages.logos.google,
+    image: images.logos.google,
     height: '38px',
   },
   {
     url: 'https://www.icc-cricket.com',
     name: 'ICC',
-    ipfsImage: ipfsImages.logos.icc,
+    image: images.logos.icc,
     height: '24px',
   },
 ];
@@ -264,19 +263,19 @@ const communityItems = [
     name: 'DevHub',
     description:
       'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
-    ipfsImage: ipfsImages.community.devHub,
+    image: images.community.devHub,
     url: '/devgovgigs.near/widget/Ideas',
   },
   {
     name: 'Horizon',
     description: 'Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.',
-    ipfsImage: ipfsImages.community.horizon,
+    image: images.community.horizon,
     url: '/horizon',
   },
   {
     name: 'Near Digital Collective (NDC)',
     description: 'The NDC is a grassroots, community-led movement to build decentralized governance on NEAR.',
-    ipfsImage: ipfsImages.community.ndc,
+    image: images.community.ndc,
     url: 'https://app.neardc.org/',
     target: '_blank',
   },
@@ -314,7 +313,13 @@ export const Home = () => {
                     fill="outline"
                     size="large"
                   />
-                  <Button href={CREATE_ACCOUNT_URL} label="Create Account" variant="affirmative" size="large" />
+                  <Button
+                    href="https://docs.near.org/tools/welcome"
+                    target="_blank"
+                    label="Start Building"
+                    variant="affirmative"
+                    size="large"
+                  />
                 </Flex>
               </Flex>
             </PatternContent>
@@ -344,7 +349,7 @@ export const Home = () => {
                     style={{ height: team.height }}
                     key={team.name}
                   >
-                    <img src={returnImageSrc(team.ipfsImage)} alt={team.name} />
+                    <img src={returnImageSrc(team.image)} alt={team.name} />
                   </Link>
                 ))}
               </LogoLinks>
@@ -364,7 +369,7 @@ export const Home = () => {
           </Flex>
 
           <Grid $columns="1fr 1fr" $gap="var(--section-gap)">
-            <img src={returnImageSrc(ipfsImages.illustrations.betterWayToBuild)} alt="There's a better way to build" />
+            <img src={returnImageSrc(images.illustrations.betterWayToBuild)} alt="There's a better way to build" />
 
             <Flex $direction="column" $gap="var(--section-gap)">
               <Flex $direction="column" $gap="24px">
@@ -377,7 +382,14 @@ export const Home = () => {
                   your data.
                 </Text>
                 <div>
-                  <Button href="/signup" label="Create an Account" variant="secondary" fill="outline" size="large" />
+                  <Button
+                    href="https://dev.near.org"
+                    target="_blank"
+                    label="Join Near Developers"
+                    variant="secondary"
+                    fill="outline"
+                    size="large"
+                  />
                 </div>
               </Flex>
 
@@ -430,7 +442,7 @@ export const Home = () => {
                 <Card $clickable as="a" href={app.url} style={{ borderColor: 'var(--sand12)' }} key={app.name}>
                   <Flex $alignItems="center" $gap="24px">
                     <CardThumbnail>
-                      <img src={returnImageSrc(app.ipfsImage)} alt={app.name} />
+                      <img src={returnImageSrc(app.image)} alt={app.name} />
                     </CardThumbnail>
                     <div>
                       <Text $size="text-l" $weight="500">
@@ -459,7 +471,7 @@ export const Home = () => {
 
           <ContentWithImage
             imageSide="left"
-            src={returnImageSrc(ipfsImages.illustrations.code)}
+            src={returnImageSrc(images.illustrations.code)}
             alt="Illustration of a console with javascript code above the Javascript and Rust logos, surrounded by brackets"
           >
             <>
@@ -485,7 +497,7 @@ export const Home = () => {
 
           <ContentWithImage
             imageSide="right"
-            src={returnImageSrc(ipfsImages.illustrations.components)}
+            src={returnImageSrc(images.illustrations.components)}
             alt="Illustration of the UI listing of a component with buttons to view details or open. Below it are images of checkboxes"
           >
             <>
@@ -510,7 +522,7 @@ export const Home = () => {
           </ContentWithImage>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.dapps)}
+            src={returnImageSrc(images.illustrations.dapps)}
             imageSide="left"
             alt="Illustration of the UI listing of an application with buttons to open, fork, view source, or discuss. Behind it there are images of code brackets and a git-fork icon. "
           >
@@ -546,7 +558,7 @@ export const Home = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.gateways)}
+            src={returnImageSrc(images.illustrations.gateways)}
             imageSide="left"
             alt="Illustration of a search bar above two buttons for GitHub and Deploy"
           >
@@ -566,7 +578,7 @@ export const Home = () => {
           </ContentWithImage>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.fastAuth)}
+            src={returnImageSrc(images.illustrations.fastAuth)}
             imageSide="right"
             alt="Illustration of the FastAuth UI showing the stage allowing user to connect their account to a dApp."
           >
@@ -688,7 +700,7 @@ export const Home = () => {
               {communityItems.map((item) => (
                 <Card $clickable $dark key={item.name} as="a" href={item.url} target={item.target}>
                   <CardThumbnail>
-                    <img src={returnImageSrc(item.ipfsImage)} alt={item.name} />
+                    <img src={returnImageSrc(item.image)} alt={item.name} />
                   </CardThumbnail>
 
                   <Flex $direction="column" $gap="16px">

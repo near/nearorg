@@ -7,7 +7,7 @@ import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
-const ipfsImages = {
+const images = {
   illustrations: {
     fastAuth: 'bafkreidkr2s4fdnnm4f3xduwgnywyfwes3p6rtmpzac5l6xufpdivdvrva',
     relayers: 'bafkreibtzosgikkencpjv35bjdc2iyz4mwxo7qcb6irnsb4gwiljvshhne',
@@ -48,7 +48,7 @@ export const FastAuthAndRelayers = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.fastAuth)}
+            src={returnImageSrc(images.illustrations.fastAuth)}
             imageSide="left"
             alt="A line drawing of a key hole and the near logo set behind the FastAuth sign-in window"
           >
@@ -58,7 +58,7 @@ export const FastAuthAndRelayers = () => {
                   Familiar login
                 </Text>
                 <Text>
-                  Forget recovery phrases, FastAuth seamlessly links your users’ emails directly to NEAR accounts.
+                  Forget recovery phrases, FastAuth seamlessly links your users&apos; emails directly to NEAR accounts.
                 </Text>
               </Flex>
 
@@ -107,7 +107,7 @@ export const FastAuthAndRelayers = () => {
           </Flex>
 
           <ContentWithImage
-            src={returnImageSrc(ipfsImages.illustrations.relayers)}
+            src={returnImageSrc(images.illustrations.relayers)}
             imageSide="right"
             alt="A line drawing of the Relayer pathway starting at the user, to the transaction with the developer, and the developer paying the gas fee to NEAR"
           >

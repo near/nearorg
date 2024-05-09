@@ -34,6 +34,21 @@ const selfServeResources = [
     url: '/papers/token-launch-checklist',
     target: '_blank',
   },
+  {
+    name: 'Builder Perks',
+    description: (
+      <>
+        {`We've`} curated a growing collection of curated resources and over $500K in discounts for HZN Founders.
+        <br />
+        <br />
+        Interested in having your product listed as a perk? Send us a message at:{' '}
+        <a href="mailto:Horizon@near.foundation">Horizon@near.foundation</a>
+      </>
+    ),
+    icon: 'ph-hammer',
+    url: 'https://www.notion.so/near-horizon/Builder-Perks-cb5e5f55870c4c5da6bf9f72fbae35a9',
+    target: '_blank',
+  },
 ];
 
 const ecosystemCommunityResources = [
@@ -50,7 +65,7 @@ const ecosystemCommunityResources = [
     description:
       'Explore ecosystem funding opportunities and builder communities to find the right support for your projects.',
     icon: 'ph-article',
-    url: 'https://${REPL_NEAR_URL}/ecosystem/get-funding',
+    url: '/ecosystem/get-funding',
   },
   {
     name: 'Founder Events',
@@ -192,13 +207,7 @@ export const Founders = () => {
             <Text $size="text-xl" style={{ maxWidth: '658px', textAlign: 'center' }}>
               Reach out to us to provide your feedback or to ask for specific support.
             </Text>
-            <Button
-              href="https://pages.near.org/about/contact-us"
-              target="_blank"
-              label="Contact Us"
-              variant="primary"
-              size="large"
-            />
+            <Button href="/contact-us" label="Contact Us" variant="primary" size="large" />
           </Flex>
         </Container>
       </Section>
