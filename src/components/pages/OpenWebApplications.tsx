@@ -243,7 +243,7 @@ export const OpenWebApplications = () => {
 
               <div>
                 <Button
-                  href="https://docs.near.org/bos/tutorial/quickstart"
+                  href="https://dev.near.org"
                   target="_blank"
                   label="Start Building"
                   variant="secondary"
