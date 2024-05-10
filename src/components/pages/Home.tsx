@@ -314,7 +314,7 @@ export const Home = () => {
                     size="large"
                   />
                   <Button
-                    href="https://docs.near.org/tools/welcome"
+                    href="https://dev.near.org"
                     target="_blank"
                     label="Start Building"
                     variant="affirmative"

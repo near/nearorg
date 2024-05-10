@@ -115,7 +115,7 @@ export const Blockchain = () => {
 
               <div>
                 <Button
-                  href="https://docs.near.org/tools/welcome"
+                  href="https://dev.near.org"
                   target="_blank"
                   label="Start Building"
                   variant="secondary"
@@ -167,7 +167,7 @@ export const Blockchain = () => {
 
               <div>
                 <Button
-                  href="https://docs.near.org/concepts/welcome"
+                  href="https://dev.near.org"
                   target="_blank"
                   label="Start Building"
                   variant="secondary"
@@ -269,7 +269,7 @@ export const Blockchain = () => {
 
             <Flex $gap="24px" $wrap="$wrap" $alignItems="center" $justifyContent="center">
               <Button
-                href="https://docs.near.org/tools/welcome"
+                href="https://dev.near.org"
                 target="_blank"
                 label="Start Building"
                 variant="secondary"
