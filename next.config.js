@@ -77,7 +77,7 @@ const nextConfig = {
       },
       {
         source: '/horizon',
-        destination: `${appGatewayHostname}/nearhorizon.near/component/HomePage`,
+        destination: `${appGatewayHostname}/nearhorizon.near/widget/HomePage`,
         permanent: true,
       },
       {
@@ -112,12 +112,12 @@ const nextConfig = {
       },
       {
         source: '/signin',
-        destination: `${appGatewayHostname}/applications?requestAuth=1`,
+        destination: `${appGatewayHostname}/signin`,
         permanent: false,
       },
       {
         source: '/signup',
-        destination: `${appGatewayHostname}/applications?requestAuth=1&createAccount=1`,
+        destination: `${appGatewayHostname}/signup`,
         permanent: false,
       },
       {

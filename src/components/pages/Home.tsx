@@ -254,7 +254,7 @@ const learnItems = [
     name: 'Learn Center',
     description: 'Starter kit to learn about blockchain technology, web3, and the NEAR protocol.',
     icon: 'ph-book-open-text',
-    url: '/learn',
+    url: 'https://dev.near.org/learn',
   },
 ];
 
@@ -514,6 +514,7 @@ export const Home = () => {
                   href="/components"
                   label="Explore Components"
                   variant="affirmative"
+                  target="_blank"
                   size="large"
                   className="darkButton"
                 />
@@ -572,7 +573,14 @@ export const Home = () => {
                 {`NEAR's`} speed, low cost, and scalability.
               </Text>
               <div>
-                <Button href="/gateways" label="Explore Gateways" variant="secondary" fill="outline" size="large" />
+                <Button
+                  href="/gateways"
+                  label="Explore Gateways"
+                  target="_blank"
+                  variant="secondary"
+                  fill="outline"
+                  size="large"
+                />
               </div>
             </>
           </ContentWithImage>

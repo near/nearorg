@@ -55,12 +55,12 @@ export const navigationCategories = [
           },
           {
             title: 'DevHub',
-            url: '/devhub.near/widget/app',
+            url: 'https://dev.near.org/devhub.near/widget/app',
             icon: 'ph-code ph-bold',
           },
           {
             title: 'Sandbox',
-            url: '/sandbox',
+            url: 'https://dev.near.org/sandbox',
             icon: 'ph-code-block ph-bold',
           },
           {
@@ -87,17 +87,17 @@ export const navigationCategories = [
         links: [
           {
             title: 'Applications',
-            url: '/applications',
+            url: 'https://dev.near.org/applications',
             icon: 'ph-app-window ph-bold',
           },
           {
             title: 'Components',
-            url: '/components',
+            url: 'https://dev.near.org/components',
             icon: 'ph-git-fork ph-bold',
           },
           {
             title: 'Gateways',
-            url: '/gateways',
+            url: 'https://dev.near.org/gateways',
             icon: 'ph-compass ph-bold',
           },
         ],
@@ -123,13 +123,8 @@ export const navigationCategories = [
             icon: 'ph-lightbulb ph-bold',
           },
           {
-            title: 'People',
-            url: '/people',
-            icon: 'ph-users-three ph-bold',
-          },
-          {
             title: 'News',
-            url: '/nearweekapp.near/widget/nearweek.com',
+            url: 'https://dev.near.org/nearweekapp.near/widget/nearweek.com',
             icon: 'ph-newspaper ph-bold',
           },
           {
@@ -203,7 +198,7 @@ export const navigationCategories = [
         links: [
           {
             title: 'Learn',
-            url: '/learn',
+            url: 'https://dev.near.org/learn',
             icon: 'ph-info ph-bold',
           },
           {
@@ -218,7 +213,7 @@ export const navigationCategories = [
           },
           {
             title: 'Contact Us',
-            url: 'https://pages.near.org/about/contact-us/',
+            url: 'https://dev.near.org/contact-us',
             icon: 'ph-question ph-bold',
           },
         ],

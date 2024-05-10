@@ -84,7 +84,14 @@ export const EcosystemOverview = () => {
             </Text>
             <Text>Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.</Text>
             <div>
-              <Button href="/horizon" label="Explore Horizon" variant="secondary" fill="outline" size="large" />
+              <Button
+                href="/horizon"
+                label="Explore Horizon"
+                target="_blank"
+                variant="secondary"
+                fill="outline"
+                size="large"
+              />
             </div>
           </ContentWithImage>
 

@@ -207,7 +207,13 @@ export const Founders = () => {
             <Text $size="text-xl" style={{ maxWidth: '658px', textAlign: 'center' }}>
               Reach out to us to provide your feedback or to ask for specific support.
             </Text>
-            <Button href="/contact-us" label="Contact Us" variant="primary" size="large" />
+            <Button
+              href="https://dev.near.org/contact-us"
+              label="Contact Us"
+              target="_blank"
+              variant="primary"
+              size="large"
+            />
           </Flex>
         </Container>
       </Section>

@@ -27,8 +27,6 @@ export const CtaSection = ({ backgroundColor = 'rgb(97, 229, 226)' }: Props) => 
           </Flex>
 
           <Flex $gap="24px" $wrap="$wrap" $alignItems="center" $justifyContent="center">
-            <Button href={CREATE_ACCOUNT_URL} label="Create Account" variant="secondary" size="large" />
-
             <Button
               href="https://docs.near.org/concepts/welcome"
               target="_blank"

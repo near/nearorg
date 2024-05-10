@@ -166,7 +166,14 @@ export const OpenWebApplications = () => {
                 <Text style={{ maxWidth: '598px', marginRight: 'auto' }}>
                   See how developers are using gateways to create rich multi-chain, open web applications
                 </Text>
-                <Button href="/gateways" label="Explore Gateways" variant="secondary" fill="outline" size="large" />
+                <Button
+                  href="/gateways"
+                  label="Explore Gateways"
+                  variant="secondary"
+                  target="_blank"
+                  fill="outline"
+                  size="large"
+                />
               </Flex>
             </Flex>
 
@@ -262,6 +269,7 @@ export const OpenWebApplications = () => {
                 <Button
                   href="/components"
                   label="Explore Components"
+                  target="_blank"
                   variant="secondary"
                   fill="outline"
                   size="large"
@@ -272,7 +280,7 @@ export const OpenWebApplications = () => {
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px">
               {featuredApps.map((app) => (
-                <Card $clickable $dark as="a" href={app.url} key={app.name}>
+                <Card $clickable $dark as="a" href={app.url} key={app.name} target="_blank">
                   <Flex $alignItems="center" $gap="24px">
                     <CardThumbnail>
                       <img src={returnImageSrc(app.image)} alt={app.name} />
@@ -319,7 +327,7 @@ export const OpenWebApplications = () => {
                 target="_blank"
               />
 
-              <Button href="/components" label="Explore Components" variant="primary" size="large" />
+              <Button href="/components" label="Explore Components" target="_blank" variant="primary" size="large" />
             </Flex>
           </Flex>
         </Container>
