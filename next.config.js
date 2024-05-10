@@ -26,6 +26,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/learn',
+        destination: 'https://dev.near.org/learn',
+        permanent: false,
+      },
+      {
         source: '/components',
         destination: `${appGatewayHostname}/components`,
         permanent: true,
