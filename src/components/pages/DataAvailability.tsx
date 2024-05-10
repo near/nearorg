@@ -418,7 +418,7 @@ export const DataAvailability = () => {
               />
 
               <Button
-                href="https://${REPL_NEAR_URL}/blog/why-near-data-availability"
+                href="/blog/why-near-data-availability"
                 target="_blank"
                 label="Intro to NEAR DA"
                 variant="secondary"

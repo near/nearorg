@@ -113,7 +113,7 @@ const sections = [
       },
       {
         title: 'Sandbox',
-        url: '/sandbox',
+        url: 'https://dev.near.org/sandbox',
       },
       {
         title: 'Tools',
@@ -142,15 +142,15 @@ const sections = [
     links: [
       {
         title: 'Applications',
-        url: '/applications',
+        url: 'https://dev.near.org/applications',
       },
       {
         title: 'Components',
-        url: '/components',
+        url: 'https://dev.near.org/components',
       },
       {
         title: 'Gateways',
-        url: '/gateways',
+        url: 'https://dev.near.org/gateways',
       },
     ],
   },
@@ -162,12 +162,8 @@ const sections = [
         url: '/ecosystem',
       },
       {
-        title: 'People',
-        url: '/people',
-      },
-      {
         title: 'News',
-        url: '/nearweekapp.near/widget/nearweek.com',
+        url: 'https://dev.near.org/nearweekapp.near/widget/nearweek.com',
       },
       {
         title: 'Events',
@@ -184,7 +180,7 @@ const sections = [
     links: [
       {
         title: 'Learn',
-        url: '/learn',
+        url: 'https://dev.near.org/learn',
       },
       {
         title: 'Blog',
@@ -196,7 +192,7 @@ const sections = [
       },
       {
         title: 'Contact us',
-        url: 'https://pages.near.org/about/contact-us/',
+        url: 'https://dev.near.org/contact-us',
       },
       {
         title: 'Brand Toolkit',
@@ -204,15 +200,15 @@ const sections = [
       },
       {
         title: 'Privacy',
-        url: 'https://near.org/privacy',
+        url: 'https://dev.near.org/privacy',
       },
       {
         title: 'Terms of Use',
-        url: 'https://near.org/terms',
+        url: 'https://dev.near.org/terms',
       },
       {
         title: 'Cookie Policy',
-        url: 'https://near.org/cookies',
+        url: 'https://dev.near.org/cookies',
       },
     ],
   },
