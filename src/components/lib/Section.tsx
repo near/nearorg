@@ -8,7 +8,7 @@ export const Section = styled.div<{
   position: relative;
   padding: 160px 24px;
   overflow: hidden;
-
+  color: var(--color);
   @media (max-width: 900px) {
     padding: var(--section-gap) 24px;
   }

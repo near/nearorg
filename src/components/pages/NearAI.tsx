@@ -13,6 +13,14 @@ import { Pattern, PatternContent } from '../lib/Pattern';
 import { Section } from '../lib/Section';
 import { H1, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
+import { NearAIHome } from './NearAIHome';
+
+const ContentWrapper = styled(Wrapper)`
+  --near-green: #00ec97;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+`;
 
 const NavRoot = styled(NavigationMenu.Root)`
   height: 100%;
@@ -86,7 +94,7 @@ const NavLink = styled(NavigationMenu.Link)`
   padding: 7px;
   margin-right: 12px;
   font: var(--text-s);
-  color: var(--sand12);
+  color: var(--near-green);
   transition: color 200ms;
   white-space: nowrap;
   outline: none;
@@ -98,18 +106,21 @@ const NavLink = styled(NavigationMenu.Link)`
     text-underline-offset: 2px;
   }
 `;
+const Title = styled(H1)`
+  color: var(--near-green);
+`;
 
 export const NearAI = (props: any) => {
   return (
-    <Wrapper>
-      <Section $backgroundColor="#9797FF" style={{ padding: '20px 0 0 0' }}>
+    <ContentWrapper>
+      <Section style={{ padding: '20px 0 0 0', color: 'white' }}>
         <Flex $alignItems="right" style={{ paddingRight: '2rem' }}>
           <NavRoot delayDuration={0} style={{ display: 'flex', marginLeft: 'auto' }}>
             <NavList>
-              <NavItem key={'About'}>
+              <NavItem key={'about'}>
                 <NavTrigger onMouseEnter={recordMouseEnter}>
                   <NavLink asChild>
-                    <Link href={'https://near.org'}>About</Link>
+                    <Link href={'https://near.org'}>ABOUT</Link>
                   </NavLink>
                 </NavTrigger>
               </NavItem>
@@ -117,23 +128,25 @@ export const NearAI = (props: any) => {
           </NavRoot>
         </Flex>
         <Container $center>
-          <Pattern style={{ height: '200px', minHeight: '200px' }}>
-            <PatternContent>
+          <Pattern style={{ height: '150px', minHeight: '150px' }}>
+            <PatternContent style={{ color: 'white' }}>
               <Flex $gap="32px" $direction="column" $alignItems="center" style={{ margin: '2rem' }}>
-                <H1>NEAR AI</H1>
+                <Title style={{}}>NEAR AI</Title>
 
-                <Text $size="text-l" $mobileSize="text-base">
-                  NEAR AI: Digital self-sovereignty for the creator economy.
-                </Text>
+                {/*<Text $size="text-l" $mobileSize="text-base" style={{color: 'white'}}>*/}
+                {/*  NEAR AI: Digital self-sovereignty for the creator economy.*/}
+                {/*</Text>*/}
               </Flex>
             </PatternContent>
           </Pattern>
         </Container>
       </Section>
-      <Section style={{ padding: 0 }}>
-        <StaticBlogPage bloghtml={props.bloghtml} /> {/*contains a hardcoded blog link*/}
-      </Section>
-      <Section $backgroundColor="#9797FF" style={{ padding: '20px 0 0 0' }}></Section>
-    </Wrapper>
+      <Container $center>
+        <Section style={{ padding: 0, textAlign: 'left' }}>
+          <NearAIHome />
+        </Section>
+      </Container>
+      <Section style={{ padding: '20px 0 0 0' }}></Section>
+    </ContentWrapper>
   );
 };
