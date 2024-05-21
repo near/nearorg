@@ -57,7 +57,11 @@ export const CookiePrompt = () => {
     <Wrapper>
       <Text $size="text-s" $mobileSize="text-xs">
         We use our own and third-party cookies on our website to enhance your experience, analyze traffic, and for
-        marketing. For more information see our <Link href="/cookies">Cookie Policy</Link>.
+        marketing. For more information see our&nbsp;
+        <Link target="_blank" href="/cookies">
+          Cookie Policy
+        </Link>
+        .
       </Text>
 
       <Actions>
