@@ -264,7 +264,8 @@ const communityItems = [
     description:
       'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
     image: images.community.devHub,
-    url: '/devgovgigs.near/widget/Ideas',
+    url: 'https://dev.near.org/devhub.near/widget/app?page=communities',
+    target: '_blank',
   },
   {
     name: 'Horizon',
