@@ -64,7 +64,7 @@ export const EcosystemOverview = () => {
             </Text>
             <div>
               <Button
-                href="/devhub.near/widget/app"
+                href="/devhub.near/widget/app?page=communities"
                 target="_blank"
                 label="Explore DevHub"
                 variant="secondary"
