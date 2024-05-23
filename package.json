@@ -6,11 +6,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "lint:pre-commit": "next lint --max-warnings 0",
     "prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json}'",
     "prettier:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json}'",
     "ts:check": "tsc --noEmit --incremental",
-    "pre-commit": "npm run lint:pre-commit && npm run prettier:write && npm run ts:check",
+    "pre-commit": "npm run lint:pre-commit && npm run prettier && npm run ts:check",
     "sync-submodules": "git submodule init && git submodule update",
     "prepare": "husky"
   },
