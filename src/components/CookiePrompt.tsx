@@ -8,6 +8,7 @@ import { Text } from './lib/Text';
 
 const Wrapper = styled.div`
   position: fixed;
+  z-index: 1000;
   bottom: 1rem;
   left: 0;
   right: 0;
