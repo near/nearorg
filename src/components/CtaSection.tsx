@@ -1,5 +1,3 @@
-import { CREATE_ACCOUNT_URL } from '@/utils/constants';
-
 import { Button } from './lib/Button';
 import { Container } from './lib/Container';
 import { Flex } from './lib/Flex';

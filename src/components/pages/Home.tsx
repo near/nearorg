@@ -767,7 +767,7 @@ export const Home = () => {
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
               {news.map((post) => (
-                <Article key={post.title} href={post.url} target="_blank">
+                <Article key={post.title + post.createdAt} href={post.url} target="_blank">
                   <ArticleImage>
                     <img src={post.thumbnail} alt={post.title} />
                   </ArticleImage>
@@ -818,7 +818,7 @@ export const Home = () => {
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
               {events.map((event) => (
-                <Article key={event.title} href={event.url} target="_blank" style={{ minWidth: 0 }}>
+                <Article key={event.title + event.date} href={event.url} target="_blank" style={{ minWidth: 0 }}>
                   <ArticleImage>
                     <img src={event.thumbnail} alt={event.title} />
                   </ArticleImage>
