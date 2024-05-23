@@ -35,6 +35,11 @@ const nextConfig = {
       // Please keep redirects in alphabetical order based on `source`:
 
       {
+        source: '/about',
+        destination: `${appGatewayHostname}/learn`,
+        permanent: false,
+      },
+      {
         source: '/applications',
         destination: `${appGatewayHostname}/applications`,
         permanent: true,
@@ -47,6 +52,16 @@ const nextConfig = {
       {
         source: '/brand',
         destination: 'https://pages.near.org/brand',
+        permanent: false,
+      },
+      {
+        source: '/bridge',
+        destination: `${appGatewayHostname}/bridge`,
+        permanent: false,
+      },
+      {
+        source: '/edit/:path*',
+        destination: `${appGatewayHostname}/edit/:path*`,
         permanent: true,
       },
       {
@@ -132,6 +147,11 @@ const nextConfig = {
       {
         source: '/pitch',
         destination: 'https://nearpitchfestconsensus.splashthat.com/',
+        permanent: false,
+      },
+      {
+        source: '/privacy',
+        destination: `${appGatewayHostname}/privacy`,
         permanent: false,
       },
       {
