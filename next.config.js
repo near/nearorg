@@ -202,6 +202,16 @@ const nextConfig = {
         destination: 'https://airtable.com/appr1nBRRGx2PTJVh/shrpa99vKKW3xafso',
         permanent: false,
       },
+      {
+        source: '/settings',
+        destination: `${appGatewayHostname}/settings`,
+        permanent: true,
+      },
+      {
+        source: '/settings/:path*',
+        destination: `${appGatewayHostname}/settings/:path*`,
+        permanent: true,
+      }
     ];
   },
   rewrites: async () => [
