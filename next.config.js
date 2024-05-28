@@ -35,8 +35,8 @@ const nextConfig = {
       // Please keep redirects in alphabetical order based on `source`:
 
       {
-        source: '/about',
-        destination: `${appGatewayHostname}/learn`,
+        source: '/about/:path*',
+        destination: `https://pages.near.org/about/:path*`,
         permanent: false,
       },
       {
