@@ -4,15 +4,14 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import StaticBlogPage from '@/components/pages/NearAISingleBlog';
 import { recordMouseEnter } from '@/utils/analytics';
 
-import { Container } from '../lib/Container';
-import { Flex } from '../lib/Flex';
-import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
+import { Container } from '../../lib/Container';
+import { Flex } from '../../lib/Flex';
+import { Pattern, PatternContent } from '../../lib/Pattern';
+import { Section } from '../../lib/Section';
+import { H1 } from '../../lib/Text';
+import { Wrapper } from '../../lib/Wrapper';
 import { NearAIHome } from './NearAIHome';
 
 const ContentWrapper = styled(Wrapper)`
@@ -110,7 +109,7 @@ const Title = styled(H1)`
   color: var(--near-green);
 `;
 
-export const NearAI = (props: any) => {
+export const NearAI = () => {
   return (
     <ContentWrapper>
       <Section style={{ padding: '20px 0 0 0', color: 'white' }}>

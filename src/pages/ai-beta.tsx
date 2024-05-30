@@ -2,7 +2,7 @@ import type { GetServerSideProps } from 'next';
 
 import { NearAILayout } from '@/components/layouts/NearAILayout';
 import { MetaTags } from '@/components/MetaTags';
-import { NearAI } from '@/components/pages/NearAI';
+import { NearAI } from '@/components/pages/NearAI/NearAI';
 import type { NextPageWithLayout } from '@/utils/types';
 
 export const getServerSideProps = (async () => {
@@ -25,7 +25,7 @@ const NearAIPage: NextPageWithLayout = (props) => {
       <MetaTags title="NEAR AI" description="NEAR AI: Digital self-sovereignty for the creator economy." />
 
       <NearAILayout>
-        <NearAI bloghtml={props.bloghtml} />
+        <NearAI />
       </NearAILayout>
     </>
   );
