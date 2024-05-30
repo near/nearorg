@@ -119,7 +119,7 @@ export const NearAI = () => {
               <NavItem key={'about'}>
                 <NavTrigger onMouseEnter={recordMouseEnter}>
                   <NavLink asChild>
-                    <Link href={'https://near.org'}>ABOUT</Link>
+                    <Link href={'/about-nearai'}>ABOUT</Link>
                   </NavLink>
                 </NavTrigger>
               </NavItem>
