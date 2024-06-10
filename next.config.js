@@ -180,6 +180,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/use-cases/:path*',
+        destination: `${appGatewayHostname}/use-cases/:path*`,
+        permanent: false,
+      },
+      {
         source: '/validators',
         destination: 'https://pages.near.org/validators',
         permanent: true,
