@@ -29,6 +29,7 @@ export const NearAIAbout = () => {
           <Pattern style={{ height: '500px', minHeight: '150px' }}>
             <PatternContent style={{ color: 'white' }}>
               <Flex $gap="32px" $direction="column" $alignItems="center" style={{ margin: '2rem' }}>
+                <Title style={{}}>NEAR AI</Title>
                 <Text $size="text-l" $mobileSize="text-base" style={{ color: 'var(--near-green)' }}>
                   NEAR.AI is an open source R&D effort within the NEAR Foundation, led by NEAR Protocol co-founders Alex
                   Skidanov and Illia Polosukhin.
