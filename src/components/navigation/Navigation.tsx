@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { DesktopNavigation } from './desktop/DesktopNavigation';
-import { MobileNavigation } from './mobile/MobileNavigation';
 
 export const Navigation = () => {
   const [matches, setMatches] = useState(true);
@@ -16,8 +15,7 @@ export const Navigation = () => {
 
   return (
     <>
-      {matches && <DesktopNavigation />}
-      {!matches && <MobileNavigation />}
+      <DesktopNavigation />
     </>
   );
 };

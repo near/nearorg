@@ -7,29 +7,8 @@ const IBAN_BLOCKED_REGIONS = ['CU', 'IR', 'KP', 'SY'];
 // Limit middleware triggering to specific routes
 export const config = {
   matcher: [
-    '/:path*/widget/:slug*',
-    '/:path*/component/:slug*',
     '/files/:path*',
-    '/papers/:path*',
     '/blog/:path*',
-    '/applications/:path*',
-    '/signup/:path*',
-    '/signin/:path*',
-    '/ecosystem/:path*',
-    '/founders/:path*',
-    '/people',
-    '/learn/:path*',
-    '/events/',
-    '/sandbox',
-    '/onboarding',
-    '/applications',
-    '/components',
-    '/gateways',
-    '/blockchain',
-    '/open-web-applications',
-    '/data-availability',
-    '/fast-auth-and-relayers',
-    '/data-infrastructure',
   ],
 };
 

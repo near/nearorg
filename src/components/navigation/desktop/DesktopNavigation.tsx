@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import NearLogo from '../icons/near-logo.svg';
-import { MainNavigationMenu } from './MainNavigationMenu';
+import { SimpleNavigationMenu } from '@/components/navigation/desktop/SimpleNavigationMenu';
 
 const Wrapper = styled.div`
   --nav-height: 75px;
@@ -12,9 +12,10 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background-color: white;
+  background-color: black;
+    color: var(--near-green);
   height: var(--nav-height);
-  box-shadow: 0 1px 0 var(--sand6);
+  //box-shadow: 0 1px 0 var(--sand6);
   padding: 0 1.75rem;
 `;
 
@@ -49,13 +50,7 @@ export const DesktopNavigation = () => {
     <>
       <Wrapper>
         <Container>
-          <Link href="/" passHref legacyBehavior>
-            <Logo>
-              <Image priority src={NearLogo} alt="NEAR" />
-            </Logo>
-          </Link>
-
-          <MainNavigationMenu />
+          <SimpleNavigationMenu />
         </Container>
       </Wrapper>
     </>

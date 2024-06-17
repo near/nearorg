@@ -48,9 +48,9 @@ export const NearAIHome = () => {
           <div className="relative" style={{ backgroundColor: '#ccc' }}>
             <div>
               <img
-                alt="Image | NEAR &amp; Social Good: Bringing Web3 to the Fringes"
+                alt="Image | NEAR AI Master Plan"
                 className="md:w-auto order-2 rounded-[10px] sm:col-span-2 sm:mb-[48px] sm:order-1 w-full"
-                src="https://pages.near.org/wp-content/uploads/2024/01/illia-dragon-social.png"
+                src="/images/illia-dragon-social.webp"
               />
             </div>
             <Content>
