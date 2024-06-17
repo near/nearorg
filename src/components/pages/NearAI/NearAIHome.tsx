@@ -8,6 +8,7 @@ const Content = styled.div`
   //color: #e7e7e7;
   color: #000;
   background-color: #ccc;
+
   p {
     font-size: 16px;
     margin-bottom: 1.5em;
@@ -37,6 +38,7 @@ const H1 = styled.h1`
   font-weight: 700;
   margin-top: 1em;
   margin-bottom: 1em;
+  text-align: center;
 `;
 export const NearAIHome = () => {
   return (
@@ -52,199 +54,108 @@ export const NearAIHome = () => {
               />
             </div>
             <Content>
-              <H1> Self-Sovereignty Is NEAR: A Vision for Our Ecosystem </H1>
+              <H1> NEAR.AI Master Plan </H1>
               <div className="flex items-center justify-between mb-[20px]">
-                <div className="font-[400] text-[#6D7073] text-[14px] uppercase"> A Post from Illia Polosukhin</div>
-                <div className="font-[400] text-[#6D7073] text-[14px]"> January 19, 2024</div>
+                <div className="font-[400] text-[#6D7073] text-[14px] uppercase">Illia Polosukhin</div>
+                <div className="font-[400] text-[#6D7073] text-[14px]"> May, 2024</div>
               </div>
               <div className="md:prose-base prose">
                 <p>
-                  As a kid growing up in Ukraine in the ’90s after the dissolution of the USSR, I remember we watched
-                  the price of bread go from 1,000 karbovanets, to 10,000, to 100,000 in less than five years (until
-                  that currency was thrown out altogether and replaced with hryvnia). When I first started working as a
-                  software developer as a teenager, I kept my earnings in cash in my room because I already understood
-                  that we couldn’t trust corrupt banks with our money.
+                  NEAR.AI will build towards Open Source AGI (artificial general intelligence). Here is the plan:
+                  <ul>
+                    <li>Teaching machines to code: AI Developer</li>
+                    <li>Use AI Developer to teach machines to do research: AI Researcher</li>
+                    <li>Use AI Researcher to advance science towards AGI that is owned by all</li>
+                  </ul>
                 </p>
                 <p>
-                  Between 2014 and 2016 alone, 77 banks failed in Ukraine. My grandparents still have their savings
-                  account bank books tracking the money they put away during the USSR years––but those savings don’t
-                  exist anymore. So even something that is yours, that you rightfully own, can go away if the system
-                  you’re a part of fails. The same thing is happening to millions of people living under hyperinflation,
-                  dictatorships, and war zones across the world, of course. And while these may seem like abstract or
-                  distant problems that won’t arrive at your doorstep, let me tell you from my own experience: nothing
-                  is guaranteed.&nbsp;
+                  We commit to building in Open Source as a non-profit organization, the NEAR Foundation, driven by the
+                  vision of{' '}
+                  <a href="https://near.org/blog/self-sovereignty-is-near-a-vision-for-our-ecosystem" target="_blank">
+                    Self-Sovereignty
+                  </a>
+                  . The NEAR ecosystem is best positioned to achieve this vision at scale by combining user distribution
+                  in the tens of millions, a Web3 developer ecosystem that includes a growing number of AI projects, and
+                  ample financial resources required to succeed in AI.
                 </p>
                 <p>
-                  Every system is as fragile as the rules holding it together. And the rules can change. They’re
-                  changing around us right now, and I believe we are approaching a point of no return.&nbsp;
+                  NEAR&apos;s initial product is a scalable blockchain that is easy to use and develop on, with more
+                  active users than any other blockchain today. But the long term NEAR vision has always been to enable
+                  all people to control their assets, data, and power of choice by transforming how we interact with
+                  computing: I call this the Self Sovereign Operating System.
                 </p>
                 <p>
-                  <strong>The Need for Digital Self-Sovereignty</strong>
+                  Critical to achieving this vision is User-Owned AI with capabilities that serve on the user’s behalf,
+                  able to access all the users’ data without leaking it to third parties while optimizing for users’
+                  benefit. User-owned AI means offering users the ability to customize their computing experience to the
+                  deepest level without any compromises on ownership, privacy, or security. Beyond individual users, it
+                  works across communities and brands while facilitating direct transactions without a middleman.
                 </p>
                 <p>
-                  We need to create new economic opportunities for people everywhere via self-sovereignty, which should
-                  be a universal right and which technology can now provide, not just nation-states as in most other
-                  points in history. For citizens of nations who’ve enjoyed economic security and a high degree of
-                  sovereignty, this may not seem like an immediate-term issue. But it is.&nbsp;
+                  The NEAR.AI team, led by Alex Skidanov and me, will first build an “AI Developer.” We are attacking
+                  the core problem: how to build end-to-end applications from user intent. Imagine asking an AI
+                  Developer to build a note-taking app that has specific features personalized for you and all your data
+                  is guaranteed to stay private.
                 </p>
                 <p>
-                  The economics of tech companies leads inevitably to corrupting their original product or vision for
-                  the sake of profit in order to maintain growth, and more importantly, they naturally involve creating
-                  barriers for someone else to disrupt. In order to maintain their power, governments will use pressure
-                  and ingenuity in order to control their populations, too often to the point of violating human rights
-                  in the name of safety or security.&nbsp;
+                  At NEAR, we started building an AI Developer in 2017. My work on Transformers got me excited that we
+                  could make progress on this world-changing problem. We tried building a co-pilot (
+                  <a href="https://youtu.be/dNQV05Qry3A?si=6tIjKtnmExKe2M81" target="_blank">
+                    video from 2017 of first AI-driven autocomplete
+                  </a>
+                  ) but this approach didn’t accomplish what we wanted. We tried to go directly for mobile application
+                  building, but the problem space was too broad for models at the time. When we first looked at smart
+                  contracts, we felt they were an interesting subset of coding but they were overshadowed by too many
+                  other challenges with blockchains at that point in time.
                 </p>
                 <p>
-                  We all use our phones and computers a thousand times a day, prioritizing convenience over
-                  self-sovereignty because <em>until now, we haven’t had a choice</em>. We are now approaching a tipping
-                  point towards a dystopian future that we may not be able to come back from, brought on not just by
-                  governments but by the economics of tech companies. What happens when these incentives increasingly
-                  collide and push each other deeper into the lives of individuals for the sake of maintaining control
-                  and profit?&nbsp;
-                </p>
-                <p>That’s right about where we are today.&nbsp;</p>
-                <p>
-                  <strong>Changing the Stakes with Generative AI</strong>
-                </p>
-                <p>
-                  Before founding NEAR, I was an AI researcher. I worked at Google where I contributed to TensorFlow,
-                  and eventually published a paper with a handful of colleagues called “Attention Is All You Need.” That
-                  paper introduced the Transformers architecture that powers ChatGPT, Bard, and most of the well-known
-                  LLMs behind last year’s explosive growth in AI.&nbsp;
+                  Then{' '}
+                  <a href="https://near.org/blog/near-ai-near-protocol" target="_blank">
+                    NEAR went through a transition
+                  </a>{' '}
+                  in 2018, pivoting to build a decentralized development platform that truly works: scales to billions
+                  of users, easy to use and program. This included a sharded blockchain protocol, decentralized
+                  frontends, and middleware/indexing to create an end-to-end application framework. We felt this was the
+                  best way to make an impact and empower developers at the time––we also thought it would take about six
+                  months and then we’d go back to AI.
                 </p>
                 <p>
-                  I was first interested in AI because of the 2001 movie, “Artificial Intelligence.” Changing how we
-                  interact with computing and augmenting one&#8217;s intelligence to maximize human potential was, and
-                  still is, very appealing to me. And I still think it has the potential to make human lives,
-                  organizations, even governments better. But like any other technology, in the hands of the wrong
-                  people or with the wrong incentives, it also has the potential to make our lives terrible.
+                  Now in mid-2024, there is a whole ecosystem of infrastructure and application builders who are
+                  expanding what is possible using NEAR. NEAR has onboarded tens of millions of users, 2 million of whom
+                  are daily active users, which creates a perfect substrate for the next stage of innovation: combining
+                  Web3 and AI.
                 </p>
                 <p>
-                  Generative AI is creating a universal and scalably personal method of enabling control and
-                  manipulation. Practically, it means your social feed and search results can ensure that you buy
-                  specific products or form a specific opinion. This will start in the form of commercial improvements
-                  that lead to more profit for tech giants: Netflix will generate a movie script that can shape your
-                  opinion, Facebook can reinforce that opinion by showing you more of it, and so on. This could even
-                  happen at a more fundamental level, such as flooding training data with specific information to
-                  influence all models trained on it.&nbsp;
+                  But there has been a major limitation in the blockchain space: products are fragmented across hundreds
+                  of chains while the number of products developed today is not enough to truly offer a competitive
+                  landscape to existing systems. There are less than{' '}
+                  <a href="https://www.developerreport.com/" target="_blank">
+                    7,000
+                  </a>{' '}
+                  full time developers in all of Web3, which is less than a single department at Google.
                 </p>
                 <p>
-                  If this granular information and vector of manipulation on such a personal level can be extracted or
-                  bought, it will be, and then it will become a tool for control. If it’s stored somewhere centralized
-                  and hackable, it will be stolen––we see this constantly with Web2 giants as it is. If governments can
-                  get access to this data, they will use it to maintain or grow their power.&nbsp;
+                  Web3 code is very valuable, meaning that it is expensive to develop and it supports multibillion
+                  dollar projects on top of quite small codebases composing with other applications. This is in contrast
+                  to the current Web2 software paradigm where a billion-dollar codebase contains orders of magnitude
+                  more code and complexity. By removing the expense to build Web3 products and instead generating them
+                  from simple language inputs, AI Developer will enable a major efficiency leap in creating valuable
+                  Web3 applications, unlocking a lot more value overall and making anyone a developer.
                 </p>
                 <p>
-                  The true danger that generative AI introduces is that this exploitation won’t just be on a systems
-                  level or a population level, it will become personal and incredibly specific. The depth of potential
-                  control and manipulation goes to the level of each and every human, no matter where they live, no
-                  matter where they keep their money. Such a powerful technology simply cannot remain in the hands of
-                  centralized companies, nor be too easy for governments to take over.
+                  NEAR.AI development will always be open source, providing software, datasets, and models to the
+                  broader community to develop other products. NEAR.AI will not be the only team working on this effort,
+                  but will combine forces across both the AI and Web3 ecosystems in the Open Source spirit. This will be
+                  important in order to execute faster than any centralized effort can, while using resources more
+                  efficiently via collaboration and incentives frameworks.
                 </p>
                 <p>
-                  <strong>So What Should We Do About It?</strong>
-                </p>
-                <p>
-                  So if people don’t yet feel the sense of urgency towards building new systems that uphold
-                  self-sovereignty, what will make it real for people? Changes in collective values are always driven by
-                  economic opportunity. The major revolutions of history started because of economic failures: American
-                  independence from Britain, the French Revolution, the collapse of the USSR, and so on. If people see
-                  ways to create better economic realities for themselves and their families, then they will turn values
-                  into actions.&nbsp;
-                </p>
-                <p>
-                  Creating new opportunities for people via self-sovereignty is what NEAR is about. Complete
-                  self-sovereignty&nbsp; has been the NEAR vision since day one: we want to build a world where all
-                  people can control their own assets, data, and power of governance. This sovereignty must apply not
-                  only at the level of individuals but also the organizations and communities they create, and
-                  eventually societies.&nbsp;
-                </p>
-                <p>
-                  Self-sovereignty is a new primitive that hasn’t existed before today. One always needed to rely on
-                  some power of violence for ensuring rules are followed, most recently nation-states. One of the core
-                  principles of digital self-sovereignty is the ability to choose and switch between any service
-                  provider. There is no lock- in. There are no middlemen like banks or government agencies that can lose
-                  or steal assets, or change the rules on you out of nowhere.&nbsp;
-                </p>
-                <p>
-                  Importantly, this must also apply to AI. People need to own their data so they know what it’s being
-                  used for and so they can actively consent to personalized experiences they think will improve their
-                  lives. Models must be governed transparently, in public, with clear rules and monitoring to
-                  proactively manage risk and reputation systems to build more clarity around information and
-                  traceability. Web3 can help to uphold, scale, and manage such systems to ensure AI is a force for good
-                  while also preventing it from being too exploitable.&nbsp;
-                </p>
-                <p>
-                  Another major challenge, which is especially clear in governance but it also applies to corporations,
-                  is that when we select someone to represent our ideas for us as our delegate, they will always have
-                  their own interests and motivations in the mix as well. They don’t necessarily have nefarious
-                  intentions, it’s just a natural tendency. This is the “principal agent problem,” wherein the person
-                  elected behaves differently than the people who elected them or pay them would prefer based on their
-                  best interests. This is where AI governance systems can help by introducing neutral agents, where
-                  unbiased AI agents governed directly by a community can act on their behalf in a more reliable way.
-                  With transparent governance and monitoring, AI can be a force for good in individual lives as well as
-                  for the collective.&nbsp;
-                </p>
-                <p>
-                  <strong>A Vision for the NEAR Future</strong>
-                </p>
-                <p>
-                  Despite my concerns about where the traditional tech paradigm is potentially heading, I remain a
-                  techno-optimist. I wouldn’t be doing this work if I didn’t think it was for the good of everyone, and
-                  I’ve read enough sci-fi to know that the outcomes of science and technology are much more about what
-                  people do with them than the tech itself. If we want something, we should build it.&nbsp;
-                </p>
-                <p>
-                  I would like NEAR to become a fully sovereign operating system that is equipped with a personal AI
-                  assistant that optimizes for users’ needs without revealing private information about the user’s data
-                  or assets. It should also be able to interact and transact with other people’s AIs and the community’s
-                  AIs peer-to-peer. I call this “user-owned AI.”
-                </p>
-                <p>
-                  We also need shared community AIs, which are governed by the members of such a community. They
-                  represent the mix of needs and knowledge of all the members of such a community, from something like a
-                  small club or startup, to the city, to the nation-state, to the global level. There is always an
-                  opportunity to fork one community and create new ones. The community governs which data goes into
-                  training its community model, and can run inference (running live data through a model) privately in
-                  such a way that only the user sees input and output, while getting a proof that the selected model was
-                  used.
-                </p>
-                <p>To facilitate this vision, a lot of pieces need to come together:</p>
-                <ul>
-                  <li>Economic and technological opportunity to enable users to onboard en masse.</li>
-                  <li>Open source software across the stack, from blockchain tech to AI models.</li>
-                  <li>
-                    Blockchains must get abstracted away from the user so they are not barriers to entry or
-                    participation. I call this the principle of Chain Abstraction.
-                  </li>
-                  <li>
-                    Applications must provide a novel value unlock: for example,&nbsp;
-                    <a href="https://kaikai.ai/">Cosmose</a>&nbsp; and <a href="https://sweateconomy.com/">Sweat</a>.
-                    These apps reward users and serve as an economic gateway into a broader ecosystem of opportunities.
-                  </li>
-                  <li>
-                    On-edge, meaning hyperlocal, AI models that are usable by individuals (and free of manipulation).
-                  </li>
-                  <li>
-                    Community-owned AI models with governance and economic opportunity, replacing everything from
-                    business ops to government agencies. Self-governance by the people, for the people, at scale with
-                    the help of technology and decentralized peer-to-peer systems.
-                  </li>
-                </ul>
-                <p>
-                  Blockchains, peer-to-peer payments, Web3, zero-knowledge, very large language models and on-edge AI
-                  models: these are not separate technology verticals, but rather interconnected facets of a new digital
-                  paradigm of self-sovereignty.&nbsp;
-                </p>
-                <p>
-                  We have the tools to remake how we provide for ourselves, how we work together and govern ourselves,
-                  and how we consume and generate information. Without gatekeepers, fair and open to everyone. And this
-                  is not a futuristic vision: it’s possible to start experimenting and building now, before our fragile
-                  and outdated systems and structures get weaker or fail, before too much centralization leads to the
-                  worst outcomes instead of the ones we all design and share together.
-                  <br />
-                  <br />
-                  ––<em>Illia Polosukhin, Co-Founder of NEAR and CEO of NEAR Foundation</em>
+                  To achieve this, we will need to engage the creativity of the community to unlock the range of new
+                  applications people want to build. We will need a range of infrastructure that goes beyond core
+                  blockchain primitives: peer-to-peer communication, on-edge data and inference, decentralized data
+                  storage, private computation, and more. We will need more developers than ever to actually write code
+                  to train the model. All of this is only possible by engaging a wide NEAR ecosystem and by leveraging
+                  the existing $NEAR token-based economy.
                 </p>
                 <p style={{ paddingBottom: '2rem' }}></p>
               </div>

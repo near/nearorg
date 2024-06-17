@@ -17,7 +17,6 @@ const ContentWrapper = styled(Wrapper)`
   --near-green: #00ec97;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
 `;
 
 const NavRoot = styled(NavigationMenu.Root)`
@@ -126,7 +125,7 @@ export const NearAIAbout = () => {
           </NavRoot>
         </Flex>
         <Container $center>
-          <Pattern style={{ height: '150px', minHeight: '150px' }}>
+          <Pattern style={{ height: '500px', minHeight: '150px' }}>
             <PatternContent style={{ color: 'white' }}>
               <Flex $gap="32px" $direction="column" $alignItems="center" style={{ margin: '2rem' }}>
                 <Title style={{}}>ABOUT NEAR AI</Title>
@@ -135,7 +134,7 @@ export const NearAIAbout = () => {
                   NEAR.AI is an open source R&D effort within the NEAR Foundation, led by NEAR Protocol co-founders Alex
                   Skidanov and Illia Polosukhin.
                 </Text>
-                <Text $size="text-l" $mobileSize="text-base" style={{ color: 'white' }}>
+                <Text $size="text-l" $mobileSize="text-base" style={{ color: 'white', textAlign: 'left' }}>
                   NEAR.AI is building towards Open Source AGI (artificial general intelligence) in 3 phases:
                   <ul>
                     <li>Teaching machines to code: AI Developer</li>

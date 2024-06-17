@@ -24,6 +24,7 @@ const Content = styled.div`
   justify-content: stretch;
   align-items: stretch;
   min-width: 0;
+  background-color: black;
 `;
 
 export function NearAILayout({ children }: Props) {
