@@ -96,7 +96,7 @@ export const SimpleNavigationMenu = () => {
             <NavItem key={'home'}>
               <NavTrigger onMouseEnter={recordMouseEnter}>
                 <NavLink asChild>
-                  <Link href={'/beta'}>NEAR AI</Link>
+                  <Link href={'/beta'} style={{fontSize: '2rem'}}>NEAR AI</Link>
                 </NavLink>
               </NavTrigger>
             </NavItem>
