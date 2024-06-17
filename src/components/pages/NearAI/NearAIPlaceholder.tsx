@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Container } from '../lib/Container';
-import { Section } from '../lib/Section';
-import { Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
+import { Container } from '../../lib/Container';
+import { Section } from '../../lib/Section';
+import { Text } from '../../lib/Text';
+import { Wrapper } from '../../lib/Wrapper';
 
 export const NearAIPlaceholder = () => {
   return (

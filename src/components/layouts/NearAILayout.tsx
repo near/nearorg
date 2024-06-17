@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   min-width: 0;
+  --background-color: black;
+  --color: white;
+  color: var(--color);
 `;
 
 const Content = styled.div`
@@ -21,6 +24,7 @@ const Content = styled.div`
   justify-content: stretch;
   align-items: stretch;
   min-width: 0;
+  background-color: black;
 `;
 
 export function NearAILayout({ children }: Props) {
