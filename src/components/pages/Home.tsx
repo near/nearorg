@@ -138,21 +138,24 @@ const featuredApps = [
     accountId: 'hack.near',
     description: 'Ranking starred components',
     image: images.apps.bosAllStars,
-    url: '/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
+    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
+    target: '_blank',
   },
   {
     name: 'BOS Hacks',
     accountId: 'ndcplug.near',
     description: 'The 2 week B.O.S Hackathon on B.O.S',
     image: images.apps.bosHacks,
-    url: '/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
+    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
+    target: '_blank',
   },
   {
     name: 'NUI',
     accountId: 'nearui.near',
     description: ' A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
     image: images.apps.nui,
-    url: '/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
+    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
+    target: '_blank',
   },
 ];
 
@@ -255,6 +258,7 @@ const learnItems = [
     description: 'Starter kit to learn about blockchain technology, web3, and the NEAR protocol.',
     icon: 'ph-book-open-text',
     url: 'https://dev.near.org/learn',
+    target: '_blank',
   },
 ];
 
@@ -264,13 +268,15 @@ const communityItems = [
     description:
       'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
     image: images.community.devHub,
-    url: '/devgovgigs.near/widget/Ideas',
+    url: 'https://dev.near.org/devhub.near/widget/app?page=communities',
+    target: '_blank',
   },
   {
     name: 'Horizon',
     description: 'Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.',
     image: images.community.horizon,
     url: '/horizon',
+    target: '_blank',
   },
   {
     name: 'Near Digital Collective (NDC)',
@@ -433,13 +439,21 @@ export const Home = () => {
                   variant="secondary"
                   fill="outline"
                   size="large"
+                  target="_blank"
                 />
               </Flex>
             </Flex>
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px">
               {featuredApps.map((app) => (
-                <Card $clickable as="a" href={app.url} style={{ borderColor: 'var(--sand12)' }} key={app.name}>
+                <Card
+                  $clickable
+                  as="a"
+                  href={app.url}
+                  style={{ borderColor: 'var(--sand12)' }}
+                  key={app.name}
+                  target={app.target}
+                >
                   <Flex $alignItems="center" $gap="24px">
                     <CardThumbnail>
                       <img src={returnImageSrc(app.image)} alt={app.name} />
@@ -542,6 +556,7 @@ export const Home = () => {
                   variant="affirmative"
                   size="large"
                   className="darkButton"
+                  target="_blank"
                 />
               </div>
             </>
@@ -605,6 +620,7 @@ export const Home = () => {
                   variant="secondary"
                   fill="outline"
                   size="large"
+                  target="_blank"
                 />
               </div>
             </>
@@ -744,13 +760,14 @@ export const Home = () => {
                   variant="affirmative"
                   size="large"
                   className="darkButton"
+                  target="_blank"
                 />
               </Flex>
             </Flex>
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
               {news.map((post) => (
-                <Article key={post.title} href={post.url} target="_blank">
+                <Article key={post.title + post.createdAt} href={post.url} target="_blank">
                   <ArticleImage>
                     <img src={post.thumbnail} alt={post.title} />
                   </ArticleImage>
@@ -801,7 +818,7 @@ export const Home = () => {
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
               {events.map((event) => (
-                <Article key={event.title} href={event.url} target="_blank" style={{ minWidth: 0 }}>
+                <Article key={event.title + event.date} href={event.url} target="_blank" style={{ minWidth: 0 }}>
                   <ArticleImage>
                     <img src={event.thumbnail} alt={event.title} />
                   </ArticleImage>

@@ -1,5 +1,6 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
+import type { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 
 import { recordMouseEnter } from '@/utils/analytics';
@@ -44,7 +45,7 @@ const NavTrigger = styled(NavigationMenu.Trigger)`
   transition: all 200ms;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &[data-state='open'] {
     background: var(--sand4);
   }
@@ -146,6 +147,16 @@ const NavSection = styled.div`
 `;
 
 export const MainNavigationMenu = () => {
+  const navTriggerClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    const target = event.target as HTMLButtonElement;
+
+    if (target.getAttribute('data-state') === 'open') {
+      // When a nav trigger is already open and then clicked, we ignore the click to keep the nav dropdown open
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  };
+
   return (
     <Wrapper>
       <NavRoot delayDuration={0}>
@@ -154,7 +165,9 @@ export const MainNavigationMenu = () => {
             .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (
               <NavItem key={category.title}>
-                <NavTrigger onMouseEnter={recordMouseEnter}>{category.title}</NavTrigger>
+                <NavTrigger onMouseEnter={recordMouseEnter} onClick={navTriggerClick}>
+                  {category.title}
+                </NavTrigger>
 
                 <NavContent>
                   <Container>

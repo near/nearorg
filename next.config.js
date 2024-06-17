@@ -35,6 +35,11 @@ const nextConfig = {
       // Please keep redirects in alphabetical order based on `source`:
 
       {
+        source: '/about/:path*',
+        destination: `https://pages.near.org/about/:path*`,
+        permanent: false,
+      },
+      {
         source: '/applications',
         destination: `${appGatewayHostname}/applications`,
         permanent: true,
@@ -47,6 +52,16 @@ const nextConfig = {
       {
         source: '/brand',
         destination: 'https://pages.near.org/brand',
+        permanent: false,
+      },
+      {
+        source: '/bridge',
+        destination: `${appGatewayHostname}/bridge`,
+        permanent: false,
+      },
+      {
+        source: '/edit/:path*',
+        destination: `${appGatewayHostname}/edit/:path*`,
         permanent: true,
       },
       {
@@ -135,6 +150,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/privacy',
+        destination: `${appGatewayHostname}/privacy`,
+        permanent: false,
+      },
+      {
         source: '/sandbox',
         destination: `${appGatewayHostname}/sandbox`,
         permanent: true,
@@ -157,6 +177,11 @@ const nextConfig = {
       {
         source: '/stakewars',
         destination: 'https://github.com/near/stakewars-iv',
+        permanent: false,
+      },
+      {
+        source: '/use-cases/:path*',
+        destination: `${appGatewayHostname}/use-cases/:path*`,
         permanent: false,
       },
       {
