@@ -9,29 +9,6 @@ const nextConfig = {
   redirects: async () => {
     return [
 
-      // near.ai domain redirect
-      {
-        source: '/',
-        has: [{
-          type: 'header',
-          key: 'host',
-          value: 'near.ai'
-        }],
-        destination: '/ai',
-        permanent: true
-      },
-      // near.ai testing
-      {
-        source: '/',
-        has: [{
-          type: 'header',
-          key: 'host',
-          value: 'nearai-marketing.vercel.app'
-        }],
-        destination: '/ai',
-        permanent: true
-      },
-
       // Please keep redirects in alphabetical order based on `source`:
 
       {
