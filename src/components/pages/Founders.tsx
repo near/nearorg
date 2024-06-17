@@ -49,6 +49,14 @@ const selfServeResources = [
     url: 'https://www.notion.so/near-horizon/Builder-Perks-cb5e5f55870c4c5da6bf9f72fbae35a9',
     target: '_blank',
   },
+  {
+    name: 'Token Launch Hub',
+    description:
+      'Discover detailed support and education on token launches with three free courses designed to enhance your understanding of incentive design and successful token launch strategies.',
+    icon: 'ph ph-users-three',
+    url: 'https://neartokenhub.com',
+    target: '_blank',
+  },
 ];
 
 const ecosystemCommunityResources = [
@@ -103,6 +111,16 @@ export const Founders = () => {
               From idea to launch, the NEAR FounderHub guides you every step of the way. Get the tailored resources,
               support, and community you need to launch and scale your Web3 project on NEAR.
             </Text>
+
+            <Flex>
+              <Button
+                href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
+                target="_blank"
+                label="Join our Founder Community"
+                variant="primary"
+                size="large"
+              />
+            </Flex>
           </Flex>
         </Container>
       </Section>
