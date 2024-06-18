@@ -69,7 +69,6 @@ const NavItem = styled(NavigationMenu.Item)`
 `;
 const NavLink = styled(NavigationMenu.Link)`
     padding: 7px;
-    margin-right: 12px;
     font: var(--text-s);
     color: var(--near-green);
     transition: color 200ms;
@@ -85,7 +84,7 @@ const NavLink = styled(NavigationMenu.Link)`
 
 export const SimpleNavigationMenu = () => {
   return (
-    <Flex $gap="10px" $direction="column" $alignItems="left">
+    <Flex $gap="2px" $direction="column" $alignItems="left">
 
       {/*<Text $size="text-l" $mobileSize="text-base" style={{color: 'white'}}>*/}
       {/*  NEAR AI: Digital self-sovereignty for the creator economy.*/}
@@ -113,6 +112,15 @@ export const SimpleNavigationMenu = () => {
               <NavTrigger onMouseEnter={recordMouseEnter}>
                 <NavLink asChild>
                   <Link href={'/about'} style={{padding: 0}}>About</Link>
+                </NavLink>
+              </NavTrigger>
+            </NavItem>
+            <NavItem key={'twitter'}>
+              <NavTrigger onMouseEnter={recordMouseEnter}>
+                <NavLink asChild>
+                  <Link href={'https://x.com/near_ai'} target="_blank" style={{padding: 0}}>
+                    <img src={'/images/x-logo.svg'} alt={'X | Twitter'} style={{width: '0.8rem', height: '0.8rem'}}/>
+                  </Link>
                 </NavLink>
               </NavTrigger>
             </NavItem>
