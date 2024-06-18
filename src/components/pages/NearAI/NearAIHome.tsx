@@ -29,6 +29,7 @@ const Content = styled.div`
         Segoe UI Symbol,
         Noto Color Emoji;
         text-rendering: optimizeLegibility;
+        padding: 0 1rem
     }
 `;
 

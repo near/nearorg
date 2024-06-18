@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     color: var(--near-green);
   height: var(--nav-height);
   //box-shadow: 0 1px 0 var(--sand6);
-  padding: 0 1.75rem;
+  padding: 0;
 `;
 
 const Container = styled.div`
