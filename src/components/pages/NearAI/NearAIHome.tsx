@@ -175,10 +175,7 @@ export const NearAIHome = () => {
                   communities rather than large companies or governments. Therefore, in order to benefit everyone, all
                   AI and eventually AGI must be Open Source and User-Owned.
                 </p>
-                <div className="flex items-center justify-between mb-[20px]">
-                  <div className="font-[400] text-[#6D7073] text-[14px]">Illia Polosukhin, June 2024</div>
-                </div>
-                <p style={{ paddingBottom: '2rem' }}></p>
+                <p style={{ paddingBottom: '2rem' }}>--Illia Polosukhin, June 2024</p>
               </div>
             </Content>
           </div>
