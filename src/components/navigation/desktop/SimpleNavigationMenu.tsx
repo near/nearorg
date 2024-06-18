@@ -26,7 +26,7 @@ const NavTrigger = styled(NavigationMenu.Trigger)`
     font: var(--text-s);
     //color: var(--sand12);
     font-weight: 600;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     height: 40px;
     display: flex;
     align-items: center;
@@ -85,13 +85,13 @@ const NavLink = styled(NavigationMenu.Link)`
 
 export const SimpleNavigationMenu = () => {
   return (
-    <Flex $gap="32px" $direction="column" $alignItems="center" style={{ margin: '2rem' }}>
+    <Flex $gap="10px" $direction="column" $alignItems="left">
 
       {/*<Text $size="text-l" $mobileSize="text-base" style={{color: 'white'}}>*/}
       {/*  NEAR AI: Digital self-sovereignty for the creator economy.*/}
       {/*</Text>*/}
-      <Flex $alignItems="right" style={{ paddingRight: '2rem' }}>
-        <NavRoot delayDuration={0} style={{ display: 'flex', marginLeft: 'auto' }}>
+      <Flex $alignItems="left">
+        <NavRoot delayDuration={0} style={{ display: 'flex'}}>
           <NavList>
             <NavItem key={'home'}>
               <NavTrigger onMouseEnter={recordMouseEnter}>
@@ -104,7 +104,7 @@ export const SimpleNavigationMenu = () => {
               <NavTrigger onMouseEnter={recordMouseEnter}>
                 <NavLink asChild>
                   <Link href={'https://www.youtube.com/watch?v=ye_2k7dxtCE&list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY'}
-                  target="_blank">AI
+                  target="_blank" style={{padding: 0}}>AI
                     Office Hours</Link>
                 </NavLink>
               </NavTrigger>
@@ -112,7 +112,7 @@ export const SimpleNavigationMenu = () => {
             <NavItem key={'about'}>
               <NavTrigger onMouseEnter={recordMouseEnter}>
                 <NavLink asChild>
-                  <Link href={'/about'}>About</Link>
+                  <Link href={'/about'} style={{padding: 0}}>About</Link>
                 </NavLink>
               </NavTrigger>
             </NavItem>
