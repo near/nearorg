@@ -10,6 +10,12 @@ const nextConfig = {
     return [
 
       {
+        source: '/nearai-master-plan',
+        destination: `/`,
+        permanent: false,
+      },
+
+      {
         source: '/privacy',
         destination: `${appGatewayHostname}/privacy`,
         permanent: false,
