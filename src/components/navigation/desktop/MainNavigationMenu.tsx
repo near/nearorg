@@ -146,6 +146,7 @@ const NavSection = styled.div`
   align-items: center;
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NearAiLink = styled(NavLink)`
   all: unset;
   display: flex;
@@ -191,14 +192,15 @@ export const MainNavigationMenu = () => {
     <Wrapper>
       <NavRoot delayDuration={0}>
         <NavList>
-          <NavItem>
+          {/* TODO: Enable this when the Near AI page is ready */}
+          {/* <NavItem>
             <NearAiLink asChild>
               <Link href="/ai">
                 Near AI
                 <i className="ph-fill ph-star-four" />
               </Link>
             </NearAiLink>
-          </NavItem>
+          </NavItem> */}
           {navigationCategories
             .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (

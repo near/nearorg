@@ -112,6 +112,7 @@ const NavSection = styled.div`
   align-items: center;
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NearAiLink = styled(Link)`
   all: unset;
   box-sizing: border-box;
@@ -138,10 +139,11 @@ const NearAiLink = styled(Link)`
 export const AccordionMenu = (props: Props) => {
   return (
     <Wrapper>
-      <NearAiLink href="/ai">
+      {/* TODO: Enable this when the Near AI page is ready */}
+      {/* <NearAiLink href="/ai">
         Near AI
         <i className="ph-fill ph-star-four" />
-      </NearAiLink>
+      </NearAiLink> */}
       <AccordionRoot type="multiple">
         {navigationCategories
           .filter((category) => category.visible === 'all' || category.visible === 'mobile')
