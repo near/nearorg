@@ -146,6 +146,36 @@ const NavSection = styled.div`
   align-items: center;
 `;
 
+const NearAiLink = styled(NavLink)`
+  all: unset;
+  display: flex;
+  align-items: center;
+  font: var(--text-s);
+  color: var(--sand12);
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 0 1rem;
+  transition: all 200ms;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background: var(--sand4);
+    color: var(--sand12);
+    text-decoration: none;
+    text-underline-offset: unset;
+  }
+
+  i {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    color: #9797ff;
+  }
+`;
+
 export const MainNavigationMenu = () => {
   const navTriggerClick: MouseEventHandler<HTMLButtonElement> = (event) => {
     const target = event.target as HTMLButtonElement;
@@ -161,6 +191,14 @@ export const MainNavigationMenu = () => {
     <Wrapper>
       <NavRoot delayDuration={0}>
         <NavList>
+          <NavItem>
+            <NearAiLink asChild>
+              <Link href="/ai">
+                Near AI
+                <i className="ph-fill ph-star-four" />
+              </Link>
+            </NearAiLink>
+          </NavItem>
           {navigationCategories
             .filter((category) => category.visible === 'all' || category.visible === 'desktop')
             .map((category) => (
