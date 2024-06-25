@@ -180,39 +180,6 @@ const ecosystemTeams = [
   },
 ];
 
-const stackItems = [
-  {
-    icon: 'ph-wrench',
-    text: 'Developer Tooling & Agent Frameworks',
-    color: 'var(--violet3)',
-  },
-  {
-    icon: 'ph-lock',
-    text: 'Security & Observability',
-    color: 'var(--violet4)',
-  },
-  {
-    icon: 'ph-database',
-    text: 'Data Platforms',
-    color: 'var(--violet5)',
-  },
-  {
-    icon: 'ph-cpu',
-    text: 'Compute & Cloud Providers',
-    color: 'var(--violet6)',
-  },
-  {
-    icon: 'ph-brain',
-    text: 'Model Training & Inference',
-    color: 'var(--violet7)',
-  },
-  {
-    icon: 'ph-stack',
-    text: 'Foundational Models',
-    color: 'var(--violet9)',
-  },
-];
-
 const getInvolvedItems = [
   {
     name: 'Are you an early stage AI Founder?',
@@ -243,19 +210,6 @@ const getInvolvedItems = [
     target: '_blank',
   },
 ];
-
-const Icon = styled.i`
-  color: var(--black);
-  font-size: 32px;
-`;
-
-const StackItem = styled(Flex)<{ $backgroundColor: string }>`
-  align-items: center;
-  padding: 32px 24px;
-  gap: 32px;
-  background: ${(p) => p.$backgroundColor};
-  border-radius: 8px;
-`;
 
 export const Ai = () => {
   const { events } = useLatestAiEvents();
@@ -304,14 +258,7 @@ export const Ai = () => {
           </Flex>
 
           <Flex $direction="column" $gap="12px">
-            {stackItems.map((item) => (
-              <StackItem $backgroundColor={item.color} key={item.text}>
-                <Icon className={`ph-bold ${item.icon}`} />
-                <Text $size="text-xl" $weight="500">
-                  {item.text}
-                </Text>
-              </StackItem>
-            ))}
+            <img src="/images/ai/ai-stack.png" alt="ai-stack" />
           </Flex>
 
           <Teams>
