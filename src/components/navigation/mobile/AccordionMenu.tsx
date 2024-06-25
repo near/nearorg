@@ -112,9 +112,37 @@ const NavSection = styled.div`
   align-items: center;
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const NearAiLink = styled(Link)`
+  all: unset;
+  box-sizing: border-box;
+  background: var(--white);
+  font: var(--text-base);
+  font-weight: 600;
+  color: var(--sand12);
+  padding: 0 24px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+
+  i {
+    position: absolute;
+    top: 4px;
+    left: 78px;
+    color: #9797ff;
+  }
+`;
+
 export const AccordionMenu = (props: Props) => {
   return (
     <Wrapper>
+      <NearAiLink href="/ai">
+        Near AI
+        <i className="ph-fill ph-star-four" />
+      </NearAiLink>
       <AccordionRoot type="multiple">
         {navigationCategories
           .filter((category) => category.visible === 'all' || category.visible === 'mobile')

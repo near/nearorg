@@ -1,17 +1,18 @@
-import { NearAILayout } from '@/components/layouts/NearAILayout';
 import { MetaTags } from '@/components/MetaTags';
-import { NearAIPlaceholder } from '@/components/pages/NearAIPlaceholder';
+import { Ai } from '@/components/pages/Ai';
+import { useDefaultLayout } from '@/hooks/useLayout';
 import type { NextPageWithLayout } from '@/utils/types';
 
-const NearAIPage: NextPageWithLayout = () => {
+const AiPage: NextPageWithLayout = () => {
   return (
     <>
-      <MetaTags title="NEAR AI" description="NEAR AI: Digital self-sovereignty for the creator economy." />
+      <MetaTags title="NEAR | AI" description="NEAR AI" />
 
-      <NearAILayout>
-        <NearAIPlaceholder />
-      </NearAILayout>
+      <Ai />
     </>
   );
 };
-export default NearAIPage;
+
+AiPage.getLayout = useDefaultLayout;
+
+export default AiPage;
