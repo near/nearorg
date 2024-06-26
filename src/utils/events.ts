@@ -18,14 +18,14 @@ type EventsListData = {
   hasMore: boolean;
 };
 
-export const fetchEvents = async (limit: number, offset: number): Promise<EventsListData> => {
+export const fetchEvents = async (calendarApiId: string, limit: number, offset: number): Promise<EventsListData> => {
   const eventsApiUrl = 'https://api.lu.ma';
   const queryFrom = `period=future`;
   const queryLimit = `pagination_limit=${limit ?? 10}`;
   const queryOffset = offset ? `pagination_offset=${offset}` : '';
   const queryParams = [queryFrom, queryLimit, queryOffset].filter(Boolean).join('&');
 
-  const res = await fetch(`${eventsApiUrl}/calendar/get-items?calendar_api_id=cal-Nrz4EsmLDjXvjPp&${queryParams}`, {
+  const res = await fetch(`${eventsApiUrl}/calendar/get-items?calendar_api_id=${calendarApiId}&${queryParams}`, {
     method: 'GET',
     headers: {
       accept: 'application/json',
