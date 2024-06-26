@@ -5,6 +5,9 @@
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	>
 
 <channel>
@@ -12,22 +15,225 @@
 	<atom:link href="/blog/category/near-foundation/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/category/near-foundation/</link>
 	<description></description>
-	<lastBuildDate>Thu, 08 Feb 2024 14:10:43 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 13 Jun 2024 13:03:57 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.5.3</generator>
 
 <image>
-	<url>/wp-content/uploads/2020/09/cropped-favicon-32x32.png</url>
+	<url>https://pages.near.org/wp-content/uploads/2020/09/cropped-favicon-32x32.png</url>
 	<title>NEAR Foundation Archives &#8211; NEAR Protocol</title>
 	<link>/blog/category/near-foundation/</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
-	<item>
+<site xmlns="com-wordpress:feed-additions:1">234542837</site>	<item>
+		<title>NEAR Modular Spins Out to Become Nuffle Labs with $13M in Funding</title>
+		<link>/blog/nuffle-labs/</link>
+		
+		<dc:creator><![CDATA[NEAR Team]]></dc:creator>
+		<pubDate>Thu, 13 Jun 2024 13:00:00 +0000</pubDate>
+				<category><![CDATA[Community]]></category>
+		<category><![CDATA[NEAR Foundation]]></category>
+		<guid isPermaLink="false">/?p=21409</guid>
+
+					<description><![CDATA[<p>The NEAR Foundation announces the launch of Nuffle Labs, a new venture spinning out from Pagoda and the NEAR Foundation. …</p>
+<p>The post <a href="/blog/nuffle-labs/">NEAR Modular Spins Out to Become Nuffle Labs with $13M in Funding</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>The NEAR Foundation announces the launch of Nuffle Labs, a new venture spinning out from Pagoda and the NEAR Foundation. Founded by the core contributors to the NEAR Data Availability Layer (NEAR DA) and the NEAR Fast Finality Layer (NFFL), the NEAR Modular product suite is now spinning out into an independent entity dedicated to improving and amplifying NEAR’s modularity offerings. The new entity has secured $13 million in funding, including a strategic grant from NEAR Foundation and external investment led by Electric Capital.</p>
+
+
+
+<p>The spinout of Nuffle Labs reflects not only the strength of the core team and the products they are building, but also illustrates the Foundation’s commitment to decentralization by turning core functions over to proven teams in the ecosystem. As an independent team, Nuffle Labs will be better positioned to operate at the forefront of modular blockchain design, nurture its own decentralized community, and forge more partnerships across the Web3 ecosystem.&nbsp;</p>
+
+
+
+<p>Nuffle Labs will leverage NEAR Protocol’s cost-effective, fast, and proven technology to offer rollups enhanced modularity. It is responsible for two key products in NEAR’s modular suite: NEAR Data Availability (NEAR DA) and NEAR Fast Finality Layer, now Nuffle Fast Finality Layer (NFFL).</p>
+
+
+
+<p><strong>Nuffle Labs secures $13M in funding to support their growth</strong></p>
+
+
+
+<p>Nuffle Labs’ spinout comes with substantial investment, including a strategic grant from the NEAR Foundation as well as funding from external investors including Electric Capital, Canonical Crypto, Fabric Ventures, Robot Ventures, Caladan, and Lyrik Ventures. Notable angel investors include Jordi Alexander (Selini), Blackdragon VC, Bowen Wang (NEAR), Sreeram Kannan (EigenLayer), Sam Kazemian (Frax), Sandeep Nailwal (Polygon), DeFi Dad (4RC), Dovey Wan (Primitive Ventures), and Mert Mumtaz (Helius). With these resources and supporters, the team is well-equipped to advance NEAR DA and NFFL, expand the team, invest in R&amp;D, and build a strong community that spans across NEAR, Ethereum, and beyond.</p>
+
+
+
+<p>“We&#8217;re proud to support the growth of Nuffle Labs as an independent company in the NEAR ecosystem. These 4 excellent co-founders have built first-rate modularity products that showcase the best of NEAR&#8217;s technology with NEAR DA and NFFL, providing cost-effective and performant solutions to projects across Web3,” said Illia Polosukhin, Co-Founder of NEAR Protocol and CEO of NEAR Foundation. “We look forward to continued collaboration with the NEAR Foundation as they expand and evolve.”</p>
+
+
+
+<p>Avichal Garg, General Partner at lead investor Electric Capital, said, “We are excited to back Nuffle Labs, the builders behind NEAR DA and the NEAR Fast Finality Layer (NFFL). As the core team that developed these products from the ground up, Nuffle Labs has the expertise to advance these modular solutions, creating a world where intra- and interchain transactions are cheap, fast, and secure.”</p>
+
+
+
+<p>“I have had the great privilege of getting to know the founders of Nuffle and working with them from day zero,” said Anand Iyer, General Partner at Canonical Crypto. “Their passion for solving blockchain scaling combined with their expertise from building solutions at NEAR has me genuinely excited for them and their future.”</p>
+
+
+
+<p><strong>Understanding NEAR Data Availability (NEAR DA)</strong></p>
+
+
+
+<p>NEAR DA utilizes the sharded architecture of NEAR Protocol to provide a modular data availability layer for Ethereum rollups with extremely high throughput and low cost. On mainnet launch, RSS3 – an open information protocol bridging AI and Web3 – experienced a substantial cost reduction, paying a daily average of $10 compared to their previous $1,000. NEAR DA currently has a throughput of 24MB/s, significantly higher than its closest competitor’s 6.67MB/s – making NEAR DA the most scalable, cheapest, and reliable DA solution on the market.</p>
+
+
+
+<p>NEAR DA’s scalability is further enhanced by its ability to support multiple rollups, whether they are optimistic or ZK-rollups. NEAR Data Availability (NEAR DA) provides:</p>
+
+
+
+<ul>
+<li>Cost-efficiency: Storing data on NEAR Protocol is significantly cheaper than on Ethereum, making it easier for projects to build as well as faster.</li>
+
+
+
+<li>Effortless Validation: NEAR Protocol&#8217;s trustless off-chain light client simplifies validation, ensuring accurate and reliable transactions.</li>
+
+
+
+<li>User-Friendly Interaction: NEAR Protocol provides easy access to on-chain data through RPC, making blockchain interaction seamless for developers and users.</li>
+</ul>
+
+
+
+<p><strong>Exploring NEAR Fast Finality Layer (NFFL)</strong></p>
+
+
+
+<p>The name Nuffle Labs is derived from the acronym NFFL. The Nuffle Fast Finality Layer (NFFL) is an EigenLayer Actively Validated Service (AVS) designed to aggregate state across various rollups. By leveraging NEAR DA, NFFL provides a fast, universal, and secure finality layer. It enhances block finality across different protocols and integrates additional public DA layers into the blockchain stack, paving the way for innovative cross-chain applications. NFFL is currently live on testnet––learn more <a href="https://nffl.nethermind.io/">about the protocol</a>.</p>
+
+
+
+<p><strong>What&#8217;s next for Nuffle Labs?</strong></p>
+
+
+
+<p>“We are thrilled about the incredible opportunity to grow and develop NEAR’s modular product offerings at Nuffle Labs,” said Altan Tutar, CEO of Nuffle Labs. The other Nuffle co-founders are Sam Wang, Firat Sertgoz, and Donovan Dall. “We deeply appreciate the support from the NEAR Foundation and are honored by the validation from such distinguished investors. Their confidence in our vision and capabilities energizes us as we continue to innovate and expand.”&nbsp;</p>
+
+
+
+<p>Looking ahead, Nuffle Labs will focus on advancing the development of the NFFL AVS on EigenLayer and further enhancing the robustness and efficiency of NEAR DA to support Ethereum’s rollup-centric future. The team is committed to furthering innovation in modular blockchain design and defragmenting the Web3 ecosystem.</p>
+
+
+
+<p>Follow along with the Nuffle team’s progress on their <a href="http://nuff.tech/">new site here</a> and follow the <a href="https://x.com/NuffleLabs">Nuffle Labs X(Twitter) account</a>. L2 builders interested in a partnership with Nuffle or those interested in applying to work with Nuffle can get in touch via the Nuffle Labs website.&nbsp;</p>
+<p>The post <a href="/blog/nuffle-labs/">NEAR Modular Spins Out to Become Nuffle Labs with $13M in Funding</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">21409</post-id>	</item>
+		<item>
+		<title>Summer of Shipping on NEAR Heats up with Horizon’s HZN3 Cohort </title>
+		<link>/blog/summer-of-shipping/</link>
+		
+		<dc:creator><![CDATA[NEAR Team]]></dc:creator>
+		<pubDate>Wed, 03 Apr 2024 01:46:10 +0000</pubDate>
+				<category><![CDATA[NEAR Foundation]]></category>
+		<guid isPermaLink="false">/?p=21303</guid>
+
+					<description><![CDATA[<p>The NEAR Horizon Accelerator (HZN) is continuing to nurture early-stage open founders by launching its third cohort, HZN3. As part …</p>
+<p>The post <a href="/blog/summer-of-shipping/">Summer of Shipping on NEAR Heats up with Horizon’s HZN3 Cohort </a> appeared first on <a href="/">NEAR Protocol</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>The NEAR Horizon Accelerator (HZN) is continuing to nurture early-stage open founders by launching its third cohort, HZN3. As part of NEAR’s Summer of Shipping, HZN3 will encourage accountability, community, and deploying products that amplify chain abstraction.</p>
+
+
+
+<p>Established as an equity-free program, HZN3 is designed to deliver mentorship, technical support, and tactical education to empower founders in navigating the complexities and hurdles associated with building a thriving, successful project.</p>
+
+
+
+<p>With a focus on crypto-native go-to-market strategies and refinding the tech stack, HZN3 will be a vital resource for founders aiming to scale their projects. It underscores NEAR&#8217;s commitment to fostering innovation and supporting the next wave of open web projects, contributing significantly to the ecosystem&#8217;s diversity and resilience.</p>
+
+
+
+<p>HZN3 is a chain-agnostic program and welcomes builders from any ecosystem. This approach is part of fulfilling NEAR’s vision for a unified, user-friendly open web. Here’s everything you need to know about the HZN3 cohort and how to join.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-empowering-open-web-innovation-with-hzn3">Empowering Open Web Innovation with HZN3</h2>
+
+
+
+<p>The HZN3 Accelerator Program, NEAR&#8217;s third cohort under the Horizon banner, will be a structured, eight-week journey for open web founders, emphasizing sustainable growth. This equity-free approach aligns with NEAR&#8217;s dedication to founders success and autonomy.&nbsp;</p>
+
+
+
+<p>Specifically geared towards early-stage Web3 founders, HZN3 is a launchpad for projects at any development stage, from idea to MVP. The program’s core objectives are to furnish participants with mentorship, one-on-one technical support, and education tailored to the nuances of launching and scaling in the crypto space.</p>
+
+
+
+<p>While HZN3 does not provide direct funding, its focus is on providing invaluable resources and a network that far exceeds monetary support. <strong>The HZN3 Program runs from May 20th &#8211; July 12th, 2024, capped with a Demo Day live at ETH CC in Brussels, Belgium </strong>HZN3 will be an intensive, hands-on experience, crafted to sharpen go-to-market strategies and refine technical stacks, ensuring projects are not just visionary but viable and market-ready.&nbsp;</p>
+
+
+
+<p>The application period, spanning from March 18th to May 10th, 2024, invites early-stage founders to step forward with their visions, irrespective of their blockchain foundation, fostering a diversity rich cohort. Selected participants can anticipate a kickoff meeting to outline the road ahead, ensuring founders are prepared for the intensive, growth-oriented journey in HZN3.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-building-on-previous-hzn-alumni-success">Building on Previous HZN Alumni Success</h2>
+
+
+
+<p>The HZN3 program will take its cue from the achievements of previous HZN alumni projects that have laid the groundwork for the upcoming cohort. The previous 50+ participants from HZN&#8217;s programs include <a href="https://www.gravvity.ai/">Gravvity</a>, <a href="http://questlabs.ai/">Quest</a>, <a href="https://shard.dog/">Superchargd</a>, <a href="https://www.getplato.app/">Plato</a>, <a href="https://shard.dog/">Shard Dog</a>, and <a href="https://contentedworld.com/">Contented</a>, illustrating HZN’s tangible impact.&nbsp;</p>
+
+
+
+<p>These projects have navigated the initial stages of development and launch, successfully securing significant external capital and collectively raising over $20 million. These funding successes validate the value and trust investors place in HZN-supported initiatives and highlight HZN’s effectiveness in preparing founders for the pitching and funding process.</p>
+
+
+
+<p>The accelerator&#8217;s focus on mentorship, technical support, and tactical education has also equipped these projects with the necessary tools for scalability and market penetration. Through HZN, founders gain financial backing and receive a comprehensive foundation for sustained growth, network expansion, and strategic positioning moving forward.</p>
+
+
+
+<p>HZN&#8217;s commitment to fostering innovation and supporting early-stage projects contributes significantly to the diversity and resilience of the NEAR ecosystem, ensuring a vibrant future for open web innovation.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-apply-to-hzn3-and-join-near-s-vision-for-chain-abstraction">Apply to HZN3 and Join NEAR&#8217;s Vision for Chain Abstraction</h2>
+
+
+
+<p>HZN3 applications are open from March 18th to May 10th, 2024, welcoming visionaries eager to scale their projects. Interested founders can apply directly through <a href="https://www.hzn.xyz/hzn">HZN&#8217;s application page</a>, where they&#8217;ll find detailed instructions and requirements. Founders building on any blockchain are encouraged to apply, as HZ3 is a chain-agnostic program.</p>
+
+
+
+<p>HZN3 also plays a critical role in NEAR&#8217;s broader chain abstraction narrative by attracting diverse, high-quality projects across multiple blockchains. By supporting founders regardless of blockchain or ecosystem, HZN3 will contribute to the broader vision of chain abstraction. This approach is key for driving the adoption of the chain abstraction stack.&nbsp;</p>
+
+
+
+<p>Through HZN3, NEAR reinforces its commitment to an open web that thrives on diversity, collaboration, and shared success.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-seizing-open-web-opportunities-with-hzn3">Seizing Open Web Opportunities with HZN3</h2>
+
+
+
+<p>As an equity-free, accelerator program, HZN3 is a unique opportunity to bootstrap and jumpstart any project. Founders won’t want to miss out on key resources, network expansion, and strategic development insights they’ll receive during the course of the program.</p>
+
+
+
+<p>Potential applicants should apply before May 10th, 2024, to secure a spot in the upcoming HZ3 cohort. For more details, visit <a href="https://www.hzn.xyz/hzn">HZN&#8217;s application page</a> to join the community discussion, connect with peers and mentors, and brainstorm about how your project can be a part of the open web’s future.</p>
+
+
+
+<p></p>
+<p>The post <a href="/blog/summer-of-shipping/">Summer of Shipping on NEAR Heats up with Horizon’s HZN3 Cohort </a> appeared first on <a href="/">NEAR Protocol</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">21303</post-id>	</item>
+		<item>
 		<title>NEAR Protocol Partners With D3 To Apply For .Near Top-Level Domain</title>
 		<link>/blog/near-protocol-partners-with-d3-to-apply-for-near-top-level-domain/</link>
 		
@@ -86,12 +292,12 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21222</post-id>	</item>
 		<item>
 		<title>Meta Pool Launches Enterprise Node Operators Program</title>
 		<link>/blog/meta-pool-launches-enterprise-node-operators-program/</link>
 		
-		<dc:creator><![CDATA[Rob Woodbury]]></dc:creator>
+		<dc:creator><![CDATA[NEAR Team]]></dc:creator>
 		<pubDate>Wed, 07 Feb 2024 13:59:03 +0000</pubDate>
 				<category><![CDATA[NEAR Foundation]]></category>
 		<guid isPermaLink="false">/?p=21219</guid>
@@ -210,7 +416,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21219</post-id>	</item>
 		<item>
 		<title>Phase 2 of NEAR Sharding Launches</title>
 		<link>/blog/phase-2-of-near-sharding-launches/</link>
@@ -279,7 +485,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21200</post-id>	</item>
 		<item>
 		<title>MetaMask Is Now Usable on NEAR via NEAR Snap 🦊🤝</title>
 		<link>/blog/metamask-snaps/</link>
@@ -393,7 +599,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21186</post-id>	</item>
 		<item>
 		<title>An Update from the NEAR Foundation</title>
 		<link>/blog/an-update-from-the-near-foundation/</link>
@@ -447,7 +653,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21148</post-id>	</item>
 		<item>
 		<title>Arbitrum Integrates NEAR DA for Developers Building Ethereum Rollups </title>
 		<link>/blog/arbitrum-integrates-near-da-for-developers-building-ethereum-rollups/</link>
@@ -521,7 +727,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21140</post-id>	</item>
 		<item>
 		<title>2023: NEAR In Review</title>
 		<link>/blog/2023-near-in-review/</link>
@@ -627,7 +833,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21133</post-id>	</item>
 		<item>
 		<title>Pyth Price Feeds Launch on NEAR Protocol Bringing Equity, Commodities, and Market Data On Chain </title>
 		<link>/blog/pyth-price-feeds-launch-on-near-protocol-bringing-equity-commodities-and-market-data-on-chain/</link>
@@ -686,321 +892,6 @@
 					
 		
 		
-			</item>
-		<item>
-		<title>Meet the 2023 NEARCON IRL Hackathon Winners</title>
-		<link>/blog/meet-the-2023-nearcon-irl-hackathon-winners/</link>
-		
-		<dc:creator><![CDATA[NEAR Team]]></dc:creator>
-		<pubDate>Wed, 22 Nov 2023 14:00:00 +0000</pubDate>
-				<category><![CDATA[NEAR Foundation]]></category>
-		<category><![CDATA[NEARCON IRL Hackathon]]></category>
-		<guid isPermaLink="false">/?p=21104</guid>
-
-					<description><![CDATA[<p>The wait is over! After a week of intense, dedicated work from the NEARCON hackathon judges, the winners of the …</p>
-<p>The post <a href="/blog/meet-the-2023-nearcon-irl-hackathon-winners/">Meet the 2023 NEARCON IRL Hackathon Winners</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>The wait is over! After a week of intense, dedicated work from the NEARCON hackathon judges, the winners of the 2023 NEARCON IRL Hackathon have been chosen.&nbsp;</p>
-
-
-
-<p>For the NEARCON IRL Hackathon, DevHub issued travel stipends to the most experienced hackers from all around the world. From Brazil and Canada to Spain, the UK, and beyond, the best builders traveled to NEARCON to celebrate NEAR’s global ecosystem. Those hackers who choose to stick around and keep building on NEAR will be eligible to apply to NEAR Horizon&#8217;s pre-acceleration program or the accelerator itself.</p>
-
-
-
-<p>Without further ado, let’s take a look at the amazing projects that were built on NEAR. </p>
-
-
-
-<h2 class="wp-block-heading" id="h-developers-track-winner-quex">Developers Track Winner: Quex</h2>
-
-
-
-<p>Quex is an AI-powered NEAR Grant program treasury. A smart contract can automatically fund a project if a pre-configured ChatGPT concludes that it will satisfy the grant program criteria.</p>
-
-
-
-<p>“The idea of a fully autonomous AI-controlled treasury captivated our imagination. We envisioned a system where AI, not humans, would have the sole discretion over the allocation of funds, paving the way for an unbiased and efficient distribution of resources,” wrote Quex developers Dmitry Meshkov (3x) and Alejandro V. Betancourt (Biz Dev, Metapool / Co-founder NEAR Misfits).&nbsp;</p>
-
-
-
-<p>“We aim to achieve the fully autonomous and secure DAO — even being the developers of this DAO, we should not be able to fund our own project until we get a ‘funded’ response from AI, and we&#8217;re not able to censor transactions to fund projects good enough from the chosen AI point of view.”</p>
-
-
-
-<p><a href="https://devpost.com/software/quex">More details on Quex</a>. </p>
-
-
-
-<h2 class="wp-block-heading" id="h-entrepreneurs-track-winner-clickdapp">Entrepreneurs Track Winner: ClickDapp</h2>
-
-
-
-<p>ClickDapp, a B.O.S-powered no-code tool to easily create, customize, and deploy dApps, was the winning project for the NEARCON IRL Hackathon’s Entrepreneurs Track.&nbsp;</p>
-
-
-
-<p>“ClickDapp was inspired by how easy it is to start a Web 2 company,” said developers João Veiga, Pedro Destri, and Rafaeldkb Borges. “No-code tooling empowers a set of different players, from devs to PMs, to entrepreneurs, allowing them to create and iterate on their products with zero to no difficulty, low cost, and faster development speeds.”</p>
-
-
-
-<p>“ClickDapp is a no-code builder connected to the Near BOS library, giving devs, PMs and entrepreneurs the superpower of building entire blockchain applications and products without writing a single line of code.”</p>
-
-
-
-<p><a href="https://devpost.com/software/click-dapp">More details on ClickDapp</a>.</p>
-
-
-
-<h2 class="wp-block-heading" id="h-creators-track-winner-b4b">Creators Track Winner: B4B&nbsp;</h2>
-
-
-
-<p>An influencer-marketing protocol for Near Social Graph, B4B collects on-chain data about channel activity and enables the amplification of new and existing projects in certain NEAR communities.</p>
-
-
-
-<p>“We have built a protocol that simplifies searching, analyzing, and managing influencer marketing through Near Social Graph,” said developers Anton Pecherkin, Ann Chuhnina, Gregory Melnikov, and Aleksandr Sokolov. “Additionally, it provides new monetization opportunities for content creators and influencers in the ecosystem.”</p>
-
-
-
-<p>“B4B is a Web3-native influencer ad network that connects advertisers with influencers willing to create and publish ads on their channels. The B4B protocol protects advertisers and influencers by escrowing the budget and maintaining a transparent history of ad orders owned by users. During the NEARHACK, we connected the protocol with the Near Social Graph.”</p>
-
-
-
-<p><a href="https://devpost.com/software/near-social-b4b">More details on B4B</a></p>
-
-
-
-<h2 class="wp-block-heading" id="h-regulators-track-winner-proof-of-reputation">Regulators Track Winner: Proof-of-Reputation</h2>
-
-
-
-<p>Proof-of-Reputation is a mechanism that enables any user to get a loan using their on-chain activity as collateral and accomplishing the regulator&#8217;s requirement. In other words, it’s a simple, on-chain, and transparent loan protocol for underbanked regions.&nbsp;</p>
-
-
-
-<p>Small and medium-sized businesses (SMBs) are the backbone of many economies. Still, they often face challenges in accessing loans — this is especially true in underbanked regions, where people may not have access to traditional banking services,” said the developers Luis Daniel Mendez Castellanos, Irving Yair Nava Hernández, and Alan Estrada.&nbsp;</p>
-
-
-
-<p>“Avoid complicated, bureaucratic, and lengthy loan application processes. All tracking is done on-chain using a Soul Bond Token,” explain the developers. “If necessary, complete anti-money laundering (AML) procedures by completing quests for proof of identity, proof of citizenship, and other requirements provided by third parties. Allow anyone in regions with limited access to banking services to get a loan.”</p>
-
-
-
-<p><a href="https://devpost.com/software/proof-of-reputation-score-and-loan-system">More details on Proof-of-Reputation</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Pitch Competition Winner: DeFi Builder</h2>
-
-
-
-<p>Using AI, DeFi Builder allows users to effortlessly launch powerful DeFi projects without coding. Its intuitive code-less tools unlock the doors to the next DeFi entrepreneurs on NEAR and Aurora.</p>
-
-
-
-<p>“For the NEAR hackathon, we introduced an innovative feature: the AI Smart Contract Generator,” said its developers&nbsp; Ravi Rasadiya, Alexe Spataru, Lorenzo Castagnone, and Daniel Morosan. “Utilizing the latest AI technology —&nbsp;which has been trained and fine-tuned on NEAR Rust smart contracts, JavaScript smart contracts, and Aurora EVM smart contracts —&nbsp;NEARAI can generate a variety of smart contracts tailored to the user&#8217;s specific requests.”</p>
-
-
-
-<p>“The platform&#8217;s design focuses on automating complex processes like smart contract deployment, while offering integration across various blockchain networks, thus streamlining the journey from concept to market-ready DeFi project.”</p>
-
-
-
-<p><a href="https://devpost.com/software/defi-builder">More details on DeFi Builder</a>.</p>
-
-
-
-<h2 class="wp-block-heading" id="h-main-track-winners">Main Track Winners</h2>
-
-
-
-<p>Three winners took home prizes for the NEARCON IRL Hackathon Main Track.&nbsp;</p>
-
-
-
-<h3 class="wp-block-heading" id="h-1st-prize-obrigado">1st Prize — Obrigado</h3>
-
-
-
-<p>Obrigado allows seamless execution of heavy computational tasks, distributed across multiple computational resource providers.</p>
-
-
-
-<p>“NEAR is aiming to be the OS for an open web with the on-chain frontend (B.O.S) and backend (WASM/zkWASM),” said the developers William S, João Vasco Pestana, Igor Perić, Souheila Sidennas, and Hojay Lee. “The missing piece is a way to process heavy computes such as training a LLM or analyzing DNA data.”</p>
-
-
-
-<p>“Obrigado will allow seamless execution of heavy computational tasks, distributed across multiple computational resource providers (Task Runners), ensuring efficient processing and integrity of results, all within NEAR. Computing happens off-chain and book-keeping like job queue handling, result validation, node reputation, slashing and balances happen on-chain.”</p>
-
-
-
-<p><a href="https://devpost.com/software/obrigado">More details on Obrigado</a>. </p>
-
-
-
-<h3 class="wp-block-heading" id="h-2nd-prize-magic-build">2nd Prize — Magic Build</h3>
-
-
-
-<p>Magic Build is a powerful tool designed to streamline the process of generating front-end interfaces for smart contracts on the B.O.S. It will help developers on B.O.S to deploy products faster without coding.&nbsp;</p>
-
-
-
-<p>“Our B.O.S Composer is a tool that helps create widget connections within the BOS ecosystem. It enables infinite scalability of nested widgets, increasing the depth and resource utilization of a website,” said the developers Hai N and Kuro Denjiro. “With B.O.S Composer, you can create multiple pages, export them as widgets, and then select and link these widgets together.”&nbsp;</p>
-
-
-
-<p>“Magic Build also supports horizontal widget connections through the &#8220;self customize&#8221; section, where you can input the URL of a widget, export it, and import it to establish connections with other widgets. B.O.S Composer simplifies the process of creating widget connections, enabling the creation of intricate and resource-rich web experiences within the B.O.S ecosystem.</p>
-
-
-
-<p><a href="https://devpost.com/software/magic-build">More details on Magic Build</a>.</p>
-
-
-
-<h3 class="wp-block-heading" id="h-3rd-prize-web3-plugin">3rd Prize — Web3 Plugin</h3>
-
-
-
-<p>A web3.jd plugin for NEAR Protocol and its ecosystem, Web3 Plugin provides the functionality of near-api-js but in the web3.js style.</p>
-
-
-
-<p>“Developers who already use web3.js can quickly start working with NEAR technology  with fewer things to read and learn,” said the developer, Muhammad Altabba. “All they need to do is provide the web3.js library with a link to a NEAR provider, add it with the plugin, then they can start working just like they are used to. Even though there will be slight differences that they&#8217;ll have to adjust for, we do our best to reduce them to the minimum.”</p>
-
-
-
-<p><a href="https://devpost.com/software/web3-plugin-near">More details on Web3 Plugin</a>.</p>
-
-
-
-<h2 class="wp-block-heading" id="h-thanks-for-joining-the-nearcon-irl-hackathon">Thanks for joining the NEARCON IRL Hackathon</h2>
-
-
-
-<p>Thanks to all of the participants who joined the NEARCON ‘23 hackathon! As you can see from the winners, there was no shortage of great, cutting edge projects built on NEAR. The NEAR community and ecosystem are strong and creative because of each and every project like yours.&nbsp;</p>
-
-
-
-<p>A big thank you as well to the NEARCON IRL Hackathon judges: Max Zavershynskyi (Leader, NEAR DevHub), Eric Winer (CTO, Pagoda), Alex Shevchenko (CEO, Aurora), Nate Geier (CEO, Mintbase), Laura Cunningham (General Manager, NEAR Horizon), Samantha Bohbot (Chief Growth Officer, RockawayX), Oleg Fomenko (Co-founder, Sweat Economy), Bowen Wang(Head of Protocol, Pagoda), Sandi Fatic (Co-founder, Calimero Network), Joe Spano (Co-Founder, ShardDog), MJ (Head of Product, Proximity Labs), and Diogo Monica (Founder, Anchorage Digital). </p>
-
-
-
-<p>The NEAR Foundation and the entire NEAR community looks forward to you participating in the hackathon at NEARCON ‘24! </p>
-
-
-
-<p>Keep hacking and building on NEAR.</p>
-<p>The post <a href="/blog/meet-the-2023-nearcon-irl-hackathon-winners/">Meet the 2023 NEARCON IRL Hackathon Winners</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>NEAR Tasks Launches AI Marketplace on NEAR to Revolutionize the Future of Work</title>
-		<link>/blog/near-tasks-launches-ai-marketplace-on-near-to-revolutionize-the-future-of-work/</link>
-		
-		<dc:creator><![CDATA[NEAR Team]]></dc:creator>
-		<pubDate>Thu, 16 Nov 2023 14:00:00 +0000</pubDate>
-				<category><![CDATA[NEAR Foundation]]></category>
-		<guid isPermaLink="false">/?p=21096</guid>
-
-					<description><![CDATA[<p>The convergence of AI and Web3 captured the tech industry’s imagination in 2023 — but few ideas have actually become …</p>
-<p>The post <a href="/blog/near-tasks-launches-ai-marketplace-on-near-to-revolutionize-the-future-of-work/">NEAR Tasks Launches AI Marketplace on NEAR to Revolutionize the Future of Work</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>The convergence of AI and Web3 captured the tech industry’s imagination in 2023 — but few ideas have actually become a working reality. An exciting exception is NEAR Tasks, a global gigs marketplace poised to reshape AI training while leveraging the power of NEAR blockchain. Officially launched at NEARCON 2023 with its first product beta launching this week, NEAR Tasks is a self-service platform where anyone can easily list and complete AI requests, setting a new standard for quality data labeling.</p>
-
-
-
-<h2 class="wp-block-heading" id="h-unlocking-the-power-of-ai-and-web3"><strong>Unlocking the Power of AI and Web3</strong></h2>
-
-
-
-<p>NEAR Tasks envisions a future where AI and Web3 technologies complement each other, fostering an ecosystem driven by transparency and efficiency. This symbiotic relationship aims to streamline task matching, review processes, and manage data quality more effectively at scale.</p>
-
-
-
-<p>Implemented on the NEAR Protocol, NEAR Tasks utilizes on-chain tasker IDs, smart contracts for automated payments, and $NEAR transactions for global payments with minimal fees. This ensures accountability, motivates high-quality outcomes, and addresses the challenge of underpaid workers in the AI sector.</p>
-
-
-
-<h2 class="wp-block-heading"><strong>NEAR Tasks in a Nutshell</strong></h2>
-
-
-
-<p>In the age of AI, despite popular narratives about LLMs replacing a range of human jobs, human intelligence actually becomes even more important: as models get more complex, they need human expertise for fine-tuning models and increasing subject matter specialization. This user-friendly platform seamlessly connects task listing, work review, and crypto rewards, propelling AI model training into a new era through direct human feedback loops and a flexible self-service marketplace.</p>
-
-
-
-<p>For business clients and AI builders, NEAR Tasks provides a self-service, plug-and-play solution, liberating users from the constraints of costly managed service options. Blockchain integration on NEAR facilitates efficient data labeling by verified human experts, who can build reputation and get paid in real time for contributing quality work to the platform.&nbsp;</p>
-
-
-
-<p>For taskers, the NEAR Tasks marketplace offers a transparent path to monetizing their skills and knowledge, unlocking new revenue streams in the ever-evolving AI labor frontier, and changing the future of digital work. There are more than a billion participants in the global on-demand gig economy today, showing the need for more opportunities as well as greater specialization for those with particular training or expertise. With more reliable identity verification for accounts, faster work review, and the ability to pay taskers with crypto, taskers can get paid more reliably and work at the pace they wish — making the gig economy more supportive to specialized workers. </p>
-
-
-
-<p>In his introduction to NEAR Tasks at NEARCON in Lisbon, Senior Engineer Momo Araki pointed out: “There’s an interdependence for the system to work properly. You have to reform the central inspection principle wielded by task providers, and maintain sybil-resistance so workers can’t spoof the platform. It’s loosely analogous to a ‘proof-of-work’ model, where work performed well also translates to earning reputation, which leads to accessing further opportunities.&#8221; Incorporating more trust into a tasks marketplace in this way also produces better results for the AI builders and businesses trying to refine their models. </p>
-
-
-
-<h2 class="wp-block-heading"><strong>A Fair and Transparent Platform for AI Training</strong></h2>
-
-
-
-<p>In an AI landscape where autonomy often overshadows human involvement, NEAR Tasks recognizes the vital role of a global workforce responsible for data labeling and validation. The platform introduces on-chain digital IDs for taskers, ensuring transparency and accountability.</p>
-
-
-
-<p>Transactions exclusively conducted in $NEAR guarantee rapid global payments with minimal fees, directly confronting the issue of underpaid AI workers in what is known in the industry as “AI sweatshops.”</p>
-
-
-
-<p>&#8220;Human intelligence forms the base of artificial intelligence, and it&#8217;s time we give AI tasks the recognition they deserve as legitimate jobs in the AI economy,&#8221; says Catherine Yushina, Head of Operations at NEAR Tasks.</p>
-
-
-
-<h2 class="wp-block-heading"><strong>AI Is NEAR</strong></h2>
-
-
-
-<p>At NEARCON 2023, NEAR Co-Founder Illia Polosukhin — an AI researcher himself and co-creator of transformers, the architecture powering today’s major LLMs like ChatGPT — named AI as one of the core verticals for the NEAR ecosystem heading into 2024. From transforming governance and business operations with AI agents to provable provenance for data and content, as well as novel marketplaces like NEAR Tasks and hybrid human-AI working environments, we’re at the very beginning of an exciting revolution that will change the ways we work, collaborate, transact, research, and govern ourselves. More news is coming before the end of 2023 to position NEAR as the leader at the intersection of AI and Web3. </p>
-
-
-
-<h2 class="wp-block-heading"><strong>Join the AI + Blockchain Movement</strong></h2>
-
-
-
-<p>If you want to be part of this transformative AI and blockchain convergence shaping the human intelligence market, sign up for the NEAR Tasks <a href="https://neartasks.ai/neartasks-waitlist">waitlist</a> — currently at more than 48,000 applicants. The marketplace opens for public access in Q1 of 2024. You can also reach out to the team directly to request entry into the current Beta. Drop them an email at <a href="mailto:info@neartasks.ai">info@neartasks.ai</a> to express your interest by Monday, November 20.</p>
-
-
-
-<p>For more information about NEAR Tasks, please visit <a href="https://neartasks.ai/">https://neartasks.ai/</a>.</p>
-
-
-
-<p>Follow along on social media:</p>
-
-
-
-<ul>
-<li>Twitter: <a href="https://twitter.com/near_tasks">https://twitter.com/near_tasks</a>&nbsp;</li>
-
-
-
-<li>LinkedIn: <a href="https://www.linkedin.com/company/98907399">https://www.linkedin.com/company/98907399</a>&nbsp;</li>
-</ul>
-<p>The post <a href="/blog/near-tasks-launches-ai-marketplace-on-near-to-revolutionize-the-future-of-work/">NEAR Tasks Launches AI Marketplace on NEAR to Revolutionize the Future of Work</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">21126</post-id>	</item>
 	</channel>
 </rss>
