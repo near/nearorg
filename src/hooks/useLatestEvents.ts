@@ -14,6 +14,8 @@ export type MappedEvent = {
 // TODO: Refactor this hook to use something like ReactQuery
 
 export function useLatestEvents(limit = 3) {
+  // TODO: Refactor this hook to use it for ai events too
+  const aiEventsUrl = 'https://lu.ma';
   const [events, setEvents] = useState<MappedEvent[]>([]);
   const [hasMoreEvents, setHasMoreEvents] = useState(false);
 
@@ -30,10 +32,10 @@ export function useLatestEvents(limit = 3) {
           return {
             date: formatDate(item.event.start_at, item.event.end_at),
             description: item.event.description,
-            location: formatLocation(item.event.geo_address_json),
+            location: formatLocation(item.event.geo_address_json ?? item.event.geo_address_info),
             thumbnail: item.event.cover_url,
             title: item.event.name,
-            url: item.event.url,
+            url: `${aiEventsUrl}/${item.event.url}`,
           };
         });
 
