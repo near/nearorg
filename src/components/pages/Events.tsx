@@ -108,7 +108,7 @@ const CoverCardImageWrapper = styled.div`
 `;
 
 export const Events = () => {
-  const { events, hasMoreEvents } = useEvents(LUMA_NEAR_CALENDAR_ID, 4);
+  const { events, hasMoreEvents } = useEvents(LUMA_NEAR_CALENDAR_ID, 7);
   const featuredEvent = events[0] as MappedEvent | undefined;
   const otherEvents = events.filter((event) => event.title !== featuredEvent?.title);
 
@@ -198,7 +198,7 @@ export const Events = () => {
               )}
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="20px">
+            <Grid $columns="1fr 1fr 1fr" $gap="24px">
               {otherEvents.map((event) => {
                 return (
                   <Article key={event.title} href={event.url} target="_blank" style={{ minWidth: 0 }}>

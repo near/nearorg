@@ -138,6 +138,18 @@ const ecosystemTeams = [
     height: '28px',
   },
   {
+    url: 'https://cosmose.ai',
+    name: 'Cosmose',
+    image: '/images/ai/cosmose.png',
+    height: '28px',
+  },
+  {
+    url: 'https://www.exabits.ai',
+    name: 'Exabits',
+    image: '/images/ai/exabits.png',
+    height: '28px',
+  },
+  {
     url: 'https://hyperbolic.xyz',
     name: 'Hyperbolic',
     image: '/images/ai/hyperbolic.png',
@@ -179,6 +191,12 @@ const ecosystemTeams = [
     image: '/images/ai/pond.png',
     height: '28px',
   },
+  {
+    url: 'https://www.ringfence.ai',
+    name: 'Ringfence',
+    image: '/images/ai/ringfence.png',
+    height: '28px',
+  },
 ];
 
 const getInvolvedItems = [
@@ -213,7 +231,7 @@ const getInvolvedItems = [
 ];
 
 export const Ai = () => {
-  const { events } = useEvents(LUMA_NEAR_AI_CALENDAR_ID);
+  const { events, hasMoreEvents } = useEvents(LUMA_NEAR_AI_CALENDAR_ID);
   return (
     <Wrapper>
       <AiSection $backgroundColor="#9797FF">
@@ -327,9 +345,20 @@ export const Ai = () => {
       </Section>
 
       <Section $backgroundColor="var(--violet6)">
-        <Container>
+        <Container $gap="48px">
           <Flex $direction="column" $gap="24px">
-            <H2>Upcoming NEAR AI Events</H2>
+            <Flex $alignItems="center" $justifyContent="space-between">
+              <H2>Upcoming NEAR AI Events</H2>
+              {hasMoreEvents && (
+                <Button
+                  href="https://lu.ma/edgeAGI"
+                  target="_blank"
+                  label="View All"
+                  variant="secondary"
+                  size="small"
+                />
+              )}
+            </Flex>
             <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
               Join us at conferences, meetups, and more as we gather across the globe to discuss the future of
               User-Owned AI.

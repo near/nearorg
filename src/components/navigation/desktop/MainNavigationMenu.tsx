@@ -159,13 +159,17 @@ const NearAiLink = styled(NavLink)`
   height: 40px;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--sand4);
+    color: var(--sand12);
+    text-underline-offset: unset;
+  }
 
   &:hover,
   &:focus {
-    background: var(--sand4);
-    color: var(--sand12);
     text-decoration: none;
-    text-underline-offset: unset;
   }
 
   i {
