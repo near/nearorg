@@ -2,8 +2,9 @@
 
 import styled from 'styled-components';
 
-import type { MappedEvent } from '@/hooks/useLatestEvents';
-import { useLatestEvents } from '@/hooks/useLatestEvents';
+import type { MappedEvent } from '@/hooks/useEvents';
+import { useEvents } from '@/hooks/useEvents';
+import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
@@ -107,7 +108,7 @@ const CoverCardImageWrapper = styled.div`
 `;
 
 export const Events = () => {
-  const { events, hasMoreEvents } = useLatestEvents(4);
+  const { events, hasMoreEvents } = useEvents(LUMA_NEAR_CALENDAR_ID, 4);
   const featuredEvent = events[0] as MappedEvent | undefined;
   const otherEvents = events.filter((event) => event.title !== featuredEvent?.title);
 

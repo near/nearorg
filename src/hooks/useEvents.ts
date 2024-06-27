@@ -13,8 +13,7 @@ export type MappedEvent = {
 
 // TODO: Refactor this hook to use something like ReactQuery
 
-export function useLatestEvents(limit = 3) {
-  // TODO: Refactor this hook to use it for ai events too
+export function useEvents(calendarApiId: string, limit = 3) {
   const aiEventsUrl = 'https://lu.ma';
   const [events, setEvents] = useState<MappedEvent[]>([]);
   const [hasMoreEvents, setHasMoreEvents] = useState(false);
@@ -22,7 +21,7 @@ export function useLatestEvents(limit = 3) {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchEvents(limit, 0);
+        const result = await fetchEvents(calendarApiId, limit, 0);
 
         const sortedEvents = [...result.entries]
           .sort((a, b) => new Date(a.event.start_at).getTime() - new Date(b.event.start_at).getTime())
@@ -47,7 +46,7 @@ export function useLatestEvents(limit = 3) {
     };
 
     loadData();
-  }, [limit]);
+  }, [calendarApiId, limit]);
 
   const formatDate = (startAt: string, endAt: string) => {
     // Example Format: "Jul 21 - Jul 23, 2023"

@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { useLatestEvents } from '@/hooks/useLatestEvents';
+import { useEvents } from '@/hooks/useEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
+import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
@@ -293,7 +294,7 @@ function returnImageSrc(cfid: string) {
 
 export const Home = () => {
   const { statistics } = useStatistics();
-  const { events } = useLatestEvents();
+  const { events } = useEvents(LUMA_NEAR_CALENDAR_ID);
   const { news } = useLatestNews();
 
   return (
