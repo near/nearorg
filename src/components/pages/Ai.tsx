@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { useLatestAiEvents } from '@/hooks/useLatestAiEvents';
+import { useEvents } from '@/hooks/useEvents';
 import { NEAR_AI_URL } from '@/utils/constants';
+import { LUMA_NEAR_AI_CALENDAR_ID } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
 import { Button } from '../lib/Button';
@@ -212,7 +213,7 @@ const getInvolvedItems = [
 ];
 
 export const Ai = () => {
-  const { events } = useLatestAiEvents();
+  const { events } = useEvents(LUMA_NEAR_AI_CALENDAR_ID);
   return (
     <Wrapper>
       <AiSection $backgroundColor="#9797FF">

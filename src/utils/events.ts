@@ -1,5 +1,3 @@
-import { eventsApiKey, eventsApiUrl } from './config';
-
 export type EventItem = {
   api_id: string;
   event: {
@@ -11,6 +9,7 @@ export type EventItem = {
     cover_url: string;
     url: string;
     geo_address_json: any;
+    geo_address_info?: any;
   };
 };
 
@@ -19,21 +18,17 @@ type EventsListData = {
   hasMore: boolean;
 };
 
-export const fetchEvents = async (limit: number, offset: number): Promise<EventsListData> => {
-  const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() - 1);
-  const afterDate = currentDate.toISOString().split('T')[0]; // YYYY-MM-DD
-
-  const queryFrom = `after=${afterDate}`;
+export const fetchEvents = async (calendarApiId: string, limit: number, offset: number): Promise<EventsListData> => {
+  const eventsApiUrl = 'https://api.lu.ma';
+  const queryFrom = `period=future`;
   const queryLimit = `pagination_limit=${limit ?? 10}`;
   const queryOffset = offset ? `pagination_offset=${offset}` : '';
   const queryParams = [queryFrom, queryLimit, queryOffset].filter(Boolean).join('&');
 
-  const res = await fetch(`${eventsApiUrl}/calendar/list-events?${queryParams}`, {
+  const res = await fetch(`${eventsApiUrl}/calendar/get-items?calendar_api_id=${calendarApiId}&${queryParams}`, {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      'x-luma-api-key': eventsApiKey as string,
     },
   });
 
