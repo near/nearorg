@@ -138,6 +138,18 @@ const ecosystemTeams = [
     height: '28px',
   },
   {
+    url: 'https://cosmose.ai',
+    name: 'Cosmose',
+    image: '/images/ai/cosmose.png',
+    height: '28px',
+  },
+  {
+    url: 'https://www.exabits.ai',
+    name: 'Exabits',
+    image: '/images/ai/exabits.png',
+    height: '28px',
+  },
+  {
     url: 'https://hyperbolic.xyz',
     name: 'Hyperbolic',
     image: '/images/ai/hyperbolic.png',
@@ -177,6 +189,12 @@ const ecosystemTeams = [
     url: 'https://cryptopond.xyz',
     name: 'Pond',
     image: '/images/ai/pond.png',
+    height: '28px',
+  },
+  {
+    url: 'https://www.ringfence.ai',
+    name: 'Ringfence',
+    image: '/images/ai/ringfence.png',
     height: '28px',
   },
 ];
