@@ -5,6 +5,9 @@
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	>
 
 <channel>
@@ -18,7 +21,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.5.3</generator>
 
 <image>
 	<url>https://pages.near.org/wp-content/uploads/2020/09/cropped-favicon-32x32.png</url>
@@ -27,7 +30,7 @@
 	<width>32</width>
 	<height>32</height>
 </image> 
-	<item>
+<site xmlns="com-wordpress:feed-additions:1">234542837</site>	<item>
 		<title>Sweat Economy Launches in the USA, Opening the Door to Millions of New Web3 Users </title>
 		<link>/blog/sweat-economy-launches-in-the-usa-opening-the-door-to-millions-of-new-web3-users/</link>
 		
@@ -94,7 +97,7 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">20973</post-id>	</item>
 		<item>
 		<title>Case Study: Sweat Economy’s Oleg Fomenko on Reshaping Fitness with Move-to-Earn</title>
 		<link>/blog/case-study-sweat-economys-oleg-fomenko-on-reshaping-fitness-with-move-to-earn/</link>
@@ -153,14 +156,14 @@
 
 
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="Case Study: Sweat Economy’s Oleg Fomenko on Reshaping Fitness with Move-to-Earn" width="500" height="281" src="https://www.youtube.com/embed/2tTmTMYFKfk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe title="Case Study: Sweat Economy’s Oleg Fomenko on Reshaping Fitness with Move-to-Earn" width="500" height="281" src="https://www.youtube.com/embed/2tTmTMYFKfk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div></figure>
 <p>The post <a href="/blog/case-study-sweat-economys-oleg-fomenko-on-reshaping-fitness-with-move-to-earn/">Case Study: Sweat Economy’s Oleg Fomenko on Reshaping Fitness with Move-to-Earn</a> appeared first on <a href="/">NEAR Protocol</a>.</p>
 ]]></content:encoded>
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">20618</post-id>	</item>
 		<item>
 		<title>Get Ready to SWEAT: Learn and Earn with the Most Active NEAR dApp</title>
 		<link>/blog/get-ready-to-sweat-learn-and-earn-with-the-most-active-near-dapp/</link>
@@ -230,6 +233,6 @@
 					
 		
 		
-			</item>
+		<post-id xmlns="com-wordpress:feed-additions:1">20537</post-id>	</item>
 	</channel>
 </rss>
