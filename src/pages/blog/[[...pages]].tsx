@@ -45,9 +45,9 @@ const StaticBlogPage: NextPageWithLayout = (props) => {
   }, [onBlogLinkClick]);
 
   return (
-    <>
+    <div className="gateway-page-container">
       <div dangerouslySetInnerHTML={props.bloghtml} />
-    </>
+    </div>
   );
 };
 
