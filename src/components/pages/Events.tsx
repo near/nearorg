@@ -198,7 +198,7 @@ export const Events = () => {
               )}
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="20px">
+            <Grid $columns="1fr 1fr 1fr" $gap="24px">
               {otherEvents.map((event) => {
                 return (
                   <Article key={event.title} href={event.url} target="_blank" style={{ minWidth: 0 }}>
