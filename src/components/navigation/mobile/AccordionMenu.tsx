@@ -139,7 +139,7 @@ const NearAiLink = styled(Link)`
 export const AccordionMenu = (props: Props) => {
   return (
     <Wrapper>
-      <NearAiLink href="/ai">
+      <NearAiLink href="/ai" onClick={props.onCloseMenu}>
         Near AI
         <i className="ph-fill ph-star-four" />
       </NearAiLink>
