@@ -28,6 +28,7 @@ jobs:
         run: |
           git branch url-update
           git checkout url-update
+          git add . 
           gh pr create -B develop -H url-update --fill -m 'build: auto-update URL paths in response to marketing content update. Before merging Test /blog/page/2'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
