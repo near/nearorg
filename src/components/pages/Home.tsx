@@ -294,7 +294,7 @@ function returnImageSrc(cfid: string) {
 
 export const Home = () => {
   const { statistics } = useStatistics();
-  const { events } = useEvents(LUMA_NEAR_CALENDAR_ID);
+  const { events } = useEvents([LUMA_NEAR_CALENDAR_ID]);
   const { news } = useLatestNews();
 
   return (

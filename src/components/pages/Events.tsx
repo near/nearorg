@@ -108,7 +108,7 @@ const CoverCardImageWrapper = styled.div`
 `;
 
 export const Events = () => {
-  const { events, hasMoreEvents } = useEvents(LUMA_NEAR_CALENDAR_ID, 7);
+  const { events, hasMoreEvents } = useEvents([LUMA_NEAR_CALENDAR_ID], 7);
   const featuredEvent = events[0] as MappedEvent | undefined;
   const otherEvents = events.filter((event) => event.title !== featuredEvent?.title);
 

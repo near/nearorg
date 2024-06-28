@@ -13,7 +13,7 @@ export type MappedEvent = {
 
 // TODO: Refactor this hook to use something like ReactQuery
 
-export function useEvents(calendarApiId: string, limit = 3) {
+export function useEvents(calendarApiIds: string[], limit = 3) {
   const aiEventsUrl = 'https://lu.ma';
   const [events, setEvents] = useState<MappedEvent[]>([]);
   const [hasMoreEvents, setHasMoreEvents] = useState(false);
@@ -21,9 +21,11 @@ export function useEvents(calendarApiId: string, limit = 3) {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchEvents(calendarApiId, limit, 0);
+        const allEvents = await Promise.all(calendarApiIds.map((id) => fetchEvents(id, limit, 0)));
 
-        const sortedEvents = [...result.entries]
+        const combinedEvents = allEvents.flatMap((result) => result.entries);
+
+        const sortedEvents = [...combinedEvents]
           .sort((a, b) => new Date(a.event.start_at).getTime() - new Date(b.event.start_at).getTime())
           .slice(0, limit);
 
@@ -39,14 +41,15 @@ export function useEvents(calendarApiId: string, limit = 3) {
         });
 
         setEvents(mappedEvents);
-        setHasMoreEvents(result.hasMore);
+        setHasMoreEvents(combinedEvents.length > limit);
       } catch (error) {
         console.error(error);
       }
     };
 
     loadData();
-  }, [calendarApiId, limit]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(calendarApiIds), limit]);
 
   const formatDate = (startAt: string, endAt: string) => {
     // Example Format: "Jul 21 - Jul 23, 2023"
@@ -71,6 +74,9 @@ export function useEvents(calendarApiId: string, limit = 3) {
   const formatLocation = (location: any) => {
     if (location.city || location.city_state) {
       return `${location.city ?? location.city_state}, ${location.country}`;
+      // Luma API returns "mode" as "obfuscated" when the address is hidden
+    } else if (location && location?.mode === 'obfuscated') {
+      return 'Register to See Address';
     }
     return location.address;
   };
