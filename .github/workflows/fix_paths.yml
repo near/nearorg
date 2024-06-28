@@ -25,6 +25,9 @@ jobs:
 
       - name: create pull request
         if: steps.check_diff.outputs.changed == 'true'
-        run: gh pr create -B develop -H url-update --fill -m 'auto-update URL paths in response to marketing content update'
+        run: |
+          gb url-update
+          git checkout url-update
+          gh pr create -B develop -H url-update --fill -m 'build: auto-update URL paths in response to marketing content update. Before merging Test /blog/page/2'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
