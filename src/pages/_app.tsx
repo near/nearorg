@@ -2,6 +2,7 @@ import '@/styles/reset.css';
 import '@/styles/theme.css';
 import '@/styles/globals.css';
 
+import Gleap from 'gleap';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -17,6 +18,11 @@ import type { NextPageWithLayout } from '@/utils/types';
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+if (typeof window !== 'undefined') {
+  const gleapSdkToken = process.env.NEXT_PUBLIC_GLEAP_SDK_TOKEN;
+  if (gleapSdkToken) Gleap.initialize(gleapSdkToken);
+}
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);

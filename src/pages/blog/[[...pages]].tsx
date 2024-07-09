@@ -11,11 +11,11 @@ export const getServerSideProps = (async ({ resolvedUrl }) => {
   if (blogParts[1] !== title) {
     title = `${blogParts[1].substring(0, blogParts[1].indexOf('/'))}/index.html`;
   }
-  const res = await fetch(`https://raw.githubusercontent.com/near/nearorg_marketing/${blog_branch}/public/blog/${title}`).catch(
-    (e) => {
-      throw e;
-    },
-  );
+  const res = await fetch(
+    `https://raw.githubusercontent.com/near/nearorg_marketing/${blog_branch}/public/blog/${title}`,
+  ).catch((e) => {
+    throw e;
+  });
 
   const __html = await (await res.blob()).text();
 
