@@ -25,7 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rudder-sdk-js": "^2.48.6",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",

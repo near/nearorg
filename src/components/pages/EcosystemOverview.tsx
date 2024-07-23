@@ -3,6 +3,7 @@ import { Button } from '../lib/Button';
 import { Container } from '../lib/Container';
 import { ContentWithImage } from '../lib/ContentWithImage';
 import { Flex } from '../lib/Flex';
+import { Grid } from '../lib/Grid';
 import { Pattern, PatternContent } from '../lib/Pattern';
 import { Section } from '../lib/Section';
 import { H1, H2, Text } from '../lib/Text';
@@ -29,11 +30,30 @@ export const EcosystemOverview = () => {
           <Pattern>
             <PatternContent>
               <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>Ecosystem</H1>
+                <H1>Welcome to NEAR</H1>
 
                 <Text $size="text-l" $mobileSize="text-base">
                   Explore a vibrant ecosystem that supports developers, founders, and contributors.
                 </Text>
+
+                <Grid $gap="16px" $columns="1fr 1fr 1fr 1fr" $mobileColumns="1fr 1fr">
+                  <Button href="/founders" label="Founders" variant="primary" size="large" />
+                  <Button href="/ai" label="NEAR AI" variant="primary" size="large" />
+                  <Button
+                    href="https://dev.near.org/devhub.near/widget/app"
+                    target="_blank"
+                    label="Developers"
+                    variant="primary"
+                    size="large"
+                  />
+                  <Button
+                    href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
+                    target="_blank"
+                    label="Connect"
+                    variant="primary"
+                    size="large"
+                  />
+                </Grid>
               </Flex>
             </PatternContent>
           </Pattern>
@@ -80,13 +100,13 @@ export const EcosystemOverview = () => {
             alt="The Near Horizon logo, a blue sunrise and the wordmark for Horizon"
           >
             <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-              Horizon: The launchpad for founders.
+              Founder Hub: A Resource for Founders
             </Text>
-            <Text>Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.</Text>
+            <Text>Founder Hub is an early stage accelerator for Web3 founders to build, connect, and grow.</Text>
             <div>
               <Button
                 href="/horizon"
-                label="Explore Horizon"
+                label="Explore Founder Hub"
                 target="_blank"
                 variant="secondary"
                 fill="outline"
