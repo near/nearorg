@@ -1,15 +1,17 @@
 @font-face {
-  font-family: "Mona Sans";
-  src: url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
-    url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-family: 'Mona Sans';
+  src:
+    url('/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('/fonts/Mona-Sans.woff2') format('woff2-variations');
   font-weight: 200 900;
   font-stretch: 75% 125%;
 }
 
 @font-face {
-  font-family: "FK Grotesk";
-  src: url("/fonts/FKGrotesk.woff2") format("woff2 supports variations"),
-    url("/fonts/FKGrotesk.woff2") format("woff2-variations");
+  font-family: 'FK Grotesk';
+  src:
+    url('/fonts/FKGrotesk.woff2') format('woff2 supports variations'),
+    url('/fonts/FKGrotesk.woff2') format('woff2-variations');
   font-weight: 200 900;
   font-stretch: 75% 125%;
 }
@@ -19,6 +21,7 @@ html {
   -webkit-font-smoothing: antialiased;
   color: var(--sand12);
   font: var(--text-base);
+  text-wrap: pretty;
 }
 
 a {
@@ -30,6 +33,5 @@ a {
   flex-grow: 1;
   max-width: 1320px;
   margin: 0 auto;
-  padding: var(--gateway-page-container-padding-y)
-    var(--gateway-page-container-padding-x);
+  padding: var(--gateway-page-container-padding-y) var(--gateway-page-container-padding-x);
 }

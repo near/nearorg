@@ -118,33 +118,6 @@ const images = {
   flagUSA: 'bafkreicsmgaejlbmzvfbawdayiqljbxzi62tmvvktoveubuljijib6ezd4.svg',
 };
 
-const fundingCards = [
-  {
-    key: 'ecosystem_grants',
-    iconClassName: 'ph ph-circles-three-plus',
-    iconColor: 'violet7',
-    content: 'Ecosystem Funding Outlets',
-  },
-  {
-    key: 'accelerators_and_incubators',
-    iconClassName: 'ph ph-trend-up',
-    iconColor: 'violet8',
-    content: 'Accelerators & Incubators',
-  },
-  {
-    key: 'community_led_dao',
-    iconClassName: 'ph ph-users-four',
-    iconColor: 'red7',
-    content: 'Community-led DAOs',
-  },
-  {
-    key: 'regional_hubs',
-    iconClassName: 'ph ph-planet',
-    iconColor: 'cyan7',
-    content: 'Regional hubs',
-  },
-];
-
 const ecosystemGrantCards = [
   {
     image: images.logoNDC,
@@ -363,35 +336,6 @@ export const EcosystemGetFunding = () => {
               The NEAR ecosystem offers multiple funding options to support initiatives aimed at decentralizing,
               growing, and innovating on NEAR.
             </Text>
-          </Flex>
-        </Section>
-
-        <Section $center>
-          <Flex $gap="16px" $direction="column" $alignItems="stretch" style={{ width: '100%' }}>
-            <Text $size="text-3xl" color="sand12">
-              Funding sources
-            </Text>
-            <Text $size="text-xl" color="sand12">
-              {`We've`} helped hundreds of projects and teams realize their ideas, and bring them to market.
-            </Text>
-            <img
-              src={returnImageSrc(images.arrows)}
-              alt=""
-              className="arrows-image"
-              style={{ maxWidth: '890px', margin: '0 auto' }}
-            />
-            <Grid $columns="1fr 1fr 1fr 1fr" $gap="1rem">
-              {fundingCards.map((item) => (
-                <div className="col" key={item.key}>
-                  <Card $center>
-                    <a href={`#${item.key}`}>
-                      <SocialIcon className={item.iconClassName} $color={`var(--${item.iconColor})`} />
-                      <Text color="sand12">{item.content}</Text>
-                    </a>
-                  </Card>
-                </div>
-              ))}
-            </Grid>
           </Flex>
         </Section>
 

@@ -7,7 +7,7 @@ import { Grid } from '../lib/Grid';
 import { IconCircle } from '../lib/IconCircle';
 import { Pattern, PatternContent } from '../lib/Pattern';
 import { Section } from '../lib/Section';
-import { H1, H2, Text } from '../lib/Text';
+import { H2, Text } from '../lib/Text';
 import { Wrapper } from '../lib/Wrapper';
 
 const selfServeResources = [
@@ -28,21 +28,13 @@ const selfServeResources = [
     target: '_blank',
   },
   {
-    name: 'Token Launch Resources',
-    description: 'Discover detailed support to help you understand how to launch a token.',
-    icon: 'ph-file-doc',
-    url: '/papers/token-launch-checklist',
-    target: '_blank',
-  },
-  {
     name: 'Builder Perks',
     description: (
       <>
         {`We've`} curated a growing collection of curated resources and over $500K in discounts for HZN Founders.
         <br />
         <br />
-        Interested in having your product listed as a perk? Send us a message at:{' '}
-        <a href="mailto:Horizon@near.foundation">Horizon@near.foundation</a>
+        Interested in having your product listed as a perk? Send us a message at: <b>Horizon@near.foundation</b>
       </>
     ),
     icon: 'ph-hammer',
@@ -61,9 +53,9 @@ const selfServeResources = [
 
 const ecosystemCommunityResources = [
   {
-    name: 'HZN Accelerator Application',
+    name: 'HZN AI Incubator Application',
     description:
-      'Join the 8-week equity-free accelerator that provides multi-faceted support for early stage web3 projects.',
+      "Building in Web3 and AI. Apply to NEAR Horizon’s AI incubator and contribute to NEAR's User-Owned AI vision.",
     icon: 'ph-article',
     url: 'https://www.hzn.xyz/hzn',
     target: '_blank',
@@ -74,13 +66,6 @@ const ecosystemCommunityResources = [
       'Explore ecosystem funding opportunities and builder communities to find the right support for your projects.',
     icon: 'ph-article',
     url: '/ecosystem/get-funding',
-  },
-  {
-    name: 'Founder Events',
-    description: 'Discover the events that are revolutionizing how founders and builders find support in Web3.',
-    icon: 'ph-calendar-plus',
-    url: 'https://lu.ma/u/usr-5oZHY9dEDbDcaHY',
-    target: '_blank',
   },
 ];
 
@@ -95,36 +80,42 @@ export const Founders = () => {
         <Container $center>
           <Pattern>
             <PatternContent>
-              <Flex $direction="column" $alignItems="center">
-                <H1>FounderHub</H1>
+              <Flex $gap="32px" $direction="column" $alignItems="center">
+                <H2>Welcome to NEAR, the best place to build Web3 projects</H2>
+
+                <Text $size="text-base" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
+                  From idea to launch, the NEAR FounderHub guides you every step of the way. Get the tailored resources,
+                  support, and community you need to launch and scale your Web3 project on NEAR.
+                </Text>
+
+                <Flex $gap="16px" $wrap="wrap" $justifyContent="center" $alignItems="center">
+                  <Button
+                    href="https://near-horizon.notion.site/NEAR-Founder-Hub-Content-Database-d69fcf11613443128fa249fe9fa069f0"
+                    target="_blank"
+                    label="Resources"
+                    variant="primary"
+                    size="large"
+                  />
+                  <Button
+                    href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
+                    target="_blank"
+                    label="Connect"
+                    variant="primary"
+                    size="large"
+                  />
+                  <Button
+                    href="https://www.hzn.xyz/hzn"
+                    target="_blank"
+                    label="AI Incubator"
+                    variant="primary"
+                    size="large"
+                  />
+                </Flex>
               </Flex>
             </PatternContent>
           </Pattern>
         </Container>
       </Section>
-
-      <Section $backgroundColor="#ffffff">
-        <Container $center>
-          <Flex $direction="column" $gap="24px" $alignItems="center">
-            <H2>Welcome to NEAR, the best place to build Web3 projects</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              From idea to launch, the NEAR FounderHub guides you every step of the way. Get the tailored resources,
-              support, and community you need to launch and scale your Web3 project on NEAR.
-            </Text>
-
-            <Flex>
-              <Button
-                href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
-                target="_blank"
-                label="Join our Founder Community"
-                variant="primary"
-                size="large"
-              />
-            </Flex>
-          </Flex>
-        </Container>
-      </Section>
-
       <Section $backgroundColor="#F2F1EA">
         <Container>
           <Flex $direction="column" $gap="24px">
@@ -150,6 +141,42 @@ export const Founders = () => {
               </Card>
             ))}
           </Grid>
+        </Container>
+      </Section>
+
+      <Section $backgroundColor="#161615">
+        <Container>
+          <Flex $direction="column" $gap="24px">
+            <H2 style={{ color: 'var(--white)' }}>Join the User-Owned AI Mission</H2>
+          </Flex>
+
+          <ContentWithImage
+            src={returnImageSrc('bafkreib55qq67nbthwpkzqx2upjnecwnrutpo3q26zjqt3wz3n5iw4o6da')}
+            imageSide="left"
+            alt="The HZN logo."
+          >
+            <Flex $direction="column" $gap="32px">
+              <Text $size="text-xl" $mobileSize="text-l" $weight="500" color="white">
+                {`Apply to NEAR's HZN AI Incubator`}
+              </Text>
+              <Text color="white" style={{ maxWidth: '496px' }}>
+                Put the power of AI where it belongs, in the hands of Users. Apply to be part of NEAR Foundation’s
+                strategic vision to build a User-Owned AI ecosystem that provides alternatives to the corporate-owned,
+                centralized AI.
+              </Text>
+              <Flex>
+                <Button
+                  href="https://www.hzn.xyz/hzn"
+                  target="_blank"
+                  label="Apply Now"
+                  variant="affirmative"
+                  fill="outline"
+                  size="large"
+                  className="darkButton"
+                />
+              </Flex>
+            </Flex>
+          </ContentWithImage>
         </Container>
       </Section>
 
@@ -180,54 +207,18 @@ export const Founders = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#161615">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Accelerate your Web3 journey</H2>
-          </Flex>
-
-          <ContentWithImage
-            src={returnImageSrc('bafkreib55qq67nbthwpkzqx2upjnecwnrutpo3q26zjqt3wz3n5iw4o6da')}
-            imageSide="left"
-            alt="The HZN logo."
-          >
-            <Flex $direction="column" $gap="32px">
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500" color="white">
-                HZN3 applications are open
-              </Text>
-              <Text color="white" style={{ maxWidth: '496px' }}>
-                Over 50 projects have been accelerated through HZN, our equity-free accelerator and gone on to raise
-                over $10M in external capital. Get the equity-free education, mentorship, and a network to take your
-                project to the next level.
-              </Text>
-              <Flex>
-                <Button
-                  href="https://www.hzn.xyz/hzn"
-                  target="_blank"
-                  label="Apply Now"
-                  variant="affirmative"
-                  fill="outline"
-                  size="large"
-                  className="darkButton"
-                />
-              </Flex>
-            </Flex>
-          </ContentWithImage>
-        </Container>
-      </Section>
-
       <Section $backgroundColor="#00EC97">
         <Container>
           <Flex $direction="column" $gap="24px" $alignItems="center">
             <Text $size="text-3xl" $weight="500" style={{ maxWidth: '808px', textAlign: 'center' }}>
-              Get in touch
+              Get in Touch
             </Text>
             <Text $size="text-xl" style={{ maxWidth: '658px', textAlign: 'center' }}>
               Reach out to us to provide your feedback or to ask for specific support.
             </Text>
             <Button
-              href="https://dev.near.org/contact-us"
-              label="Contact Us"
+              href="https://linktr.ee/joinNEARcommunity"
+              label="Connect"
               target="_blank"
               variant="primary"
               size="large"
