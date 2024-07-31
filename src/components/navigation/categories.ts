@@ -12,6 +12,11 @@ export const navigationCategories = [
             icon: 'ph-squares-four ph-bold',
           },
           {
+            title: 'Chain Abstraction',
+            url: '/chain-abstraction',
+            icon: 'ph-user-focus ph-bold',
+          },
+          {
             title: 'Open Web Applications',
             url: '/open-web-applications',
             icon: 'ph-globe-simple ph-bold',
