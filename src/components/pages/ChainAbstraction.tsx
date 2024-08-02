@@ -20,83 +20,90 @@ import { Wrapper } from '../lib/Wrapper';
 
 const validators = [
   {
-    height: '24px',
+    height: '26px',
     imageUrl: '/images/chain-abstraction/validators/pagoda.png',
     name: 'Pagoda',
-    url: '#',
+    url: 'https://www.pagoda.co/',
+  },
+
+  {
+    height: '26px',
+    imageUrl: '/images/chain-abstraction/validators/luganodes.png',
+    name: 'Luganodes',
+    url: 'https://www.luganodes.com/',
+  },
+  {
+    height: '30px',
+    imageUrl: '/images/chain-abstraction/validators/the-lifted-initiative.png',
+    name: 'The Lifted Initiative',
+    url: 'https://liftedinit.org/',
+  },
+  {
+    height: '26px',
+    imageUrl: '/images/chain-abstraction/validators/infstones.png',
+    name: 'InfStones',
+    url: 'https://infstones.com/',
+  },
+  {
+    height: '26px',
+    imageUrl: '/images/chain-abstraction/validators/staking4all.png',
+    name: 'Staking4All',
+    url: 'https://www.staking4all.org/',
+  },
+  {
+    height: '26px',
+    imageUrl: '/images/chain-abstraction/validators/node-monster.png',
+    name: 'Node Monster',
+    url: 'https://node.monster/',
+  },
+  {
+    height: '30px',
+    imageUrl: '/images/chain-abstraction/validators/black-sand.png',
+    name: 'Black Sand Technologies',
+    url: 'https://blacksand.xyz/',
   },
   {
     height: '26px',
     imageUrl: '/images/chain-abstraction/validators/aurora.png',
     name: 'Aurora',
-    url: '#',
-  },
-  {
-    height: '24px',
-    imageUrl: '/images/chain-abstraction/validators/luganodes.png',
-    name: 'Luganodes',
-    url: '#',
-  },
-  {
-    height: '24px',
-    imageUrl: '/images/chain-abstraction/validators/infstones.png',
-    name: 'Infstones',
-    url: '#',
-  },
-  {
-    height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/staking4all.png',
-    name: 'Staking 4 All',
-    url: '#',
-  },
-  {
-    height: '24px',
-    imageUrl: '/images/chain-abstraction/validators/node-monster.png',
-    name: 'Node Monster',
-    url: '#',
-  },
-  {
-    height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/black-sand.png',
-    name: 'Black Sand Technologies',
-    url: '#',
+    url: 'https://aurora.dev/',
   },
 ];
 
 const featuredDapps = [
   {
-    name: 'AllStake',
+    name: 'Allstake',
     description:
       'Allstake pioneers meshed restaking, enabling users to natively restake a wide range of assets on multiple chains including NEAR, Solana, Bitcoin, Ethereum, Ton, and more.',
     imageUrl: '/images/chain-abstraction/dapps/all-stake.png',
-    url: '#',
+    url: 'https://allstake.org/',
   },
   {
-    name: 'Sweat Wallet',
+    name: 'Sweat Economy',
     description:
       'SWEAT is an ecosystem that captures the value of physical movement for tens of millions of users. By pioneering NEAR’s Chain Signatures, SWEAT is setting a new standard for multi-chain experiences on a global scale.',
     imageUrl: '/images/chain-abstraction/dapps/sweat-wallet.png',
-    url: '#',
+    url: 'https://sweateconomy.com/',
   },
   {
     name: 'Defuse',
     description:
       'Defuse is a scalable, multi-chain DeFi infrastructure that facilitates the creation and trading of financial instruments with minimized centralization risks, while unifying liquidity across crypto ecosystems.',
     imageUrl: '/images/chain-abstraction/dapps/defuse.png',
-    url: '#',
+    url: 'https://defuse.org',
   },
   {
     name: 'Bitte Wallet',
     description: 'Smart accounts with on-chain AI.',
     imageUrl: '/images/chain-abstraction/dapps/bitte-wallet.png',
-    url: '#',
+    url: 'https://wallet.bitte.ai/',
   },
   {
     name: 'Here Wallet',
     description:
       'HERE Wallet is a self-custodial mobile, web, and Telegram crypto wallet with over 15 million users. HERE supports accounts over HOT Protocol, a decentralized MPC network built with the NEAR Chain Abstraction stack.',
     imageUrl: '/images/chain-abstraction/dapps/here-wallet.png',
-    url: '#',
+    url: 'https://www.herewallet.app/',
   },
 ];
 
@@ -106,33 +113,33 @@ const upcomingDapps = [
     description:
       'The definitive cross-chain swap solution using MPC technology. Bridgeless, swap native assets faster and securely between Bitcoin, Solana, TON, Near, and EVM blockchains without MEV attacks or slippage.',
     imageUrl: '/images/chain-abstraction/dapps/omnilane.png',
-    url: '#',
+    url: 'https://omnilane.xyz/',
   },
   {
     name: 'Atlas',
     description: 'Liquid staking on Bitcoin via Chain Signatures',
     imageUrl: '/images/chain-abstraction/dapps/atlas.png',
-    url: '#',
+    url: 'https://x.com/_atlasprotocol',
   },
   {
     name: 'Redacted',
     description:
       'Multichain lending protocol. Use any asset on any chain as collateral: BTC, DOGE, XRP, SOL, TON, and more',
     imageUrl: '/images/chain-abstraction/dapps/redacted.png',
-    url: '#',
+    url: '',
   },
   {
     name: 'Paras',
     description: 'The first high-throughput Bitcoin Runes marketplace. Settle trades in seconds',
     imageUrl: '/images/chain-abstraction/dapps/paras.png',
-    url: '#',
+    url: 'https://paras.id',
   },
   {
     name: 'DeltaTrade',
     description:
       'Delta Trade is a decentralized trading protocol that enhances user capabilities with sophisticated on-chain trading strategies such as Grid Trading, DCA, Rebalancing Grid, MultiChain Support, OrderBook, Full Platform Market Making, and AI Powered Strategy.',
     imageUrl: '/images/chain-abstraction/dapps/delta-trade.png',
-    url: '#',
+    url: 'https://www.deltatrade.ai/',
   },
 ];
 
@@ -141,29 +148,74 @@ const learnItems = [
     name: 'Technical Deep Dive',
     description: 'A breakdown of the technical ins and outs of Chain Signatures.',
     icon: 'ph-article',
-    url: '#',
+    url: 'https://medium.com/@ProximityFi/a-first-look-at-chain-signatures-cross-chain-without-bridges-81c8421d153c',
     target: '_blank',
   },
   {
     name: 'Docs & Examples',
     description: 'Official documentation and code examples for Chain Signatures',
     icon: 'ph-file-doc',
-    url: '#',
+    url: 'https://docs.near.org/concepts/abstraction/chain-signatures',
     target: '_blank',
   },
   {
     name: 'Getting Started Guide',
     description: "An easy starter's guide written for developers, by developers.",
     icon: 'ph-book-open-text',
+    url: 'https://docs.near.org/build/chain-abstraction/chain-signatures',
+    target: '_blank',
+  },
+  {
+    name: 'Multichain Gas Relayer',
+    description:
+      'How the Multichain Gas Relayer enables gas abstraction for Chain Signatures products and their users.',
+    icon: 'ph-book-open-text',
+    url: 'https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview',
+    target: '_blank',
+  },
+];
+
+const mediaItems = [
+  {
+    name: 'Chain Abstracted Podcast',
+    imageUrl: '/images/chain-abstraction/media/chain-abstracted-podcast.png',
+    url: 'https://youtu.be/363tiDWblFQ?si=JFDBl0WWT9J4QRUO',
+    target: '_blank',
+  },
+  {
+    name: 'Cross-Chain Without Bridges',
+    imageUrl: '/images/chain-abstraction/media/cross-chain-without-bridges.png',
+    url: 'https://youtu.be/vOmq4DKZIAA?si=xA-zGJNMz-g-dkHH',
+    target: '_blank',
+  },
+  {
+    name: 'Chain Signatures Mainnet Announcement Post',
+    imageUrl: '/images/chain-abstraction/media/announcement-post.png',
     url: '#',
     target: '_blank',
   },
   {
-    name: 'Multichain Gas Relayer ',
-    description:
-      'How the Multichain Gas Relayer enables gas abstraction for Chain Signatures products and their users.',
-    icon: 'ph-book-open-text',
-    url: '#',
+    name: 'Chain Signature Examples',
+    imageUrl: '/images/chain-abstraction/media/chain-signature-examples.png',
+    url: 'https://pages.near.org/blog/unlocking-multichain-web3-with-near-chain-signatures/',
+    target: '_blank',
+  },
+  {
+    name: 'A First Look at Chain Signatures',
+    imageUrl: '/images/chain-abstraction/media/first-look.png',
+    url: 'https://medium.com/nearprotocol/a-first-look-at-chain-signatures-cross-chain-without-bridges-81c8421d153c',
+    target: '_blank',
+  },
+  {
+    name: 'DevHub: Chain Abstraction Community Call Playlist',
+    imageUrl: '/images/chain-abstraction/media/dev-hub-community-playlist.png',
+    url: 'https://youtube.com/playlist?list=PLrLLmjcJVAB9LOIB2oMVHWU4kjL7rZNrH&si=Mm8UGnLBDsVGmXaP',
+    target: '_blank',
+  },
+  {
+    name: 'DevHub: Chain Abstraction Playlist',
+    imageUrl: '/images/chain-abstraction/media/dev-hub-abstraction-playlist.png',
+    url: 'https://youtube.com/playlist?list=PLrLLmjcJVAB-hMq0mgAyzlOqccMHvQFys&si=-Hvrmp6GOsfMGrKF',
     target: '_blank',
   },
 ];
@@ -216,9 +268,16 @@ export const ChainAbstraction = () => {
                 </Text>
 
                 <Flex $gap="16px" $wrap="wrap" $justifyContent="center" $alignItems="center">
-                  <Button href="#" label="Build With Us" variant="secondary" fill="outline" size="large" />
-                  <Button href="#" label="Explore dApps" variant="secondary" fill="outline" size="large" />
-                  <Button href="#" label="Get Started" variant="primary" size="large" />
+                  <Button
+                    href="https://form.jotform.com/240777569453167"
+                    target="_blank"
+                    label="Build With Us"
+                    variant="secondary"
+                    fill="outline"
+                    size="large"
+                  />
+                  <Button href="#dapps" label="Explore dApps" variant="secondary" fill="outline" size="large" />
+                  <Button href="#get-started" label="Get Started" variant="primary" size="large" />
                 </Flex>
               </Flex>
             </PatternContent>
@@ -238,7 +297,7 @@ export const ChainAbstraction = () => {
             </Flex>
 
             <video controls>
-              <source src="/videos/example.webm" type="video/webm" />
+              <source src="/videos/chain-abstraction.mp4" type="video/mp4" />
             </video>
           </Flex>
 
@@ -340,15 +399,23 @@ export const ChainAbstraction = () => {
               </Text>
 
               <Text $color="white" $size="text-s">
-                The Multichain Gas Relayer eliminates the need for users to acquire native gas tokens separately when
-                making cross-chain transactions
+                The{' '}
+                <a
+                  style={{ color: '#fff', fontWeight: 600, textDecoration: 'underline' }}
+                  href="https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview"
+                  target="_blank"
+                >
+                  Multichain Gas Relayer
+                </a>{' '}
+                eliminates the need for users to acquire native gas tokens separately when making cross-chain
+                transactions
               </Text>
             </Flex>
           </Grid>
         </Container>
       </Section>
 
-      <Section $backgroundColor="#fff">
+      <Section $backgroundColor="#fff" id="dapps">
         <Container>
           <Flex $direction="column" $gap="24px">
             <H2>Explore dApps</H2>
@@ -393,7 +460,14 @@ export const ChainAbstraction = () => {
 
             <Grid $columns="1fr 1fr 1fr" $gap="24px">
               {upcomingDapps.map((item) => (
-                <Card as="a" href={item.url} target="_blank" rel="noopener noreferrer" key={item.name} $clickable>
+                <Card
+                  as={item.url ? 'a' : undefined}
+                  href={item.url || undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={item.name}
+                  $clickable={!!item.url}
+                >
                   <Flex $direction="column" $gap="16px">
                     <DappIcon src={item.imageUrl} alt={item.name} />
 
@@ -409,7 +483,7 @@ export const ChainAbstraction = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#161615" style={{ '--sand11': '#A1A09A' } as any}>
+      <Section $backgroundColor="#161615" style={{ '--sand11': '#A1A09A' } as any} id="get-started">
         <Container>
           <Flex $direction="column" $gap="24px">
             <H2 style={{ color: 'var(--white)' }}>Getting Started</H2>
@@ -470,10 +544,17 @@ export const ChainAbstraction = () => {
               </Flex>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
+            <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
+              {mediaItems.map((item) => (
+                <Article key={item.name} href={item.url} target="_blank" style={{ minWidth: 0 }}>
+                  <ArticleImage>
+                    <img src={item.imageUrl} alt={item.name} />
+                  </ArticleImage>
+                  <Text $size="text-l" $weight="500" as="h3" $color="white">
+                    {item.name}
+                  </Text>
+                </Article>
+              ))}
             </Grid>
           </Flex>
         </Container>
@@ -489,7 +570,14 @@ export const ChainAbstraction = () => {
           </Flex>
 
           <Grid $columns="1fr 1fr" $gap="24px">
-            <Card $clickable $dark as="a" href="#" $borderColor="var(--cyan11)">
+            <Card
+              $clickable
+              $dark
+              as="a"
+              href="https://form.jotform.com/240777569453167"
+              target="_blank"
+              $borderColor="var(--cyan11)"
+            >
               <IconCircle>
                 <i className="ph-duotone ph-lightbulb-filament" />
               </IconCircle>
@@ -504,7 +592,14 @@ export const ChainAbstraction = () => {
               </Flex>
             </Card>
 
-            <Card $clickable $dark as="a" href="#" $borderColor="var(--cyan11)">
+            <Card
+              $clickable
+              $dark
+              as="a"
+              href="https://t.me/+RXYjlPob_XM5N2Ex"
+              target="_blank"
+              $borderColor="var(--cyan11)"
+            >
               <IconCircle>
                 <i className="ph-duotone ph-users-three" />
               </IconCircle>
