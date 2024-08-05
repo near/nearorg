@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
 
 export const Card = styled.div<{
+  $borderColor?: string;
   $clickable?: boolean;
   $dark?: boolean;
 }>`
   --background-hover-color: ${(p) => (p.$dark ? 'var(--whiteA6)' : 'var(--blackA6)')};
   --background-focus-color: ${(p) => (p.$dark ? 'var(--whiteA6)' : 'var(--blackA6)')};
-  --border-color: ${(p) => (p.$dark ? '#717069' : 'var(--sand11)')};
+  --border-color: ${(p) => p.$borderColor ?? (p.$dark ? '#717069' : 'var(--sand11)')};
   padding: 32px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
