@@ -87,6 +87,10 @@ const sections = [
         url: '/blockchain',
       },
       {
+        title: 'Chain Abstraction',
+        url: '/chain-abstraction',
+      },
+      {
         title: 'Open Web Applications',
         url: '/open-web-applications',
       },
