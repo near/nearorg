@@ -93,10 +93,10 @@ const featuredDapps = [
     url: 'https://defuse.org',
   },
   {
-    name: 'Bitte Wallet',
+    name: 'Bitte',
     description: 'Smart accounts with on-chain AI.',
     imageUrl: '/images/chain-abstraction/dapps/bitte-wallet.png',
-    url: 'https://wallet.bitte.ai/',
+    url: 'https://bitte.ai/',
   },
   {
     name: 'Here Wallet',
@@ -144,13 +144,13 @@ const upcomingDapps = [
 ];
 
 const learnItems = [
-  {
-    name: 'Technical Deep Dive',
-    description: 'A breakdown of the technical ins and outs of Chain Signatures.',
-    icon: 'ph-article',
-    url: 'https://medium.com/@ProximityFi/a-first-look-at-chain-signatures-cross-chain-without-bridges-81c8421d153c',
-    target: '_blank',
-  },
+  // {
+  //   name: 'Technical Deep Dive',
+  //   description: 'A breakdown of the technical ins and outs of Chain Signatures.',
+  //   icon: 'ph-article',
+  //   url: 'https://medium.com/@ProximityFi/a-first-look-at-chain-signatures-cross-chain-without-bridges-81c8421d153c',
+  //   target: '_blank',
+  // },
   {
     name: 'Docs & Examples',
     description: 'Official documentation and code examples for Chain Signatures',
@@ -188,12 +188,12 @@ const mediaItems = [
     url: 'https://youtu.be/vOmq4DKZIAA?si=xA-zGJNMz-g-dkHH',
     target: '_blank',
   },
-  {
-    name: 'Chain Signatures Mainnet Announcement Post',
-    imageUrl: '/images/chain-abstraction/media/announcement-post.png',
-    url: '#',
-    target: '_blank',
-  },
+  // {
+  //   name: 'Chain Signatures Mainnet Announcement Post',
+  //   imageUrl: '/images/chain-abstraction/media/announcement-post.png',
+  //   url: '#',
+  //   target: '_blank',
+  // },
   {
     name: 'Chain Signature Examples',
     imageUrl: '/images/chain-abstraction/media/chain-signature-examples.png',
