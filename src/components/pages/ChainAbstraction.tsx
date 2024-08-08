@@ -162,7 +162,7 @@ const learnItems = [
     name: 'Getting Started Guide',
     description: "An easy starter's guide written for developers, by developers.",
     icon: 'ph-book-open-text',
-    url: 'https://docs.near.org/build/chain-abstraction/chain-signatures',
+    url: 'https://pages.near.org/blog/getting-started-with-chain-signatures',
     target: '_blank',
   },
   {
@@ -170,7 +170,7 @@ const learnItems = [
     description:
       'How the Multichain Gas Relayer enables gas abstraction for Chain Signatures products and their users.',
     icon: 'ph-book-open-text',
-    url: 'https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview',
+    url: 'https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/getting-started',
     target: '_blank',
   },
 ];
@@ -557,6 +557,47 @@ export const ChainAbstraction = () => {
               ))}
             </Grid>
           </Flex>
+        </Container>
+      </Section>
+
+      <Section $backgroundColor="#fff">
+        <Container>
+          <Flex $direction="column" $gap="24px">
+            <H2>Roadmap</H2>
+            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
+              Technical developments coming soon to Chain Signatures.
+            </Text>
+          </Flex>
+
+          <Grid $columns="1fr 1fr 1fr" $gap="48px">
+            <Flex $direction="column" $gap="24px">
+              <Text $size="text-l" $weight="600">
+                Q3 2024
+              </Text>
+              <Text $size="text-s">Mainnet launch (ECDSA support)</Text>
+            </Flex>
+
+            <Flex $direction="column" $gap="24px">
+              <Text $size="text-l" $weight="600">
+                Q4 2024
+              </Text>
+              <Text $size="text-s">EDDSA support (Solana, TON)</Text>
+            </Flex>
+
+            <Flex $direction="column" $gap="24px">
+              <Text $size="text-l" $weight="600">
+                2025
+              </Text>
+              <Text $size="text-s">Increase throughput to 300 tx/s</Text>
+            </Flex>
+
+            <Flex $direction="column" $gap="24px">
+              <Text $size="text-l" $weight="600">
+                2025
+              </Text>
+              <Text $size="text-s">40+ highly independent validator nodes</Text>
+            </Flex>
+          </Grid>
         </Container>
       </Section>
 
