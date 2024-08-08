@@ -162,7 +162,7 @@ const learnItems = [
     name: 'Getting Started Guide',
     description: "An easy starter's guide written for developers, by developers.",
     icon: 'ph-book-open-text',
-    url: 'https://pages.near.org/blog/getting-started-with-chain-signatures',
+    url: 'https://docs.near.org/build/chain-abstraction/chain-signatures',
     target: '_blank',
   },
   {
@@ -197,7 +197,7 @@ const mediaItems = [
   {
     name: 'Chain Signature Examples',
     imageUrl: '/images/chain-abstraction/media/chain-signature-examples.png',
-    url: 'https://pages.near.org/blog/unlocking-multichain-web3-with-near-chain-signatures/',
+    url: 'https://near.org/blog/unlocking-multichain-web3-with-near-chain-signatures/',
     target: '_blank',
   },
   {
