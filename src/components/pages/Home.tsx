@@ -492,7 +492,7 @@ export const Home = () => {
         </ContentWithImage>
       </Section>
 
-      <Section background="amber1" padding="hero" gap="2xl">
+      <Section background="amber2" padding="hero" gap="2xl">
         <Flex stack gap="l">
           <Text as="h2" size="text-hero-m">
             Greater discoverability. Easier onboarding.
@@ -604,7 +604,7 @@ export const Home = () => {
             </Text>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" gap="l">
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {learnItems.map((item) => (
               <Card
                 padding="l"
@@ -648,7 +648,7 @@ export const Home = () => {
             </Flex>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" gap="l">
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {communityItems.map((item) => (
               <Card
                 padding="l"
@@ -698,7 +698,7 @@ export const Home = () => {
             </Flex>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" gap="l">
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {news.map((post) => (
               <Article
                 key={post.title + post.createdAt}
@@ -752,7 +752,7 @@ export const Home = () => {
             </Flex>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" gap="l">
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {events.map((event) => (
               <Article
                 key={event.title + event.date}
