@@ -326,7 +326,7 @@ export const Ai = () => {
         </Flex>
       </Section>
 
-      <Section background="sand12" padding="hero" gap="2xl">
+      <Section background="black" padding="hero" gap="2xl">
         <Flex stack gap="l">
           <Text as="h2" size="text-hero-m" color="white">
             Get Involved
@@ -339,7 +339,7 @@ export const Ai = () => {
         <Grid columns="1fr 1fr" columnsPhone="1fr" gap="l">
           {getInvolvedItems.map((item) => (
             <Card
-              background="sand12"
+              background="black"
               border="sand11"
               padding="l"
               gap="l"
