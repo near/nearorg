@@ -1,7 +1,9 @@
-import '@/styles/reset.css';
-import '@/styles/theme.css';
+import '@near-pagoda/ui/globals.css';
+import '@near-pagoda/ui/theme.css';
+import '@near-pagoda/ui/lib.css';
 import '@/styles/globals.css';
 
+import { Toaster } from '@near-pagoda/ui';
 import Gleap from 'gleap';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -56,6 +58,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       {getLayout(<Component {...pageProps} />)}
 
       <CookiePrompt />
+
+      <Toaster />
     </>
   );
 }

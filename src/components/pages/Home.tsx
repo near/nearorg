@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { Button, Container, Flex, Grid, Section, Text } from '@near-pagoda/ui';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -9,17 +10,10 @@ import { useStatistics } from '@/hooks/useStatistics';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
 import { Article, ArticleImage } from '../lib/Article';
-import { Button } from '../lib/Button';
 import { Card, CardThumbnail } from '../lib/Card';
-import { Container } from '../lib/Container';
 import { ContentWithImage } from '../lib/ContentWithImage';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
 import { IconCircle } from '../lib/IconCircle';
 import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, H2, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
 
 const Teams = styled.div`
   width: 100%;
@@ -298,20 +292,22 @@ export const Home = () => {
   const { news } = useLatestNews();
 
   return (
-    <Wrapper>
-      <Section style={{ padding: '72px 0' }} $backgroundColor="var(--white)">
-        <Container $center>
+    <>
+      <Section style={{ background: '#fff' }}>
+        <Container>
           <Pattern>
             <PatternContent $maxWidth="648px">
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>Blockchains, Abstracted.</H1>
+              <Flex gap="l" stack align="center">
+                <Text as="h1" size="text-hero-l">
+                  Blockchains, Abstracted.
+                </Text>
 
-                <Text $size="text-l" $mobileSize="text-base">
+                <Text size="text-l">
                   NEAR is the chain abstraction stack, empowering builders to create apps that scale to billions of
                   users and across all blockchains.
                 </Text>
 
-                <Flex $gap="24px">
+                <Flex gap="l">
                   <Button
                     href="https://docs.near.org"
                     target="_blank"
@@ -334,9 +330,9 @@ export const Home = () => {
 
           <Teams>
             <Text
-              $size="text-xs"
-              $weight="700"
-              $color="sand11"
+              size="text-xs"
+              weight="700"
+              color="sand11"
               style={{
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
@@ -365,22 +361,24 @@ export const Home = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#00EC97">
+      <Section style={{ background: '#00EC97' }}>
         <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>{`There's`} a better way to build.</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
+          <Flex stack gap="l">
+            <Text as="h2" size="text-hero-m">
+              {`There's`} a better way to build.
+            </Text>
+            <Text size="text-2xl" style={{ maxWidth: '808px' }}>
               Imagine if the online experiences we use every day were more transparent and resilient – shaped and
               controlled by their creators and users.
             </Text>
           </Flex>
 
-          <Grid $columns="1fr 1fr" $gap="var(--section-gap)">
+          <Grid columns="1fr 1fr" gap="xl">
             <img src={returnImageSrc(images.illustrations.betterWayToBuild)} alt="There's a better way to build" />
 
-            <Flex $direction="column" $gap="var(--section-gap)">
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
+            <Flex stack gap="xl">
+              <Flex stack gap="l">
+                <Text size="text-xl" weight="500">
                   Truly developer owned.
                 </Text>
                 <Text>
@@ -400,8 +398,8 @@ export const Home = () => {
                 </div>
               </Flex>
 
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
+              <Flex stack gap="l">
+                <Text size="text-xl" weight="500">
                   Application hosting with zero setup, fewer costs, & less headaches.
                 </Text>
                 <Text>
@@ -423,13 +421,13 @@ export const Home = () => {
             </Flex>
           </Grid>
 
-          <Flex $direction="column" $gap="60px">
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500">
+          <Flex stack gap="xl">
+            <Flex stack gap="l">
+              <Text size="text-xl" weight="500">
                 A new & more open digital economy.
               </Text>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
+              <Flex gap="l" align="end" stack="phone">
                 <Text style={{ maxWidth: '598px', marginRight: 'auto' }}>
                   Develop unique and powerful ways to earn, transact, and exercise digital ownership through online
                   experiences accessible to anyone with an internet connection.
@@ -445,7 +443,7 @@ export const Home = () => {
               </Flex>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
+            <Grid columns="1fr 1fr 1fr" gap="l">
               {featuredApps.map((app) => (
                 <Card
                   $clickable
@@ -455,18 +453,18 @@ export const Home = () => {
                   key={app.name}
                   target={app.target}
                 >
-                  <Flex $alignItems="center" $gap="24px">
+                  <Flex align="center" gap="l">
                     <CardThumbnail>
                       <img src={returnImageSrc(app.image)} alt={app.name} />
                     </CardThumbnail>
                     <div>
-                      <Text $size="text-l" $weight="500">
+                      <Text size="text-l" weight="500">
                         {app.name}
                       </Text>
-                      <Text $size="text-s">@{app.accountId}</Text>
+                      <Text size="text-s">@{app.accountId}</Text>
                     </div>
                   </Flex>
-                  <Text $size="text-s">{app.description}</Text>
+                  <Text size="text-s">{app.description}</Text>
                 </Card>
               ))}
             </Grid>
@@ -474,11 +472,13 @@ export const Home = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#000000">
+      <Section style={{ background: '#000' }}>
         <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Web3 development made easy</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" $color="white" style={{ maxWidth: '808px' }}>
+          <Flex stack gap="l">
+            <Text as="h2" size="text-hero-m" color="white">
+              Web3 development made easy
+            </Text>
+            <Text size="text-2xl" color="white" style={{ maxWidth: '808px' }}>
               Build great applications without the hassle of deciding between platforms, finding the right tools, or
               learning new programming languages.
             </Text>
@@ -490,10 +490,10 @@ export const Home = () => {
             alt="Illustration of a console with javascript code above the Javascript and Rust logos, surrounded by brackets"
           >
             <>
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500" $color="white">
+              <Text size="text-xl" weight="500" color="white">
                 Build faster with <span style={{ color: '#00EC97' }}>Javascript</span> & familiar developer tools.
               </Text>
-              <Text $color="white">
+              <Text color="white">
                 Spend less time learning and more time building with the tools you already know and love.
               </Text>
               <div>
@@ -516,11 +516,11 @@ export const Home = () => {
             alt="Illustration of the UI listing of a component with buttons to view details or open. Below it are images of checkboxes"
           >
             <>
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500" $color="white">
+              <Text size="text-xl" weight="500" color="white">
                 Stop reinventing the wheel and leverage over{' '}
                 <span style={{ color: '#00EC97' }}>{statistics.totalComponents}</span> Web3 components.
               </Text>
-              <Text $color="white">
+              <Text color="white">
                 Open-source components built with public blockchain data allow you to create rich user experiences
                 without wasting time on backend configuration.
               </Text>
@@ -543,10 +543,10 @@ export const Home = () => {
             alt="Illustration of the UI listing of an application with buttons to open, fork, view source, or discuss. Behind it there are images of code brackets and a git-fork icon. "
           >
             <>
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500" $color="white">
+              <Text size="text-xl" weight="500" color="white">
                 Discover Web3 Open Source
               </Text>
-              <Text $color="white">
+              <Text color="white">
                 Everything on B.O.S. is easy to discover and open source by default. See what others have built, learn
                 faster, and gain inspiration.
               </Text>
@@ -565,11 +565,13 @@ export const Home = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#F2F1EA">
+      <Section style={{ background: '#F2F1EA' }}>
         <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>Greater discoverability. Easier onboarding.</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
+          <Flex stack gap="l">
+            <Text as="h2" size="text-hero-m">
+              Greater discoverability. Easier onboarding.
+            </Text>
+            <Text size="text-2xl" style={{ maxWidth: '808px' }}>
               Current Web3 experiences are siloed & inaccessible. They don’t have to be.
             </Text>
           </Flex>
@@ -580,7 +582,7 @@ export const Home = () => {
             alt="Illustration of a search bar above two buttons for GitHub and Deploy"
           >
             <>
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500">
+              <Text size="text-xl" weight="500">
                 Deploy anywhere, get discovered everywhere.
               </Text>
               <Text>
@@ -607,7 +609,7 @@ export const Home = () => {
             alt="Illustration of the FastAuth UI showing the stage allowing user to connect their account to a dApp."
           >
             <>
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500">
+              <Text size="text-xl" weight="500">
                 Onboard new users in seconds, no crypto required.
               </Text>
               <Text>
@@ -629,9 +631,11 @@ export const Home = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#00EC97">
+      <Section style={{ background: '#00EC97' }}>
         <Container>
-          <H2 style={{ maxWidth: '1000px' }}>Be part of a global open source community.</H2>
+          <Text as="h2" size="text-hero-m">
+            Be part of a global open source community.
+          </Text>
 
           <Stats>
             <div>
@@ -652,43 +656,43 @@ export const Home = () => {
         </Container>
       </Section>
 
-      <Section $backgroundColor="#161615" style={{ '--sand11': '#A1A09A' } as any}>
+      <Section style={{ background: '#161615', '--sand11': '#A1A09A' } as any}>
         <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Learn, connect, & collaborate.</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" $color="white" style={{ maxWidth: '808px' }}>
+          <Flex stack gap="l">
+            <Text as="h2" size="text-hero-m" color="white">
+              Learn, connect, & collaborate.
+            </Text>
+            <Text size="text-2xl" color="white" style={{ maxWidth: '808px' }}>
               Join a vibrant community of innovators and builders creating a more open web.
             </Text>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
+          <Flex stack gap="l">
+            <Flex stack gap="l">
+              <Flex align="center" gap="m">
                 <i className="ph-duotone ph-book-open-text" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
+                <Text size="text-xl" weight="600" color="white">
                   Learn
                 </Text>
               </Flex>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
-                  Everything you need to know about NEAR from ongoing developments to the latest updates.
-                </Text>
-              </Flex>
+              <Text style={{ maxWidth: '393px' }} color="white">
+                Everything you need to know about NEAR from ongoing developments to the latest updates.
+              </Text>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
+            <Grid columns="1fr 1fr 1fr" gap="l">
               {learnItems.map((item) => (
                 <Card $clickable $dark as="a" href={item.url} target={item.target} key={item.name}>
                   <IconCircle>
                     <i className={`ph-duotone ${item.icon}`} />
                   </IconCircle>
 
-                  <Flex $direction="column" $gap="16px">
-                    <Text $size="text-l" $weight="500" $color="white">
+                  <Flex stack gap="m">
+                    <Text size="text-l" weight="500" color="white">
                       {item.name}
                     </Text>
-                    <Text $size="text-s" $color="white">
+                    <Text size="text-s" color="white">
                       {item.description}
                     </Text>
                   </Flex>
@@ -697,17 +701,17 @@ export const Home = () => {
             </Grid>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
+          <Flex stack gap="l">
+            <Flex stack gap="l">
+              <Flex align="center" gap="m">
                 <i className="ph-duotone ph-users-three" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
+                <Text size="text-xl" weight="600" color="white">
                   Community
                 </Text>
               </Flex>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
+              <Flex gap="l" align="end" stack="phone">
+                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
                   Connect with people to help you on your journey across the open web.
                 </Text>
 
@@ -721,18 +725,18 @@ export const Home = () => {
               </Flex>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
+            <Grid columns="1fr 1fr 1fr" gap="l">
               {communityItems.map((item) => (
                 <Card $clickable $dark key={item.name} as="a" href={item.url} target={item.target}>
                   <CardThumbnail>
                     <img src={returnImageSrc(item.image)} alt={item.name} />
                   </CardThumbnail>
 
-                  <Flex $direction="column" $gap="16px">
-                    <Text $size="text-l" $weight="500" $color="white">
+                  <Flex stack gap="m">
+                    <Text size="text-l" weight="500" color="white">
                       {item.name}
                     </Text>
-                    <Text $size="text-s" $color="white">
+                    <Text size="text-s" color="white">
                       {item.description}
                     </Text>
                   </Flex>
@@ -741,17 +745,17 @@ export const Home = () => {
             </Grid>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
+          <Flex stack gap="l">
+            <Flex stack gap="l">
+              <Flex align="center" gap="m">
                 <i className="ph-duotone ph-newspaper" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
+                <Text size="text-xl" weight="600" color="white">
                   News
                 </Text>
               </Flex>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
+              <Flex gap="l" align="end" stack="phone">
+                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
                   Catch up on the latest news and announcements from around the ecosystem.
                 </Text>
 
@@ -766,13 +770,13 @@ export const Home = () => {
               </Flex>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
+            <Grid columns="1fr 1fr 1fr" gap="l">
               {news.map((post) => (
                 <Article key={post.title + post.createdAt} href={post.url} target="_blank">
                   <ArticleImage>
                     <img src={post.thumbnail} alt={post.title} />
                   </ArticleImage>
-                  <Text $color="sand11" $size="text-s">
+                  <Text color="sand11" size="text-s">
                     {new Date(post.createdAt).toLocaleString(undefined, {
                       month: 'long',
                       day: 'numeric',
@@ -780,9 +784,9 @@ export const Home = () => {
                     })}
                   </Text>
                   <Text
-                    $color="white"
-                    $size="text-l"
-                    $weight="500"
+                    color="white"
+                    size="text-l"
+                    weight="500"
                     as="h3"
                     style={{
                       display: '-webkit-box',
@@ -799,17 +803,17 @@ export const Home = () => {
             </Grid>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
+          <Flex stack gap="l">
+            <Flex stack gap="l">
+              <Flex align="center" gap="m">
                 <i className="ph-duotone ph-calendar-blank" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
+                <Text size="text-xl" weight="600" color="white">
                   Events
                 </Text>
               </Flex>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
+              <Flex gap="l" align="end" stack="phone">
+                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
                   Join us at conferences, meetups, and more as we gather across the globe.
                 </Text>
 
@@ -817,27 +821,27 @@ export const Home = () => {
               </Flex>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
+            <Grid columns="1fr 1fr 1fr" gap="l">
               {events.map((event) => (
                 <Article key={event.title + event.date} href={event.url} target="_blank" style={{ minWidth: 0 }}>
                   <ArticleImage>
                     <img src={event.thumbnail} alt={event.title} />
                   </ArticleImage>
-                  <Text $color="white" $size="text-l" $weight="500" as="h3">
+                  <Text color="white" size="text-l" weight="500" as="h3">
                     {event.title}
                   </Text>
-                  <Flex $alignItems="center" $gap="32px" style={{ minWidth: 0 }}>
-                    <Flex $alignItems="center" $gap="8px">
+                  <Flex align="center" gap="l" style={{ minWidth: 0 }}>
+                    <Flex align="center" gap="s">
                       <i className="ph-bold ph-calendar-blank" style={{ color: 'var(--white)' }} />
-                      <Text $color="sand11" $size="text-s" style={{ whiteSpace: 'nowrap' }}>
+                      <Text color="sand11" size="text-s" style={{ whiteSpace: 'nowrap' }}>
                         {event.date}
                       </Text>
                     </Flex>
-                    <Flex $alignItems="center" $gap="8px" style={{ minWidth: 0 }}>
+                    <Flex align="center" gap="s" style={{ minWidth: 0 }}>
                       <i className="ph-bold ph-map-pin-line" style={{ color: 'var(--white)' }} />
                       <Text
-                        $color="sand11"
-                        $size="text-s"
+                        color="sand11"
+                        size="text-s"
                         style={{
                           whiteSpace: 'nowrap',
                           minWidth: 0,
@@ -855,6 +859,6 @@ export const Home = () => {
           </Flex>
         </Container>
       </Section>
-    </Wrapper>
+    </>
   );
 };
