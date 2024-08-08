@@ -41,5 +41,10 @@
     "prettier": "^3.2.5",
     "typescript": "^5"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=20",
+    "pnpm": "9.1.1"
+  },
+  "packageManager": "pnpm@9.1.1"
 }
