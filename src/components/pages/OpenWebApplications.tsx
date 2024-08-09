@@ -1,16 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Article, ArticleImage } from '../lib/Article';
-import { Button } from '../lib/Button';
-import { Card, CardThumbnail } from '../lib/Card';
-import { Container } from '../lib/Container';
-import { ContentWithImage } from '../lib/ContentWithImage';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
-import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, H2, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
+import {
+  Article,
+  Button,
+  Card,
+  CardThumbnail,
+  ContentWithImage,
+  Flex,
+  Grid,
+  Pattern,
+  Section,
+  Text,
+} from '@near-pagoda/ui';
 
 const images = {
   apps: {
@@ -83,253 +84,246 @@ function returnImageSrc(cfid: string) {
 
 export const OpenWebApplications = () => {
   return (
-    <Wrapper>
-      <Section $backgroundColor="#9797FF" style={{ padding: '72px 0' }}>
-        <Container $center>
-          <Pattern>
-            <PatternContent>
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>Building an open web</H1>
+    <>
+      <Section background="violet-brand" style={{ textAlign: 'center' }}>
+        <Pattern>
+          <Flex gap="l" stack align="center">
+            <Text as="h1" size="text-hero-l">
+              Building an open web
+            </Text>
 
-                <Text $size="text-l" $mobileSize="text-base">
-                  Contribute to building a web where users own their data, voices count, and everyone can be fairly
-                  rewarded for their effort.
-                </Text>
-              </Flex>
-            </PatternContent>
-          </Pattern>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#F2F1EA">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>Gateways: the doors to an open web</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              Create multi-chain open web applications that feature seamless user onboarding.
+            <Text size="text-l" weight={400}>
+              Contribute to building a web where users own their data, voices count, and everyone can be fairly rewarded
+              for their effort.
             </Text>
           </Flex>
-
-          <ContentWithImage
-            src={returnImageSrc(images.illustrations.gateways)}
-            imageSide="left"
-            alt="A browser window and a console window with the code snippet # Quick-start your own gateway npx create-near-app@latest alongside the logos for React JS, Ethereum, Polygon, and NEAR."
-          >
-            <Flex $direction="column" $gap="60px">
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Supercharge the open web
-                </Text>
-                <Text>Augment your open web applications with thousands of composable multi-chain components.</Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Seamless onboarding
-                </Text>
-                <Text>
-                  Empower users to login using only their email. Eliminate all onboarding friction to facilitate mass
-                  adoption.
-                </Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Social from the get-go
-                </Text>
-                <Text>
-                  Easily add social components to your app and keep your audience engaged through web push
-                  notifications.
-                </Text>
-              </Flex>
-
-              <div>
-                <Button
-                  href="https://github.com/near/create-near-app"
-                  target="_blank"
-                  label="Create Your App"
-                  variant="secondary"
-                  fill="outline"
-                  size="large"
-                />
-              </div>
-            </Flex>
-          </ContentWithImage>
-
-          <Flex $direction="column" $gap="60px">
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                Example Gateways
-              </Text>
-
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '598px', marginRight: 'auto' }}>
-                  See how developers are using gateways to create rich multi-chain, open web applications
-                </Text>
-                <Button
-                  href="/gateways"
-                  label="Explore Gateways"
-                  variant="secondary"
-                  target="_blank"
-                  fill="outline"
-                  size="large"
-                />
-              </Flex>
-            </Flex>
-
-            <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
-              {exampleGateways.map((gateway) => (
-                <Article key={gateway.title} href={gateway.url} target="_blank">
-                  <ArticleImage>
-                    <img src={returnImageSrc(gateway.image)} alt={gateway.title} />
-                  </ArticleImage>
-                  <Text $size="text-l" $weight="500" as="h3">
-                    {gateway.title}
-                  </Text>
-                  <Text>{gateway.description}</Text>
-                </Article>
-              ))}
-            </Grid>
-          </Flex>
-        </Container>
+        </Pattern>
       </Section>
 
-      <Section $backgroundColor="#000000">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)', maxWidth: '1015px' }}>
-              Components: the building blocks of an open web
-            </H2>
-            <Text $size="text-2xl" $mobileSize="text-l" color="white" style={{ maxWidth: '808px' }}>
-              Explore, use, and share the building blocks for open web applications.
-            </Text>
-          </Flex>
+      <Section gap="2xl" padding="hero" background="amber2">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m">
+            Gateways: the doors to an open web
+          </Text>
+          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+            Create multi-chain open web applications that feature seamless user onboarding.
+          </Text>
+        </Flex>
 
-          <ContentWithImage
-            src={returnImageSrc(images.illustrations.buildingBlocks)}
-            imageSide="left"
-            alt="Two chat bubbles alongside two component windows from the NEAR gateway"
-          >
-            <Flex $direction="column" $gap="60px">
-              <Flex $direction="column" $gap="24px">
-                <Text color="white" $size="text-xl" $mobileSize="text-l" $weight="500">
-                  10,000 components and climbing
-                </Text>
-                <Text color="white">
-                  Use an ever-growing library of components, providing functionality ranging from Social to DeFi and
-                  beyond.
-                </Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text color="white" $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Decentralized frontends made simple
-                </Text>
-                <Text color="white">
-                  Use JSX syntax and a React-like library to easily build decentralized frontends using composable
-                  components.
-                </Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text color="white" $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Secured on-chain
-                </Text>
-                <Text color="white">
-                  All components are stored on a NEAR contract, making frontends highly reliable and
-                  censorship-resistant
-                </Text>
-              </Flex>
-
-              <div>
-                <Button
-                  href="https://dev.near.org"
-                  target="_blank"
-                  label="Start Building"
-                  variant="secondary"
-                  fill="outline"
-                  size="large"
-                />
-              </div>
-            </Flex>
-          </ContentWithImage>
-
-          <Flex $direction="column" $gap="60px">
-            <Flex $direction="column" $gap="24px">
-              <Text color="white" $size="text-xl" $mobileSize="text-l" $weight="500">
-                A new and more open web
+        <ContentWithImage
+          src={returnImageSrc(images.illustrations.gateways)}
+          imageSide="left"
+          alt="A browser window and a console window with the code snippet # Quick-start your own gateway npx create-near-app@latest alongside the logos for React JS, Ethereum, Polygon, and NEAR."
+        >
+          <Flex stack gap="xl">
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Supercharge the open web
               </Text>
-
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text color="white" style={{ maxWidth: '598px', marginRight: 'auto' }}>
-                  Break out of siloed, single-chain experiences and expand your reach, all while getting the best of
-                  {`NEAR's`} speed, low cost, and scalability.
-                </Text>
-                <Button
-                  href="/components"
-                  label="Explore Components"
-                  target="_blank"
-                  variant="secondary"
-                  fill="outline"
-                  size="large"
-                />
-              </Flex>
+              <Text>Augment your open web applications with thousands of composable multi-chain components.</Text>
             </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              {featuredApps.map((app) => (
-                <Card $clickable $dark as="a" href={app.url} key={app.name} target="_blank">
-                  <Flex $alignItems="center" $gap="24px">
-                    <CardThumbnail>
-                      <img src={returnImageSrc(app.image)} alt={app.name} />
-                    </CardThumbnail>
-                    <div>
-                      <Text color="white" $size="text-l" $weight="500">
-                        {app.name}
-                      </Text>
-                      <Text color="white" $size="text-s">
-                        @{app.accountId}
-                      </Text>
-                    </div>
-                  </Flex>
-                  <Text color="white" $size="text-s">
-                    {app.description}
-                  </Text>
-                </Card>
-              ))}
-            </Grid>
-          </Flex>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#9797FF">
-        <Container>
-          <Flex $direction="column" $gap="50px" $alignItems="center">
-            <Flex $direction="column" $gap="20px" $alignItems="center" style={{ textAlign: 'center' }}>
-              <Text $size="text-3xl" $weight="500" style={{ maxWidth: '600px' }}>
-                Start your journey with an open web
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Seamless onboarding
               </Text>
-
-              <Text $size="text-l" $mobileSize="text-l" style={{ maxWidth: '600px' }}>
-                Build quickly with awesome resources and thousands of composable components. Join a thriving community
-                of developers building an open web.
+              <Text>
+                Empower users to login using only their email. Eliminate all onboarding friction to facilitate mass
+                adoption.
               </Text>
             </Flex>
 
-            <Flex $gap="24px" $wrap="wrap" $alignItems="center" $justifyContent="center">
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Social from the get-go
+              </Text>
+              <Text>
+                Easily add social components to your app and keep your audience engaged through web push notifications.
+              </Text>
+            </Flex>
+
+            <div>
               <Button
-                href="https://docs.near.org/bos/overview"
-                label="Read Docs"
-                variant="secondary"
-                size="large"
+                href="https://github.com/near/create-near-app"
                 target="_blank"
+                label="Create Your App"
+                variant="secondary"
+                fill="outline"
+                size="large"
               />
+            </div>
+          </Flex>
+        </ContentWithImage>
 
-              <Button href="/components" label="Explore Components" target="_blank" variant="primary" size="large" />
+        <Flex stack gap="xl">
+          <Flex stack gap="l">
+            <Text size="text-xl" weight="500">
+              Example Gateways
+            </Text>
+
+            <Flex gap="l" align="end" stack="phone">
+              <Text style={{ maxWidth: '598px', marginRight: 'auto' }}>
+                See how developers are using gateways to create rich multi-chain, open web applications
+              </Text>
+              <Button
+                href="/gateways"
+                label="Explore Gateways"
+                variant="secondary"
+                target="_blank"
+                fill="outline"
+                size="large"
+              />
             </Flex>
           </Flex>
-        </Container>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {exampleGateways.map((gateway) => (
+              <Article
+                key={gateway.title}
+                href={gateway.url}
+                target="_blank"
+                src={returnImageSrc(gateway.image)}
+                alt={gateway.title}
+              >
+                <Text size="text-l" weight="500" as="h3">
+                  {gateway.title}
+                </Text>
+                <Text>{gateway.description}</Text>
+              </Article>
+            ))}
+          </Grid>
+        </Flex>
       </Section>
-    </Wrapper>
+
+      <Section gap="2xl" padding="hero" background="black">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m" color="white" style={{ maxWidth: '1015px' }}>
+            Components: the building blocks of an open web
+          </Text>
+          <Text size="text-2xl" color="white" weight={400} style={{ maxWidth: '808px' }}>
+            Explore, use, and share the building blocks for open web applications.
+          </Text>
+        </Flex>
+
+        <ContentWithImage
+          src={returnImageSrc(images.illustrations.buildingBlocks)}
+          imageSide="left"
+          alt="Two chat bubbles alongside two component windows from the NEAR gateway"
+        >
+          <Flex stack gap="xl">
+            <Flex stack>
+              <Text color="white" size="text-xl" weight="500">
+                10,000 components and climbing
+              </Text>
+              <Text color="white">
+                Use an ever-growing library of components, providing functionality ranging from Social to DeFi and
+                beyond.
+              </Text>
+            </Flex>
+
+            <Flex stack>
+              <Text color="white" size="text-xl" weight="500">
+                Decentralized frontends made simple
+              </Text>
+              <Text color="white">
+                Use JSX syntax and a React-like library to easily build decentralized frontends using composable
+                components.
+              </Text>
+            </Flex>
+
+            <Flex stack>
+              <Text color="white" size="text-xl" weight="500">
+                Secured on-chain
+              </Text>
+              <Text color="white">
+                All components are stored on a NEAR contract, making frontends highly reliable and censorship-resistant
+              </Text>
+            </Flex>
+
+            <div>
+              <Button
+                href="https://dev.near.org"
+                target="_blank"
+                label="Start Building"
+                variant="affirmative"
+                size="large"
+              />
+            </div>
+          </Flex>
+        </ContentWithImage>
+
+        <Flex stack gap="xl">
+          <Flex stack gap="l">
+            <Text color="white" size="text-xl" weight="500">
+              A new and more open web
+            </Text>
+
+            <Flex gap="l" align="end" stack="phone">
+              <Text color="white" style={{ maxWidth: '598px', marginRight: 'auto' }}>
+                Break out of siloed, single-chain experiences and expand your reach, all while getting the best of
+                {`NEAR's`} speed, low cost, and scalability.
+              </Text>
+              <Button href="/components" label="Explore Components" target="_blank" variant="secondary" size="large" />
+            </Flex>
+          </Flex>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {featuredApps.map((app) => (
+              <Card
+                gap="l"
+                padding="l"
+                border="sand11"
+                background="black"
+                href={app.url}
+                key={app.name}
+                target="_blank"
+              >
+                <Flex align="center" gap="l">
+                  <CardThumbnail src={returnImageSrc(app.image)} alt={app.name} />
+                  <div>
+                    <Text color="white" size="text-l" weight="500">
+                      {app.name}
+                    </Text>
+                    <Text color="white" size="text-s">
+                      @{app.accountId}
+                    </Text>
+                  </div>
+                </Flex>
+                <Text color="white" size="text-s">
+                  {app.description}
+                </Text>
+              </Card>
+            ))}
+          </Grid>
+        </Flex>
+      </Section>
+
+      <Section padding="hero" background="violet-brand">
+        <Flex stack gap="xl" align="center" style={{ textAlign: 'center' }}>
+          <Flex stack gap="l" align="center">
+            <Text size="text-3xl" weight="500" style={{ maxWidth: '600px' }}>
+              Start your journey with an open web
+            </Text>
+
+            <Text size="text-l" weight={400} style={{ maxWidth: '600px' }}>
+              Build quickly with awesome resources and thousands of composable components. Join a thriving community of
+              developers building an open web.
+            </Text>
+          </Flex>
+
+          <Flex gap="l" wrap align="center" justify="center">
+            <Button
+              href="https://docs.near.org/bos/overview"
+              label="Read Docs"
+              variant="secondary"
+              size="large"
+              target="_blank"
+            />
+
+            <Button href="/components" label="Explore Components" target="_blank" variant="primary" size="large" />
+          </Flex>
+        </Flex>
+      </Section>
+    </>
   );
 };

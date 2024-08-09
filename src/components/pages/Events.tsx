@@ -196,7 +196,7 @@ export const Events = () => {
         </Section>
       )}
 
-      <Section padding="hero" background="violet6">
+      <Section padding="hero" background="violet-brand">
         <Flex stack gap="l" align="center" style={{ textAlign: 'center' }}>
           <Text size="text-2xl" weight="500">
             Hosting an event?

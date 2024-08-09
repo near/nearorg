@@ -196,7 +196,7 @@ export const Ai = () => {
         </Grid>
       </Section>
 
-      <Section background="violet6" padding="hero" gap="2xl">
+      <Section background="violet-brand" padding="hero" gap="2xl">
         <Flex stack gap="l">
           <Flex align="center" justify="space-between">
             <Text as="h2" size="text-hero-m">
