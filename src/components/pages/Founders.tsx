@@ -172,7 +172,6 @@ export const Founders = () => {
                   variant="affirmative"
                   fill="outline"
                   size="large"
-                  className="darkButton"
                 />
               </Flex>
             </Flex>

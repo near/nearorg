@@ -249,7 +249,6 @@ export const OpenWebApplications = () => {
                   variant="secondary"
                   fill="outline"
                   size="large"
-                  className="darkButton"
                 />
               </div>
             </Flex>
@@ -273,7 +272,6 @@ export const OpenWebApplications = () => {
                   variant="secondary"
                   fill="outline"
                   size="large"
-                  className="darkButton"
                 />
               </Flex>
             </Flex>

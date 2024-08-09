@@ -147,7 +147,6 @@ export const FastAuthAndRelayers = () => {
                   variant="secondary"
                   fill="outline"
                   size="large"
-                  className="darkButton"
                 />
               </div>
             </Flex>
