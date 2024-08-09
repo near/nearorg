@@ -16,7 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@near-pagoda/ui": "file:../pagoda-ui",
+    "@near-pagoda/ui": "^0.3.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "gleap": "^13.7.6",
