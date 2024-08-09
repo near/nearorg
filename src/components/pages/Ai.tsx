@@ -4,7 +4,7 @@ import { useEvents } from '@/hooks/useEvents';
 import { NEAR_AI_URL } from '@/utils/constants';
 import { LUMA_NEAR_AI_CALENDAR_ID, LUMA_NEAR_HZN_CALENDAR_ID } from '@/utils/constants';
 
-import { LogoLinks } from '../lib/LogoLinks';
+import { LogoLinks } from '../LogoLinks';
 import s from './Ai.module.scss';
 
 const ecosystemTeams = [

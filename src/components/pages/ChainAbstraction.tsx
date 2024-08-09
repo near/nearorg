@@ -1,10 +1,9 @@
-import { Article, Button, Card, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
-import styled from 'styled-components';
+import { Article, Button, Card, CardThumbnail, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
 
 import { useEvents } from '@/hooks/useEvents';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
-import { LogoLinks } from '../lib/LogoLinks';
+import { LogoLinks } from '../LogoLinks';
 
 const validators = [
   {
@@ -208,12 +207,6 @@ const mediaItems = [
   },
 ];
 
-const DappIcon = styled.img`
-  display: block;
-  width: 72px;
-  border-radius: 8px;
-`;
-
 export const ChainAbstraction = () => {
   const { events } = useEvents([LUMA_NEAR_CALENDAR_ID]);
 
@@ -370,15 +363,20 @@ export const ChainAbstraction = () => {
 
           <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {featuredDapps.map((item) => (
-              <Card gap="l" padding="l" href={item.url} target="_blank" rel="noopener noreferrer" key={item.name}>
-                <Flex stack>
-                  <DappIcon src={item.imageUrl} alt={item.name} />
+              <Card
+                border="sand11"
+                padding="l"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={item.name}
+              >
+                <CardThumbnail src={item.imageUrl} alt={item.name} />
 
-                  <Text size="text-l" weight="500">
-                    {item.name}
-                  </Text>
-                  <Text size="text-s">{item.description}</Text>
-                </Flex>
+                <Text size="text-l" weight="500">
+                  {item.name}
+                </Text>
+                <Text size="text-s">{item.description}</Text>
               </Card>
             ))}
           </Grid>
@@ -395,21 +393,19 @@ export const ChainAbstraction = () => {
           <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
             {upcomingDapps.map((item) => (
               <Card
-                gap="l"
+                border="sand11"
                 padding="l"
                 href={item.url || undefined}
                 target="_blank"
                 rel="noopener noreferrer"
                 key={item.name}
               >
-                <Flex stack>
-                  <DappIcon src={item.imageUrl} alt={item.name} />
+                <CardThumbnail src={item.imageUrl} alt={item.name} />
 
-                  <Text size="text-l" weight="500">
-                    {item.name}
-                  </Text>
-                  <Text size="text-s">{item.description}</Text>
-                </Flex>
+                <Text size="text-l" weight="500">
+                  {item.name}
+                </Text>
+                <Text size="text-s">{item.description}</Text>
               </Card>
             ))}
           </Grid>

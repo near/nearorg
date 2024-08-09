@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: stretch;
+  align-items: stretch;
+  min-width: 0;
+}

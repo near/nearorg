@@ -1,0 +1,60 @@
+.wrapper {
+  --nav-height: 72px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.navigation {
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: white;
+  box-shadow: 0 1px 0 var(--sand6);
+  position: relative;
+  z-index: 10005;
+}
+
+.logo {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  margin-right: auto;
+  transition: all 200ms;
+  border-radius: 4px;
+
+  &:focus {
+    outline: 2px solid var(--violet4);
+    outline-offset: 0.3rem;
+  }
+
+  img {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.menuButton {
+  all: unset;
+  display: flex;
+  width: 32px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms;
+  color: var(--sand12);
+
+  i {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}

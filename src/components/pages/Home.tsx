@@ -17,7 +17,7 @@ import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
-import { LogoLinks } from '../lib/LogoLinks';
+import { LogoLinks } from '../LogoLinks';
 
 const images = {
   apps: {

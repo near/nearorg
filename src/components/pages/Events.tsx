@@ -1,62 +1,11 @@
 import { Article, Button, Flex, Grid, Section, Text } from '@near-pagoda/ui';
-import styled from 'styled-components';
+import Link from 'next/link';
 
 import type { MappedEvent } from '@/hooks/useEvents';
 import { useEvents } from '@/hooks/useEvents';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
 import s from './Events.module.scss';
-
-const CoverCard = styled.a`
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 2fr 1fr;
-  align-items: center;
-  border: 4px solid transparent;
-  cursor: pointer;
-  transition: all 200ms;
-
-  i {
-    color: var(--sand12);
-  }
-
-  &:hover {
-    text-decoration: none;
-
-    .title {
-      text-decoration: underline;
-    }
-
-    img {
-      filter: brightness(1);
-      transform: scale(1.02);
-    }
-  }
-
-  &:focus-within {
-    border: 4px solid var(--violet4);
-    border-radius: 12px;
-  }
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const CoverCardImageWrapper = styled.div`
-  width: 100%;
-  height: 471px;
-  border-radius: 8px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 200ms;
-    filter: brightness(0.9);
-  }
-`;
 
 export const Events = () => {
   const { events, hasMoreEvents } = useEvents([LUMA_NEAR_CALENDAR_ID], 7);
@@ -87,13 +36,13 @@ export const Events = () => {
             Upcoming Event
           </Text>
 
-          <CoverCard href={featuredEvent.url} target="_blank">
-            <CoverCardImageWrapper>
+          <Link className={s.coverCard} href={featuredEvent.url} target="_blank">
+            <div className={s.coverCardImage}>
               <img src={featuredEvent.thumbnail} alt={featuredEvent.title} />
-            </CoverCardImageWrapper>
+            </div>
 
             <Flex stack>
-              <Text className="title" clampLines={3} size="text-2xl" weight="500">
+              <Text as="h3" clampLines={3} size="text-2xl" weight="500">
                 {featuredEvent.title}
               </Text>
 
@@ -123,7 +72,7 @@ export const Events = () => {
                 </Flex>
               </Flex>
             </Flex>
-          </CoverCard>
+          </Link>
         </Section>
       )}
 

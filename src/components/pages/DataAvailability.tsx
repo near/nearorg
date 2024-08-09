@@ -1,6 +1,6 @@
 import { Button, ContentWithImage, Flex, Pattern, Section, Text } from '@near-pagoda/ui';
 
-import { LogoLinks } from '../lib/LogoLinks';
+import { LogoLinks } from '../LogoLinks';
 
 type Team = {
   url: string;

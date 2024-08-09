@@ -40,3 +40,54 @@
   align-items: center;
   min-height: 260px;
 }
+
+.coverCard {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  border: 4px solid transparent;
+  cursor: pointer;
+  transition: all 200ms;
+
+  i {
+    color: var(--sand12);
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;
+    }
+
+    img {
+      filter: brightness(1);
+      transform: scale(1.02);
+    }
+  }
+
+  &:focus-within {
+    border: 4px solid var(--violet4);
+    border-radius: 12px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.coverCardImage {
+  width: 100%;
+  height: 471px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 200ms;
+    filter: brightness(0.9);
+  }
+}
