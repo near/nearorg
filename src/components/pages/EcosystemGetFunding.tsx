@@ -1,94 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import styled from 'styled-components';
-
-import { Button } from '../lib/Button';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
-import { Text } from '../lib/Text';
-
-const Wrapper = styled.div`
-  --section-gap: 162px;
-  --large-gap: 82px;
-  --medium-gap: 48px;
-  padding: calc(var(--section-gap) / 2) 0 0;
-  position: relative;
-
-  @media (max-width: 900px) {
-    --section-gap: 60px;
-    --large-gap: 48px;
-    --medium-gap: 24px;
-
-    .arrows-image {
-      display: none;
-    }
-  }
-`;
-
-const H1 = styled.h1`
-  font: var(--text-hero);
-  text-align: center;
-  letter-spacing: -0.015em;
-  color: var(--sand12);
-  margin: 0;
-  max-width: 960px;
-
-  @media (max-width: 900px) {
-    font: var(--text-2xl);
-    font-weight: 600;
-  }
-`;
-
-const Section = styled.div<{
-  $gap?: string;
-  $center?: boolean;
-  $background?: string;
-}>`
-  display: flex;
-  padding: calc(var(--section-gap) / 2);
-  gap: ${(p) => p.$gap ?? 'var(--medium-gap)'};
-  flex-direction: column;
-  align-items: ${(p) => (p.$center ? 'center' : undefined)};
-  justify-content: ${(p) => (p.$center ? 'center' : undefined)};
-  text-align: ${(p) => (p.$center ? 'center' : undefined)};
-  background: ${(p) => p.$background};
-
-  @media (max-width: 900px) {
-    padding-left: var(--medium-gap);
-    padding-right: var(--medium-gap);
-  }
-`;
-
-const Card = styled.div<{
-  $direction?: string;
-  $gap?: string;
-  $padding?: string;
-  $border?: string;
-  $center?: boolean;
-  $background?: string;
-}>`
-  display: flex;
-  flex-direction: ${(p) => p.$direction ?? 'column'};
-  gap: ${(p) => p.$gap ?? '24px'};
-  width: 100%;
-  padding: ${(p) => p.$padding ?? '32px'};
-  border-radius: 8px;
-  border: ${(p) => p.$border ?? '1px solid var(--sand4)'};
-  align-items: ${(p) => (p.$center ? 'center' : 'flex-star')};
-  justify-content: ${(p) => (p.$center ? 'center' : undefined)};
-  text-align: ${(p) => (p.$center ? 'center' : undefined)};
-  background: ${(p) => p.$background ?? 'var(--sand1)'};
-`;
-
-const SocialIcon = styled.i<{
-  $size?: string;
-  $align?: string;
-  $color?: string;
-}>`
-  font-size: ${(p) => p.$size ?? '30px'};
-  text-align: ${(p) => p.$align};
-  color: ${(p) => p.$color};
-`;
+import { Button, Card, CardThumbnail, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
 
 const images = {
   arrows: 'bafkreifdzknpkboed3jmm4rgtbg3mqaocziagtjbznfp6o3hvgd5ix6brm.svg',
@@ -282,7 +194,7 @@ const regionalHubCards = [
   },
 ];
 
-const fundingHugeCards = [
+const sections = [
   {
     key: 'ecosystem_grants_huge_card',
     id: 'ecosystem_grants',
@@ -328,95 +240,92 @@ function returnImageSrc(image: string) {
 export const EcosystemGetFunding = () => {
   return (
     <>
-      <Wrapper className="gateway-page-container">
-        <Section $center>
-          <Flex $gap="16px" $direction="column" $alignItems="center">
-            <H1>Get Funded. Build the Future.</H1>
-            <Text $size="text-xl" color="sand12" style={{ maxWidth: '662px' }}>
+      <Section background="white" style={{ textAlign: 'center' }}>
+        <Pattern>
+          <Flex gap="l" stack align="center">
+            <Text as="h1" size="text-hero-l">
+              Get Funded. Build the Future.
+            </Text>
+
+            <Text size="text-l" weight={400}>
               The NEAR ecosystem offers multiple funding options to support initiatives aimed at decentralizing,
               growing, and innovating on NEAR.
             </Text>
           </Flex>
-        </Section>
+        </Pattern>
+      </Section>
 
-        <Section $gap="32px">
-          {fundingHugeCards.map((card) => (
-            <Card $center key={card.key} id={card.id}>
-              <SocialIcon className={card.iconClassName} $color={`var(--${card.iconColor})`} $size="32px" />
-              <Text $size="text-3xl" color="sand12">
-                {card.title}
-              </Text>
-              <Text $size="text-l" color="sand12">
-                {card.content}
-              </Text>
-              <Grid $columns="1fr 1fr" $gap="2rem">
-                {card.cards.map((item) => (
-                  <div className="col" key={item.image}>
-                    <Card $background="transparent" $border="none" $direction="row">
-                      <img
-                        src={returnImageSrc(item.image)}
-                        alt={item.title}
-                        className="img-fluid"
-                        style={{
-                          width: '80px',
-                          height: '80px',
-                          borderRadius: '50%',
-                        }}
-                      />
-                      <Flex $gap="16px" $direction="column" $alignItems="start">
-                        <Text $size="text-l" color="sand12" $weight="600" style={{ textAlign: 'left' }}>
-                          {item.title}
+      {sections.map((section) => (
+        <Section gap="xl" key={section.key} id={section.id}>
+          <Flex stack align="center">
+            <IconCircle icon={<i className={section.iconClassName} />} color={section.iconColor as any} />
+            <Text size="text-3xl" color="sand12">
+              {section.title}
+            </Text>
+            <Text size="text-l" weight={400} color="sand12">
+              {section.content}
+            </Text>
+          </Flex>
+
+          <Grid columns="1fr 1fr" columnsPhone="1fr" gap="l">
+            {section.cards.map((item) => (
+              <Card padding="l" key={item.image}>
+                <Flex gap="l">
+                  <CardThumbnail src={returnImageSrc(item.image)} alt={item.title} />
+
+                  <Flex stack>
+                    <Flex stack gap="s">
+                      <Text size="text-l" color="sand12" weight="600" style={{ textAlign: 'left' }}>
+                        {item.title}
+                      </Text>
+                      {item.content && (
+                        <Text color="sand12" size="text-s" style={{ textAlign: 'left' }}>
+                          {item.content}
                         </Text>
-                        {item.content && (
-                          <Text color="sand12" style={{ textAlign: 'left' }}>
-                            {item.content}
-                          </Text>
-                        )}
-                        {item.href ? (
-                          <div>
-                            <Button
-                              href={item.href}
-                              iconRight="ph-bold ph-arrow-up-right"
-                              label="Learn more"
-                              variant="primary"
-                              fill="outline"
-                              size="small"
-                              target="_blank"
-                            />
-                          </div>
-                        ) : (
-                          <Text color="sand12" style={{ textAlign: 'left' }} $weight="600">
-                            Comming Soon
-                          </Text>
-                        )}
-                      </Flex>
-                    </Card>
-                  </div>
-                ))}
-              </Grid>
-            </Card>
-          ))}
+                      )}
+                    </Flex>
+                    {item.href ? (
+                      <div>
+                        <Button
+                          href={item.href}
+                          label="Learn more"
+                          variant="primary"
+                          fill="outline"
+                          size="small"
+                          target="_blank"
+                        />
+                      </div>
+                    ) : (
+                      <Text color="sand12" style={{ textAlign: 'left' }} weight="600">
+                        Comming Soon
+                      </Text>
+                    )}
+                  </Flex>
+                </Flex>
+              </Card>
+            ))}
+          </Grid>
         </Section>
+      ))}
 
-        <Section $center>
-          <Text $size="text-3xl" color="sand12">
-            What funding program is best for me?
-          </Text>
-          <Text $size="text-xl" color="sand12" style={{ maxWidth: '662px' }}>
-            There are several options to get financial support for your idea - whether it is a grant from an ecosystem
-            fund, joining an accelerator, or getting venture support through our Ecosystem partners.
-          </Text>
-          <div>
-            <Button
-              href="https://www.nearbuilders.com/"
-              label="Explore All Teams"
-              variant="affirmative"
-              size="large"
-              target="_blank"
-            />
-          </div>
-        </Section>
-      </Wrapper>
+      <Section gap="l" padding="hero" background="amber2" style={{ textAlign: 'center' }}>
+        <Text size="text-3xl" color="sand12">
+          What funding program is best for me?
+        </Text>
+        <Text size="text-xl" color="sand12" weight={400} style={{ maxWidth: '662px', margin: '0 auto' }}>
+          There are several options to get financial support for your idea - whether it is a grant from an ecosystem
+          fund, joining an accelerator, or getting venture support through our Ecosystem partners.
+        </Text>
+        <div>
+          <Button
+            href="https://www.nearbuilders.com/"
+            label="Explore All Teams"
+            variant="affirmative"
+            size="large"
+            target="_blank"
+          />
+        </div>
+      </Section>
     </>
   );
 };
