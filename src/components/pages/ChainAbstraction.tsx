@@ -1,22 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { Article, Button, Card, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
 import Link from 'next/link';
 import styled from 'styled-components';
 
 import { useEvents } from '@/hooks/useEvents';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
-
-import { Article, ArticleImage } from '../lib/Article';
-import { Button } from '../lib/Button';
-import { Card } from '../lib/Card';
-import { Container } from '../lib/Container';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
-import { IconCircle } from '../lib/IconCircle';
-import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, H2, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
 
 const validators = [
   {
@@ -225,8 +214,7 @@ const LogoLinks = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
-  padding: 16px 24px;
+  gap: var(--gap-xl);
 
   a {
     display: block;
@@ -255,455 +243,441 @@ export const ChainAbstraction = () => {
   const { events } = useEvents([LUMA_NEAR_CALENDAR_ID]);
 
   return (
-    <Wrapper>
-      <Section $backgroundColor="#61E5E2" style={{ padding: '72px 0' }}>
-        <Container $center>
-          <Pattern>
-            <PatternContent>
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1 style={{ textWrap: 'initial' }}>Chain Abstraction is NEAR</H1>
-
-                <Text $size="text-l" $mobileSize="text-base">
-                  One account, any chain. Powered by Chain Signatures.
-                </Text>
-
-                <Flex $gap="16px" $wrap="wrap" $justifyContent="center" $alignItems="center">
-                  <Button
-                    href="https://form.jotform.com/240777569453167"
-                    target="_blank"
-                    label="Build With Us"
-                    variant="secondary"
-                    fill="outline"
-                    size="large"
-                  />
-                  <Button href="#dapps" label="Explore dApps" variant="secondary" fill="outline" size="large" />
-                  <Button href="#get-started" label="Get Started" variant="primary" size="large" />
-                </Flex>
-              </Flex>
-            </PatternContent>
-          </Pattern>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#fff">
-        <Container>
-          <Flex $direction="column" $gap="64px">
-            <Flex $direction="column" $gap="24px">
-              <H2 style={{ maxWidth: '1016px' }}>Chain Signatures are now live on mainnet</H2>
-              <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-                Chain Signatures are a decentralized MPC network enabling NEAR accounts, including smart contracts, to
-                sign and execute transactions across any chain.
-              </Text>
-            </Flex>
-
-            <video controls>
-              <source src="/videos/chain-abstraction.mp4" type="video/mp4" />
-            </video>
-          </Flex>
-
-          <Flex $direction="column" $alignItems="center" $gap="24px">
-            <Text
-              $size="text-xs"
-              $weight="700"
-              $color="sand11"
-              style={{
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                padding: '0 24px',
-              }}
-            >
-              Network Validators
+    <>
+      <Section background="cyan9" style={{ textAlign: 'center' }}>
+        <Pattern>
+          <Flex gap="l" stack align="center">
+            <Text as="h1" size="text-hero-l" style={{ textWrap: 'initial' }}>
+              Chain Abstraction is NEAR
             </Text>
 
-            <LogoLinks>
-              {validators.map((validator) => (
-                <Link
-                  href={validator.url}
-                  target="_blank"
-                  title={validator.name}
-                  style={{ height: validator.height }}
-                  key={validator.name}
-                >
-                  <img src={validator.imageUrl} alt={validator.name} />
-                </Link>
-              ))}
-            </LogoLinks>
+            <Text size="text-l" weight={400}>
+              One account, any chain. Powered by Chain Signatures.
+            </Text>
+
+            <Flex wrap justify="center" align="center">
+              <Button
+                href="https://form.jotform.com/240777569453167"
+                target="_blank"
+                label="Build With Us"
+                variant="secondary"
+                fill="outline"
+                size="large"
+              />
+              <Button href="#dapps" label="Explore dApps" variant="secondary" fill="outline" size="large" />
+              <Button href="#get-started" label="Get Started" variant="primary" size="large" />
+            </Flex>
           </Flex>
-        </Container>
+        </Pattern>
       </Section>
 
-      <Section $backgroundColor="#083A40">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Why build with Chain Signatures?</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }} $color="white">
-              The tech to realize chain abstraction. Let users go anywhere, fast, without the hassle.
+      <Section background="white" gap="2xl" padding="hero">
+        <Flex stack gap="xl">
+          <Flex stack gap="l">
+            <Text as="h2" size="text-hero-m" style={{ maxWidth: '1016px' }}>
+              Chain Signatures are now live on mainnet
+            </Text>
+            <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+              Chain Signatures are a decentralized MPC network enabling NEAR accounts, including smart contracts, to
+              sign and execute transactions across any chain.
             </Text>
           </Flex>
 
-          <Grid $columns="1fr 1fr 1fr" $gap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                True multichain coverage
-              </Text>
+          <video controls>
+            <source src="/videos/chain-abstraction.mp4" type="video/mp4" />
+          </video>
+        </Flex>
 
-              <Text $color="white" $size="text-s">
-                Build real multichain dApps that can interact with EVM, non-EVM, and even non-smart contract chains
-                without bridges
-              </Text>
-            </Flex>
+        <Flex stack align="center" gap="xl">
+          <Text
+            size="text-xs"
+            weight="700"
+            color="sand11"
+            style={{
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+            }}
+          >
+            Network Validators
+          </Text>
 
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                Instant chain support
-              </Text>
-
-              <Text $color="white" $size="text-s">
-                Instantly add support for any new chain without the need for native integration every time
-              </Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                Single state layer
-              </Text>
-
-              <Text $color="white" $size="text-s">
-                Manage assets or states on any chain with a single smart contract on NEAR
-              </Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                Fast finality for cross-chain transactions
-              </Text>
-
-              <Text $color="white" $size="text-s">
-                Cross-chain transactions in the speed of one NEAR block (2-3 seconds)
-              </Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                One account, any chain
-              </Text>
-
-              <Text $color="white" $size="text-s">
-                Control any externally owned account (EOA) on any chain from a single NEAR account
-              </Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $color="white" $weight="600">
-                Gas Abstraction
-              </Text>
-
-              <Text $color="white" $size="text-s">
-                The{' '}
-                <a
-                  style={{ color: '#fff', fontWeight: 600, textDecoration: 'underline' }}
-                  href="https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview"
-                  target="_blank"
-                >
-                  Multichain Gas Relayer
-                </a>{' '}
-                eliminates the need for users to acquire native gas tokens separately when making cross-chain
-                transactions
-              </Text>
-            </Flex>
-          </Grid>
-        </Container>
+          <LogoLinks>
+            {validators.map((validator) => (
+              <Link
+                href={validator.url}
+                target="_blank"
+                title={validator.name}
+                style={{ height: validator.height }}
+                key={validator.name}
+              >
+                <img src={validator.imageUrl} alt={validator.name} />
+              </Link>
+            ))}
+          </LogoLinks>
+        </Flex>
       </Section>
 
-      <Section $backgroundColor="#fff" id="dapps">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>Explore dApps</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              Discover truly multichain dApps powered by Chain Signatures.
+      <Section gap="2xl" padding="hero" background="cyan12">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m" color="white">
+            Why build with Chain Signatures?
+          </Text>
+          <Text size="text-2xl" weight={400} color="white" style={{ maxWidth: '808px' }}>
+            The tech to realize chain abstraction. Let users go anywhere, fast, without the hassle.
+          </Text>
+        </Flex>
+
+        <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="xl">
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              True multichain coverage
+            </Text>
+
+            <Text color="white" size="text-s">
+              Build real multichain dApps that can interact with EVM, non-EVM, and even non-smart contract chains
+              without bridges
             </Text>
           </Flex>
 
-          <Flex $direction="column" $gap="36px">
-            <Flex $direction="column" $gap="12px">
-              <Text $size="text-xl" $weight="600">
-                Featured dApps
-              </Text>
-              <Text style={{ maxWidth: '393px' }}>
-                Discover the first live projects with Chain Signatures functionality.
-              </Text>
-            </Flex>
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              Instant chain support
+            </Text>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              {featuredDapps.map((item) => (
-                <Card as="a" href={item.url} target="_blank" rel="noopener noreferrer" key={item.name} $clickable>
-                  <Flex $direction="column" $gap="16px">
-                    <DappIcon src={item.imageUrl} alt={item.name} />
-
-                    <Text $size="text-l" $weight="500">
-                      {item.name}
-                    </Text>
-                    <Text $size="text-s">{item.description}</Text>
-                  </Flex>
-                </Card>
-              ))}
-            </Grid>
-          </Flex>
-
-          <Flex $direction="column" $gap="36px">
-            <Flex $direction="column" $gap="12px">
-              <Text $size="text-xl" $weight="600">
-                Upcoming dApps
-              </Text>
-              <Text style={{ maxWidth: '393px' }}>More Chain Signatures-powered omnichain dApps coming very soon.</Text>
-            </Flex>
-
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              {upcomingDapps.map((item) => (
-                <Card
-                  as={item.url ? 'a' : undefined}
-                  href={item.url || undefined}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={item.name}
-                  $clickable={!!item.url}
-                >
-                  <Flex $direction="column" $gap="16px">
-                    <DappIcon src={item.imageUrl} alt={item.name} />
-
-                    <Text $size="text-l" $weight="500">
-                      {item.name}
-                    </Text>
-                    <Text $size="text-s">{item.description}</Text>
-                  </Flex>
-                </Card>
-              ))}
-            </Grid>
-          </Flex>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#161615" style={{ '--sand11': '#A1A09A' } as any} id="get-started">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Getting Started</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" $color="white" style={{ maxWidth: '808px' }}>
-              Everything you need to start building with Chain Signatures.
+            <Text color="white" size="text-s">
+              Instantly add support for any new chain without the need for native integration every time
             </Text>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
-                <i className="ph-duotone ph-book-open-text" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
-                  Learn
-                </Text>
-              </Flex>
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              Single state layer
+            </Text>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
-                  Technical docs, examples, and guides for developers.
-                </Text>
-              </Flex>
-            </Flex>
-
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              {learnItems.map((item) => (
-                <Card $clickable $dark as="a" href={item.url} target={item.target} key={item.name}>
-                  <IconCircle>
-                    <i className={`ph-duotone ${item.icon}`} />
-                  </IconCircle>
-
-                  <Flex $direction="column" $gap="16px">
-                    <Text $size="text-l" $weight="500" $color="white">
-                      {item.name}
-                    </Text>
-                    <Text $size="text-s" $color="white">
-                      {item.description}
-                    </Text>
-                  </Flex>
-                </Card>
-              ))}
-            </Grid>
+            <Text color="white" size="text-s">
+              Manage assets or states on any chain with a single smart contract on NEAR
+            </Text>
           </Flex>
 
-          <Flex $direction="column" $gap="24px" $mobileGap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Flex $alignItems="center" $gap="12px">
-                <i className="ph-duotone ph-video" style={{ color: 'var(--white)', fontSize: '32px' }} />
-                <Text $size="text-xl" $weight="600" $color="white">
-                  Media
-                </Text>
-              </Flex>
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              Fast finality for cross-chain transactions
+            </Text>
 
-              <Flex $gap="24px" $alignItems="flex-end" $mobileStack $mobileAlignItems="flex-start">
-                <Text style={{ maxWidth: '393px', marginRight: 'auto' }} $color="white">
-                  Blogposts, talks, and community calls for all things Chain Signatures.
-                </Text>
-              </Flex>
-            </Flex>
+            <Text color="white" size="text-s">
+              Cross-chain transactions in the speed of one NEAR block (2-3 seconds)
+            </Text>
+          </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
-              {mediaItems.map((item) => (
-                <Article key={item.name} href={item.url} target="_blank" style={{ minWidth: 0 }}>
-                  <ArticleImage>
-                    <img src={item.imageUrl} alt={item.name} />
-                  </ArticleImage>
-                  <Text $size="text-l" $weight="500" as="h3" $color="white">
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              One account, any chain
+            </Text>
+
+            <Text color="white" size="text-s">
+              Control any externally owned account (EOA) on any chain from a single NEAR account
+            </Text>
+          </Flex>
+
+          <Flex stack>
+            <Text size="text-l" color="white" weight="600">
+              Gas Abstraction
+            </Text>
+
+            <Text color="white" size="text-s">
+              The{' '}
+              <a
+                style={{ color: '#fff', fontWeight: 600, textDecoration: 'underline' }}
+                href="https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview"
+                target="_blank"
+              >
+                Multichain Gas Relayer
+              </a>{' '}
+              eliminates the need for users to acquire native gas tokens separately when making cross-chain transactions
+            </Text>
+          </Flex>
+        </Grid>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="white" id="dapps">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m">
+            Explore dApps
+          </Text>
+          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+            Discover truly multichain dApps powered by Chain Signatures.
+          </Text>
+        </Flex>
+
+        <Flex stack gap="l">
+          <Flex stack>
+            <Text size="text-xl" weight="600">
+              Featured dApps
+            </Text>
+            <Text style={{ maxWidth: '393px' }}>
+              Discover the first live projects with Chain Signatures functionality.
+            </Text>
+          </Flex>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {featuredDapps.map((item) => (
+              <Card gap="l" padding="l" href={item.url} target="_blank" rel="noopener noreferrer" key={item.name}>
+                <Flex stack>
+                  <DappIcon src={item.imageUrl} alt={item.name} />
+
+                  <Text size="text-l" weight="500">
                     {item.name}
                   </Text>
-                </Article>
-              ))}
-            </Grid>
-          </Flex>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#fff">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>Roadmap</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              Technical developments coming soon to Chain Signatures.
-            </Text>
-          </Flex>
-
-          <Grid $columns="1fr 1fr 1fr" $gap="48px">
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $weight="600">
-                Q3 2024
-              </Text>
-              <Text $size="text-s">Mainnet launch (ECDSA support)</Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $weight="600">
-                Q4 2024
-              </Text>
-              <Text $size="text-s">EDDSA support (Solana, TON)</Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $weight="600">
-                2025
-              </Text>
-              <Text $size="text-s">Increase throughput to 300 tx/s</Text>
-            </Flex>
-
-            <Flex $direction="column" $gap="24px">
-              <Text $size="text-l" $weight="600">
-                2025
-              </Text>
-              <Text $size="text-s">40+ highly independent validator nodes</Text>
-            </Flex>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#083A40" style={{ '--sand11': '#EDEDEC' } as any}>
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ color: 'var(--white)' }}>Get Involved</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" $color="white" style={{ maxWidth: '808px' }}>
-              Building with Chain Signatures? Get technical, advisory, financial support, and more.
-            </Text>
-          </Flex>
-
-          <Grid $columns="1fr 1fr" $gap="24px">
-            <Card
-              $clickable
-              $dark
-              as="a"
-              href="https://form.jotform.com/240777569453167"
-              target="_blank"
-              $borderColor="var(--cyan11)"
-            >
-              <IconCircle>
-                <i className="ph-duotone ph-lightbulb-filament" />
-              </IconCircle>
-
-              <Flex $direction="column" $gap="16px">
-                <Text $size="text-l" $weight="500" $color="white">
-                  Are you interested in Chain Signatures?
-                </Text>
-                <Text $size="text-s" $color="white">
-                  Fill out our interest form and let us know how we might help!
-                </Text>
-              </Flex>
-            </Card>
-
-            <Card
-              $clickable
-              $dark
-              as="a"
-              href="https://t.me/+RXYjlPob_XM5N2Ex"
-              target="_blank"
-              $borderColor="var(--cyan11)"
-            >
-              <IconCircle>
-                <i className="ph-duotone ph-users-three" />
-              </IconCircle>
-
-              <Flex $direction="column" $gap="16px">
-                <Text $size="text-l" $weight="500" $color="white">
-                  Are you looking to connect with other devs?
-                </Text>
-                <Text $size="text-s" $color="white">
-                  Join our NEAR Chain Abstraction Dev Group on Telegram.
-                </Text>
-              </Flex>
-            </Card>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#61E5E2">
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2>Upcoming Events</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              Join us at conferences, meetups, and more as we gather across the globe to discuss Chain Signatures.
-            </Text>
-          </Flex>
-
-          <Grid $columns="1fr 1fr 1fr" $gap="24px" $mobileGap="48px">
-            {events.map((event) => (
-              <Article key={event.title + event.date} href={event.url} target="_blank" style={{ minWidth: 0 }}>
-                <ArticleImage>
-                  <img src={event.thumbnail} alt={event.title} />
-                </ArticleImage>
-                <Text $size="text-l" $weight="500" as="h3">
-                  {event.title}
-                </Text>
-                <Flex $alignItems="center" $gap="32px" style={{ minWidth: 0 }}>
-                  <Flex $alignItems="center" $gap="8px">
-                    <i className="ph-bold ph-calendar-blank" />
-                    <Text $color="sand11" $size="text-s" style={{ whiteSpace: 'nowrap' }}>
-                      {event.date}
-                    </Text>
-                  </Flex>
-                  <Flex $alignItems="center" $gap="8px" style={{ minWidth: 0 }}>
-                    <i className="ph-bold ph-map-pin-line" />
-                    <Text
-                      $color="sand11"
-                      $size="text-s"
-                      style={{
-                        whiteSpace: 'nowrap',
-                        minWidth: 0,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                    >
-                      {event.location}
-                    </Text>
-                  </Flex>
+                  <Text size="text-s">{item.description}</Text>
                 </Flex>
+              </Card>
+            ))}
+          </Grid>
+        </Flex>
+
+        <Flex stack gap="l">
+          <Flex stack>
+            <Text size="text-xl" weight="600">
+              Upcoming dApps
+            </Text>
+            <Text style={{ maxWidth: '393px' }}>More Chain Signatures-powered omnichain dApps coming very soon.</Text>
+          </Flex>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {upcomingDapps.map((item) => (
+              <Card
+                gap="l"
+                padding="l"
+                href={item.url || undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={item.name}
+              >
+                <Flex stack>
+                  <DappIcon src={item.imageUrl} alt={item.name} />
+
+                  <Text size="text-l" weight="500">
+                    {item.name}
+                  </Text>
+                  <Text size="text-s">{item.description}</Text>
+                </Flex>
+              </Card>
+            ))}
+          </Grid>
+        </Flex>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="sand12" id="get-started">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m" color="white">
+            Getting Started
+          </Text>
+          <Text size="text-2xl" weight={400} color="white" style={{ maxWidth: '808px' }}>
+            Everything you need to start building with Chain Signatures.
+          </Text>
+        </Flex>
+
+        <Flex stack gap="l">
+          <Flex stack gap="l">
+            <Flex align="center">
+              <i className="ph-duotone ph-book-open-text" style={{ color: 'var(--white)', fontSize: '32px' }} />
+              <Text size="text-xl" weight="600" color="white">
+                Learn
+              </Text>
+            </Flex>
+
+            <Text color="white" style={{ maxWidth: '393px' }}>
+              Technical docs, examples, and guides for developers.
+            </Text>
+          </Flex>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {learnItems.map((item) => (
+              <Card border="sand11" background="sand12" href={item.url} target={item.target} key={item.name}>
+                <IconCircle icon={<i className={`ph-duotone ${item.icon}`} />} />
+
+                <Flex stack>
+                  <Text size="text-l" weight="500" color="white">
+                    {item.name}
+                  </Text>
+                  <Text size="text-s" color="white">
+                    {item.description}
+                  </Text>
+                </Flex>
+              </Card>
+            ))}
+          </Grid>
+        </Flex>
+
+        <Flex stack gap="l">
+          <Flex stack gap="l">
+            <Flex align="center">
+              <i className="ph-duotone ph-video" style={{ color: 'var(--white)', fontSize: '32px' }} />
+              <Text size="text-xl" weight="600" color="white">
+                Media
+              </Text>
+            </Flex>
+
+            <Text color="white" style={{ maxWidth: '393px' }}>
+              Blogposts, talks, and community calls for all things Chain Signatures.
+            </Text>
+          </Flex>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {mediaItems.map((item) => (
+              <Article key={item.name} href={item.url} target="_blank" src={item.imageUrl} alt={item.name}>
+                <Text size="text-l" weight="500" as="h3" color="white">
+                  {item.name}
+                </Text>
               </Article>
             ))}
           </Grid>
-        </Container>
+        </Flex>
       </Section>
-    </Wrapper>
+
+      <Section gap="2xl" padding="hero" background="white">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m">
+            Roadmap
+          </Text>
+          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+            Technical developments coming soon to Chain Signatures.
+          </Text>
+        </Flex>
+
+        <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="xl">
+          <Flex stack>
+            <Text size="text-l" weight="600">
+              Q3 2024
+            </Text>
+            <Text size="text-s">Mainnet launch (ECDSA support)</Text>
+          </Flex>
+
+          <Flex stack>
+            <Text size="text-l" weight="600">
+              Q4 2024
+            </Text>
+            <Text size="text-s">EDDSA support (Solana, TON)</Text>
+          </Flex>
+
+          <Flex stack>
+            <Text size="text-l" weight="600">
+              2025
+            </Text>
+            <Text size="text-s">Increase throughput to 300 tx/s</Text>
+          </Flex>
+
+          <Flex stack>
+            <Text size="text-l" weight="600">
+              2025
+            </Text>
+            <Text size="text-s">40+ highly independent validator nodes</Text>
+          </Flex>
+        </Grid>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="cyan12">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m" color="white">
+            Get Involved
+          </Text>
+          <Text size="text-2xl" weight={400} color="white" style={{ maxWidth: '808px' }}>
+            Building with Chain Signatures? Get technical, advisory, financial support, and more.
+          </Text>
+        </Flex>
+
+        <Grid columns="1fr 1fr" columnsPhone="1fr" gap="l">
+          <Card
+            gap="l"
+            padding="l"
+            border="cyan11"
+            background="cyan12"
+            href="https://form.jotform.com/240777569453167"
+            target="_blank"
+          >
+            <IconCircle color="cyan6" icon={<i className="ph-duotone ph-lightbulb-filament" />} />
+
+            <Flex stack>
+              <Text size="text-l" weight="500" color="white">
+                Are you interested in Chain Signatures?
+              </Text>
+              <Text size="text-s" color="white">
+                Fill out our interest form and let us know how we might help!
+              </Text>
+            </Flex>
+          </Card>
+
+          <Card
+            gap="l"
+            padding="l"
+            border="cyan11"
+            background="cyan12"
+            href="https://t.me/+RXYjlPob_XM5N2Ex"
+            target="_blank"
+          >
+            <IconCircle color="cyan6" icon={<i className="ph-duotone ph-users-three" />} />
+
+            <Flex stack>
+              <Text size="text-l" weight="500" color="white">
+                Are you looking to connect with other devs?
+              </Text>
+              <Text size="text-s" color="white">
+                Join our NEAR Chain Abstraction Dev Group on Telegram.
+              </Text>
+            </Flex>
+          </Card>
+        </Grid>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="cyan9">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m">
+            Upcoming Events
+          </Text>
+          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+            Join us at conferences, meetups, and more as we gather across the globe to discuss Chain Signatures.
+          </Text>
+        </Flex>
+
+        <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+          {events.map((event) => (
+            <Article
+              key={event.title + event.date}
+              href={event.url}
+              target="_blank"
+              src={event.thumbnail}
+              alt={event.title}
+            >
+              <Text size="text-l" weight="500" as="h3">
+                {event.title}
+              </Text>
+              <Flex align="center" gap="l" style={{ minWidth: 0 }}>
+                <Flex align="center" gap="s">
+                  <i className="ph-bold ph-calendar-blank" style={{ color: 'var(--sand12)' }} />
+                  <Text color="sand11" size="text-s" style={{ whiteSpace: 'nowrap' }}>
+                    {event.date}
+                  </Text>
+                </Flex>
+                <Flex align="center" gap="s" style={{ minWidth: 0 }}>
+                  <i className="ph-bold ph-map-pin-line" style={{ color: 'var(--sand12)' }} />
+                  <Text
+                    color="sand11"
+                    size="text-s"
+                    style={{
+                      whiteSpace: 'nowrap',
+                      minWidth: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {event.location}
+                  </Text>
+                </Flex>
+              </Flex>
+            </Article>
+          ))}
+        </Grid>
+      </Section>
+    </>
   );
 };

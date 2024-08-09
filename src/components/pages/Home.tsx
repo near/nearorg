@@ -434,7 +434,11 @@ export const Home = () => {
           alt="Illustration of a console with javascript code above the Javascript and Rust logos, surrounded by brackets"
         >
           <Text size="text-xl" weight="500" color="white">
-            Build faster with <span style={{ color: '#00EC97' }}>Javascript</span> & familiar developer tools.
+            Build faster with{' '}
+            <Text as="span" size="text-xl" weight="500" color="green-brand">
+              Javascript
+            </Text>{' '}
+            & familiar developer tools.
           </Text>
           <Text color="white">
             Spend less time learning and more time building with the tools you already know and love.
