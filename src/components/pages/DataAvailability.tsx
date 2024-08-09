@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Button, ContentWithImage, Flex, Pattern, Section, Text } from '@near-pagoda/ui';
 
 import { LogoLinks } from '../lib/LogoLinks';

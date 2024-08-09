@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Flex, Text } from '@near-pagoda/ui';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';

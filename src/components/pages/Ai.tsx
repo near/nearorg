@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Article, Button, Card, Flex, Grid, IconCircle, Section, Text } from '@near-pagoda/ui';
 
 import { useEvents } from '@/hooks/useEvents';

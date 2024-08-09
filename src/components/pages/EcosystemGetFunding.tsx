@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Button, Card, CardThumbnail, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
 
 const images = {
