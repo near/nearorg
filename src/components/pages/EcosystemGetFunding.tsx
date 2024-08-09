@@ -240,7 +240,7 @@ function returnImageSrc(image: string) {
 export const EcosystemGetFunding = () => {
   return (
     <>
-      <Section background="white" style={{ textAlign: 'center' }}>
+      <Section background="amber2" style={{ textAlign: 'center' }}>
         <Pattern>
           <Flex gap="l" stack align="center">
             <Text as="h1" size="text-hero-l">
@@ -308,23 +308,25 @@ export const EcosystemGetFunding = () => {
         </Section>
       ))}
 
-      <Section gap="l" padding="hero" background="amber2" style={{ textAlign: 'center' }}>
-        <Text size="text-3xl" color="sand12">
-          What funding program is best for me?
-        </Text>
-        <Text size="text-xl" color="sand12" weight={400} style={{ maxWidth: '662px', margin: '0 auto' }}>
-          There are several options to get financial support for your idea - whether it is a grant from an ecosystem
-          fund, joining an accelerator, or getting venture support through our Ecosystem partners.
-        </Text>
-        <div>
-          <Button
-            href="https://www.nearbuilders.com/"
-            label="Explore All Teams"
-            variant="affirmative"
-            size="large"
-            target="_blank"
-          />
-        </div>
+      <Section padding="hero" background="amber2">
+        <Flex stack gap="xl" align="center" style={{ textAlign: 'center' }}>
+          <Text size="text-3xl" color="sand12">
+            What funding program is best for me?
+          </Text>
+          <Text size="text-xl" color="sand12" weight={400} style={{ maxWidth: '662px', margin: '0 auto' }}>
+            There are several options to get financial support for your idea - whether it is a grant from an ecosystem
+            fund, joining an accelerator, or getting venture support through our Ecosystem partners.
+          </Text>
+          <div>
+            <Button
+              href="https://www.nearbuilders.com/"
+              label="Explore All Teams"
+              variant="affirmative"
+              size="large"
+              target="_blank"
+            />
+          </div>
+        </Flex>
       </Section>
     </>
   );
