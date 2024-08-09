@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Button, ContentWithImage, Flex, Pattern, Section, Text } from '@near-pagoda/ui';
-import Link from 'next/link';
-import styled from 'styled-components';
+
+import { LogoLinks } from '../lib/LogoLinks';
 
 type Team = {
   url: string;
   name: string;
   image: string;
-  grayscaleImage?: string;
+  filter?: string;
   height: string;
 };
 
@@ -46,60 +46,35 @@ function returnImageSrc(cfid: string) {
   return `/images/data-availability/${cfid}.png`;
 }
 
-const LogoLinks = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 60px;
-  padding: 16px 24px;
-
-  a {
-    display: block;
-    height: 24px;
-    color: var(--sand10);
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    gap: 40px;
-  }
-`;
-
 const web3Teams1 = [
   {
     url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
     name: 'Arbitrum',
-    image: images.logos.arbitrum,
+    image: returnImageSrc(images.logos.arbitrum),
     height: '29px',
   },
   {
     url: 'https://polygon.technology/polygon-cdk',
     name: 'Polygon',
-    image: images.logos.polygon,
+    image: returnImageSrc(images.logos.polygon),
     height: '29px',
   },
   {
     url: 'https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/on-chain-data',
     name: 'Starknet',
-    image: images.logos.starknet,
+    image: returnImageSrc(images.logos.starknet),
     height: '29px',
   },
   {
     url: 'https://movementlabs.xyz',
     name: 'Movement Labs',
-    image: images.logos.movementLabs,
+    image: returnImageSrc(images.logos.movementLabs),
     height: '24px',
   },
   {
     url: 'https://docs.optimism.io',
     name: 'Optimism',
-    image: images.logos.optimism,
+    image: returnImageSrc(images.logos.optimism),
     height: '24px',
   },
 ];
@@ -108,37 +83,37 @@ const web3Teams2 = [
   {
     url: 'https://docs.altlayer.io/altlayer-documentation/core-features-of-altlayers-in-house-rollup-stack/modular',
     name: 'Altlayer',
-    image: images.logos.altlayer,
+    image: returnImageSrc(images.logos.altlayer),
     height: '29px',
   },
   {
     url: 'https://docs.caldera.xyz/about/alternative-da',
     name: 'Caldera',
-    image: images.logos.caldera,
+    image: returnImageSrc(images.logos.caldera),
     height: '28px',
   },
   {
     url: 'https://docs.dymension.xyz/build/adv-guide/roller-adv/da-light-client',
     name: 'Dymension',
-    image: images.logos.dymension,
+    image: returnImageSrc(images.logos.dymension),
     height: '28px',
   },
   {
     url: 'https://www.zeeve.io/blog/zeeve-raas-partners-with-near-da-to-power-ethereum-rollup-builders-with-efficient-data-availability',
     name: 'Zeeve',
-    image: images.logos.zeeve,
+    image: returnImageSrc(images.logos.zeeve),
     height: '29px',
   },
   {
     url: 'https://gateway.fm',
     name: 'Gateway',
-    image: images.logos.gatewayFm,
+    image: returnImageSrc(images.logos.gatewayFm),
     height: '29px',
   },
   {
     url: 'https://www.ankr.com/docs/scaling-services-rollups/data-availability/nearda',
     name: 'Ankr',
-    image: images.logos.ankr,
+    image: returnImageSrc(images.logos.ankr),
     height: '28px',
   },
 ];
@@ -147,20 +122,20 @@ const web3Teams3 = [
   {
     url: 'https://web3games.com',
     name: 'Web3Game',
-    image: images.logos.web3Game,
+    image: returnImageSrc(images.logos.web3Game),
     height: '28px',
   },
   {
     url: 'https://frax.finance',
     name: 'Frax Finance',
-    image: images.logos.fraxFinance,
+    image: returnImageSrc(images.logos.fraxFinance),
     height: '28px',
   },
   {
     url: 'https://particle.network',
     name: 'Particle Network',
-    image: images.logos.particleNetwork,
-    grayscaleImage: 'grayscale(1) brightness(50%)',
+    image: returnImageSrc(images.logos.particleNetwork),
+    filter: 'grayscale(1) brightness(50%)',
     height: '29px',
   },
 ];
@@ -232,33 +207,7 @@ export const DataAvailability = () => {
         </Text>
 
         {web3TeamsSections.map((section) => (
-          <Flex stack key={section.title.replace(/ /g, '_').toLowerCase()}>
-            <Text
-              size="text-xs"
-              weight="700"
-              color="sand11"
-              style={{
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-              }}
-            >
-              {section.title}
-            </Text>
-
-            <LogoLinks>
-              {section.teams.map((team) => (
-                <Link
-                  href={team.url}
-                  target="_blank"
-                  title={team.name}
-                  style={{ height: team.height, filter: team?.grayscaleImage }}
-                  key={team.name}
-                >
-                  <img src={returnImageSrc(team.image)} alt={team.name} />
-                </Link>
-              ))}
-            </LogoLinks>
-          </Flex>
+          <LogoLinks label={section.title} logos={section.teams} key={section.title.replace(/ /g, '_').toLowerCase()} />
         ))}
       </Section>
 

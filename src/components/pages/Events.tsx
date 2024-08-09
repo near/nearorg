@@ -1,60 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { Article, Button, Flex, Grid, Section, Text } from '@near-pagoda/ui';
 import styled from 'styled-components';
 
 import type { MappedEvent } from '@/hooks/useEvents';
 import { useEvents } from '@/hooks/useEvents';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
-import { Article, ArticleImage } from '../lib/Article';
-import { Button } from '../lib/Button';
-import { Container } from '../lib/Container';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
-import { PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
-
-function returnImageSrc(image: string) {
-  return `/images/events/${image}.jpeg`;
-}
-
-const backgroundAsset1 = 'bafkreibocppns3yi7yakmhgsj53qdgw74kzs25dulfbrrif5g3gtzm45zy';
-const backgroundAsset2 = 'bafkreibupkdrjsmnxcmcu4yvtlex3rmioj3eoqlb2jlccdkeujzfwmvzhy';
-const backgroundAsset3 = 'bafkreidovdxkcy6f3rb5xm3ack7tdujxngx6xn6bnkl7t72u7fds4vt53i';
-const backgroundAsset4 = 'bafkreic632ok3wpcjcqjem43e7y3er4pxtt457akiw6coevu43aksy4ctu';
-
-const Pattern = styled.div`
-  width: 100%;
-  min-height: 540px;
-  display: flex;
-  align-items: center;
-  background-image: url('${returnImageSrc(backgroundAsset1)}'), url('${returnImageSrc(backgroundAsset2)}'),
-    url('${returnImageSrc(backgroundAsset3)}'), url('${returnImageSrc(backgroundAsset4)}'),
-    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGeSURBVHgB7doxTisxEAbgeY/mvQro6NiSDo6QkpJbcA2OwjWooKQMJ2DpKENJBV7FEYoBeQSIZr9PGk2cItWvsdfZnSBjKHVf6rnUbdD1N8g4K7VX6jhIEaycofaTIEWwcoam0yFYOYe179WiQ7Byhk8+8wnB6munlHNWgmD1tUGyFSYIVl8bJFcOCYLV106s/aBrJ2hNE+qo1GmpRanz2J5aB6X+x/oQv/l+FWz5E/O1iHU4pom0W/u0/uoZahnrgN2VGuv6Jpidl1+o2T5BznkrfKj9MdZT6l9836r+3k2pq1KXMVNz3gpbU7hOmj49AQ7x/lJ0WWsK5xhv2+AYkHQR29vbddDluqFvbNZPQZdg9S07az4gWH3tHZVgJQhW3xjb4XIZyo+Z3nffHN79CZ1gYuXc1b4KEytFsHLGptMhWDlj7Q9BimDlbJ4Ex4AftggHdwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIpXoUVLSWulnzoAAAAASUVORK5CYII=');
-  background-size:
-    13%,
-    14%,
-    14%,
-    25%,
-    75px 75px;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-  background-position:
-    top left,
-    top right 7%,
-    bottom left 14%,
-    bottom right,
-    center top;
-
-  @media (min-width: 576px) and (max-width: 1020px) {
-    min-height: 570px;
-  }
-
-  @media (max-width: 575px) {
-    min-height: 390px;
-  }
-`;
+import s from './Events.module.scss';
 
 const CoverCard = styled.a`
   display: grid;
@@ -113,173 +66,155 @@ export const Events = () => {
   const otherEvents = events.filter((event) => event.title !== featuredEvent?.title);
 
   return (
-    <Wrapper>
-      <Section $backgroundColor="#fff" style={{ padding: '72px 0' }}>
-        <Container $center>
-          <Pattern>
-            <PatternContent $maxWidth="470px">
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>Events</H1>
+    <>
+      <Section background="white" style={{ textAlign: 'center' }}>
+        <div className={s.pattern}>
+          <div className={s.patternContent}>
+            <Flex gap="l" stack align="center" style={{ maxWidth: '470px' }}>
+              <Text as="h1" size="text-hero-l">
+                Events
+              </Text>
 
-                <Text $size="text-l" $mobileSize="text-base">
-                  Come together IRL and online, and be part of building the Open Web together.
-                </Text>
-              </Flex>
-            </PatternContent>
-          </Pattern>
-        </Container>
+              <Text size="text-l" weight={400}>
+                Come together IRL and online, and be part of building the Open Web together.
+              </Text>
+            </Flex>
+          </div>
+        </div>
       </Section>
 
       {featuredEvent && (
-        <Section $backgroundColor="#fff" style={{ padding: '72px 24px' }}>
-          <Container $gap="48px">
-            <Flex $direction="column" $gap="80px" $mobileGap="40px">
-              <Text $size="text-3xl" $mobileSize="text-2xl" $weight="500">
-                Upcoming Event
+        <Section gap="xl" background="white">
+          <Text size="text-3xl" weight="500">
+            Upcoming Event
+          </Text>
+
+          <CoverCard href={featuredEvent.url} target="_blank">
+            <CoverCardImageWrapper>
+              <img src={featuredEvent.thumbnail} alt={featuredEvent.title} />
+            </CoverCardImageWrapper>
+
+            <Flex stack>
+              <Text className="title" clampLines={3} size="text-2xl" weight="500">
+                {featuredEvent.title}
               </Text>
-            </Flex>
 
-            <CoverCard href={featuredEvent.url} target="_blank">
-              <CoverCardImageWrapper>
-                <img src={featuredEvent.thumbnail} alt={featuredEvent.title} />
-              </CoverCardImageWrapper>
+              <Text clampLines={7}>{featuredEvent.description}</Text>
 
-              <Flex $gap="1rem" $direction="column">
-                <Text className="title" $clampLines={3} $size="text-3xl" $mobileSize="text-2xl" $weight="500">
-                  {featuredEvent.title}
-                </Text>
-
-                <Text $clampLines={7}>{featuredEvent.description}</Text>
-
-                <Flex $alignItems="center" $gap="32px" style={{ minWidth: 0 }}>
-                  <Flex $alignItems="center" $gap="8px">
-                    <i className="ph-bold ph-calendar-blank" />
-                    <Text $color="sand11" $size="text-s" style={{ whiteSpace: 'nowrap' }}>
-                      {featuredEvent.date}
-                    </Text>
-                  </Flex>
-                  <Flex $alignItems="center" $gap="8px" style={{ minWidth: 0 }}>
-                    <i className="ph-bold ph-map-pin-line" />
-                    <Text
-                      $color="sand11"
-                      $size="text-s"
-                      style={{
-                        whiteSpace: 'nowrap',
-                        minWidth: 0,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                    >
-                      {featuredEvent.location}
-                    </Text>
-                  </Flex>
+              <Flex align="center" gap="l" style={{ minWidth: 0 }}>
+                <Flex align="center" gap="s">
+                  <i className="ph-bold ph-calendar-blank" />
+                  <Text color="sand11" size="text-s" style={{ whiteSpace: 'nowrap' }}>
+                    {featuredEvent.date}
+                  </Text>
+                </Flex>
+                <Flex align="center" gap="s" style={{ minWidth: 0 }}>
+                  <i className="ph-bold ph-map-pin-line" />
+                  <Text
+                    color="sand11"
+                    size="text-s"
+                    style={{
+                      whiteSpace: 'nowrap',
+                      minWidth: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {featuredEvent.location}
+                  </Text>
                 </Flex>
               </Flex>
-            </CoverCard>
-          </Container>
+            </Flex>
+          </CoverCard>
         </Section>
       )}
 
       {otherEvents.length > 0 && (
-        <Section $backgroundColor="#fff" style={{ padding: '72px 24px' }}>
-          <Container $gap="48px">
-            <Flex $gap="80px" $mobileGap="40px" $alignItems="center" $justifyContent="space-between">
-              <Text $size="text-3xl" $mobileSize="text-2xl" $weight="500">
-                Our Events
-              </Text>
-              {hasMoreEvents && (
-                <Button
-                  href="https://lu.ma/NEAR-community"
-                  target="_blank"
-                  label="View All"
-                  variant="secondary"
-                  size="small"
-                />
-              )}
-            </Flex>
+        <Section gap="2xl" padding="hero" background="white">
+          <Flex gap="l" align="center" justify="space-between">
+            <Text size="text-2xl" weight="500">
+              Our Events
+            </Text>
+            {hasMoreEvents && (
+              <Button
+                href="https://lu.ma/NEAR-community"
+                target="_blank"
+                label="View All"
+                variant="secondary"
+                size="small"
+              />
+            )}
+          </Flex>
 
-            <Grid $columns="1fr 1fr 1fr" $gap="24px">
-              {otherEvents.map((event) => {
-                return (
-                  <Article key={event.title} href={event.url} target="_blank" style={{ minWidth: 0 }}>
-                    <ArticleImage>
-                      <img src={event.thumbnail} alt={event.title} />
-                    </ArticleImage>
-                    <Text $color="sand12" $size="text-l" $weight="500" as="h3">
-                      {event.title}
-                    </Text>
-                    <Flex $alignItems="center" $gap="32px" style={{ minWidth: 0 }}>
-                      <Flex $alignItems="center" $gap="8px">
-                        <i className="ph-bold ph-calendar-blank" />
-                        <Text $color="sand11" $size="text-s" style={{ whiteSpace: 'nowrap' }}>
-                          {event.date}
-                        </Text>
-                      </Flex>
-                      <Flex $alignItems="center" $gap="8px" style={{ minWidth: 0 }}>
-                        <i className="ph-bold ph-map-pin-line" />
-                        <Text
-                          $color="sand11"
-                          $size="text-s"
-                          style={{
-                            whiteSpace: 'nowrap',
-                            minWidth: 0,
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                          }}
-                        >
-                          {event.location}
-                        </Text>
-                      </Flex>
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {otherEvents.map((event) => {
+              return (
+                <Article key={event.title} href={event.url} target="_blank" src={event.thumbnail} alt={event.title}>
+                  <Text color="sand12" size="text-l" weight="500" as="h3">
+                    {event.title}
+                  </Text>
+                  <Flex align="center" gap="l" style={{ minWidth: 0 }}>
+                    <Flex align="center" gap="s">
+                      <i className="ph-bold ph-calendar-blank" />
+                      <Text color="sand11" size="text-s" style={{ whiteSpace: 'nowrap' }}>
+                        {event.date}
+                      </Text>
                     </Flex>
-                  </Article>
-                );
-              })}
-            </Grid>
-          </Container>
+                    <Flex align="center" gap="s" style={{ minWidth: 0 }}>
+                      <i className="ph-bold ph-map-pin-line" />
+                      <Text
+                        color="sand11"
+                        size="text-s"
+                        style={{
+                          whiteSpace: 'nowrap',
+                          minWidth: 0,
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                      >
+                        {event.location}
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Article>
+              );
+            })}
+          </Grid>
         </Section>
       )}
 
       {otherEvents.length === 0 && (
-        <Section $backgroundColor="#fff" style={{ padding: '72px 24px' }}>
-          <Container>
-            <Flex $direction="column" $gap="24px" $alignItems="center">
-              <Text $size="text-3xl" $mobileSize="text-2xl" $weight="500">
-                New events coming soon!
-              </Text>
-              <Text $size="text-xl" $mobileSize="text-l" style={{ maxWidth: '808px', textAlign: 'center' }}>
-                Subscribe to our Luma calendar to stay up to date with our events.
-              </Text>
-            </Flex>
-          </Container>
+        <Section background="white" style={{ textAlign: 'center' }}>
+          <Flex stack gap="l" align="center">
+            <Text size="text-2xl" weight="500">
+              New events coming soon!
+            </Text>
+            <Text size="text-l" weight={400}>
+              Subscribe to our Luma calendar to stay up to date with our events.
+            </Text>
+          </Flex>
         </Section>
       )}
 
-      <Section $backgroundColor="var(--violet6)">
-        <Container>
-          <Flex $direction="column" $gap="24px" $alignItems="center">
-            <Text
-              $size="text-3xl"
-              $mobileSize="text-2xl"
-              $weight="500"
-              style={{ maxWidth: '808px', textAlign: 'center' }}
-            >
-              Hosting an event?
-            </Text>
+      <Section padding="hero" background="violet6">
+        <Flex stack gap="l" align="center" style={{ textAlign: 'center' }}>
+          <Text size="text-2xl" weight="500">
+            Hosting an event?
+          </Text>
 
-            <Text $size="text-xl" $mobileSize="text-l" style={{ maxWidth: '808px', textAlign: 'center' }}>
-              Do you want your NEAR community event posted here? Submit your event details via Luma to be considered.
-            </Text>
+          <Text size="text-l" weight={400} style={{ maxWidth: '808px' }}>
+            Do you want your NEAR community event posted here? Submit your event details via Luma to be considered.
+          </Text>
 
-            <Button
-              label="Submit Event"
-              variant="primary"
-              size="large"
-              href="https://lu.ma/NEAR-community"
-              target="_blank"
-            />
-          </Flex>
-        </Container>
+          <Button
+            label="Submit Event"
+            variant="primary"
+            size="large"
+            href="https://lu.ma/NEAR-community"
+            target="_blank"
+          />
+        </Flex>
       </Section>
-    </Wrapper>
+    </>
   );
 };

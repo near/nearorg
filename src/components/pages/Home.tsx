@@ -13,38 +13,13 @@ import {
   Section,
   Text,
 } from '@near-pagoda/ui';
-import Link from 'next/link';
-import styled from 'styled-components';
 
 import { useEvents } from '@/hooks/useEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
-const LogoLinks = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: var(--gap-l);
-  gap: var(--gap-xl);
-
-  a {
-    display: block;
-    height: 24px;
-    color: var(--sand10);
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    gap: 40px;
-  }
-`;
+import { LogoLinks } from '../lib/LogoLinks';
 
 const images = {
   apps: {
@@ -114,37 +89,37 @@ const web3Teams2 = [
   {
     url: 'https://dropt.io',
     name: 'Dropt',
-    image: images.logos.dropt,
+    image: returnImageSrc(images.logos.dropt),
     height: '35px',
   },
   {
     url: 'https://sailgp.com',
     name: 'Sail GP',
-    image: images.logos.sailgp,
+    image: returnImageSrc(images.logos.sailgp),
     height: '16px',
   },
   {
     url: 'https://www.shemarooent.com',
     name: 'Shemaroo',
-    image: images.logos.shemaroo,
+    image: returnImageSrc(images.logos.shemaroo),
     height: '38px',
   },
   {
     url: 'https://www.marblex.io',
     name: 'Marblex',
-    image: images.logos.marblex,
+    image: returnImageSrc(images.logos.marblex),
     height: '16px',
   },
   {
     url: 'https://polygon.technology/polygon-cdk',
     name: 'Polygon',
-    image: images.logos.polygon,
+    image: returnImageSrc(images.logos.polygon),
     height: '38px',
   },
   {
     url: 'https://sweatco.in',
     name: 'Sweatcoin',
-    image: images.logos.sweatcoin,
+    image: returnImageSrc(images.logos.sweatcoin),
     height: '24px',
   },
 ];
@@ -153,37 +128,37 @@ const web3Teams = [
   {
     url: 'https://alibabacloud.com/',
     name: 'Alibaba',
-    image: images.logos.alibaba,
+    image: returnImageSrc(images.logos.alibaba),
     height: '38px',
   },
   {
     url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
     name: 'Arbitrum',
-    image: images.logos.arbitrum,
+    image: returnImageSrc(images.logos.arbitrum),
     height: '38px',
   },
   {
     url: 'https://cosmose.co',
     name: 'Cosmose AI',
-    image: images.logos.cosmose,
+    image: returnImageSrc(images.logos.cosmose),
     height: '38px',
   },
   {
     url: 'https://docs.eigenlayer.xyz/eigenda-guides/eigenda-overview',
     name: 'EigenLayer',
-    image: images.logos.eigenLayer,
+    image: returnImageSrc(images.logos.eigenLayer),
     height: '38px',
   },
   {
     url: 'https://google.com',
     name: 'Google',
-    image: images.logos.google,
+    image: returnImageSrc(images.logos.google),
     height: '38px',
   },
   {
     url: 'https://www.icc-cricket.com',
     name: 'ICC',
-    image: images.logos.icc,
+    image: returnImageSrc(images.logos.icc),
     height: '24px',
   },
 ];
@@ -281,28 +256,11 @@ export const Home = () => {
           </Flex>
         </Pattern>
 
-        <Flex stack gap="xl">
-          <Text
-            size="text-xs"
-            weight="700"
-            color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              padding: '0 24px',
-            }}
-          >
-            Trusted by forward thinking teams
-          </Text>
-
-          <LogoLinks>
-            {web3TeamsCombined.map((team) => (
-              <Link href={team.url} target="_blank" title={team.name} style={{ height: team.height }} key={team.name}>
-                <img src={returnImageSrc(team.image)} alt={team.name} />
-              </Link>
-            ))}
-          </LogoLinks>
-        </Flex>
+        <LogoLinks
+          label="Trusted by forward thinking teams"
+          logos={web3TeamsCombined}
+          style={{ marginBottom: 'var(--gap-l)' }}
+        />
       </Section>
 
       <Section gap="2xl" background="green-brand" padding="hero">

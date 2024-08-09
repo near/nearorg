@@ -1,154 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Article, Button, Card, Flex, Grid, IconCircle, Section, Text } from '@near-pagoda/ui';
-import Link from 'next/link';
-import styled from 'styled-components';
 
 import { useEvents } from '@/hooks/useEvents';
 import { NEAR_AI_URL } from '@/utils/constants';
 import { LUMA_NEAR_AI_CALENDAR_ID, LUMA_NEAR_HZN_CALENDAR_ID } from '@/utils/constants';
 
-const HeroText = styled.h1`
-  font: var(--text-hero-l);
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 12.8px;
-  text-align: left;
-  margin: 0;
-
-  @media (max-width: 1120px) {
-    text-align: center;
-    font-size: 32px;
-
-    br {
-      display: none;
-    }
-  }
-
-  @media (max-width: 900px) {
-    font-size: 48px;
-  }
-
-  @media (max-width: 400px) {
-    letter-spacing: 6px;
-  }
-`;
-
-const HeroImage = styled.div`
-  background: url('/images/ai/hero-section-mobile.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 354px;
-
-  @media (min-width: 1120px) {
-    display: none;
-  }
-
-  @media (max-width: 798px) {
-    background-position: center;
-  }
-`;
-
-const AiSection = styled.section`
-  background-color: #9797ff;
-  background-image: url('/images/ai/hero-section.png');
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 100% 687px;
-  overflow: hidden;
-  padding: 72px 0;
-  position: relative;
-
-  @media (max-width: 900px) {
-    padding: var(--section-gap) 24px;
-  }
-
-  @media (max-width: 1440px) {
-    background-size: 1536px 687px;
-  }
-  @media (max-width: 1120px) {
-    background-image: none;
-    padding: 56px 0 36px;
-  }
-
-  @media (min-width: 1120px) {
-    min-height: 543px;
-  }
-`;
-
-const AiPattern = styled.div`
-  align-items: center;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGeSURBVHgB7doxTisxEAbgeY/mvQro6NiSDo6QkpJbcA2OwjWooKQMJ2DpKENJBV7FEYoBeQSIZr9PGk2cItWvsdfZnSBjKHVf6rnUbdD1N8g4K7VX6jhIEaycofaTIEWwcoam0yFYOYe179WiQ7Byhk8+8wnB6munlHNWgmD1tUGyFSYIVl8bJFcOCYLV106s/aBrJ2hNE+qo1GmpRanz2J5aB6X+x/oQv/l+FWz5E/O1iHU4pom0W/u0/uoZahnrgN2VGuv6Jpidl1+o2T5BznkrfKj9MdZT6l9836r+3k2pq1KXMVNz3gpbU7hOmj49AQ7x/lJ0WWsK5xhv2+AYkHQR29vbddDluqFvbNZPQZdg9S07az4gWH3tHZVgJQhW3xjb4XIZyo+Z3nffHN79CZ1gYuXc1b4KEytFsHLGptMhWDlj7Q9BimDlbJ4Ex4AftggHdwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIpXoUVLSWulnzoAAAAASUVORK5CYII=');
-  background-position: center top;
-  background-repeat: repeat;
-  background-size: 75px 75px;
-  display: flex;
-  min-height: 540px;
-  width: 100%;
-
-  @media (min-width: 1120px), (max-width: 600px) {
-    background: none;
-    min-height: unset;
-  }
-`;
-
-const AiPatternContent = styled.div`
-  align-items: center;
-  background: #9797ff;
-  display: flex;
-  margin: 185px 0 0;
-  max-width: 808px;
-  min-height: 260px;
-  padding: 1rem;
-
-  @media (max-width: 1120px) {
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
-  }
-`;
-
-export const AiContainer = styled.div<{
-  $center?: boolean;
-  $gap?: string;
-}>`
-  display: flex;
-  max-width: 1224px;
-  margin: 0 auto;
-  gap: ${(p) => p.$gap ?? 'var(--section-gap)'};
-  flex-direction: column;
-  align-items: ${(p) => (p.$center ? 'center' : undefined)};
-  justify-content: ${(p) => (p.$center ? 'center' : undefined)};
-  text-align: ${(p) => (p.$center ? 'center' : undefined)};
-`;
-
-const LogoLinks = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: var(--gap-l);
-  gap: var(--gap-xl);
-
-  a {
-    display: block;
-    height: 24px;
-    color: var(--sand10);
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    gap: 40px;
-  }
-`;
+import { LogoLinks } from '../lib/LogoLinks';
+import s from './Ai.module.scss';
 
 const ecosystemTeams = [
   {
@@ -254,22 +113,19 @@ export const Ai = () => {
   const { events, hasMoreEvents } = useEvents([LUMA_NEAR_AI_CALENDAR_ID, LUMA_NEAR_HZN_CALENDAR_ID]);
   return (
     <>
-      <AiSection>
-        <AiContainer>
-          <AiPattern>
-            <AiPatternContent>
+      <section className={s.aiSection}>
+        <div className={s.aiContainer}>
+          <div className={s.aiPattern}>
+            <div className={s.aiPatternContent}>
               <Flex gap="l" stack justify="center" align="center">
-                <HeroText>
+                <h1 className={s.heroText}>
                   User -<br /> Owned
-                </HeroText>
-
-                <HeroImage />
-
+                </h1>
+                <div className={s.heroImage} />
                 <Text size="text-l" weight={400}>
                   The intersection of AI x Web3 is NEAR
                 </Text>
-
-                <Flex>
+                <Flex wrap align="center" justify="center">
                   <Button
                     href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
                     target="_blank"
@@ -281,10 +137,10 @@ export const Ai = () => {
                   <Button href={NEAR_AI_URL} target="_blank" label="NEAR AI R&D" variant="primary" size="large" />
                 </Flex>
               </Flex>
-            </AiPatternContent>
-          </AiPattern>
-        </AiContainer>
-      </AiSection>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Section background="amber2" padding="hero" gap="2xl">
         <Flex stack gap="l">
@@ -301,29 +157,7 @@ export const Ai = () => {
           <img src="/images/ai/ai-stack.png" alt="ai-stack" />
         </Flex>
 
-        <Flex stack gap="xl">
-          <Text
-            size="text-xs"
-            weight="700"
-            color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              padding: '0 24px',
-              textAlign: 'center',
-            }}
-          >
-            Ecosystem
-          </Text>
-
-          <LogoLinks>
-            {ecosystemTeams.map((team) => (
-              <Link href={team.url} target="_blank" title={team.name} style={{ height: team.height }} key={team.name}>
-                <img src={team.image} alt={team.name} />
-              </Link>
-            ))}
-          </LogoLinks>
-        </Flex>
+        <LogoLinks label="Ecosystem" logos={ecosystemTeams} />
       </Section>
 
       <Section background="black" padding="hero" gap="2xl">

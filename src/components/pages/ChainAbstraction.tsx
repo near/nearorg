@@ -1,59 +1,60 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Article, Button, Card, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import { useEvents } from '@/hooks/useEvents';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
 
+import { LogoLinks } from '../lib/LogoLinks';
+
 const validators = [
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/pagoda.png',
+    image: '/images/chain-abstraction/validators/pagoda.png',
     name: 'Pagoda',
     url: 'https://www.pagoda.co/',
   },
 
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/luganodes.png',
+    image: '/images/chain-abstraction/validators/luganodes.png',
     name: 'Luganodes',
     url: 'https://www.luganodes.com/',
   },
   {
     height: '30px',
-    imageUrl: '/images/chain-abstraction/validators/the-lifted-initiative.png',
+    image: '/images/chain-abstraction/validators/the-lifted-initiative.png',
     name: 'The Lifted Initiative',
     url: 'https://liftedinit.org/',
   },
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/infstones.png',
+    image: '/images/chain-abstraction/validators/infstones.png',
     name: 'InfStones',
     url: 'https://infstones.com/',
   },
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/staking4all.png',
+    image: '/images/chain-abstraction/validators/staking4all.png',
     name: 'Staking4All',
     url: 'https://www.staking4all.org/',
   },
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/node-monster.png',
+    image: '/images/chain-abstraction/validators/node-monster.png',
     name: 'Node Monster',
     url: 'https://node.monster/',
   },
   {
     height: '30px',
-    imageUrl: '/images/chain-abstraction/validators/black-sand.png',
+    image: '/images/chain-abstraction/validators/black-sand.png',
     name: 'Black Sand Technologies',
     url: 'https://blacksand.xyz/',
   },
   {
     height: '26px',
-    imageUrl: '/images/chain-abstraction/validators/aurora.png',
+    image: '/images/chain-abstraction/validators/aurora.png',
     name: 'Aurora',
     url: 'https://aurora.dev/',
   },
@@ -209,30 +210,6 @@ const mediaItems = [
   },
 ];
 
-const LogoLinks = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--gap-xl);
-
-  a {
-    display: block;
-    height: 24px;
-    color: var(--sand10);
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    gap: 40px;
-  }
-`;
-
 const DappIcon = styled.img`
   display: block;
   width: 72px;
@@ -288,33 +265,7 @@ export const ChainAbstraction = () => {
           </video>
         </Flex>
 
-        <Flex stack align="center" gap="xl">
-          <Text
-            size="text-xs"
-            weight="700"
-            color="sand11"
-            style={{
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-            }}
-          >
-            Network Validators
-          </Text>
-
-          <LogoLinks>
-            {validators.map((validator) => (
-              <Link
-                href={validator.url}
-                target="_blank"
-                title={validator.name}
-                style={{ height: validator.height }}
-                key={validator.name}
-              >
-                <img src={validator.imageUrl} alt={validator.name} />
-              </Link>
-            ))}
-          </LogoLinks>
-        </Flex>
+        <LogoLinks label="Network Validators" logos={validators} />
       </Section>
 
       <Section gap="2xl" padding="hero" background="cyan12">
