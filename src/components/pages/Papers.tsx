@@ -1,13 +1,4 @@
-import { CtaSection } from '../CtaSection';
-import { Card } from '../lib/Card';
-import { Container } from '../lib/Container';
-import { Flex } from '../lib/Flex';
-import { Grid } from '../lib/Grid';
-import { IconCircle } from '../lib/IconCircle';
-import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
+import { Button, Card, Flex, Grid, IconCircle, Pattern, Section, Text } from '@near-pagoda/ui';
 
 const papersDocs = [
   {
@@ -38,45 +29,69 @@ const papersDocs = [
 
 export const Papers = () => {
   return (
-    <Wrapper>
-      <Section $backgroundColor="#61E5E2" style={{ padding: '72px 0' }}>
-        <Container $center>
-          <Pattern>
-            <PatternContent>
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>Papers</H1>
+    <>
+      <Section background="cyan9" style={{ textAlign: 'center' }}>
+        <Pattern>
+          <Flex gap="l" stack align="center">
+            <Text as="h1" size="text-hero-l">
+              Papers
+            </Text>
 
-                <Text $size="text-l" $mobileSize="text-base">
-                  Join us as we dive deep into our technology.
+            <Text size="text-l" weight={400}>
+              Join us as we dive deep into our technology.
+            </Text>
+          </Flex>
+        </Pattern>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="amber2">
+        <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+          {papersDocs.map((item) => (
+            <Card
+              border="sand11"
+              background="amber2"
+              gap="l"
+              padding="l"
+              key={item.name}
+              href={item.url}
+              target={item.target}
+              rel="noopener noreferrer"
+            >
+              <IconCircle icon={<i className={`ph-duotone ${item.icon}`} />} />
+
+              <Flex stack>
+                <Text size="text-l" weight="500">
+                  {item.name}
                 </Text>
+                <Text size="text-s">{item.description}</Text>
               </Flex>
-            </PatternContent>
-          </Pattern>
-        </Container>
+            </Card>
+          ))}
+        </Grid>
       </Section>
 
-      <Section $backgroundColor="#F2F1EA">
-        <Container>
-          <Grid $columns="1fr 1fr 1fr" $gap="24px">
-            {papersDocs.map((item) => (
-              <Card key={item.name} as="a" href={item.url} target={item.target} rel="noopener noreferrer">
-                <IconCircle>
-                  <i className={`ph-duotone ${item.icon}`} />
-                </IconCircle>
+      <Section padding="hero" background="cyan9">
+        <Flex stack gap="xl" align="center" style={{ textAlign: 'center' }}>
+          <Flex stack align="center" style={{ textAlign: 'center' }}>
+            <Text size="text-3xl" weight="500">
+              The blockchain for everyone
+            </Text>
 
-                <Flex $direction="column" $gap="16px">
-                  <Text $size="text-l" $weight="500">
-                    {item.name}
-                  </Text>
-                  <Text $size="text-s">{item.description}</Text>
-                </Flex>
-              </Card>
-            ))}
-          </Grid>
-        </Container>
+            <Text size="text-l" weight={400} style={{ maxWidth: '592px' }}>
+              Blockchain has never been easier. Create your account and join a thriving community of visionaries. Help
+              build a new Internet, where everyone counts.
+            </Text>
+          </Flex>
+
+          <Button
+            href="https://docs.near.org/concepts/welcome"
+            target="_blank"
+            label="Read Docs"
+            variant="primary"
+            size="large"
+          />
+        </Flex>
       </Section>
-
-      <CtaSection />
-    </Wrapper>
+    </>
   );
 };

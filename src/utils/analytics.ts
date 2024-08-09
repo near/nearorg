@@ -1,3 +1,4 @@
+import { getCookiePreferences } from '@near-pagoda/ui';
 import { get, truncate } from 'lodash';
 import { nanoid } from 'nanoid';
 import type { UIEvent } from 'react';
@@ -79,8 +80,8 @@ export async function init() {
   getAnonymousId();
 
   //pick up any change to cookie preferences on init (full page reload)
-  const userCookiePreference = localStorage.getItem('cookies-preference');
-  optOut(userCookiePreference === cookiePreferences.onlyRequired);
+  const cookiePreference = getCookiePreferences();
+  optOut(cookiePreference === cookiePreferences.onlyRequired);
   userCountryCode = readCountryCodeCookie();
 
   const rudderStackDataPlaneUrl = 'https://near.dataplane.rudderstack.com';

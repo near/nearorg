@@ -1,22 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
+import { Button, ContentWithImage, Flex, Pattern, Section, Text } from '@near-pagoda/ui';
 
-import Link from 'next/link';
-import styled from 'styled-components';
-
-import { Button } from '../lib/Button';
-import { Container } from '../lib/Container';
-import { ContentWithImage } from '../lib/ContentWithImage';
-import { Flex } from '../lib/Flex';
-import { Pattern, PatternContent } from '../lib/Pattern';
-import { Section } from '../lib/Section';
-import { H1, H2, Text } from '../lib/Text';
-import { Wrapper } from '../lib/Wrapper';
+import { LogoLinks } from '../LogoLinks';
 
 type Team = {
   url: string;
   name: string;
   image: string;
-  grayscaleImage?: string;
+  filter?: string;
   height: string;
 };
 
@@ -54,102 +44,35 @@ function returnImageSrc(cfid: string) {
   return `/images/data-availability/${cfid}.png`;
 }
 
-const LogoText = styled.p<{
-  $color?: string;
-  $size?: string;
-  $mobileSize?: string;
-  $weight?: string;
-}>`
-  font: var(--${(p) => p.$size ?? 'text-base'});
-  font-weight: ${(p) => p.$weight} !important;
-  color: var(--${(p) => p.$color ?? 'sand12'});
-  margin: 0;
-
-  @media (max-width: 900px) {
-    font: var(--${(p) => p.$mobileSize ?? p.$size ?? 'text-base'});
-  }
-`;
-
-const LogoLinksWrapper = styled.div`
-  margin-top: 40px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-
-  @media (max-width: 1170px) {
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 40px;
-      height: 100%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-    }
-  }
-`;
-
-const LogoLinks = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 60px;
-  padding: 16px 24px;
-
-  a {
-    display: block;
-    height: 24px;
-    color: var(--sand10);
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    gap: 40px;
-  }
-`;
-
-const LinkLogo = styled(Link)<{ $grayscale?: string }>`
-  img {
-    filter: ${(p) => p.$grayscale ?? 'none'};
-  }
-`;
-
 const web3Teams1 = [
   {
     url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
     name: 'Arbitrum',
-    image: images.logos.arbitrum,
+    image: returnImageSrc(images.logos.arbitrum),
     height: '29px',
   },
   {
     url: 'https://polygon.technology/polygon-cdk',
     name: 'Polygon',
-    image: images.logos.polygon,
+    image: returnImageSrc(images.logos.polygon),
     height: '29px',
   },
   {
     url: 'https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/on-chain-data',
     name: 'Starknet',
-    image: images.logos.starknet,
+    image: returnImageSrc(images.logos.starknet),
     height: '29px',
   },
   {
     url: 'https://movementlabs.xyz',
     name: 'Movement Labs',
-    image: images.logos.movementLabs,
+    image: returnImageSrc(images.logos.movementLabs),
     height: '24px',
   },
   {
     url: 'https://docs.optimism.io',
     name: 'Optimism',
-    image: images.logos.optimism,
+    image: returnImageSrc(images.logos.optimism),
     height: '24px',
   },
 ];
@@ -158,37 +81,37 @@ const web3Teams2 = [
   {
     url: 'https://docs.altlayer.io/altlayer-documentation/core-features-of-altlayers-in-house-rollup-stack/modular',
     name: 'Altlayer',
-    image: images.logos.altlayer,
+    image: returnImageSrc(images.logos.altlayer),
     height: '29px',
   },
   {
     url: 'https://docs.caldera.xyz/about/alternative-da',
     name: 'Caldera',
-    image: images.logos.caldera,
+    image: returnImageSrc(images.logos.caldera),
     height: '28px',
   },
   {
     url: 'https://docs.dymension.xyz/build/adv-guide/roller-adv/da-light-client',
     name: 'Dymension',
-    image: images.logos.dymension,
+    image: returnImageSrc(images.logos.dymension),
     height: '28px',
   },
   {
     url: 'https://www.zeeve.io/blog/zeeve-raas-partners-with-near-da-to-power-ethereum-rollup-builders-with-efficient-data-availability',
     name: 'Zeeve',
-    image: images.logos.zeeve,
+    image: returnImageSrc(images.logos.zeeve),
     height: '29px',
   },
   {
     url: 'https://gateway.fm',
     name: 'Gateway',
-    image: images.logos.gatewayFm,
+    image: returnImageSrc(images.logos.gatewayFm),
     height: '29px',
   },
   {
     url: 'https://www.ankr.com/docs/scaling-services-rollups/data-availability/nearda',
     name: 'Ankr',
-    image: images.logos.ankr,
+    image: returnImageSrc(images.logos.ankr),
     height: '28px',
   },
 ];
@@ -197,20 +120,20 @@ const web3Teams3 = [
   {
     url: 'https://web3games.com',
     name: 'Web3Game',
-    image: images.logos.web3Game,
+    image: returnImageSrc(images.logos.web3Game),
     height: '28px',
   },
   {
     url: 'https://frax.finance',
     name: 'Frax Finance',
-    image: images.logos.fraxFinance,
+    image: returnImageSrc(images.logos.fraxFinance),
     height: '28px',
   },
   {
     url: 'https://particle.network',
     name: 'Particle Network',
-    image: images.logos.particleNetwork,
-    grayscaleImage: 'grayscale(1) brightness(50%)',
+    image: returnImageSrc(images.logos.particleNetwork),
+    filter: 'grayscale(1) brightness(50%)',
     height: '29px',
   },
 ];
@@ -232,174 +155,20 @@ const web3TeamsSections: TeamSection[] = [
 
 export const DataAvailability = () => {
   return (
-    <Wrapper>
-      <Section $backgroundColor="#F2F1EA" style={{ padding: '72px 0' }}>
-        <Container $center>
-          <Pattern>
-            <PatternContent>
-              <Flex $gap="32px" $direction="column" $alignItems="center">
-                <H1>An efficient and robust data availability layer</H1>
-
-                <Text $size="text-l" $mobileSize="text-base">
-                  Simplify and lower costs in your rollup network by using NEAR as the Data Availability (DA) Layer in
-                  your Rollup Stack
-                </Text>
-
-                <Flex $gap="24px" $wrap="wrap" $alignItems="center" $justifyContent="center">
-                  <Button
-                    href="https://docs.near.org/data-availability/welcome"
-                    target="_blank"
-                    label="Read Docs"
-                    variant="secondary"
-                    fill="outline"
-                    size="large"
-                  />
-
-                  <Button
-                    href="/blog/why-near-data-availability"
-                    target="_blank"
-                    label="Intro to NEAR DA"
-                    variant="primary"
-                    size="large"
-                  />
-
-                  <Button
-                    href="https://www.nearmodular.com"
-                    target="_blank"
-                    label="Costs Dashboard"
-                    variant="secondary"
-                    fill="outline"
-                    size="large"
-                  />
-                </Flex>
-              </Flex>
-            </PatternContent>
-          </Pattern>
-        </Container>
-      </Section>
-
-      <Section>
-        {/* <Teams> */}
-
-        <Flex $gap="16px" $direction="column" $alignItems="center" style={{ textAlign: 'center' }}>
-          <Text $size="text-3xl" $weight="500" style={{ maxWidth: '600px' }}>
-            Trusted by forward thinking teams
-          </Text>
-
-          {/* <TeamsList> */}
-          {web3TeamsSections.map((section) => (
-            <Flex $gap="16px" $direction="column" key={section.title.replace(/ /g, '_').toLowerCase()}>
-              <LogoText
-                $size="text-xs"
-                $weight="700"
-                $color="sand11"
-                style={{
-                  textTransform: 'uppercase',
-                  letterSpacing: '2px',
-                  textAlign: 'center',
-                  marginTop: '60px',
-                }}
-              >
-                {section.title}
-              </LogoText>
-              <LogoLinksWrapper>
-                <LogoLinks>
-                  {section.teams.map((team) => (
-                    <LinkLogo
-                      href={team.url}
-                      target="_blank"
-                      title={team.name}
-                      style={{ height: team.height, display: 'inline-block' }}
-                      key={team.name}
-                      $grayscale={team?.grayscaleImage ?? undefined}
-                    >
-                      <img src={returnImageSrc(team.image)} alt={team.name} />
-                    </LinkLogo>
-                  ))}
-                </LogoLinks>
-              </LogoLinksWrapper>
-            </Flex>
-          ))}
-        </Flex>
-      </Section>
-
-      <Section>
-        <Container>
-          <Flex $direction="column" $gap="24px">
-            <H2 style={{ maxWidth: '1016px' }}>A data availability layer compatible with L2 frameworks</H2>
-            <Text $size="text-2xl" $mobileSize="text-l" style={{ maxWidth: '808px' }}>
-              Plug {`NEAR's`} DA layer into your L2 framework and start publishing transaction data on a blockchain with
-              a proven trajectory of 100% uptime over its lifetime.
+    <>
+      <Section background="amber2" style={{ textAlign: 'center' }}>
+        <Pattern>
+          <Flex gap="l" stack align="center">
+            <Text as="h1" size="text-hero-l">
+              An efficient and robust data availability layer
             </Text>
-          </Flex>
 
-          <img
-            src={returnImageSrc(images.illustrations.dac)}
-            alt="A data availability chart showing comparisons between NEAR, Celestia, Ethereum with proto-danksharding, and ethereum without proto-danksharding."
-          />
+            <Text size="text-l" weight={400}>
+              Simplify and lower costs in your rollup network by using NEAR as the Data Availability (DA) Layer in your
+              Rollup Stack
+            </Text>
 
-          <ContentWithImage
-            src={returnImageSrc(images.illustrations.l2)}
-            imageSide="left"
-            alt="A flow chart showing the relationships between the L2 and Data Availability (DA). On the L2, the Rollup node and Batcher feed into the NEAR Protocol on Data Availability. The proposal from the L2 feeds into Ethereum in the DA when then feeds back into the Rollup Node of the L2."
-          >
-            <Flex $direction="column" $gap="60px">
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Drastically reduce your costs
-                </Text>
-                <Text>
-                  A trustless off-chain light client for NEAR provides easy access to validate that rollup data was
-                  stored on-chain.
-                </Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Easily validate proofs
-                </Text>
-                <Text>
-                  A trustless off-chain light client for NEAR provides easy access to validate that rollup data was
-                  stored on-chain.
-                </Text>
-              </Flex>
-
-              <Flex $direction="column" $gap="24px">
-                <Text $size="text-xl" $mobileSize="text-l" $weight="500">
-                  Simple to interact with
-                </Text>
-                <Text>NEAR readily provides an RPC to easily retrieve the on-chain data from anywhere</Text>
-              </Flex>
-
-              <div>
-                <Button
-                  href="https://docs.near.org/data-availability/welcome"
-                  target="_blank"
-                  label="Bootstrap Your L2"
-                  variant="secondary"
-                  fill="outline"
-                  size="large"
-                />
-              </div>
-            </Flex>
-          </ContentWithImage>
-        </Container>
-      </Section>
-
-      <Section $backgroundColor="#F2F1EA">
-        <Container>
-          <Flex $direction="column" $gap="50px" $alignItems="center">
-            <Flex $direction="column" $gap="20px" $alignItems="center" style={{ textAlign: 'center' }}>
-              <Text $size="text-3xl" $weight="500" style={{ maxWidth: '600px' }}>
-                Get started with {`NEAR's`} data availability layer
-              </Text>
-
-              <Text style={{ maxWidth: '600px' }}>
-                Efficiently store state data and commitments on a NEAR contract for your L2 rollup.
-              </Text>
-            </Flex>
-
-            <Flex $gap="24px" $wrap="wrap" $alignItems="center" $justifyContent="center">
+            <Flex gap="l" wrap align="center" justify="center">
               <Button
                 href="https://docs.near.org/data-availability/welcome"
                 target="_blank"
@@ -410,25 +179,140 @@ export const DataAvailability = () => {
               />
 
               <Button
-                href="https://forms.gle/LWJoTpTiCbSheUL26"
+                href="/blog/why-near-data-availability"
                 target="_blank"
-                label="Get Updates"
+                label="Intro to NEAR DA"
                 variant="primary"
                 size="large"
               />
 
               <Button
-                href="/blog/why-near-data-availability"
+                href="https://www.nearmodular.com"
                 target="_blank"
-                label="Intro to NEAR DA"
+                label="Costs Dashboard"
                 variant="secondary"
                 fill="outline"
                 size="large"
               />
             </Flex>
           </Flex>
-        </Container>
+        </Pattern>
       </Section>
-    </Wrapper>
+
+      <Section gap="2xl" padding="hero" background="white" style={{ textAlign: 'center' }}>
+        <Text size="text-3xl" weight="500" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          Trusted by forward thinking teams
+        </Text>
+
+        {web3TeamsSections.map((section) => (
+          <LogoLinks label={section.title} logos={section.teams} key={section.title.replace(/ /g, '_').toLowerCase()} />
+        ))}
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="white">
+        <Flex stack gap="l">
+          <Text as="h2" size="text-hero-m">
+            A data availability layer compatible with L2 frameworks
+          </Text>
+          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
+            Plug {`NEAR's`} DA layer into your L2 framework and start publishing transaction data on a blockchain with a
+            proven trajectory of 100% uptime over its lifetime.
+          </Text>
+        </Flex>
+
+        <img
+          src={returnImageSrc(images.illustrations.dac)}
+          alt="A data availability chart showing comparisons between NEAR, Celestia, Ethereum with proto-danksharding, and ethereum without proto-danksharding."
+        />
+
+        <ContentWithImage
+          src={returnImageSrc(images.illustrations.l2)}
+          imageSide="left"
+          alt="A flow chart showing the relationships between the L2 and Data Availability (DA). On the L2, the Rollup node and Batcher feed into the NEAR Protocol on Data Availability. The proposal from the L2 feeds into Ethereum in the DA when then feeds back into the Rollup Node of the L2."
+        >
+          <Flex stack gap="xl">
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Drastically reduce your costs
+              </Text>
+              <Text>
+                A trustless off-chain light client for NEAR provides easy access to validate that rollup data was stored
+                on-chain.
+              </Text>
+            </Flex>
+
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Easily validate proofs
+              </Text>
+              <Text>
+                A trustless off-chain light client for NEAR provides easy access to validate that rollup data was stored
+                on-chain.
+              </Text>
+            </Flex>
+
+            <Flex stack>
+              <Text size="text-xl" weight="500">
+                Simple to interact with
+              </Text>
+              <Text>NEAR readily provides an RPC to easily retrieve the on-chain data from anywhere</Text>
+            </Flex>
+
+            <div>
+              <Button
+                href="https://docs.near.org/data-availability/welcome"
+                target="_blank"
+                label="Bootstrap Your L2"
+                variant="secondary"
+                fill="outline"
+                size="large"
+              />
+            </div>
+          </Flex>
+        </ContentWithImage>
+      </Section>
+
+      <Section gap="2xl" padding="hero" background="amber2">
+        <Flex stack gap="xl" align="center">
+          <Flex stack align="center" style={{ textAlign: 'center' }}>
+            <Text size="text-3xl" weight="500" style={{ maxWidth: '600px' }}>
+              Get started with {`NEAR's`} data availability layer
+            </Text>
+
+            <Text style={{ maxWidth: '600px' }}>
+              Efficiently store state data and commitments on a NEAR contract for your L2 rollup.
+            </Text>
+          </Flex>
+
+          <Flex gap="l" wrap align="center" justify="center">
+            <Button
+              href="https://docs.near.org/data-availability/welcome"
+              target="_blank"
+              label="Read Docs"
+              variant="secondary"
+              fill="outline"
+              size="large"
+            />
+
+            <Button
+              href="https://forms.gle/LWJoTpTiCbSheUL26"
+              target="_blank"
+              label="Get Updates"
+              variant="primary"
+              size="large"
+            />
+
+            <Button
+              href="/blog/why-near-data-availability"
+              target="_blank"
+              label="Intro to NEAR DA"
+              variant="secondary"
+              fill="outline"
+              size="large"
+            />
+          </Flex>
+        </Flex>
+      </Section>
+    </>
   );
 };

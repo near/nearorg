@@ -3,12 +3,8 @@ const appGatewayHostname = 'https://dev.near.org'; // This will probably change 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
-  },
   redirects: async () => {
     return [
-
       // Please keep redirects in alphabetical order based on `source`:
 
       {
