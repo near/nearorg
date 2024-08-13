@@ -1,0 +1,19 @@
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap-xl);
+
+  a {
+    display: inline-flex;
+    height: 24px;
+    color: var(--sand10);
+
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+}

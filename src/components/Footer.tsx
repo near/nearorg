@@ -1,82 +1,7 @@
+import { Text } from '@near-pagoda/ui';
 import Link from 'next/link';
-import styled from 'styled-components';
 
-import { Text } from './lib/Text';
-
-const Wrapper = styled.div`
-  background: var(--white);
-  padding: 100px 24px;
-
-  @media (max-width: 1024px) {
-    padding: 80px 24px 24px;
-  }
-`;
-
-const Container = styled.div`
-  display: grid;
-  gap: 100px;
-  max-width: 1224px;
-  margin: 0 auto;
-`;
-
-const LinkGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 24px;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  ul {
-    display: grid;
-    list-style: none;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    font-family: 'FK Grotesk', sans-serif;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--sand12);
-    white-space: nowrap;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--sand12);
-      text-decoration: underline;
-      outline: none;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
-`;
-
-const Logo = styled.div`
-  height: 32px;
-  svg {
-    height: 100%;
-  }
-`;
-
-const Bottom = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding-right: 5.55rem;
-
-  @media (max-width: 1024px) {
-    padding-right: 0;
-  }
-`;
+import s from './Footer.module.scss';
 
 const sections = [
   {
@@ -257,12 +182,12 @@ const sections = [
 
 export const Footer = () => {
   return (
-    <Wrapper>
-      <Container>
-        <LinkGrid>
+    <footer className={s.footer}>
+      <div className={s.container}>
+        <div className={s.linkGrid}>
           {sections.map((section) => (
             <div key={section.title}>
-              <Text $size="text-xs" $weight="450" $color="var(--sand10)">
+              <Text size="text-xs" weight="450" color="sand10">
                 {section.title}
               </Text>
 
@@ -277,10 +202,10 @@ export const Footer = () => {
               </ul>
             </div>
           ))}
-        </LinkGrid>
+        </div>
 
-        <Bottom>
-          <Logo>
+        <div className={s.bottom}>
+          <div className={s.logo}>
             <svg viewBox="0 0 128 32" fill="none">
               <path
                 d="M52.6979 4.94885C50.35 4.94885 48.6434 5.50114 47.1923 6.77897L44.6324 8.98811C44.4204 9.15596 43.991 9.28591 43.6921 9.03142C43.3932 8.77694 43.3497 8.43582 43.6051 8.09471L44.9693 6.05342C45.1813 5.75562 45.0128 5.37119 44.6269 5.37119H41.3442C40.9583 5.37119 40.6594 5.66899 40.6594 6.05342V25.9465C40.6594 26.3309 40.9583 26.6287 41.3442 26.6287H44.7574C45.1433 26.6287 45.4422 26.3309 45.4422 25.9465V14.7275C45.4422 9.58371 49.7522 8.77694 51.3718 8.77694C54.8285 8.77694 56.0622 11.2406 56.0622 13.114V25.9519C56.0622 26.3363 56.3611 26.6341 56.747 26.6341H60.1602C60.5461 26.6341 60.845 26.3363 60.845 25.9519V12.6917C60.845 7.93227 57.7308 4.95427 52.6979 4.95427V4.94885Z"
@@ -303,11 +228,11 @@ export const Footer = () => {
                 fill="black"
               />
             </svg>
-          </Logo>
+          </div>
 
-          <Text $size="text-xs">© {new Date().getFullYear()} Near.org</Text>
-        </Bottom>
-      </Container>
-    </Wrapper>
+          <Text size="text-xs">© {new Date().getFullYear()} Near.org</Text>
+        </div>
+      </div>
+    </footer>
   );
 };

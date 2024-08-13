@@ -1,7 +1,9 @@
-import '@/styles/reset.css';
-import '@/styles/theme.css';
+import '@near-pagoda/ui/globals.css';
+import '@near-pagoda/ui/theme.css';
+import '@near-pagoda/ui/lib.css';
 import '@/styles/globals.css';
 
+import { CookiePrompt, Toaster } from '@near-pagoda/ui';
 import Gleap from 'gleap';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -9,7 +11,6 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
 
-import { CookiePrompt } from '@/components/CookiePrompt';
 import { useClickTracking } from '@/hooks/useClickTracking';
 import { usePageAnalytics } from '@/hooks/usePageAnalytics';
 import { init as initializeAnalytics, setReferrer } from '@/utils/analytics';
@@ -56,6 +57,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       {getLayout(<Component {...pageProps} />)}
 
       <CookiePrompt />
+
+      <Toaster />
     </>
   );
 }
