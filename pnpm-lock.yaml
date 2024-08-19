@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@near-pagoda/ui':
-        specifier: ^0.3.0
-        version: 0.3.0(@types/react-dom@18.2.10)(@types/react@18.2.25)(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zustand@4.5.2(@types/react@18.2.25)(react@18.3.1))
+        specifier: ^1.0.0
+        version: 1.0.0(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zustand@4.5.2(@types/react@18.2.25)(react@18.3.1))
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -150,11 +150,10 @@ packages:
   '@ndhoule/keys@2.0.0':
     resolution: {integrity: sha512-vtCqKBC1Av6dsBA8xpAO+cgk051nfaI+PnmTZep2Px0vYrDvpUmLxv7z40COlWH5yCpu3gzNhepk+02yiQiZNw==}
 
-  '@near-pagoda/ui@0.3.0':
-    resolution: {integrity: sha512-GZ7jdZdJGC9YRcyhYMJ75w8BJg6kcycRuKGVxgPvwHwGyYs3CVUjYoQmkt2Bd1aUqzct/D0pAwUOx9VIsYJ0LQ==}
+  '@near-pagoda/ui@1.0.0':
+    resolution: {integrity: sha512-lOve8WnHXJfx/ci2zDY0RJz+Rccl2UvzrLtULVYd3p2QBtsY/Afbe2H3x4lKl8SLFDLgE7uL3LecUte+wiE6AQ==}
     engines: {node: '>=20', pnpm: 9.1.1}
     peerDependencies:
-      next: '>=13'
       react: ^18
       react-dom: ^18
       zustand: ^4
@@ -2299,7 +2298,7 @@ snapshots:
 
   '@ndhoule/keys@2.0.0': {}
 
-  '@near-pagoda/ui@0.3.0(@types/react-dom@18.2.10)(@types/react@18.2.25)(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zustand@4.5.2(@types/react@18.2.25)(react@18.3.1))':
+  '@near-pagoda/ui@1.0.0(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zustand@4.5.2(@types/react@18.2.25)(react@18.3.1))':
     dependencies:
       '@phosphor-icons/react': 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2311,7 +2310,6 @@ snapshots:
       '@radix-ui/react-tooltip': 1.1.2(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       downshift: 9.0.7(react@18.3.1)
       lodash-es: 4.17.21
-      next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       zustand: 4.5.2(@types/react@18.2.25)(react@18.3.1)
