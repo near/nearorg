@@ -81,7 +81,7 @@ const getInvolvedItems = [
     name: 'Are you an early stage AI Founder?',
     description: 'Apply for the next NEAR Horizon AI Incubator cohort.',
     icon: 'ph-lightbulb-filament',
-    url: 'https://www.hzn.xyz/hzn',
+    url: 'https://www.hzn.xyz',
     target: '_blank',
   },
   {
