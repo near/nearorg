@@ -219,7 +219,7 @@ export const Ai = () => {
       <Section background="amber2" padding="hero" gap="2xl">
         <Flex stack gap="l">
           <Text as="h2" size="text-hero-m">
-            NEAR = Home For AI x Web3 Builders
+            NEAR is the home for AI x Web3 Builders
           </Text>
           <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
             Whether {`it's`} expertise, mindshare, adoption, developer experience, AI infrastructure, institutional
@@ -275,14 +275,9 @@ export const Ai = () => {
       </Section>
 
       <Section background="violet-brand" padding="hero" gap="2xl">
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m">
-            NEAR is Best Chain for Builders
-          </Text>
-          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
-            Interested in joining the User-Owned AI movement? Find ways to get in touch below.
-          </Text>
-        </Flex>
+        <Text as="h2" size="text-hero-m">
+          NEAR is the Best Chain for Builders
+        </Text>
 
         <Grid columns="1fr 1fr" gap="2xl">
           <Flex stack gap="s">
