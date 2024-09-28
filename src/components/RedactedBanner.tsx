@@ -4,8 +4,8 @@ import s from './RedactedBanner.module.scss';
 
 export const RedactedBanner = () => {
   const now = Date.now();
-  const redactedEndTime = 1731139200000; // Nov 9th 2024
-  const hackathonEndTime = 1727247600000; // Oct 25th 2024
+  const redactedEndTime = 1731312000000; // Nov 11th 2024
+  const hackathonEndTime = 1731312000000; // Nov 11th 2024
   const hackathonEndPassed = now > hackathonEndTime;
   const redactedEndPassed = now > redactedEndTime;
 
