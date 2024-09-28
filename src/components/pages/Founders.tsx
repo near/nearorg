@@ -47,7 +47,7 @@ const ecosystemCommunityResources = [
     description:
       "Building in Web3 and AI. Apply to NEAR Horizon’s AI incubator and contribute to NEAR's User-Owned AI vision.",
     icon: 'ph-article',
-    url: 'https://www.hzn.xyz/hzn',
+    url: 'https://www.hzn.xyz',
     target: '_blank',
   },
   {
@@ -93,13 +93,7 @@ export const Founders = () => {
                 variant="primary"
                 size="large"
               />
-              <Button
-                href="https://www.hzn.xyz/hzn"
-                target="_blank"
-                label="AI Incubator"
-                variant="primary"
-                size="large"
-              />
+              <Button href="https://www.hzn.xyz" target="_blank" label="AI Incubator" variant="primary" size="large" />
             </Flex>
           </Flex>
         </Pattern>
@@ -160,13 +154,7 @@ export const Founders = () => {
               centralized AI.
             </Text>
             <Flex>
-              <Button
-                href="https://www.hzn.xyz/hzn"
-                target="_blank"
-                label="Apply Now"
-                variant="affirmative"
-                size="large"
-              />
+              <Button href="https://www.hzn.xyz" target="_blank" label="Apply Now" variant="affirmative" size="large" />
             </Flex>
           </Flex>
         </ContentWithImage>
