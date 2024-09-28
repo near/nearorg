@@ -16,7 +16,7 @@ export const RedactedBanner = () => {
       <div className={s.redactedBanner}>
         <a href="https://airtable.com/appdLXQkwmt4rqtW0/pag21sUeq3cAW994V/form" target="_blank">
           <img
-            src="/images/redacted/redacted-left.png"
+            src="/images/redacted/redacted-left-2.png"
             alt="Redacted: Reclaim your sovereignty at no cost. Click to be there IRL"
           />
         </a>
@@ -26,7 +26,7 @@ export const RedactedBanner = () => {
         ) : (
           <a href="https://redacted.devpost.com/" target="_blank">
             <img
-              src="/images/redacted/redacted-right.png"
+              src="/images/redacted/redacted-right-2.png"
               alt="Redacted: It's so much more than a hackathon. Click to learn more"
             />
           </a>
