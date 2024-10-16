@@ -12,7 +12,7 @@ export const RedactedBanner = () => {
   return (
     <Container>
       <div className={s.redactedBanner}>
-        <a href="https://airtable.com/appdLXQkwmt4rqtW0/pag21sUeq3cAW994V/form" target="_blank">
+        <a href="https://redactedbangkok.ai/" target="_blank">
           <img
             src="/images/redacted/redacted-left-3.png"
             alt="Redacted: Reclaim your sovereignty at no cost. Click to be there IRL"
