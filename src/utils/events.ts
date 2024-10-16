@@ -5,8 +5,8 @@ export type EventItem = {
     name: string;
     description: string;
     start_at: string;
-    end_at: string;
-    cover_url: string;
+    end_at?: string;
+    cover_url?: string;
     url: string;
     geo_address_json: any;
     geo_address_info?: any;

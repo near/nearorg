@@ -139,6 +139,14 @@ export const Events = () => {
             <Text size="text-l" weight={400}>
               Subscribe to our Luma calendar to stay up to date with our events.
             </Text>
+
+            <Button
+              label="Subscribe"
+              variant="primary"
+              size="large"
+              href="https://lu.ma/NEAR-community"
+              target="_blank"
+            />
           </Flex>
         </Section>
       )}
