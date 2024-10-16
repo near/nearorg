@@ -34,9 +34,9 @@ export function useEvents(calendarApiIds: string[], limit = 3) {
             date: formatDate(item.event.start_at, item.event.end_at),
             description: item.event.description,
             location: formatLocation(item.event.geo_address_json ?? item.event.geo_address_info),
-            thumbnail: item.event.cover_url,
+            thumbnail: formatThumbnail(item.api_id, item.event.cover_url),
             title: item.event.name,
-            url: `${aiEventsUrl}/${item.event.url}`,
+            url: new URL(item.event.url, aiEventsUrl).href,
           };
         });
 
@@ -51,17 +51,24 @@ export function useEvents(calendarApiIds: string[], limit = 3) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(calendarApiIds), limit]);
 
-  const formatDate = (startAt: string, endAt: string) => {
+  const formatDate = (startAt: string, endAt: string | undefined) => {
     // Example Format: "Jul 21 - Jul 23, 2023"
 
     const startAtDate = new Date(startAt);
-    const endAtDate = new Date(endAt);
 
+    if (!endAt) {
+      return startAtDate.toLocaleDateString(undefined, {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      });
+    }
     const startAtDateFormatted = startAtDate.toLocaleDateString(undefined, {
       month: 'short',
       day: 'numeric',
     });
 
+    const endAtDate = new Date(endAt);
     const endAtDateFormatted = endAtDate.toLocaleDateString(undefined, {
       month: 'short',
       day: 'numeric',
@@ -79,6 +86,13 @@ export function useEvents(calendarApiIds: string[], limit = 3) {
       return 'Register to See Address';
     }
     return location.address;
+  };
+
+  const formatThumbnail = (api_id: string, cover_url: string | undefined): string => {
+    if (cover_url) return cover_url;
+    // a bit hacky - "external" events (not hosted on Luma) have no cover image, so look for one manually uploaded on this server.
+    // if we want to be fancy, we could pull an OpenGraph share image from the event URL
+    return `/images/events/${api_id}.jpeg`;
   };
 
   return {
