@@ -111,7 +111,7 @@ const developerResources = [
   {
     name: 'Build an on chain agent plugin with Bitte',
     icon: 'ph-book-open-text',
-    url: 'https://docs.mintbase.xyz/ai/assistant-plugins',
+    url: 'https://docs.bitte.ai/agents/introduction',
     target: '_blank',
   },
   {
