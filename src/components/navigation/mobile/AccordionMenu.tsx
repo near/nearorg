@@ -19,38 +19,44 @@ export const AccordionMenu = (props: Props) => {
       <Accordion.Root type="multiple">
         {navigationCategories
           .filter((category) => category.visible === 'all' || category.visible === 'mobile')
-          .map((category) => (
-            <Accordion.Item value={category.title} key={category.title}>
-              <Accordion.Header className={s.accordionHeader}>
-                <Accordion.Trigger className={s.accordionTrigger}>
-                  {category.title}
-                  <i className="ph-bold ph-caret-down" />
-                </Accordion.Trigger>
-              </Accordion.Header>
+          .map((category) =>
+            category.url ? (
+              <Link key={category.title} className={s.nearAiLink} href={category.url} onClick={props.onCloseMenu}>
+                {category.title}
+              </Link>
+            ) : (
+              <Accordion.Item value={category.title} key={category.title}>
+                <Accordion.Header className={s.accordionHeader}>
+                  <Accordion.Trigger className={s.accordionTrigger}>
+                    {category.title}
+                    <i className="ph-bold ph-caret-down" />
+                  </Accordion.Trigger>
+                </Accordion.Header>
 
-              <Accordion.Content className={s.accordionContent}>
-                {category.sections.map((section) => (
-                  <div className={s.section} key={section.title}>
-                    {section.title && <span className={s.sectionTitle}>{section.title}</span>}
+                <Accordion.Content className={s.accordionContent}>
+                  {category.sections.map((section) => (
+                    <div className={s.section} key={section.title}>
+                      {section.title && <span className={s.sectionTitle}>{section.title}</span>}
 
-                    {section.links.map((link) => (
-                      <div className={s.subSection} key={link.title}>
-                        <i className={`${s.icon} ${link.icon}`} />
-                        <Link
-                          href={link.url}
-                          target={link.url.indexOf('http') === 0 ? '_blank' : undefined}
-                          key={link.title}
-                          onClick={props.onCloseMenu}
-                        >
-                          {link.title}
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </Accordion.Content>
-            </Accordion.Item>
-          ))}
+                      {section.links.map((link) => (
+                        <div className={s.subSection} key={link.title}>
+                          <i className={`${s.icon} ${link.icon}`} />
+                          <Link
+                            href={link.url}
+                            target={link.url.indexOf('http') === 0 ? '_blank' : undefined}
+                            key={link.title}
+                            onClick={props.onCloseMenu}
+                          >
+                            {link.title}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </Accordion.Content>
+              </Accordion.Item>
+            ),
+          )}
       </Accordion.Root>
     </div>
   );
