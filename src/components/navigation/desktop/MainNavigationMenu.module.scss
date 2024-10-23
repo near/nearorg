@@ -35,10 +35,14 @@
   border-radius: 100px;
   transition: all 200ms;
 
+  a {
+    color: var(--sand12);
+  }
+
   a:visited {
     color: var(--sand12);
   }
-  
+
   &:hover,
   &:focus-visible,
   &[data-state='open'] {
