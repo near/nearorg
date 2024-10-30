@@ -41,10 +41,6 @@ const sections = [
         url: 'https://docs.near.org/',
       },
       {
-        title: 'Sandbox',
-        url: 'https://dev.near.org/sandbox',
-      },
-      {
         title: 'Tools',
         url: 'https://docs.near.org/tools/welcome',
       },
@@ -67,28 +63,15 @@ const sections = [
     ],
   },
   {
-    title: 'Discover',
-    links: [
-      {
-        title: 'Applications',
-        url: 'https://dev.near.org/applications',
-      },
-      {
-        title: 'Components',
-        url: 'https://dev.near.org/components',
-      },
-      {
-        title: 'Gateways',
-        url: 'https://dev.near.org/gateways',
-      },
-    ],
-  },
-  {
     title: 'Ecosystem',
     links: [
       {
         title: 'Overview',
         url: '/ecosystem',
+      },
+      {
+        title: 'Applications',
+        url: 'https://dev.near.org/applications',
       },
       {
         title: 'News',
@@ -126,10 +109,6 @@ const sections = [
       {
         title: 'Brand Toolkit',
         url: 'https://near.org/brand',
-      },
-      {
-        title: 'Privacy',
-        url: 'https://dev.near.org/privacy',
       },
       {
         title: 'Terms of Use',
@@ -192,7 +171,7 @@ export const Footer = () => {
               </Text>
 
               <ul>
-                {section.links.map((link) => (
+                {(section.links || []).map((link) => (
                   <li key={link.title}>
                     <Link href={link.url} target={link.url.indexOf('http') === 0 ? '_blank' : undefined}>
                       {link.title}

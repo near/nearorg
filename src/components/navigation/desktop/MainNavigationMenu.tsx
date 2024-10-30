@@ -37,33 +37,35 @@ export const MainNavigationMenu = () => {
                   onMouseEnter={recordMouseEnter}
                   onClick={navTriggerClick}
                 >
-                  {category.title}
+                  {category.url ? <Link href={category.url}>{category.title}</Link> : category.title}
                 </NavigationMenu.Trigger>
 
-                <NavigationMenu.Content className={s.navContent}>
-                  <div className={s.container}>
-                    {category.sections.map((section) => (
-                      <div className={s.section} key={section.title}>
-                        {section.title && <span className={s.sectionTitle}>{section.title}</span>}
+                {category.sections ? (
+                  <NavigationMenu.Content className={s.navContent}>
+                    <div className={s.container}>
+                      {category.sections.map((section) => (
+                        <div className={s.section} key={section.title}>
+                          {section.title && <span className={s.sectionTitle}>{section.title}</span>}
 
-                        {section.links.map((link) => (
-                          <div className={s.subSection} key={link.title}>
-                            <i className={`${s.icon} ${link.icon}`} />
-                            <NavigationMenu.Link asChild>
-                              <Link
-                                className={s.navLink}
-                                href={link.url}
-                                target={link.url.indexOf('http') === 0 ? '_blank' : undefined}
-                              >
-                                {link.title}
-                              </Link>
-                            </NavigationMenu.Link>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </NavigationMenu.Content>
+                          {section.links.map((link) => (
+                            <div className={s.subSection} key={link.title}>
+                              <i className={`${s.icon} ${link.icon}`} />
+                              <NavigationMenu.Link asChild>
+                                <Link
+                                  className={s.navLink}
+                                  href={link.url}
+                                  target={link.url.indexOf('http') === 0 ? '_blank' : undefined}
+                                >
+                                  {link.title}
+                                </Link>
+                              </NavigationMenu.Link>
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </NavigationMenu.Content>
+                ) : null}
               </NavigationMenu.Item>
             ))}
         </NavigationMenu.List>

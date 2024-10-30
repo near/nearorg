@@ -84,30 +84,10 @@ export const navigationCategories = [
   },
 
   {
-    title: 'Discover',
+    title: 'Applications',
     visible: 'all',
-    sections: [
-      {
-        title: null,
-        links: [
-          {
-            title: 'Applications',
-            url: 'https://dev.near.org/applications',
-            icon: 'ph-app-window ph-bold',
-          },
-          {
-            title: 'Components',
-            url: 'https://dev.near.org/components',
-            icon: 'ph-git-fork ph-bold',
-          },
-          {
-            title: 'Gateways',
-            url: 'https://dev.near.org/gateways',
-            icon: 'ph-compass ph-bold',
-          },
-        ],
-      },
-    ],
+    url: 'https://dev.near.org/applications',
+    sections: [],
   },
 
   {
