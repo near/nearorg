@@ -56,32 +56,14 @@ const images = {
   },
 };
 
-const featuredApps = [
-  {
-    name: 'BOS All-Stars',
-    accountId: 'hack.near',
-    description: 'Ranking starred components',
-    image: images.apps.bosAllStars,
-    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=hack.near/widget/widgets.rank',
-    target: '_blank',
-  },
-  {
-    name: 'BOS Hacks',
-    accountId: 'ndcplug.near',
-    description: 'The 2 week B.O.S Hackathon on B.O.S',
-    image: images.apps.bosHacks,
-    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=ndcplug.near/widget/BOSHACKS.Index',
-    target: '_blank',
-  },
-  {
-    name: 'NUI',
-    accountId: 'nearui.near',
-    description: ' A growing collection of beautifully designed B.O.S widgets - your building blocks for creating...',
-    image: images.apps.nui,
-    url: 'https://dev.near.org/near/widget/ComponentDetailsPage?src=nearui.near/widget/index',
-    target: '_blank',
-  },
-];
+const featuredApps: {
+  accountId: string;
+  image: string;
+  name: string;
+  description: string;
+  url: string;
+  target: string;
+}[] = [];
 
 const web3Teams2 = [
   {
@@ -186,31 +168,6 @@ const learnItems = [
   },
 ];
 
-const communityItems = [
-  {
-    name: 'DevHub',
-    description:
-      'DevHub is a decentralized community where NEAR developers can share ideas, match solutions, and access support and funding.',
-    image: images.community.devHub,
-    url: 'https://dev.near.org/devhub.near/widget/app?page=communities',
-    target: '_blank',
-  },
-  {
-    name: 'Horizon',
-    description: 'Horizons is an early stage accelerator for Web3 founders to build, connect, and grow.',
-    image: images.community.horizon,
-    url: '/horizon',
-    target: '_blank',
-  },
-  {
-    name: 'Near Digital Collective (NDC)',
-    description: 'The NDC is a grassroots, community-led movement to build decentralized governance on NEAR.',
-    image: images.community.ndc,
-    url: 'https://app.neardc.org/',
-    target: '_blank',
-  },
-];
-
 function returnImageSrc(cfid: string) {
   return `/images/home/${cfid}.png`;
 }
@@ -299,78 +256,54 @@ export const Home = () => {
 
             <Flex stack gap="l">
               <Text size="text-xl" weight="500">
-                Application hosting with zero setup, fewer costs, & less headaches.
+                A new & more open digital economy.
               </Text>
               <Text color="sand12">
-                No more jumping through hoops to reach your audience. {`Near's`} Blockchain Operating System (B.O.S)
-                enables you to host and serve your applications entirely on the blockchain, eliminating reliance on
-                traditional web hosting services.
-              </Text>
-              <div>
-                <Button
-                  href="https://docs.near.org"
-                  target="_blank"
-                  label="Read Docs"
-                  variant="secondary"
-                  fill="outline"
-                  size="large"
-                />
-              </div>
-            </Flex>
-          </Flex>
-        </Grid>
-
-        <Flex stack gap="xl">
-          <Flex stack gap="l">
-            <Text size="text-xl" weight="500">
-              A new & more open digital economy.
-            </Text>
-
-            <Flex gap="l" align="end" stack="phone">
-              <Text color="sand12" style={{ maxWidth: '598px', marginRight: 'auto' }}>
                 Develop unique and powerful ways to earn, transact, and exercise digital ownership through online
                 experiences accessible to anyone with an internet connection.
               </Text>
-              <Button
-                href="/applications"
-                label="Explore Applications"
-                variant="secondary"
-                fill="outline"
-                size="large"
-                target="_blank"
-              />
+              <div>
+                <Button
+                  href="/applications"
+                  label="Explore Applications"
+                  variant="secondary"
+                  fill="outline"
+                  size="large"
+                  target="_blank"
+                />
+              </div>
             </Flex>
-          </Flex>
 
-          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
-            {featuredApps.map((app) => (
-              <Card
-                href={app.url}
-                key={app.name}
-                target={app.target}
-                border="sand12"
-                background="green-brand"
-                padding="l"
-                gap="l"
-              >
-                <Flex align="center" gap="l">
-                  <CardThumbnail src={returnImageSrc(app.image)} alt={app.name} />
-                  <div>
-                    <Text size="text-l" weight="500">
-                      {app.name}
-                    </Text>
-                    <Text size="text-s" color="sand12">
-                      @{app.accountId}
-                    </Text>
-                  </div>
-                </Flex>
-                <Text size="text-s" color="sand12">
-                  {app.description}
-                </Text>
-              </Card>
-            ))}
-          </Grid>
-        </Flex>
+            <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+              {featuredApps.map((app) => (
+                <Card
+                  href={app.url}
+                  key={app.name}
+                  target={app.target}
+                  border="sand12"
+                  background="green-brand"
+                  padding="l"
+                  gap="l"
+                >
+                  <Flex align="center" gap="l">
+                    <CardThumbnail src={returnImageSrc(app.image)} alt={app.name} />
+                    <div>
+                      <Text size="text-l" weight="500">
+                        {app.name}
+                      </Text>
+                      <Text size="text-s" color="sand12">
+                        @{app.accountId}
+                      </Text>
+                    </div>
+                  </Flex>
+                  <Text size="text-s" color="sand12">
+                    {app.description}
+                  </Text>
+                </Card>
+              ))}
+            </Grid>
+          </Flex>
+        </Grid>
       </Section>
 
       <Section background="black" padding="hero" gap="2xl">
@@ -411,26 +344,8 @@ export const Home = () => {
         </ContentWithImage>
 
         <ContentWithImage
-          imageSide="right"
-          src={returnImageSrc(images.illustrations.components)}
-          alt="Illustration of the UI listing of a component with buttons to view details or open. Below it are images of checkboxes"
-        >
-          <Text size="text-xl" weight="500" color="white">
-            Stop reinventing the wheel and leverage over{' '}
-            <span style={{ color: '#00EC97' }}>{statistics.totalComponents}</span> Web3 components.
-          </Text>
-          <Text color="white">
-            Open-source components built with public blockchain data allow you to create rich user experiences without
-            wasting time on backend configuration.
-          </Text>
-          <div>
-            <Button href="/components" label="Explore Components" variant="affirmative" target="_blank" size="large" />
-          </div>
-        </ContentWithImage>
-
-        <ContentWithImage
           src={returnImageSrc(images.illustrations.dapps)}
-          imageSide="left"
+          imageSide="right"
           alt="Illustration of the UI listing of an application with buttons to open, fork, view source, or discuss. Behind it there are images of code brackets and a git-fork icon. "
         >
           <Text size="text-xl" weight="500" color="white">
@@ -453,65 +368,6 @@ export const Home = () => {
       </Section>
 
       <Section background="amber2" padding="hero" gap="2xl">
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m">
-            Greater discoverability. Easier onboarding.
-          </Text>
-          <Text size="text-2xl" style={{ maxWidth: '808px' }}>
-            Current Web3 experiences are siloed & inaccessible. They don’t have to be.
-          </Text>
-        </Flex>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.gateways)}
-          imageSide="left"
-          alt="Illustration of a search bar above two buttons for GitHub and Deploy"
-        >
-          <Text size="text-xl" weight="500">
-            Deploy anywhere, get discovered everywhere.
-          </Text>
-          <Text>
-            Move beyond siloed, single-chain experiences and stop compromising your reach, all while getting the best of
-            {`NEAR's`} speed, low cost, and scalability.
-          </Text>
-          <div>
-            <Button
-              href="/gateways"
-              label="Explore Gateways"
-              target="_blank"
-              variant="secondary"
-              fill="outline"
-              size="large"
-            />
-          </div>
-        </ContentWithImage>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.fastAuth)}
-          imageSide="right"
-          alt="Illustration of the FastAuth UI showing the stage allowing user to connect their account to a dApp."
-        >
-          <Text size="text-xl" weight="500">
-            Onboard new users in seconds, no crypto required.
-          </Text>
-          <Text>
-            With FastAuth, onboarding to your decentralized application is even faster and easier than traditional web
-            authentication.
-          </Text>
-          <div>
-            <Button
-              href="https://docs.near.org/tools/fastauth-sdk"
-              label="Try FastAuth"
-              variant="secondary"
-              fill="outline"
-              size="large"
-              target="_blank"
-            />
-          </div>
-        </ContentWithImage>
-      </Section>
-
-      <Section background="green-brand" padding="hero" gap="2xl">
         <Text as="h2" size="text-hero-m">
           Be part of a global open source community.
         </Text>
@@ -576,50 +432,6 @@ export const Home = () => {
                 key={item.name}
               >
                 <IconCircle color="sand11" icon={<i className={`ph-duotone ${item.icon}`} />} />
-
-                <Flex stack>
-                  <Text size="text-l" weight="500" color="white">
-                    {item.name}
-                  </Text>
-                  <Text size="text-s" color="white">
-                    {item.description}
-                  </Text>
-                </Flex>
-              </Card>
-            ))}
-          </Grid>
-        </Flex>
-
-        <Flex stack gap="l">
-          <Flex stack gap="l">
-            <Flex align="center">
-              <i className="ph-duotone ph-users-three" style={{ color: 'var(--white)', fontSize: '32px' }} />
-              <Text size="text-xl" weight="600" color="white">
-                Community
-              </Text>
-            </Flex>
-
-            <Flex gap="l" align="end" stack="phone">
-              <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
-                Connect with people to help you on your journey across the open web.
-              </Text>
-
-              <Button href="/ecosystem" label="Explore the Ecosystem" variant="affirmative" size="large" />
-            </Flex>
-          </Flex>
-
-          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
-            {communityItems.map((item) => (
-              <Card
-                padding="l"
-                gap="l"
-                background="sand12"
-                border="sand11"
-                key={item.name}
-                href={item.url}
-                target={item.target}
-              >
-                <CardThumbnail src={returnImageSrc(item.image)} alt={item.name} />
 
                 <Flex stack>
                   <Text size="text-l" weight="500" color="white">
