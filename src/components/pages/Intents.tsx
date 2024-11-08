@@ -352,11 +352,12 @@ export const Intents = () => {
             marginTop: '-80px',
             maxWidth: '1000px',
             margin: '-80px auto 0',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            width: '100%'
           }}
         >
           <Card
-           border="black"
+            border="black"
             background="green-brand"
             gap="l"
             padding="l"
@@ -364,14 +365,13 @@ export const Intents = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={{ 
-                width: '600px',
+              width: '100%',
+              maxWidth: '600px',
               display: 'flex',
-              alignItems: 'center',  // Centers content vertically
-              justifyContent: 'center' // Centers content horizontally
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-          
-
             <Flex gap="m" align="center">
               <IconCircle icon={<i className="ph-duotone ph-book" />} />
               <Text size="text-xl" weight="500" color="black">
@@ -389,7 +389,8 @@ export const Intents = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={{ 
-              width: '600px',
+              width: '100%',
+              maxWidth: '600px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
