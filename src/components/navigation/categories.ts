@@ -17,6 +17,11 @@ export const navigationCategories = [
             icon: 'ph-user-focus ph-bold',
           },
           {
+            title: 'Intents',
+            url: '/intents',
+            icon: 'ph-handshake ph-bold',
+          },
+          {
             title: 'Open Web Applications',
             url: '/open-web-applications',
             icon: 'ph-globe-simple ph-bold',
@@ -36,11 +41,7 @@ export const navigationCategories = [
             url: '/data-availability',
             icon: 'ph-database ph-bold',
           },
-          {
-            title: 'Intents',
-            url: '/intents',
-            icon: 'ph-handshake ph-bold',
-          },
+          
         ],
       },
     ],

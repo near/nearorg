@@ -16,6 +16,10 @@ const sections = [
         url: '/chain-abstraction',
       },
       {
+        title: 'Intents',
+        url: '/intents',
+      },
+      {
         title: 'Open Web Applications',
         url: '/open-web-applications',
       },
@@ -30,10 +34,6 @@ const sections = [
       {
         title: 'Data Availability',
         url: '/data-availability',
-      },
-      {
-        title: 'Intents',
-        url: '/intents',
       },
     ],
   },
