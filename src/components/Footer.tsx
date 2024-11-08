@@ -12,12 +12,12 @@ const sections = [
         url: '/blockchain',
       },
       {
-        title: 'Chain Abstraction',
-        url: '/chain-abstraction',
-      },
-      {
         title: 'Intents',
         url: '/intents',
+      },
+      {
+        title: 'Chain Abstraction',
+        url: '/chain-abstraction',
       },
       {
         title: 'Open Web Applications',

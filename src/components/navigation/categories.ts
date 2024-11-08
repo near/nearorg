@@ -12,14 +12,14 @@ export const navigationCategories = [
             icon: 'ph-squares-four ph-bold',
           },
           {
+            title: 'Intents',
+            url: '/intents',
+            icon: 'ph-lightbulb ph-bold',
+          },
+          {
             title: 'Chain Abstraction',
             url: '/chain-abstraction',
             icon: 'ph-user-focus ph-bold',
-          },
-          {
-            title: 'Intents',
-            url: '/intents',
-            icon: 'ph-handshake ph-bold',
           },
           {
             title: 'Open Web Applications',
