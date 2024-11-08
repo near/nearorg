@@ -31,6 +31,10 @@ const sections = [
         title: 'Data Availability',
         url: '/data-availability',
       },
+      {
+        title: 'Intents',
+        url: '/intents',
+      },
     ],
   },
   {

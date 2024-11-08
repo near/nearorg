@@ -36,6 +36,11 @@ export const navigationCategories = [
             url: '/data-availability',
             icon: 'ph-database ph-bold',
           },
+          {
+            title: 'Intents',
+            url: '/intents',
+            icon: 'ph-handshake ph-bold',
+          },
         ],
       },
     ],
