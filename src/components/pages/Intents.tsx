@@ -200,7 +200,6 @@ export const Intents = () => {
             <Flex gap="l" wrap align="center" justify="center">
               <Button
                 href="#explore"
-                target="_blank"
                 label="Explore Intents"
                 variant="secondary"
                 fill="outline"
@@ -209,7 +208,6 @@ export const Intents = () => {
 
               <Button
                 href="#getstarted"
-                target="_blank"
                 label="Get Started"
                 variant="primary"
                 size="large"
