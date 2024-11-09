@@ -14,10 +14,10 @@ export const RedactedBanner = () => {
       <div className={s.redactedBanner}>
         <a href="https://redactedbangkok.ai/" target="_blank">
           <img
-            src="/images/redacted/redacted-left-3.png"
+            src="/images/redacted/redacted_live-now-banner.png"
             alt="Redacted: Reclaim your sovereignty at no cost. Click to be there IRL"
           />
-          <img src="/images/redacted/redacted-right-3.png" alt="Redacted: Bangkok, Thailand, November 9-11" />
+          
         </a>
       </div>
     </Container>
