@@ -92,7 +92,7 @@ export const Intents = () => {
           target: '_blank',
         },
         {
-          name: 'Omnilane (Coming Soon)',
+          name: 'Omnilane',
           description: 'Cross-chain RFQ (request-for-quote) protocol',
           icon: '/images/intents/omnilane.png',
           url: 'https://omnilane.xyz/',
@@ -199,7 +199,7 @@ export const Intents = () => {
 
             <Flex gap="l" wrap align="center" justify="center">
               <Button
-                href="https://docs.near.org/"
+                href="#explore"
                 target="_blank"
                 label="Explore Intents"
                 variant="secondary"
@@ -208,7 +208,7 @@ export const Intents = () => {
               />
 
               <Button
-                href="https://dev.near.org"
+                href="#getstarted"
                 target="_blank"
                 label="Get Started"
                 variant="primary"
@@ -296,7 +296,7 @@ export const Intents = () => {
         </Card>
       </Section>
 
-      <Section gap="2xl" padding="standard" background="black">
+      <Section gap="2xl" padding="standard" background="black" id="explore">
         <Flex stack gap="l">
           <Text as="h2" size="text-hero-m" color="white">
             Explore NEAR Intents
@@ -335,7 +335,7 @@ export const Intents = () => {
             </Card>
           ))}
         </Grid>
-        <Flex stack gap="l">
+        <Flex stack gap="l" id="getstarted">
           <Text as="h2" size="text-hero-m" color="white">
             Getting Started
           </Text>
@@ -361,7 +361,7 @@ export const Intents = () => {
             background="green-brand"
             gap="l"
             padding="l"
-            href="https://docs.near.org/concepts/web3/intents"
+            href="https://docs.near.org"
             target="_blank"
             rel="noopener noreferrer"
             style={{ 
@@ -385,7 +385,7 @@ export const Intents = () => {
             background="green-brand"
             gap="l"
             padding="l"
-            href="https://dev.near.org"
+            href="https://t.me/+RXYjlPob_XM5N2Ex"
             target="_blank"
             rel="noopener noreferrer"
             style={{ 
