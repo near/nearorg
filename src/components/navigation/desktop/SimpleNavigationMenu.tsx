@@ -104,7 +104,7 @@ export const SimpleNavigationMenu = () => {
               <NavTrigger onMouseEnter={recordMouseEnter}>
                 <NavLink asChild>
                   <Link
-                    href={'https://www.youtube.com/watch?v=ye_2k7dxtCE&list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY'}
+                    href={'https://www.youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY'}
                     target="_blank"
                     style={{ padding: 0 }}
                   >
