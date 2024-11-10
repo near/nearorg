@@ -6,10 +6,7 @@ const IBAN_BLOCKED_REGIONS = ['CU', 'IR', 'KP', 'SY'];
 
 // Limit middleware triggering to specific routes
 export const config = {
-  matcher: [
-    '/files/:path*',
-    '/blog/:path*',
-  ],
+  matcher: ['/files/:path*', '/blog/:path*'],
 };
 
 export function middleware(req: NextRequest) {

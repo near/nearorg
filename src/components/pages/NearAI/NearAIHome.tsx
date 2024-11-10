@@ -3,42 +3,43 @@ import styled from 'styled-components';
 import { Flex } from '@/components/lib/Flex';
 
 const Content = styled.div`
-    max-width: 800px;
-    margin: auto auto;
-    //color: #e7e7e7;
-    color: #000;
-    background-color: #ccc;
+  max-width: 800px;
+  margin: auto auto;
+  //color: #e7e7e7;
+  color: #000;
+  background-color: #ccc;
 
-    p {
-        font-size: 16px;
-        margin-bottom: 1.5em;
-        margin-top: 1.5em;
-        font-family: FK Grotesk,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        Segoe UI,
-        Roboto,
-        Helvetica Neue,
-        Arial,
-        Noto Sans,
-        sans-serif,
-        Apple Color Emoji,
-        Segoe UI Emoji,
-        Segoe UI Symbol,
-        Noto Color Emoji;
-        text-rendering: optimizeLegibility;
-        padding: 0 1rem
-    }
+  p {
+    font-size: 16px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-family:
+      FK Grotesk,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Helvetica Neue,
+      Arial,
+      Noto Sans,
+      sans-serif,
+      Apple Color Emoji,
+      Segoe UI Emoji,
+      Segoe UI Symbol,
+      Noto Color Emoji;
+    text-rendering: optimizeLegibility;
+    padding: 0 1rem;
+  }
 `;
 
 const H1 = styled.h1`
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
 `;
 export const NearAIHome = () => {
   return (
@@ -57,7 +58,8 @@ export const NearAIHome = () => {
               <H1> NEAR.AI Master Plan </H1>
               <div className="md:prose-base prose">
                 <p>
-                  NEAR.AI will build towards Open Source and User-owned AGI (artificial general intelligence).<br />
+                  NEAR.AI will build towards Open Source and User-owned AGI (artificial general intelligence).
+                  <br />
                   Here is the plan:
                   <ul>
                     <li>Teaching machines to code: AI Developer</li>
@@ -126,11 +128,11 @@ export const NearAIHome = () => {
                 <p>
                   But there has been a major limitation in the blockchain space: products are fragmented across hundreds
                   of chains while the number of products developed today is not enough to truly offer a competitive
-                  landscape to existing systems. There are fewer than {' '}
+                  landscape to existing systems. There are fewer than{' '}
                   <a href="https://www.developerreport.com/" target="_blank">
                     7,000 full time
-                  </a>{' '} developers in all of Web3, which
-                  is fewer people than a single department at Google.
+                  </a>{' '}
+                  developers in all of Web3, which is fewer people than a single department at Google.
                 </p>
                 <p>
                   Web3 code is very valuable, meaning that it is expensive to develop and it supports multibillion

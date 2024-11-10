@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Mona Sans";
+  src: url("MonaSans-Regular.woff2") format("woff2"), url("MonaSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("MonaSans-Bold.woff2") format("woff2"), url("MonaSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("MonaSans-ExtraBold.woff2") format("woff2"), url("MonaSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

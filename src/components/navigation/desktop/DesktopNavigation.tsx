@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   background-color: black;
-    color: var(--near-green);
+  color: var(--near-green);
   height: var(--nav-height);
   //box-shadow: 0 1px 0 var(--sand6);
   padding: 0;

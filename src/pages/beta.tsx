@@ -1,7 +1,7 @@
 import { MetaTags } from '@/components/MetaTags';
+import { NearAIHome } from '@/components/pages/NearAI/NearAIHome';
 import { useDefaultLayout } from '@/hooks/useLayout';
 import type { NextPageWithLayout } from '@/utils/types';
-import { NearAIHome } from '@/components/pages/NearAI/NearAIHome';
 
 const HomePage: NextPageWithLayout = () => {
   return (

@@ -92,7 +92,7 @@ export async function init() {
   }
 
   try {
-    const key = window.location.href.indexOf('https://near.org') !== -1 ? destinationkeys.prod : destinationkeys.stage;
+    const key = window.location.href.indexOf('https://near.ai') !== -1 ? destinationkeys.prod : destinationkeys.stage;
     window.rudderAnalytics = await import('rudder-sdk-js');
     window.rudderAnalytics.load(key, analyticsUrl);
     rudderAnalytics = window.rudderAnalytics;
