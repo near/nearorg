@@ -8,31 +8,24 @@ const nextConfig = {
   },
   redirects: async () => {
     return [
-
       {
-        source: '/nearai-master-plan',
+        source: '/about',
         destination: `/`,
         permanent: false,
       },
-
       {
-        source: '/privacy',
-        destination: `${appGatewayHostname}/privacy`,
+        source: '/beta',
+        destination: `/`,
         permanent: false,
       },
-
+      {
+        source: '/nearai-master-plan',
+        destination: `/master-plan`,
+        permanent: false,
+      },
     ];
   },
-  rewrites: async () => [
-    {
-      source: '/api/analytics/:path*',
-      destination: 'https://near.dataplane.rudderstack.com/:path*',
-    },
-    {
-      source: '/blog/:path*',
-      destination: '/blog/:path*/index.html',
-    },
-  ],
+  rewrites: async () => [],
   headers: async () => [
     {
       source: '/:path*',

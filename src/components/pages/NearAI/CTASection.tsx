@@ -37,7 +37,7 @@ const CTASection = () => {
           <h2 className="text-4xl font-bold mb-4">
             The future of AI is <span className="text-[#00EB9A]">as yet unwritten</span>.
           </h2>
-          <p className="text-xl text-[#AFD0C5] mb-12">It's time to take a stand. It's time for User-Owned AGI.</p>
+          <p className="text-xl text-[#AFD0C5] mb-12">It's time to take a stand. It's time for User-Owned AI.</p>
 
           <div className="flex flex-col items-center gap-8">
             {/* Main CTAs */}

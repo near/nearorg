@@ -3,43 +3,47 @@ import styled from 'styled-components';
 import { Flex } from '@/components/lib/Flex';
 
 const Content = styled.div`
-  max-width: 800px;
-  margin: auto auto;
-  //color: #e7e7e7;
-  color: #000;
-  background-color: #ccc;
+    max-width: 800px;
+    margin: auto auto;
+    //color: #e7e7e7;
+    color: #000;
+    background-color: #ccc;
 
-  p {
-    font-size: 16px;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
-    font-family:
-      FK Grotesk,
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Helvetica Neue,
-      Arial,
-      Noto Sans,
-      sans-serif,
-      Apple Color Emoji,
-      Segoe UI Emoji,
-      Segoe UI Symbol,
-      Noto Color Emoji;
-    text-rendering: optimizeLegibility;
-    padding: 0 1rem;
-  }
+    p, ul {
+        font-size: 16px;
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
+        font-family: FK Grotesk,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Roboto,
+        Helvetica Neue,
+        Arial,
+        Noto Sans,
+        sans-serif,
+        Apple Color Emoji,
+        Segoe UI Emoji,
+        Segoe UI Symbol,
+        Noto Color Emoji;
+        text-rendering: optimizeLegibility;
+        padding: 0 1rem;
+    }
+    
+    ul {
+        list-style-type: disc;
+        margin-left: 2em;
+    }
 `;
 
 const H1 = styled.h1`
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
 `;
 export const NearAIHome = () => {
   return (
@@ -61,12 +65,12 @@ export const NearAIHome = () => {
                   NEAR.AI will build towards Open Source and User-owned AGI (artificial general intelligence).
                   <br />
                   Here is the plan:
-                  <ul>
-                    <li>Teaching machines to code: AI Developer</li>
-                    <li>Use AI Developer to teach machines to do research: AI Researcher</li>
-                    <li>Use AI Researcher to advance science towards AGI that is owned by all</li>
-                  </ul>
                 </p>
+                <ul>
+                  <li>Teaching machines to code: AI Developer</li>
+                  <li>Use AI Developer to teach machines to do research: AI Researcher</li>
+                  <li>Use AI Researcher to advance science towards AGI that is owned by all</li>
+                </ul>
                 <p>
                   We commit to building in Open Source as a non-profit organization, the NEAR Foundation, driven by the
                   vision of{' '}

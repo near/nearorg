@@ -18,6 +18,5 @@ const LandingPage = () => {
     </PageWrapper>
   );
 };
-// LandingPage.getLayout = useDefaultLayout;
 
 export default LandingPage;
