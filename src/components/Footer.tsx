@@ -12,6 +12,10 @@ const sections = [
         url: '/blockchain',
       },
       {
+        title: 'Intents',
+        url: '/intents',
+      },
+      {
         title: 'Chain Abstraction',
         url: '/chain-abstraction',
       },
