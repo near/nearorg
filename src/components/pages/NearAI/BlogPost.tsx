@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { Facebook, Link as LinkIcon,Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Link as LinkIcon, Linkedin, Twitter } from 'lucide-react';
 import React from 'react';
 
 import { BlogWrapper } from '@/components/pages/NearAI/PageWrapper';
@@ -15,15 +15,7 @@ interface BlogPostProps {
   children: React.ReactNode;
 }
 
-const ShareButton = ({
-                       href,
-                       icon: Icon,
-                       label
-                     }: {
-  href: string;
-  icon: React.ElementType;
-  label: string;
-}) => (
+const ShareButton = ({ href, icon: Icon, label }: { href: string; icon: React.ElementType; label: string }) => (
   <a
     href={href}
     target="_blank"
@@ -81,23 +73,17 @@ const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
     <BlogWrapper>
       <div className="max-w-[65ch] mx-auto px-6 md:px-8">
         <header className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-            {title}
-          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{title}</h1>
 
           <div className="flex items-center justify-center gap-4">
             <div className="text-center">
               <div className="font-medium text-white">{author.name}</div>
-              <time className="text-sm text-[#AFD0C5]">
-                {format(new Date(date), 'MMMM d, yyyy')}
-              </time>
+              <time className="text-sm text-[#AFD0C5]">{format(new Date(date), 'MMMM d, yyyy')}</time>
             </div>
           </div>
         </header>
 
-        <div className="space-y-12">
-          {children}
-        </div>
+        <div className="space-y-12">{children}</div>
 
         <SocialShare url={currentUrl} title={title} />
       </div>
