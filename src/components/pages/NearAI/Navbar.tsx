@@ -2,6 +2,8 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
+import XIcon from '@/components/pages/NearAI/XIcon';
+
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
@@ -67,10 +69,16 @@ const Navbar = () => {
               <NavLink href="https://chat.near.ai" external alpha>
                 AI Assistant
               </NavLink>
-              <NavLink href="https://youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY" external>
-                AI Office Hours
-              </NavLink>
               <NavLink href="/blog">Blog</NavLink>
+              <a
+                href="https://x.com/near_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-[#AFD0C5] hover:text-white transition-colors"
+                aria-label="Follow NEAR AI on X"
+              >
+                <XIcon className="h-5 w-5" />
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -110,6 +118,15 @@ const Navbar = () => {
           <NavLink href="/blog" onClick={closeMobileMenu}>
             Blog
           </NavLink>
+          <a
+            href="https://x.com/near_ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-[#AFD0C5] hover:text-white transition-colors"
+            aria-label="Follow NEAR AI on X"
+          >
+            <XIcon className="h-5 w-5" />
+          </a>
         </div>
       </div>
     </>

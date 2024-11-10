@@ -9,7 +9,7 @@ import VisionSection from '@/components/pages/NearAI/VisionSection';
 const LandingPage = () => {
   return (
     <PageWrapper withAnimation={true}>
-      <MetaTags title="NEAR AI" description="NEAR AI: Digital self-sovereignty for the creator economy." />
+      <MetaTags />
       <HeroSection />
       <VisionSection />
       <ProductSection />

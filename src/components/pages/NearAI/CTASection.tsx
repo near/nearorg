@@ -1,6 +1,9 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import React from 'react';
 
+import XIcon from '@/components/pages/NearAI/XIcon';
+import YouTubeIcon from '@/components/pages/NearAI/YouTubeIcon';
+
 interface CTAButtonProps {
   href: string;
   children: React.ReactNode;
@@ -36,18 +39,38 @@ const CTASection = () => {
           </h2>
           <p className="text-xl text-[#AFD0C5] mb-12">It's time to take a stand. It's time for User-Owned AGI.</p>
 
-          {/* Grid of all four CTAs */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <CTAButton href="https://app.near.ai" primary external>
-              Research Hub
-            </CTAButton>
-            <CTAButton href="https://chat.near.ai" external>
-              AI Assistant
-            </CTAButton>
-            <CTAButton href="https://youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY" external>
-              AI Office Hours
-            </CTAButton>
-            <CTAButton href="/blog">Blog</CTAButton>
+          <div className="flex flex-col items-center gap-8">
+            {/* Main CTAs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full">
+              <CTAButton href="https://app.near.ai" primary external>
+                Research Hub
+              </CTAButton>
+              <CTAButton href="https://chat.near.ai" external>
+                AI Assistant
+              </CTAButton>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-6">
+              <a
+                href="https://x.com/near_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-[#AFD0C5] hover:text-white transition-colors"
+                aria-label="Follow NEAR AI on X"
+              >
+                <XIcon className="h-6 w-6" />
+              </a>
+              <a
+                href="https://youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-[#AFD0C5] hover:text-white transition-colors"
+                aria-label="Watch AI Office Hours on YouTube"
+              >
+                <YouTubeIcon className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
