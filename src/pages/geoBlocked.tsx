@@ -1,7 +1,7 @@
+import type { NextPage } from 'next';
 import styled from 'styled-components';
 
 import { Text } from '@/components/lib/Text';
-import type { NextPageWithLayout } from '@/utils/types';
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const Container = styled.div`
   padding: 2rem 1rem;
 `;
 
-const BlockedPage: NextPageWithLayout = () => {
+const BlockedPage: NextPage = () => {
   return (
     <Container>
       <Text $size="text-xl">near.ai is not currently available in your region.</Text>

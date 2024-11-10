@@ -1,6 +1,6 @@
 import { MetaTags } from '@/components/MetaTags';
-import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 import { NearAIHome } from '@/components/pages/NearAI/NearAIHome';
+import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const MasterPlanPage = () => {
   return (

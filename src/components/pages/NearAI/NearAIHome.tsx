@@ -3,47 +3,49 @@ import styled from 'styled-components';
 import { Flex } from '@/components/lib/Flex';
 
 const Content = styled.div`
-    max-width: 800px;
-    margin: auto auto;
-    //color: #e7e7e7;
-    color: #000;
-    background-color: #ccc;
+  max-width: 800px;
+  margin: auto auto;
+  //color: #e7e7e7;
+  color: #000;
+  background-color: #ccc;
 
-    p, ul {
-        font-size: 16px;
-        margin-bottom: 1.5em;
-        margin-top: 1.5em;
-        font-family: FK Grotesk,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        Segoe UI,
-        Roboto,
-        Helvetica Neue,
-        Arial,
-        Noto Sans,
-        sans-serif,
-        Apple Color Emoji,
-        Segoe UI Emoji,
-        Segoe UI Symbol,
-        Noto Color Emoji;
-        text-rendering: optimizeLegibility;
-        padding: 0 1rem;
-    }
-    
-    ul {
-        list-style-type: disc;
-        margin-left: 2em;
-    }
+  p,
+  ul {
+    font-size: 16px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-family:
+      FK Grotesk,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Helvetica Neue,
+      Arial,
+      Noto Sans,
+      sans-serif,
+      Apple Color Emoji,
+      Segoe UI Emoji,
+      Segoe UI Symbol,
+      Noto Color Emoji;
+    text-rendering: optimizeLegibility;
+    padding: 0 1rem;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 2em;
+  }
 `;
 
 const H1 = styled.h1`
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
 `;
 export const NearAIHome = () => {
   return (
