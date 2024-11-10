@@ -183,13 +183,10 @@ export const Home = () => {
         <Pattern contentMaxWidth="648px">
           <Flex gap="l" stack align="center">
             <Text as="h1" size="text-hero-l">
-              Blockchains, Abstracted.
+              The Blockchain for AI
             </Text>
 
-            <Text size="text-l" weight={400}>
-              NEAR is the chain abstraction stack, empowering builders to create apps that scale to billions of users
-              and across all blockchains.
-            </Text>
+            
 
             <Flex>
               <Button
