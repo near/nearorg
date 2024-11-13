@@ -186,8 +186,6 @@ export const Home = () => {
               The Blockchain for AI
             </Text>
 
-            
-
             <Flex>
               <Button
                 href="https://docs.near.org"
