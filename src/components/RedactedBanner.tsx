@@ -17,7 +17,6 @@ export const RedactedBanner = () => {
             src="/images/redacted/redacted_live-now-banner.png"
             alt="Redacted: Reclaim your sovereignty at no cost. Click to be there IRL"
           />
-          
         </a>
       </div>
     </Container>

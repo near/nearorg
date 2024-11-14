@@ -41,7 +41,6 @@ export const navigationCategories = [
             url: '/data-availability',
             icon: 'ph-database ph-bold',
           },
-          
         ],
       },
     ],
