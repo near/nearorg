@@ -192,10 +192,6 @@ const nextConfig = {
       source: '/api/analytics/:path*',
       destination: 'https://near.dataplane.rudderstack.com/:path*',
     },
-    {
-      source: '/blog/:path*',
-      destination: '/blog/:path*/index.html',
-    },
   ],
   headers: async () => [
     {
