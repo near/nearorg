@@ -22,11 +22,6 @@ export const navigationCategories = [
             icon: 'ph-user-focus ph-bold',
           },
           {
-            title: 'Open Web Applications',
-            url: '/open-web-applications',
-            icon: 'ph-globe-simple ph-bold',
-          },
-          {
             title: 'Onboarding',
             url: '/fast-auth-and-relayers',
             icon: 'ph-user-plus ph-bold',

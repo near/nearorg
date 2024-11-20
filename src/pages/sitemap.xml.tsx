@@ -399,10 +399,6 @@ function generateSiteMap() {
           <lastmod>2024-02-13</lastmod>
       </url>
       <url>
-          <loc>${process.env.NEXT_PUBLIC_HOSTNAME}/open-web-applications</loc>
-          <lastmod>2024-02-13</lastmod>
-      </url>
-      <url>
           <loc>${process.env.NEXT_PUBLIC_HOSTNAME}/privacy</loc>
           <lastmod>2024-02-13</lastmod>
       </url>
