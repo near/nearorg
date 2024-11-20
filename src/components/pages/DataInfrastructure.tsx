@@ -3,7 +3,6 @@ import { Button, ContentWithImage, Flex, Pattern, Section, Text } from '@near-pa
 const images = {
   illustrations: {
     bigQuery: 'bafkreidvzhed5xtbswgzrcu4woho5jwql53wzagfmkafjcpxivmxv6tkcm',
-    queryApi: 'bafkreie5lvklwktdgvxyachxn4zkwb4pzkroqfopsu4zcb4ffyu5urcm6a',
     nearLake: 'bafkreial6oat5r6howyc42xqgvwuicgs6yiaczywxm2t3reiclotww7slu',
   },
 };
@@ -86,63 +85,6 @@ export const DataInfrastructure = () => {
             </div>
           </Flex>
         </ContentWithImage>
-
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m" style={{ maxWidth: '1016px' }}>
-            QueryAPI: indexers made simple
-          </Text>
-          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
-            A fully managed solution to build indexer functions, extract on-chain data, and easily query it using
-            GraphQL endpoints and subscriptions.
-          </Text>
-        </Flex>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.queryApi)}
-          imageSide="right"
-          alt="A console window with a code snippet"
-        >
-          <Flex stack gap="xl">
-            <Flex stack>
-              <Text size="text-xl" weight="500">
-                Your data, your way
-              </Text>
-              <Text>
-                Decide how you want to store data. Design the tables and databases that better suit your needs.
-              </Text>
-            </Flex>
-
-            <Flex stack>
-              <Text size="text-xl" weight="500">
-                Indexers made simple
-              </Text>
-              <Text>
-                Create the logic of your indexer and we will execute it for you. Forget about infrastructure—focus on
-                solutions.
-              </Text>
-            </Flex>
-
-            <Flex stack>
-              <Text size="text-xl" weight="500">
-                Plug & play to your app
-              </Text>
-              <Text>
-                Fetch your data from any application through our API. Leverage GraphQL to query exactly what you need.
-              </Text>
-            </Flex>
-
-            <div>
-              <Button
-                href="https://docs.near.org/bos/queryapi/intro"
-                target="_blank"
-                label="Read QueryAPI Docs"
-                variant="secondary"
-                fill="outline"
-                size="large"
-              />
-            </div>
-          </Flex>
-        </ContentWithImage>
       </Section>
 
       <Section gap="2xl" padding="hero" background="black">
@@ -214,9 +156,9 @@ export const DataInfrastructure = () => {
             />
 
             <Button
-              href="https://docs.near.org/bos/queryapi/intro"
+              href="https://docs.near.org/build/data-infrastructure/data-apis"
               target="_blank"
-              label="QueryAPI Docs"
+              label="Data API Docs"
               variant="primary"
               size="large"
             />

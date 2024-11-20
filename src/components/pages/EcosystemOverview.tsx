@@ -94,35 +94,7 @@ export const EcosystemOverview = () => {
           </Text>
           <Text>Founder Hub is an early stage accelerator for Web3 founders to build, connect, and grow.</Text>
           <div>
-            <Button
-              href="/horizon"
-              label="Explore Founder Hub"
-              target="_blank"
-              variant="secondary"
-              fill="outline"
-              size="large"
-            />
-          </div>
-        </ContentWithImage>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.ndc)}
-          imageSide="right"
-          alt="The NDC logo, the letters N, D, and C interconnected"
-        >
-          <Text size="text-xl" weight="500">
-            NEAR Digital Collective (NDC): Decentralized Grassroots Governance
-          </Text>
-          <Text>The NDC is a grassroots, community-led movement to build decentralized governance on NEAR.</Text>
-          <div>
-            <Button
-              href="https://app.neardc.org/"
-              target="_blank"
-              label="Explore the NDC"
-              variant="secondary"
-              fill="outline"
-              size="large"
-            />
+            <Button href="/founders" label="Explore Founder Hub" variant="secondary" fill="outline" size="large" />
           </div>
         </ContentWithImage>
 

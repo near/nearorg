@@ -91,12 +91,6 @@ const web3Teams2 = [
     height: '28px',
   },
   {
-    url: 'https://docs.dymension.xyz/build/adv-guide/roller-adv/da-light-client',
-    name: 'Dymension',
-    image: returnImageSrc(images.logos.dymension),
-    height: '28px',
-  },
-  {
     url: 'https://www.zeeve.io/blog/zeeve-raas-partners-with-near-da-to-power-ethereum-rollup-builders-with-efficient-data-availability',
     name: 'Zeeve',
     image: returnImageSrc(images.logos.zeeve),

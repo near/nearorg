@@ -83,13 +83,7 @@ export const Papers = () => {
             </Text>
           </Flex>
 
-          <Button
-            href="https://docs.near.org/concepts/welcome"
-            target="_blank"
-            label="Read Docs"
-            variant="primary"
-            size="large"
-          />
+          <Button href="https://docs.near.org/" target="_blank" label="Read Docs" variant="primary" size="large" />
         </Flex>
       </Section>
     </>

@@ -162,6 +162,11 @@ const nextConfig = {
         destination: 'https://pages.near.org/validators',
         permanent: true,
       },
+      {
+        source: '/open-web-applications',
+        destination: 'https://dev.near.org/applications',
+        permanent: false,
+      },
 
       // Handle dynamic widget/component path redirects:
 
