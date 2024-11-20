@@ -7,10 +7,10 @@ import { LogoLinks } from '../LogoLinks';
 
 const validators = [
   {
-    height: '26px',
-    image: '/images/chain-abstraction/validators/pagoda.png',
-    name: 'Pagoda',
-    url: 'https://www.pagoda.co/',
+    height: '30px',
+    image: '/images/chain-abstraction/validators/signetwork.svg',
+    name: 'Sig Network',
+    url: 'https://sig.network/',
   },
 
   {
@@ -150,14 +150,6 @@ const learnItems = [
     description: "An easy starter's guide written for developers, by developers.",
     icon: 'ph-book-open-text',
     url: 'https://docs.near.org/build/chain-abstraction/chain-signatures',
-    target: '_blank',
-  },
-  {
-    name: 'Multichain Gas Relayer',
-    description:
-      'How the Multichain Gas Relayer enables gas abstraction for Chain Signatures products and their users.',
-    icon: 'ph-book-open-text',
-    url: 'https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/getting-started',
     target: '_blank',
   },
 ];
@@ -318,24 +310,6 @@ export const ChainAbstraction = () => {
 
             <Text color="white" size="text-s">
               Control any externally owned account (EOA) on any chain from a single NEAR account
-            </Text>
-          </Flex>
-
-          <Flex stack>
-            <Text size="text-l" color="white" weight="600">
-              Gas Abstraction
-            </Text>
-
-            <Text color="white" size="text-s">
-              The{' '}
-              <a
-                style={{ color: '#fff', fontWeight: 600, textDecoration: 'underline' }}
-                href="https://docs.near.org/build/chain-abstraction/multichain-gas-relayer/overview"
-                target="_blank"
-              >
-                Multichain Gas Relayer
-              </a>{' '}
-              eliminates the need for users to acquire native gas tokens separately when making cross-chain transactions
             </Text>
           </Flex>
         </Grid>

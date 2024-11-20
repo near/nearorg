@@ -20,10 +20,6 @@ const sections = [
         url: '/chain-abstraction',
       },
       {
-        title: 'Open Web Applications',
-        url: '/open-web-applications',
-      },
-      {
         title: 'Onboarding',
         url: '/fast-auth-and-relayers',
       },
