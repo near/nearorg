@@ -4,8 +4,16 @@ import React from 'react';
 
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
-// Easy to comment out the Research Hub post
 const posts = [
+  {
+    slug: 'building-next-gen-near-ai-infrastructure-with-tees',
+    title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
+    excerpt: 'Enabling Fully Private, Verifiable AI Agents with Phala Network',
+    date: '2025-01-20',
+    author: {
+      name: 'Illia Polosukhin',
+    },
+  },
   {
     slug: 'near-ai-research-hub-launch',
     title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
@@ -24,7 +32,6 @@ const posts = [
     date: '2024-11-10',
     author: {
       name: 'Illia Polosukhin',
-      // avatar: '/images/authors/illia.jpg' // Add if we have one
     },
   },
 ];
