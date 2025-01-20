@@ -2,6 +2,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
+import NewPostBadge from '@/components/pages/NearAI/NewPostBadge';
 import XIcon from '@/components/pages/NearAI/XIcon';
 
 interface NavLinkProps {
@@ -69,7 +70,10 @@ const Navbar = () => {
               <NavLink href="https://chat.near.ai" external alpha>
                 AI Assistant
               </NavLink>
-              <NavLink href="/blog">Blog</NavLink>
+              <NavLink href="/blog">
+                Blog
+                <NewPostBadge />
+              </NavLink>
               <a
                 href="https://x.com/near_ai"
                 target="_blank"
