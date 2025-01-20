@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 
@@ -56,7 +56,7 @@ const BlogIndex = () => {
               <div className="flex items-center gap-4 mb-4 text-sm text-[#AFD0C5]">
                 <span>{post.author.name}</span>
                 <span>•</span>
-                <time dateTime={post.date}>{format(new Date(post.date), 'MMMM d, yyyy')}</time>
+                <time dateTime={post.date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</time>
               </div>
 
               <h2 className="text-2xl font-bold mb-3">{post.title}</h2>

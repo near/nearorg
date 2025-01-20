@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { Facebook, Link as LinkIcon, Linkedin, Twitter } from 'lucide-react';
 import React from 'react';
 
@@ -78,7 +78,7 @@ const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
           <div className="flex items-center justify-center gap-4">
             <div className="text-center">
               <div className="font-medium text-white">{author.name}</div>
-              <time className="text-sm text-[#AFD0C5]">{format(new Date(date), 'MMMM d, yyyy')}</time>
+              <time className="text-sm text-[#AFD0C5]">{format(parseISO(date), 'MMMM d, yyyy')}</time>
             </div>
           </div>
         </header>
