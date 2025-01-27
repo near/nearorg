@@ -1,11 +1,19 @@
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
-// Easy to comment out the Research Hub post
 const posts = [
+  {
+    slug: 'building-next-gen-near-ai-infrastructure-with-tees',
+    title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
+    excerpt: 'Enabling Fully Private, Verifiable AI Agents with Phala Network',
+    date: '2025-01-20',
+    author: {
+      name: 'Illia Polosukhin',
+    },
+  },
   {
     slug: 'near-ai-research-hub-launch',
     title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
@@ -24,7 +32,6 @@ const posts = [
     date: '2024-11-10',
     author: {
       name: 'Illia Polosukhin',
-      // avatar: '/images/authors/illia.jpg' // Add if we have one
     },
   },
 ];
@@ -49,7 +56,7 @@ const BlogIndex = () => {
               <div className="flex items-center gap-4 mb-4 text-sm text-[#AFD0C5]">
                 <span>{post.author.name}</span>
                 <span>•</span>
-                <time dateTime={post.date}>{format(new Date(post.date), 'MMMM d, yyyy')}</time>
+                <time dateTime={post.date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</time>
               </div>
 
               <h2 className="text-2xl font-bold mb-3">{post.title}</h2>
