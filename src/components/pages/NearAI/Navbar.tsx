@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold">
-              NEAR AI
+              <img src="/logo-white.svg" alt="NEAR AI" className="h-5" />
             </Link>
 
             {/* Desktop Navigation Links */}
