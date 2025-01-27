@@ -156,7 +156,11 @@ const TEEBlogPost = () => {
         <a href="https://t.me/nearaialpha" className="text-[#00EB9A] no-underline hover:underline">
           https://t.me/nearaialpha
         </a>
-        ) for help getting started with NEAR.AI.
+        ) for help getting started with NEAR.AI. Join the{' '}
+        <a href="https://1t-agents.devpost.com/" className="text-[#00EB9A] no-underline hover:underline">
+          One Trillion Agents online hackathon
+        </a>{' '}
+        to test the new SDK!
       </p>
     </BlogPost>
   );
