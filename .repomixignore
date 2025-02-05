@@ -1,0 +1,6 @@
+# Add patterns to ignore here, one per line
+/src/utils/analytics.ts
+/public/dragon-logo.svg
+
+# old "Master Plan" page
+/src/components/pages/NearAI/NearAIHome.tsx
