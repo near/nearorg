@@ -117,6 +117,11 @@ export const navigationCategories = [
             url: '/events',
             icon: 'ph-calendar ph-bold',
           },
+          {
+            title: 'Resources',
+            url: 'https://near-foundation.notion.site/NEAR-Ecosystem-Resources-f144f67bdb524e68b69b6fb9632c9b9c',
+            icon: 'ph-book-open-text ph-bold',
+          },
         ],
       },
     ],
