@@ -85,6 +85,10 @@ const sections = [
         title: 'Founders',
         url: '/horizon',
       },
+      {
+        title: 'Resources',
+        url: 'https://near-foundation.notion.site/NEAR-Ecosystem-Resources-f144f67bdb524e68b69b6fb9632c9b9c',
+      },
     ],
   },
   {
