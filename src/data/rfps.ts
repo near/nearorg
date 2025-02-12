@@ -187,6 +187,9 @@ export const rfps = [
             </li>
           </ol>
 
+          <h3 class="text-2xl font-bold mt-12 mb-4">Submission Deadline</h3>
+          <p class="text-lg leading-relaxed text-[#AFD0C5] mb-12">All proposals must be submitted by February 17, 2025. Late submissions will not be considered.</p>
+
           <h3 class="text-2xl font-bold mt-12 mb-4">Submission Process</h3>
           <p class="text-lg leading-relaxed text-[#AFD0C5] mb-12">Please complete the "Submit Proposal" form below and be sure to fill out the fields under "Agent Request for Proposal" in great detail. You can expect a response within 72 hours from submission.</p>
 
