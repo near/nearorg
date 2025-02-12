@@ -14,8 +14,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Analytics />
       <Head>
-        <link rel="icon" href="favicon.ico" />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
 
         {/* TODO: Do we need this canonical link tag? */}
         {/* <link rel="canonical" href={`${process.env.NEXT_PUBLIC_HOSTNAME}${router.asPath}`} key="canonical" /> */}

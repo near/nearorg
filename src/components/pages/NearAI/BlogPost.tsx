@@ -71,7 +71,7 @@ const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
 
   return (
     <BlogWrapper>
-      <div className="max-w-[65ch] mx-auto px-6 md:px-8">
+      <div className="mx-auto px-6 md:px-8">
         <header className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{title}</h1>
 

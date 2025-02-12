@@ -70,6 +70,7 @@ const Navbar = () => {
               <NavLink href="https://chat.near.ai" external alpha>
                 AI Assistant
               </NavLink>
+              <NavLink href="/rfps">Proposals</NavLink>
               <NavLink href="/blog">
                 Blog
                 <NewPostBadge />
