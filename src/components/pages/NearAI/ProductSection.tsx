@@ -1,10 +1,12 @@
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 import React from 'react';
 
 interface ProductCardProps {
   title: string;
   description: string;
-  features: string[];
+  features: ReactNode[];
   cta: {
     text: string;
     href: string;
@@ -102,6 +104,33 @@ const ProductSection = () => {
               ]}
               cta={{ text: 'Coming Soon', href: '#' }}
               alpha={false}
+            />
+          </div>
+
+          {/* Contact Us - Left */}
+          <div className="flex justify-end w-full">
+            <ProductCard
+              title="Contact Us"
+              description="Let us know how we can support your project"
+              features={[
+                <>
+                  View current{' '}
+                  <Link href="/rfps" className="text-[#00EB9A] no-underline hover:underline">
+                    Requests for Proposals (RFPs)
+                  </Link>
+                </>,
+                <>
+                  Get involved with an{' '}
+                  <a
+                    href="http://onetrillionagents.com/"
+                    target="_blank"
+                    className="text-[#00EB9A] no-underline hover:underline"
+                  >
+                    AI Hackathon
+                  </a>
+                </>,
+              ]}
+              cta={{ text: 'Get In Touch', href: 'https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form' }}
             />
           </div>
         </div>

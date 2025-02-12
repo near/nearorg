@@ -63,7 +63,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2">
               <NavLink href="https://app.near.ai" external alpha>
                 Research Hub
               </NavLink>
@@ -89,7 +89,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -101,7 +101,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <div
         className={`
-        fixed inset-0 bg-black/95 backdrop-blur-xl z-40 md:hidden
+        fixed inset-0 bg-black/95 backdrop-blur-xl z-40 lg:hidden
         transition-opacity duration-300
         ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
@@ -119,6 +119,9 @@ const Navbar = () => {
             onClick={closeMobileMenu}
           >
             AI Office Hours
+          </NavLink>
+          <NavLink href="/proposals" onClick={closeMobileMenu}>
+            Proposals
           </NavLink>
           <NavLink href="/blog" onClick={closeMobileMenu}>
             Blog
