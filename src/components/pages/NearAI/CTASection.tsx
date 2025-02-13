@@ -41,12 +41,15 @@ const CTASection = () => {
 
           <div className="flex flex-col items-center gap-8">
             {/* Main CTAs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl w-full">
               <CTAButton href="https://app.near.ai" primary external>
                 Research Hub
               </CTAButton>
               <CTAButton href="https://chat.near.ai" external>
                 AI Assistant
+              </CTAButton>
+              <CTAButton href="https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form" external>
+                Contact Us
               </CTAButton>
             </div>
 
