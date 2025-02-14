@@ -335,7 +335,7 @@ export const Intents = () => {
             background="green-brand"
             gap="l"
             padding="l"
-            href="https://docs.near.org"
+            href="https://docs.near.org/chain-abstraction/intents/overview"
             target="_blank"
             rel="noopener noreferrer"
             style={{
