@@ -6,7 +6,7 @@ const PostPage = () => {
   return (
     <BlogPost
       title="Announcing Proof of Response: a novel primitive in decentralized systems to guarantee liveness and responsiveness of services"
-      date="2025-02-12"
+      date="2025-02-18"
       author={{
         name: 'Alex Skidanov',
       }}
