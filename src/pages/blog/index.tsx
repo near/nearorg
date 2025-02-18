@@ -6,6 +6,15 @@ import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const posts = [
   {
+    slug: 'proof-of-response-announcement',
+    title: 'Announcing Proof of Response',
+    excerpt: 'A novel primitive in decentralized systems to guarantee liveness and responsiveness of services',
+    date: '2025-02-12',
+    author: {
+      name: 'Alex Skidanov',
+    },
+  },
+  {
     slug: 'building-next-gen-near-ai-infrastructure-with-tees',
     title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
     excerpt: 'Enabling Fully Private, Verifiable AI Agents with Phala Network',
