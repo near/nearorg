@@ -1,5 +1,3 @@
-const appGatewayHostname = 'https://dev.near.org'; // This will probably change to "apps.near.org"
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -21,6 +19,11 @@ const nextConfig = {
       {
         source: '/nearai-master-plan',
         destination: `/master-plan`,
+        permanent: false,
+      },
+      {
+        source: '/shade',
+        destination: `https://github.com/NearDeFi/shade-agent-template`,
         permanent: false,
       },
     ];
