@@ -23,7 +23,7 @@ const nextConfig = {
       },
       {
         source: '/shade',
-        destination: `https://github.com/NearDeFi/shade-agent-template`,
+        destination: `https://fringe-brow-647.notion.site/Based-Agents-19a09959836d8091bb8febb318cc09fd`,
         permanent: false,
       },
     ];
