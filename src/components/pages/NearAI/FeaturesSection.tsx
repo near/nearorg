@@ -8,12 +8,12 @@ interface FeatureCardProps {
 }
 
 const FeatureCard = ({ title, description, icon: Icon }: FeatureCardProps) => (
-  <div className="relative group overflow-hidden">
+  <div className="relative group overflow-hidden h-full">
     {/* Gradient background that appears on hover */}
     <div className="absolute inset-0 bg-gradient-to-b from-[#00EB9A]/0 via-[#00EB9A]/[0.02] to-[#00EB9A]/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
     {/* Main content */}
-    <div className="relative flex flex-col items-start p-8 bg-black/30 backdrop-blur-sm rounded-xl border border-[#00EB9A]/20">
+    <div className="relative flex flex-col items-start p-8 bg-black/30 backdrop-blur-sm rounded-xl border border-[#00EB9A]/20 h-full">
       {/* Icon container with glow */}
       <div className="relative mb-6">
         <div className="absolute inset-0 bg-[#00EB9A]/20 blur-xl rounded-full" />
@@ -24,7 +24,7 @@ const FeatureCard = ({ title, description, icon: Icon }: FeatureCardProps) => (
 
       <h3 className="text-xl font-semibold mb-4 text-white">{title}</h3>
 
-      <p className="text-[#AFD0C5] text-lg">{description}</p>
+      <p className="text-[#AFD0C5] text-lg flex-grow">{description}</p>
     </div>
   </div>
 );
