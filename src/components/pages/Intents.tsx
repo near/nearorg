@@ -57,7 +57,8 @@ export const Intents = () => {
   const exploreIntents = [
     {
       name: 'NEAR Intents',
-      description: 'NEAR Intents are a new type of transaction that allow information, requests, assets, and actions to be exchanged between AI agents, services, and end users.',
+      description:
+        'NEAR Intents are a new type of transaction that allow information, requests, assets, and actions to be exchanged between AI agents, services, and end users.',
       icon: '/images/intents/near-intents-logo.png',
       url: 'https://app.near-intents.org/',
       target: '_blank',
