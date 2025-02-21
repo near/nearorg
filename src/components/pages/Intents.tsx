@@ -56,6 +56,27 @@ export const Intents = () => {
 
   const exploreIntents = [
     {
+      name: 'NEAR Intents',
+      description: 'NEAR Intents are a new type of transaction that allow information, requests, assets, and actions to be exchanged between AI agents, services, and end users.',
+      icon: '/images/intents/near-intents-logo.png',
+      url: 'https://app.near-intents.org/',
+      target: '_blank',
+    },
+    {
+      name: 'Solswap',
+      description: 'Solana DEX powered by NEAR Intents',
+      icon: '/images/intents/sol-swap-logo.png',
+      url: 'https://solswap.org/',
+      target: '_blank',
+    },
+    {
+      name: 'dogecoinswap',
+      description: 'Swap native NEAR, BTC, SOL, ETH, and more for native DOGE powered by NEAR Intents',
+      icon: '/images/intents/doge-swap-logo.png',
+      url: 'https://dogecoinswap.org/',
+      target: '_blank',
+    },
+    {
       name: 'Bitte',
       description: 'Smart accounts with on-chain AI.',
       icon: '/images/intents/bitte.svg',
