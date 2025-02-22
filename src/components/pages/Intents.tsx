@@ -62,6 +62,8 @@ export const Intents = () => {
       icon: '/images/intents/near-intents-logo.png',
       url: 'https://app.near-intents.org/',
       target: '_blank',
+      aspectRatioWidth: 2000,
+      aspectRatioHeight: 512,
     },
     {
       name: 'Solswap',
@@ -69,6 +71,8 @@ export const Intents = () => {
       icon: '/images/intents/sol-swap-logo.png',
       url: 'https://solswap.org/',
       target: '_blank',
+      aspectRatioWidth: 1600,
+      aspectRatioHeight: 512,
     },
     {
       name: 'dogecoinswap',
@@ -76,6 +80,8 @@ export const Intents = () => {
       icon: '/images/intents/doge-swap-logo.png',
       url: 'https://dogecoinswap.org/',
       target: '_blank',
+      aspectRatioWidth: 1888,
+      aspectRatioHeight: 512,
     },
     {
       name: 'Bitte',
@@ -320,7 +326,13 @@ export const Intents = () => {
               key={item.url}
               style={{ borderRadius: '25px' } as React.CSSProperties}
             >
-              <Image src={item.icon} alt="Article icon" width={100} height={100} />
+              <Image
+                src={item.icon}
+                alt="Article icon"
+                width={item.aspectRatioWidth || 100}
+                height={item.aspectRatioHeight || 100}
+                style={{ height: 100 }}
+              />
 
               <Flex stack>
                 <Text size="text-l" weight="500">
