@@ -320,13 +320,7 @@ export const Intents = () => {
               key={item.url}
               style={{ borderRadius: '25px' } as React.CSSProperties}
             >
-              <Image
-                src={item.icon}
-                alt="Article icon"
-                width={100}
-                height={100}
-                style={{ height: 100 }}
-              />
+              <Image src={item.icon} alt="Article icon" width={100} height={100} style={{ height: 100 }} />
 
               <Flex stack>
                 <Text size="text-l" weight="500">

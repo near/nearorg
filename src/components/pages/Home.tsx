@@ -113,7 +113,7 @@ export const Home = () => {
         </Pattern>
       </Section>
 
-      <Section gap="s" background="black" style={{ padding: '12px'  }}>
+      <Section gap="s" background="black" style={{ padding: '12px' }}>
         <Flex
           stack
           style={{
