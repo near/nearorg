@@ -138,17 +138,29 @@ export const Home = () => {
 
           {/* Two columns section */}
           <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl" style={{ marginBottom: '48px' }}>
-            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                position: 'relative',
+                minHeight: '250px',
+                paddingBottom: '60px', // Space for button
+              }}
+            >
               <div>
                 <Text size="text-xl" weight="500">
                   The All-in-One AI & Blockchain Infrastructure
                 </Text>
-                <Text color="sand12">
+                <Text color="sand12" style={{ marginTop: '16px' }}>
                   AI developers and Web3 builders can create AI-driven applications, automate transactions, and build
                   financial or commerce tools without fragmented ecosystems.
                 </Text>
               </div>
-              <div>
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                }}
+              >
                 <Button
                   href="https://dev.near.org"
                   target="_blank"
@@ -158,19 +170,31 @@ export const Home = () => {
                   size="large"
                 />
               </div>
-            </Flex>
+            </div>
 
-            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                position: 'relative',
+                minHeight: '250px',
+                paddingBottom: '60px', // Space for button
+              }}
+            >
               <div>
                 <Text size="text-xl" weight="500">
                   Scalable & Ready for {`AI's`} Growth
                 </Text>
-                <Text color="sand12">
+                <Text color="sand12" style={{ marginTop: '16px' }}>
                   As AI-powered systems take on billions of financial and commercial interactions, NEAR ensures that the
                   network can support global AI adoption without slowdowns or high costs.
                 </Text>
               </div>
-              <div>
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                }}
+              >
                 <Button
                   href="/applications"
                   label="Explore Applications"
@@ -180,7 +204,7 @@ export const Home = () => {
                   target="_blank"
                 />
               </div>
-            </Flex>
+            </div>
           </Grid>
 
           {/* Featured apps grid */}
@@ -239,7 +263,13 @@ export const Home = () => {
 
           {/* Two columns section */}
           <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl">
-            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                position: 'relative',
+                minHeight: '250px',
+                paddingBottom: '60px', // Space for button
+              }}
+            >
               <div>
                 <img
                   src="/images/home/build_faster.png"
@@ -257,7 +287,13 @@ export const Home = () => {
                   Spend less time learning and more time building with the tools you already know and love.
                 </Text>
               </div>
-              <div>
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                }}
+              >
                 <Button
                   href="https://docs.near.org"
                   target="_blank"
@@ -266,9 +302,15 @@ export const Home = () => {
                   size="large"
                 />
               </div>
-            </Flex>
+            </div>
 
-            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                position: 'relative',
+                minHeight: '250px',
+                paddingBottom: '60px', // Space for button
+              }}
+            >
               <div>
                 <img
                   src="/images/home/discover_web3.png"
@@ -291,10 +333,16 @@ export const Home = () => {
                   <br />
                 </Text>
               </div>
-              <div>
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                }}
+              >
                 <Button href="https://near.ai" label="Explore AI" variant="affirmative" size="large" target="_blank" />
               </div>
-            </Flex>
+            </div>
           </Grid>
         </Flex>
       </Section>
