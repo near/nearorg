@@ -362,7 +362,7 @@ export const Home = () => {
             ].map((item) => (
               <a
                 key={item.name}
-                href="#"
+                href={item.url}
                 style={{
                   display: 'block',
                   width: '100%',
