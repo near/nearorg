@@ -113,7 +113,7 @@ export const Home = () => {
         </Pattern>
       </Section>
 
-      <Section gap="s" background="black" style={{ padding: '12px' }}>
+      <Section gap="s" background="black" style={{ padding: '12px'  }}>
         <Flex
           stack
           style={{
@@ -122,6 +122,7 @@ export const Home = () => {
             backgroundColor: 'var(--green-brand)',
             borderRadius: '50px',
             padding: '48px',
+            marginTop: '-100px',
           }}
         >
           {/* Header section */}
@@ -137,14 +138,16 @@ export const Home = () => {
 
           {/* Two columns section */}
           <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl" style={{ marginBottom: '48px' }}>
-            <Flex stack gap="l">
-              <Text size="text-xl" weight="500">
-                The All-in-One AI & Blockchain Infrastructure
-              </Text>
-              <Text color="sand12">
-                AI developers and Web3 builders can create AI-driven applications, automate transactions, and build
-                financial or commerce tools without fragmented ecosystems.
-              </Text>
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <Text size="text-xl" weight="500">
+                  The All-in-One AI & Blockchain Infrastructure
+                </Text>
+                <Text color="sand12">
+                  AI developers and Web3 builders can create AI-driven applications, automate transactions, and build
+                  financial or commerce tools without fragmented ecosystems.
+                </Text>
+              </div>
               <div>
                 <Button
                   href="https://dev.near.org"
@@ -157,14 +160,16 @@ export const Home = () => {
               </div>
             </Flex>
 
-            <Flex stack gap="l">
-              <Text size="text-xl" weight="500">
-                Scalable & Ready for {`AI's`} Growth
-              </Text>
-              <Text color="sand12">
-                As AI-powered systems take on billions of financial and commercial interactions, NEAR ensures that the
-                network can support global AI adoption without slowdowns or high costs.
-              </Text>
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <Text size="text-xl" weight="500">
+                  Scalable & Ready for {`AI's`} Growth
+                </Text>
+                <Text color="sand12">
+                  As AI-powered systems take on billions of financial and commercial interactions, NEAR ensures that the
+                  network can support global AI adoption without slowdowns or high costs.
+                </Text>
+              </div>
               <div>
                 <Button
                   href="/applications"
