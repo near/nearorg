@@ -1,23 +1,9 @@
-import {
-  Article,
-  Button,
-  Card,
-  CardThumbnail,
-  ContentWithImage,
-  Flex,
-  Grid,
-  IconCircle,
-  Pattern,
-  Section,
-  Text,
-} from '@near-pagoda/ui';
+import { Article, Button, Card, CardThumbnail, Flex, Grid, Pattern, Section, Text } from '@near-pagoda/ui';
 
 import { useEvents } from '@/hooks/useEvents';
 import { useLatestNews } from '@/hooks/useLatestNews';
 import { useStatistics } from '@/hooks/useStatistics';
 import { LUMA_NEAR_CALENDAR_ID } from '@/utils/constants';
-
-import { LogoLinks } from '../LogoLinks';
 
 const images = {
   apps: {
@@ -54,6 +40,12 @@ const images = {
     shemaroo: 'bafkreigoulx5h4u43xj4332bidnkn4dzbw5qgrcar6wf7yoewnrxfyjfle',
     sweatcoin: 'bafkreigztaapfbvnfzrw4oap6zi7us4drcbx2wt3broi4n3u4nzfyrtxcy',
   },
+  home: {
+    blockchain: 'blockchain_button.png',
+    ai: 'ai_button.png',
+    chainabstraction: 'chainabstraction_button.png',
+    intents: 'intents_button.png',
+  },
 };
 
 const featuredApps: {
@@ -65,104 +57,24 @@ const featuredApps: {
   target: string;
 }[] = [];
 
-const web3Teams2 = [
-  {
-    url: 'https://dropt.io',
-    name: 'Dropt',
-    image: returnImageSrc(images.logos.dropt),
-    height: '35px',
-  },
-  {
-    url: 'https://sailgp.com',
-    name: 'Sail GP',
-    image: returnImageSrc(images.logos.sailgp),
-    height: '16px',
-  },
-  {
-    url: 'https://www.shemarooent.com',
-    name: 'Shemaroo',
-    image: returnImageSrc(images.logos.shemaroo),
-    height: '38px',
-  },
-  {
-    url: 'https://www.marblex.io',
-    name: 'Marblex',
-    image: returnImageSrc(images.logos.marblex),
-    height: '16px',
-  },
-  {
-    url: 'https://polygon.technology/polygon-cdk',
-    name: 'Polygon',
-    image: returnImageSrc(images.logos.polygon),
-    height: '38px',
-  },
-  {
-    url: 'https://sweatco.in',
-    name: 'Sweatcoin',
-    image: returnImageSrc(images.logos.sweatcoin),
-    height: '24px',
-  },
-];
-
-const web3Teams = [
-  {
-    url: 'https://alibabacloud.com/',
-    name: 'Alibaba',
-    image: returnImageSrc(images.logos.alibaba),
-    height: '38px',
-  },
-  {
-    url: 'https://docs.arbitrum.io/inside-anytrust#data-availability-servers',
-    name: 'Arbitrum',
-    image: returnImageSrc(images.logos.arbitrum),
-    height: '38px',
-  },
-  {
-    url: 'https://cosmose.co',
-    name: 'Cosmose AI',
-    image: returnImageSrc(images.logos.cosmose),
-    height: '38px',
-  },
-  {
-    url: 'https://docs.eigenlayer.xyz/eigenda-guides/eigenda-overview',
-    name: 'EigenLayer',
-    image: returnImageSrc(images.logos.eigenLayer),
-    height: '38px',
-  },
-  {
-    url: 'https://google.com',
-    name: 'Google',
-    image: returnImageSrc(images.logos.google),
-    height: '38px',
-  },
-  {
-    url: 'https://www.icc-cricket.com',
-    name: 'ICC',
-    image: returnImageSrc(images.logos.icc),
-    height: '24px',
-  },
-];
-
-const web3TeamsCombined = [...web3Teams, ...web3Teams2];
-
 const learnItems = [
   {
     name: 'Docs',
     description: 'Read the NEAR documentation and learn to build and publish blockchain applications.',
-    icon: 'ph-file-doc',
+    icon: '/images/home/doc_icon.png',
     url: 'https://docs.near.org',
     target: '_blank',
   },
   {
     name: 'Blog',
     description: 'The latest news about the NEAR protocol and innovations from the community.',
-    icon: 'ph-newspaper-clipping',
+    icon: '/images/home/blog_icon.png',
     url: '/blog',
   },
   {
     name: 'Learn Center',
     description: 'Starter kit to learn about blockchain technology, web3, and the NEAR protocol.',
-    icon: 'ph-book-open-text',
+    icon: '/images/home/learn_icon.png',
     url: 'https://dev.near.org/learn',
     target: '_blank',
   },
@@ -179,7 +91,7 @@ export const Home = () => {
 
   return (
     <>
-      <Section gap="2xl" background="white" style={{ textAlign: 'center' }}>
+      <Section gap="2xl" background="white" style={{ textAlign: 'center', padding: '12px' }}>
         <Pattern contentMaxWidth="648px">
           <Flex gap="l" stack align="center">
             <Text as="h1" size="text-hero-l">
@@ -187,56 +99,55 @@ export const Home = () => {
             </Text>
 
             <Flex>
-              <Button
-                href="https://docs.near.org"
-                target="_blank"
-                label="Read Docs"
-                variant="secondary"
-                fill="outline"
-                size="large"
-              />
+              <Button href="https://docs.near.org" target="_blank" label="Read Docs" variant="secondary" size="large" />
               <Button
                 href="https://dev.near.org"
                 target="_blank"
                 label="Start Building"
-                variant="affirmative"
+                variant="primary"
+                fill="outline"
                 size="large"
               />
             </Flex>
           </Flex>
         </Pattern>
-
-        <LogoLinks
-          label="Trusted by forward thinking teams"
-          logos={web3TeamsCombined}
-          style={{ marginBottom: 'var(--gap-l)' }}
-        />
       </Section>
 
-      <Section gap="2xl" background="green-brand" padding="hero">
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m">
-            {`There's`} a better way to build.
-          </Text>
-          <Text size="text-2xl" weight={400} style={{ maxWidth: '808px' }}>
-            Imagine if the online experiences we use every day were more transparent and resilient – shaped and
-            controlled by their creators and users.
-          </Text>
-        </Flex>
+      <Section gap="s" background="black" style={{ padding: '12px' }}>
+        <Flex
+          stack
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--green-brand)',
+            borderRadius: '50px',
+            padding: '48px',
+            marginTop: '-100px',
+          }}
+        >
+          {/* Header section */}
+          <Flex stack gap="l" style={{ marginBottom: '48px' }}>
+            <Text as="h2" size="text-3xl">
+              Scalable. AI-Native. Cross-Chain.
+            </Text>
+            <Text size="text-l">
+              Combining the best of sharded scaling, AI-native transactions, and cross-chain functionality, NEAR
+              delivers a user-focused, decentralized ecosystem at global scale.
+            </Text>
+          </Flex>
 
-        <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl">
-          <img src={returnImageSrc(images.illustrations.betterWayToBuild)} alt="There's a better way to build" />
-
-          <Flex stack gap="2xl">
-            <Flex stack gap="l">
-              <Text size="text-xl" weight="500">
-                Truly developer owned.
-              </Text>
-              <Text color="sand12">
-                Today, developers access web services through centralized providers in exchange for control of their
-                data and assets. In contrast, Web3 services are public and open source, and you alone hold the keys to
-                your data.
-              </Text>
+          {/* Two columns section */}
+          <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl" style={{ marginBottom: '48px' }}>
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <Text size="text-xl" weight="500">
+                  The All-in-One AI & Blockchain Infrastructure
+                </Text>
+                <Text color="sand12">
+                  AI developers and Web3 builders can create AI-driven applications, automate transactions, and build
+                  financial or commerce tools without fragmented ecosystems.
+                </Text>
+              </div>
               <div>
                 <Button
                   href="https://dev.near.org"
@@ -249,14 +160,16 @@ export const Home = () => {
               </div>
             </Flex>
 
-            <Flex stack gap="l">
-              <Text size="text-xl" weight="500">
-                A new & more open digital economy.
-              </Text>
-              <Text color="sand12">
-                Develop unique and powerful ways to earn, transact, and exercise digital ownership through online
-                experiences accessible to anyone with an internet connection.
-              </Text>
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <Text size="text-xl" weight="500">
+                  Scalable & Ready for {`AI's`} Growth
+                </Text>
+                <Text color="sand12">
+                  As AI-powered systems take on billions of financial and commercial interactions, NEAR ensures that the
+                  network can support global AI adoption without slowdowns or high costs.
+                </Text>
+              </div>
               <div>
                 <Button
                   href="/applications"
@@ -268,171 +181,276 @@ export const Home = () => {
                 />
               </div>
             </Flex>
+          </Grid>
 
-            <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
-              {featuredApps.map((app) => (
-                <Card
-                  href={app.url}
-                  key={app.name}
-                  target={app.target}
-                  border="sand12"
-                  background="green-brand"
-                  padding="l"
-                  gap="l"
-                >
-                  <Flex align="center" gap="l">
-                    <CardThumbnail src={returnImageSrc(app.image)} alt={app.name} />
-                    <div>
-                      <Text size="text-l" weight="500">
-                        {app.name}
-                      </Text>
-                      <Text size="text-s" color="sand12">
-                        @{app.accountId}
-                      </Text>
-                    </div>
-                  </Flex>
-                  <Text size="text-s" color="sand12">
-                    {app.description}
-                  </Text>
-                </Card>
-              ))}
-            </Grid>
+          {/* Featured apps grid */}
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+            {featuredApps.map((app) => (
+              <Card
+                href={app.url}
+                key={app.name}
+                target={app.target}
+                border="sand12"
+                background="green-brand"
+                padding="l"
+                gap="l"
+              >
+                <Flex align="center" gap="l">
+                  <CardThumbnail src={returnImageSrc(app.image)} alt={app.name} />
+                  <div>
+                    <Text size="text-l" weight="500">
+                      {app.name}
+                    </Text>
+                    <Text size="text-s" color="sand12">
+                      @{app.accountId}
+                    </Text>
+                  </div>
+                </Flex>
+                <Text size="text-s" color="sand12">
+                  {app.description}
+                </Text>
+              </Card>
+            ))}
+          </Grid>
+        </Flex>
+      </Section>
+
+      <Section background="black" gap="s" style={{ padding: '12px' }}>
+        <Flex
+          stack
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--color-black)',
+            borderRadius: '50px',
+            padding: '24px',
+          }}
+        >
+          {/* Header section */}
+          <Flex stack gap="s" style={{ marginBottom: '24px' }}>
+            <Text as="h2" size="text-3xl" color="white">
+              AI and Web3 development made easy
+            </Text>
+            <Text color="white">
+              By integrating AI-driven features, chain abstraction, and a sharded, scalable infrastructure, NEAR
+              continues to expand its core components. Enabling secure, user-focused applications at every stage.
+            </Text>
           </Flex>
-        </Grid>
-      </Section>
 
-      <Section background="black" padding="hero" gap="2xl">
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m" color="white">
-            Web3 development made easy
-          </Text>
-          <Text size="text-2xl" color="white" weight={400} style={{ maxWidth: '808px' }}>
-            Build great applications without the hassle of deciding between platforms, finding the right tools, or
-            learning new programming languages.
-          </Text>
+          {/* Two columns section */}
+          <Grid columns="1fr 1fr" columnsPhone="1fr" gap="xl">
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <img
+                  src="/images/home/build_faster.png"
+                  alt="Build Faster"
+                  style={{
+                    width: '100%',
+                    height: '120px',
+                    marginBottom: '24px',
+                  }}
+                />
+                <Text size="text-xl" weight="500" color="white">
+                  Build faster with Javascript & familiar developer tools.
+                </Text>
+                <Text color="white">
+                  Spend less time learning and more time building with the tools you already know and love.
+                </Text>
+              </div>
+              <div>
+                <Button
+                  href="https://docs.near.org"
+                  target="_blank"
+                  label="Explore Docs"
+                  variant="affirmative"
+                  size="large"
+                />
+              </div>
+            </Flex>
+
+            <Flex stack gap="l" style={{ height: '100%', justifyContent: 'space-between' }}>
+              <div>
+                <img
+                  src="/images/home/discover_web3.png"
+                  alt="Discover Web3"
+                  style={{
+                    width: '100%',
+                    height: '120px',
+                    marginBottom: '24px',
+                  }}
+                />
+                <Text size="text-xl" weight="500" color="white">
+                  AI integration
+                </Text>
+                <Text color="white">
+                  • AI agents manage assets and services autonomously
+                  <br />
+                  • Chain abstraction streamlines cross-network execution
+                  <br />
+                  • Comprehensive documentation and community resources speed up development
+                  <br />
+                </Text>
+              </div>
+              <div>
+                <Button href="https://near.ai" label="Explore AI" variant="affirmative" size="large" target="_blank" />
+              </div>
+            </Flex>
+          </Grid>
         </Flex>
-
-        <ContentWithImage
-          imageSide="left"
-          src={returnImageSrc(images.illustrations.code)}
-          alt="Illustration of a console with javascript code above the Javascript and Rust logos, surrounded by brackets"
-        >
-          <Text size="text-xl" weight="500" color="white">
-            Build faster with{' '}
-            <Text as="span" size="text-xl" weight="500" color="green-brand">
-              Javascript
-            </Text>{' '}
-            & familiar developer tools.
-          </Text>
-          <Text color="white">
-            Spend less time learning and more time building with the tools you already know and love.
-          </Text>
-          <div>
-            <Button
-              href="https://docs.near.org"
-              target="_blank"
-              label="Explore Docs"
-              variant="affirmative"
-              size="large"
-            />
-          </div>
-        </ContentWithImage>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.dapps)}
-          imageSide="right"
-          alt="Illustration of the UI listing of an application with buttons to open, fork, view source, or discuss. Behind it there are images of code brackets and a git-fork icon. "
-        >
-          <Text size="text-xl" weight="500" color="white">
-            Discover Web3 Open Source
-          </Text>
-          <Text color="white">
-            Everything on B.O.S. is easy to discover and open source by default. See what others have built, learn
-            faster, and gain inspiration.
-          </Text>
-          <div>
-            <Button
-              href="/applications"
-              label="Explore Applications"
-              variant="affirmative"
-              size="large"
-              target="_blank"
-            />
-          </div>
-        </ContentWithImage>
       </Section>
-
-      <Section background="amber2" padding="hero" gap="2xl">
-        <Text as="h2" size="text-hero-m">
-          Be part of a global open source community.
-        </Text>
-
-        <Grid columns="1fr 1fr 1fr" columnsTablet="1fr" gap="2xl">
-          <div>
-            <Text size="text-hero-xl" color="sand12">
-              {statistics.totalDevelopers}
-            </Text>
-            <Text color="sand12">Developers</Text>
-          </div>
-
-          <div>
-            <Text size="text-hero-xl" color="sand12">
-              {statistics.totalComponents}
-            </Text>
-            <Text color="sand12">OSS Components</Text>
-          </div>
-
-          <div>
-            <Text size="text-hero-xl" color="sand12">
-              {statistics.totalApps}
-            </Text>
-            <Text color="sand12">Applications</Text>
-          </div>
-        </Grid>
-      </Section>
-
-      <Section background="sand12" padding="hero" gap="2xl">
-        <Flex stack gap="l">
-          <Text as="h2" size="text-hero-m" color="white">
-            Learn, connect, & collaborate.
-          </Text>
-          <Text size="text-2xl" color="white" weight={400} style={{ maxWidth: '808px' }}>
-            Join a vibrant community of innovators and builders creating a more open web.
-          </Text>
+      <Section gap="s" background="black" style={{ padding: '24px' }}>
+        <Flex
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+          }}
+        >
+          <Grid columns="1fr 1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr 1fr" gap="none">
+            {[
+              { name: 'AI', image: images.home.ai, url: '/ai' },
+              { name: 'Chain Abstraction', image: images.home.chainabstraction, url: '/chain-abstraction' },
+              { name: 'Intents', image: images.home.intents, url: '/intents' },
+              { name: 'Blockchain', image: images.home.blockchain, url: '/blockchain' },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href="#"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  overflow: 'hidden',
+                }}
+              >
+                <img
+                  src={`/images/home/${item.image}`}
+                  alt={item.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderColor: 'white',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderRadius: '24px',
+                  }}
+                />
+              </a>
+            ))}
+          </Grid>
         </Flex>
+      </Section>
 
-        <Flex stack gap="l">
-          <Flex stack gap="l">
+      <Section gap="s" background="black" style={{ padding: '12px' }}>
+        <Flex
+          stack
+          gap="s"
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--color-black)',
+            borderRadius: '50px',
+            padding: '24px',
+          }}
+        >
+          <Text as="h2" size="text-3xl" color="white">
+            Be part of a global open source community.
+          </Text>
+
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr" gap="s">
+            <div
+              style={{
+                backgroundColor: 'var(--green-brand)',
+                padding: '32px',
+                borderRadius: '24px',
+                textAlign: 'center',
+              }}
+            >
+              <Text size="text-hero-m" color="sand12">
+                {statistics.totalDevelopers}
+              </Text>
+              <Text color="sand12">Developers</Text>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: 'var(--green-brand)',
+                padding: '32px',
+                borderRadius: '24px',
+                textAlign: 'center',
+              }}
+            >
+              <Text size="text-hero-m" color="sand12">
+                {statistics.totalComponents}
+              </Text>
+              <Text color="sand12">OSS Components</Text>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: 'var(--green-brand)',
+                padding: '32px',
+                borderRadius: '24px',
+                textAlign: 'center',
+              }}
+            >
+              <Text size="text-hero-m" color="sand12">
+                {statistics.totalApps}
+              </Text>
+              <Text color="sand12">Applications</Text>
+            </div>
+          </Grid>
+        </Flex>
+      </Section>
+
+      <Section gap="s" background="green-brand" padding="hero" style={{ padding: '12px' }}>
+        <Flex
+          stack
+          gap="s"
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--color-black)',
+            borderRadius: '50px',
+            padding: '24px',
+            width: '100%',
+          }}
+        >
+          <Flex stack gap="s">
             <Flex align="center">
-              <i className="ph-duotone ph-book-open-text" style={{ color: 'var(--white)', fontSize: '32px' }} />
-              <Text size="text-xl" weight="600" color="white">
-                Learn
+              <Text size="text-3xl" weight="600">
+                Learn, connect, & collaborate.
               </Text>
             </Flex>
 
-            <Text style={{ maxWidth: '393px' }} color="white">
-              Everything you need to know about NEAR from ongoing developments to the latest updates.
+            <Text style={{ maxWidth: '600px', color: 'black' }}>
+              Explore resources, join the community, and collaborate with builders shaping the future of AI and
+              blockchain.
             </Text>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
+          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="s">
             {learnItems.map((item) => (
               <Card
                 padding="l"
-                gap="l"
-                background="sand12"
-                border="sand11"
+                background="green-brand"
+                border="black"
                 href={item.url}
                 target={item.target}
                 key={item.name}
               >
-                <IconCircle color="sand11" icon={<i className={`ph-duotone ${item.icon}`} />} />
+                <img
+                  src={item.icon}
+                  alt={`${item.name} Icon`}
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                  }}
+                />
 
                 <Flex stack>
-                  <Text size="text-l" weight="500" color="white">
+                  <Text size="text-l" weight="500">
                     {item.name}
                   </Text>
-                  <Text size="text-s" color="white">
+                  <Text size="text-s" color="black">
                     {item.description}
                   </Text>
                 </Flex>
@@ -441,24 +459,36 @@ export const Home = () => {
           </Grid>
         </Flex>
 
-        <Flex stack gap="l">
-          <Flex stack gap="l">
+        {/* News Section */}
+        <Flex
+          stack
+          gap="s"
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--color-black)',
+            borderRadius: '50px',
+            padding: '24px',
+            width: '100%',
+          }}
+        >
+          <Flex stack gap="s">
             <Flex align="center">
-              <i className="ph-duotone ph-newspaper" style={{ color: 'var(--white)', fontSize: '32px' }} />
-              <Text size="text-xl" weight="600" color="white">
+              <Text size="text-3xl" weight="600">
                 News
               </Text>
             </Flex>
 
             <Flex gap="l" align="end" stack="phone">
-              <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
+              <Text style={{ maxWidth: '600px', marginRight: 'auto', color: 'black' }}>
                 Catch up on the latest news and announcements from around the ecosystem.
               </Text>
 
               <Button
                 href="/nearweekapp.near/widget/nearweek.com"
                 label="All News"
-                variant="affirmative"
+                variant="secondary"
+                fill="outline"
                 size="large"
                 target="_blank"
               />
@@ -474,15 +504,7 @@ export const Home = () => {
                 src={post.thumbnail}
                 alt={post.title}
               >
-                <Text color="sand11" size="text-s">
-                  {new Date(post.createdAt).toLocaleString(undefined, {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
-                </Text>
                 <Text
-                  color="white"
                   size="text-l"
                   weight="500"
                   as="h3"
@@ -496,26 +518,44 @@ export const Home = () => {
                 >
                   {post.title}
                 </Text>
+                <Text color="sand11" size="text-s">
+                  {new Date(post.createdAt).toLocaleString(undefined, {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </Text>
               </Article>
             ))}
           </Grid>
         </Flex>
 
-        <Flex stack gap="l">
-          <Flex stack gap="l">
+        {/* Events Section */}
+        <Flex
+          stack
+          gap="s"
+          style={{
+            maxWidth: '66%',
+            margin: '0 auto',
+            backgroundColor: 'var(--color-black)',
+            borderRadius: '50px',
+            padding: '24px',
+            width: '100%',
+          }}
+        >
+          <Flex stack gap="s">
             <Flex align="center">
-              <i className="ph-duotone ph-calendar-blank" style={{ color: 'var(--white)', fontSize: '32px' }} />
-              <Text size="text-xl" weight="600" color="white">
-                Events
+              <Text size="text-3xl" weight="600">
+                Upcoming Events
               </Text>
             </Flex>
 
             <Flex gap="l" align="end" stack="phone">
-              <Text style={{ maxWidth: '393px', marginRight: 'auto' }} color="white">
+              <Text style={{ maxWidth: '600px', marginRight: 'auto', color: 'black' }}>
                 Join us at conferences, meetups, and more as we gather across the globe.
               </Text>
 
-              <Button href="/events" label="All Events" variant="affirmative" size="large" />
+              <Button href="/events" label="All Events" variant="secondary" fill="outline" size="large" />
             </Flex>
           </Flex>
 
@@ -528,17 +568,18 @@ export const Home = () => {
                 src={event.thumbnail}
                 alt={event.title}
               >
-                <Text color="white" size="text-l" weight="500" as="h3">
+                <Text size="text-l" weight="500" as="h3">
                   {event.title}
                 </Text>
-                <Flex align="center" gap="l" style={{ minWidth: 0 }}>
+                <Flex stack gap="s" style={{ minWidth: 0 }}>
                   <Flex align="center" gap="s">
                     <i className="ph-bold ph-calendar-blank" style={{ color: 'var(--white)' }} />
                     <Text color="sand11" size="text-s" style={{ whiteSpace: 'nowrap' }}>
                       {event.date}
                     </Text>
                   </Flex>
-                  <Flex align="center" gap="s" style={{ minWidth: 0 }}>
+
+                  <Flex align="center" gap="s">
                     <i className="ph-bold ph-map-pin-line" style={{ color: 'var(--white)' }} />
                     <Text
                       color="sand11"
