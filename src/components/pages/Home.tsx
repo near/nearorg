@@ -117,7 +117,7 @@ export const Home = () => {
         <Flex
           stack
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--green-brand)',
             borderRadius: '50px',
@@ -243,7 +243,7 @@ export const Home = () => {
         <Flex
           stack
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--color-black)',
             borderRadius: '50px',
@@ -349,7 +349,7 @@ export const Home = () => {
       <Section gap="s" background="black" style={{ padding: '24px' }}>
         <Flex
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
           }}
         >
@@ -392,7 +392,7 @@ export const Home = () => {
           stack
           gap="s"
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--color-black)',
             borderRadius: '50px',
@@ -454,7 +454,7 @@ export const Home = () => {
           stack
           gap="s"
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--color-black)',
             borderRadius: '50px',
@@ -512,7 +512,7 @@ export const Home = () => {
           stack
           gap="s"
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--color-black)',
             borderRadius: '50px',
@@ -583,7 +583,7 @@ export const Home = () => {
           stack
           gap="s"
           style={{
-            maxWidth: '66%',
+            maxWidth: '95%',
             margin: '0 auto',
             backgroundColor: 'var(--color-black)',
             borderRadius: '50px',
