@@ -31,11 +31,6 @@ export const navigationCategories = [
             url: '/data-infrastructure',
             icon: 'ph-tree-structure ph-bold',
           },
-          {
-            title: 'Data Availability',
-            url: '/data-availability',
-            icon: 'ph-database ph-bold',
-          },
         ],
       },
     ],

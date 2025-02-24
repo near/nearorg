@@ -122,7 +122,7 @@ export const DataInfrastructure = () => {
 
             <div>
               <Button
-                href="https://docs.near.org/concepts/advanced/near-lake-framework"
+                href="https://docs.near.org/build/data-infrastructure/lake-framework/building-indexers/primitives"
                 target="_blank"
                 label="Read NEAR Lake Docs"
                 variant="affirmative"

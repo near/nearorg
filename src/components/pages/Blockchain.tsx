@@ -18,10 +18,10 @@ const communityItems = [
     target: '_blank',
   },
   {
-    name: 'Roadmap',
-    description: 'Follow the public roadmap and contribute to building the ecosystem',
+    name: 'Nightshade 2.0',
+    description: 'Introducing Stateless Validation and Greater Scalability',
     icon: 'ph-map-trifold',
-    url: '/blog/near-q2-protocol-roadmap-update',
+    url: '/blog/nightshade-2-launches-on-near-mainnet-introducing-stateless-validation',
     target: '_blank',
   },
 ];
@@ -221,6 +221,7 @@ export const Blockchain = () => {
             An ever evolving protocol with an active community of contributors. Join us and help shape the future of the
             web.
           </Text>
+          <img src="/images/blockchain/nightshade20-blog.png" alt="Nightshade" />
         </Flex>
 
         <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="l">
