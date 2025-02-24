@@ -97,29 +97,6 @@ export const EcosystemOverview = () => {
             <Button href="/founders" label="Explore Founder Hub" variant="secondary" fill="outline" size="large" />
           </div>
         </ContentWithImage>
-
-        <ContentWithImage
-          src={returnImageSrc(images.illustrations.funding)}
-          imageSide="left"
-          alt="The Ecosystem Funding Homepage logo"
-        >
-          <Text size="text-xl" weight="500">
-            Funding & Amplification
-          </Text>
-          <Text>
-            Building the Open Web together. Explore the NEAR Ecosystem groups that facilitate funding & provide support
-            for a variety of focus areas.
-          </Text>
-          <div>
-            <Button
-              href="/ecosystem/get-funding"
-              label="Ecosystem Funding"
-              variant="secondary"
-              fill="outline"
-              size="large"
-            />
-          </div>
-        </ContentWithImage>
       </Section>
 
       <Section padding="hero" background="green-brand">
