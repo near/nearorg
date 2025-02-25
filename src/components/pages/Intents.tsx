@@ -56,6 +56,34 @@ export const Intents = () => {
 
   const exploreIntents = [
     {
+      name: 'NEAR Intents',
+      description:
+        'NEAR Intents are a new type of transaction that allow information, requests, assets, and actions to be exchanged between AI agents, services, and end users.',
+      icon: '/images/intents/near-intents-logo.png',
+      url: 'https://app.near-intents.org/',
+      target: '_blank',
+      aspectRatioWidth: 2000,
+      aspectRatioHeight: 512,
+    },
+    {
+      name: 'Solswap',
+      description: 'Solana DEX powered by NEAR Intents',
+      icon: '/images/intents/sol-swap-logo.png',
+      url: 'https://solswap.org/',
+      target: '_blank',
+      aspectRatioWidth: 1600,
+      aspectRatioHeight: 512,
+    },
+    {
+      name: 'dogecoinswap',
+      description: 'Swap native NEAR, BTC, SOL, ETH, and more for native DOGE powered by NEAR Intents',
+      icon: '/images/intents/doge-swap-logo.png',
+      url: 'https://dogecoinswap.org/',
+      target: '_blank',
+      aspectRatioWidth: 1888,
+      aspectRatioHeight: 512,
+    },
+    {
       name: 'Bitte',
       description: 'Smart accounts with on-chain AI.',
       icon: '/images/intents/bitte.svg',
@@ -298,7 +326,13 @@ export const Intents = () => {
               key={item.url}
               style={{ borderRadius: '25px' } as React.CSSProperties}
             >
-              <Image src={item.icon} alt="Article icon" width={100} height={100} />
+              <Image
+                src={item.icon}
+                alt="Article icon"
+                width={item.aspectRatioWidth || 100}
+                height={item.aspectRatioHeight || 100}
+                style={{ height: 100 }}
+              />
 
               <Flex stack>
                 <Text size="text-l" weight="500">

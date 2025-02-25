@@ -27,10 +27,6 @@ const sections = [
         title: 'Data Infrastructure',
         url: '/data-infrastructure',
       },
-      {
-        title: 'Data Availability',
-        url: '/data-availability',
-      },
     ],
   },
   {

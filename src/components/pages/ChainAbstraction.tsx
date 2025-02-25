@@ -73,11 +73,11 @@ const featuredDapps = [
     url: 'https://sweateconomy.com/',
   },
   {
-    name: 'Defuse',
+    name: 'NEAR Intents',
     description:
-      'Defuse is a scalable, multi-chain DeFi infrastructure that facilitates the creation and trading of financial instruments with minimized centralization risks, while unifying liquidity across crypto ecosystems.',
-    imageUrl: '/images/chain-abstraction/dapps/defuse.png',
-    url: 'https://defuse.org',
+      'NEAR Intents are a new type of transaction that allow information, requests, assets, and actions to be exchanged between AI agents, services, and end users.',
+    imageUrl: '/images/chain-abstraction/dapps/intents-logo.png',
+    url: 'https://app.near-intents.org/',
   },
   {
     name: 'Bitte',
