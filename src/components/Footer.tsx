@@ -1,5 +1,6 @@
 import { Text } from '@near-pagoda/ui';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import s from './Footer.module.scss';
 
@@ -162,6 +163,19 @@ const sections = [
 export const Footer = () => {
   return (
     <footer className={s.footer}>
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-2EL4LETE0M" />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2EL4LETE0M');
+          `,
+        }}
+      />
       <div className={s.container}>
         <div className={s.linkGrid}>
           {sections.map((section) => (
