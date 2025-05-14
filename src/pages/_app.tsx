@@ -23,7 +23,26 @@ type AppPropsWithLayout = AppProps & {
 
 if (typeof window !== 'undefined') {
   const gleapSdkToken = process.env.NEXT_PUBLIC_GLEAP_SDK_TOKEN;
-  if (gleapSdkToken) Gleap.initialize(gleapSdkToken);
+  if (gleapSdkToken) {
+    Gleap.initialize(gleapSdkToken);
+    // Override default URL handler to sanitize open-url messages from Gleap (NEAR-247)
+    Gleap.setUrlHandler((url: string, newTab?: boolean) => {
+      try {
+        const parsed = new URL(url, window.location.href);
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+          console.warn('Blocked invalid Gleap navigation to unsafe protocol:', parsed.protocol);
+          return;
+        }
+        if (newTab) {
+          window.open(parsed.href, '_blank')?.focus();
+        } else {
+          window.location.href = parsed.href;
+        }
+      } catch (e) {
+        console.warn('Blocked invalid Gleap URL:', url, e);
+      }
+    });
+  }
 }
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
