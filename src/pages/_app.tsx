@@ -21,9 +21,29 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-if (typeof window !== 'undefined') {
-  const gleapSdkToken = process.env.NEXT_PUBLIC_GLEAP_SDK_TOKEN;
-  if (gleapSdkToken) Gleap.initialize(gleapSdkToken);
+function initializeGleapTS() {
+  if (typeof window !== 'undefined') {
+    const gleapSdkToken = 'K2v3kvAJ5XtPzNYSgk4Ulpe5ptgBkIMv';
+    // do not check newTab here. Submit code prior to calling this to determine if this is a new tab in the session.
+    Gleap.initialize(gleapSdkToken);
+    // NEAR-247: Sanitize open-url messages from Gleap
+    Gleap.setUrlHandler((url: string, newTab?: boolean) => {
+      try {
+        const parsed = new URL(url, window.location.href);
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+          console.warn('Blocked invalid Gleap navigation to unsafe protocol:', parsed.protocol);
+          return;
+        }
+        if (newTab) {
+          window.open(parsed.href, '_blank')?.focus();
+        } else {
+          window.location.href = parsed.href;
+        }
+      } catch (e) {
+        console.warn('Blocked invalid Gleap URL:', url, e);
+      }
+    });
+  }
 }
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
@@ -41,6 +61,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     initializeAnalytics();
+    initializeGleapTS();
   }, []);
 
   return (
