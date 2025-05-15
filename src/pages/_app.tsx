@@ -21,11 +21,12 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-if (typeof window !== 'undefined') {
-  const gleapSdkToken = process.env.NEXT_PUBLIC_GLEAP_SDK_TOKEN;
-  if (gleapSdkToken) {
+function initializeGleapTS() {
+  if (typeof window !== 'undefined') {
+    const gleapSdkToken = 'K2v3kvAJ5XtPzNYSgk4Ulpe5ptgBkIMv';
+    // do not check newTab here. Submit code prior to calling this to determine if this is a new tab in the session.
     Gleap.initialize(gleapSdkToken);
-    // Override default URL handler to sanitize open-url messages from Gleap (NEAR-247)
+    // NEAR-247: Sanitize open-url messages from Gleap
     Gleap.setUrlHandler((url: string, newTab?: boolean) => {
       try {
         const parsed = new URL(url, window.location.href);
@@ -60,6 +61,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     initializeAnalytics();
+    initializeGleapTS();
   }, []);
 
   return (
