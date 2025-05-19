@@ -23,7 +23,7 @@ type AppPropsWithLayout = AppProps & {
 
 function initializeGleapTS() {
   if (typeof window !== 'undefined') {
-    const gleapSdkToken = 'K2v3kvAJ5XtPzNYSgk4Ulpe5ptgBkIMv';
+    const gleapSdkToken = 'CSjNAbQnKXhYOtqLjCTVH4wx11y3muUX';
     // do not check newTab here. Submit code prior to calling this to determine if this is a new tab in the session.
     Gleap.initialize(gleapSdkToken);
     // NEAR-247: Sanitize open-url messages from Gleap
