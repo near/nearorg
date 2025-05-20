@@ -483,7 +483,7 @@ export const Home = () => {
             </Text>
           </Flex>
 
-          <Grid columns="1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="s">
+          <Grid columns="1fr 1fr 1fr 1fr" columnsTablet="1fr 1fr" columnsPhone="1fr" gap="s">
             {learnItems.map((item) => (
               <Card
                 padding="l"
