@@ -78,6 +78,14 @@ const learnItems = [
     url: 'https://dev.near.org/learn',
     target: '_blank',
   },
+  {
+    name: 'Ecosystem Amplification Social Form',
+    description:
+      'This form allows a project building on or around NEAR Protocol, to request social media amplification of existing social media posts (from your accounts) from the NEAR Foundation.',
+    icon: '/images/home/doc_icon.png',
+    url: 'https://near-foundation.notion.site/1d0da22d7b6480e6a423cd2681fd8a00',
+    target: '_blank',
+  },
 ];
 
 function returnImageSrc(cfid: string) {
